@@ -1,0 +1,1206 @@
+/*
+ * 
+ */
+package dsml.diagram.providers;
+
+/**
+ * @generated
+ */
+public class DsmlParserProvider extends org.eclipse.gmf.runtime.common.core.service.AbstractProvider implements org.eclipse.gmf.runtime.common.ui.services.parser.IParserProvider {
+	
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser aggregationTypeAggregation_5051Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getAggregationTypeAggregation_5051Parser() {
+		if (aggregationTypeAggregation_5051Parser == null) {
+							org.eclipse.emf.ecore.EAttribute editableFeature = dsml.DsmlPackage.eINSTANCE.getAggregation_TypeAggregation();
+				org.eclipse.gmf.tooling.runtime.parsers.EnumParser parser = new org.eclipse.gmf.tooling.runtime.parsers.EnumParser(editableFeature);
+			aggregationTypeAggregation_5051Parser = parser;
+		}
+		return aggregationTypeAggregation_5051Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser orderTypeOrder_5052Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getOrderTypeOrder_5052Parser() {
+		if (orderTypeOrder_5052Parser == null) {
+							org.eclipse.emf.ecore.EAttribute editableFeature = dsml.DsmlPackage.eINSTANCE.getOrder_TypeOrder();
+				org.eclipse.gmf.tooling.runtime.parsers.EnumParser parser = new org.eclipse.gmf.tooling.runtime.parsers.EnumParser(editableFeature);
+			orderTypeOrder_5052Parser = parser;
+		}
+		return orderTypeOrder_5052Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser operatorOperator_5053Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getOperatorOperator_5053Parser() {
+		if (operatorOperator_5053Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				dsml.DsmlPackage.eINSTANCE.getOperator_Operator()
+			};
+				dsml.diagram.parsers.MessageFormatParser parser = new dsml.diagram.parsers.MessageFormatParser(features);
+								operatorOperator_5053Parser = parser;
+		}
+		return operatorOperator_5053Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser valueOperatorValueOperator_5054Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getValueOperatorValueOperator_5054Parser() {
+		if (valueOperatorValueOperator_5054Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				dsml.DsmlPackage.eINSTANCE.getValueOperator_ValueOperator()
+			};
+				dsml.diagram.parsers.MessageFormatParser parser = new dsml.diagram.parsers.MessageFormatParser(features);
+								valueOperatorValueOperator_5054Parser = parser;
+		}
+		return valueOperatorValueOperator_5054Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser unaryOperatorPatternName_5055Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getUnaryOperatorPatternName_5055Parser() {
+		if (unaryOperatorPatternName_5055Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				dsml.DsmlPackage.eINSTANCE.getUnaryOperatorPattern_Name()
+			};
+				dsml.diagram.parsers.MessageFormatParser parser = new dsml.diagram.parsers.MessageFormatParser(features);
+								unaryOperatorPatternName_5055Parser = parser;
+		}
+		return unaryOperatorPatternName_5055Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser binaryOperatorPatternName_5056Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getBinaryOperatorPatternName_5056Parser() {
+		if (binaryOperatorPatternName_5056Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				dsml.DsmlPackage.eINSTANCE.getBinaryOperatorPattern_Name()
+			};
+				dsml.diagram.parsers.MessageFormatParser parser = new dsml.diagram.parsers.MessageFormatParser(features);
+								binaryOperatorPatternName_5056Parser = parser;
+		}
+		return binaryOperatorPatternName_5056Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser patternTimerPatternTimer_5057Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getPatternTimerPatternTimer_5057Parser() {
+		if (patternTimerPatternTimer_5057Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				dsml.DsmlPackage.eINSTANCE.getPatternTimer_PatternTimer()
+			};
+				dsml.diagram.parsers.MessageFormatParser parser = new dsml.diagram.parsers.MessageFormatParser(features);
+								patternTimerPatternTimer_5057Parser = parser;
+		}
+		return patternTimerPatternTimer_5057Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser conditionGroupConditionGroup_5058Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getConditionGroupConditionGroup_5058Parser() {
+		if (conditionGroupConditionGroup_5058Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				dsml.DsmlPackage.eINSTANCE.getConditionGroup_ConditionGroup()
+			};
+				dsml.diagram.parsers.MessageFormatParser parser = new dsml.diagram.parsers.MessageFormatParser(features);
+								conditionGroupConditionGroup_5058Parser = parser;
+		}
+		return conditionGroupConditionGroup_5058Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser targetTarget_5070Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getTargetTarget_5070Parser() {
+		if (targetTarget_5070Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				dsml.DsmlPackage.eINSTANCE.getTarget_Target()
+			};
+				dsml.diagram.parsers.MessageFormatParser parser = new dsml.diagram.parsers.MessageFormatParser(features);
+								targetTarget_5070Parser = parser;
+		}
+		return targetTarget_5070Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser notDescription_5059Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getNotDescription_5059Parser() {
+		if (notDescription_5059Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				dsml.DsmlPackage.eINSTANCE.getNot_Description()
+			};
+				dsml.diagram.parsers.MessageFormatParser parser = new dsml.diagram.parsers.MessageFormatParser(features);
+								notDescription_5059Parser = parser;
+		}
+		return notDescription_5059Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser ruleRuleName_5037Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getRuleRuleName_5037Parser() {
+		if (ruleRuleName_5037Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				dsml.DsmlPackage.eINSTANCE.getRule_RuleName()
+			};
+				dsml.diagram.parsers.MessageFormatParser parser = new dsml.diagram.parsers.MessageFormatParser(features);
+								ruleRuleName_5037Parser = parser;
+		}
+		return ruleRuleName_5037Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser eventPatternEventPattern_5047Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getEventPatternEventPattern_5047Parser() {
+		if (eventPatternEventPattern_5047Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				dsml.DsmlPackage.eINSTANCE.getEventPattern_EventPattern()
+			};
+				dsml.diagram.parsers.MessageFormatParser parser = new dsml.diagram.parsers.MessageFormatParser(features);
+								eventPatternEventPattern_5047Parser = parser;
+		}
+		return eventPatternEventPattern_5047Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser windowWindow_5048Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getWindowWindow_5048Parser() {
+		if (windowWindow_5048Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				dsml.DsmlPackage.eINSTANCE.getWindow_Window()
+			};
+				dsml.diagram.parsers.MessageFormatParser parser = new dsml.diagram.parsers.MessageFormatParser(features);
+								windowWindow_5048Parser = parser;
+		}
+		return windowWindow_5048Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser eventEventName_5050Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getEventEventName_5050Parser() {
+		if (eventEventName_5050Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				dsml.DsmlPackage.eINSTANCE.getEvent_EventName()
+			};
+				dsml.diagram.parsers.MessageFormatParser parser = new dsml.diagram.parsers.MessageFormatParser(features);
+								eventEventName_5050Parser = parser;
+		}
+		return eventEventName_5050Parser;
+	}
+
+
+	
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser limitValueLimit_5008Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getLimitValueLimit_5008Parser() {
+		if (limitValueLimit_5008Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				dsml.DsmlPackage.eINSTANCE.getLimit_ValueLimit()
+			};
+				dsml.diagram.parsers.MessageFormatParser parser = new dsml.diagram.parsers.MessageFormatParser(features);
+								limitValueLimit_5008Parser = parser;
+		}
+		return limitValueLimit_5008Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser operatorOperator_5015Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getOperatorOperator_5015Parser() {
+		if (operatorOperator_5015Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				dsml.DsmlPackage.eINSTANCE.getOperator_Operator()
+			};
+				dsml.diagram.parsers.MessageFormatParser parser = new dsml.diagram.parsers.MessageFormatParser(features);
+								operatorOperator_5015Parser = parser;
+		}
+		return operatorOperator_5015Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser valueOperatorValueOperator_5016Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getValueOperatorValueOperator_5016Parser() {
+		if (valueOperatorValueOperator_5016Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				dsml.DsmlPackage.eINSTANCE.getValueOperator_ValueOperator()
+			};
+				dsml.diagram.parsers.MessageFormatParser parser = new dsml.diagram.parsers.MessageFormatParser(features);
+								valueOperatorValueOperator_5016Parser = parser;
+		}
+		return valueOperatorValueOperator_5016Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser aggregationTypeAggregation_5060Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getAggregationTypeAggregation_5060Parser() {
+		if (aggregationTypeAggregation_5060Parser == null) {
+							org.eclipse.emf.ecore.EAttribute editableFeature = dsml.DsmlPackage.eINSTANCE.getAggregation_TypeAggregation();
+				org.eclipse.gmf.tooling.runtime.parsers.EnumParser parser = new org.eclipse.gmf.tooling.runtime.parsers.EnumParser(editableFeature);
+			aggregationTypeAggregation_5060Parser = parser;
+		}
+		return aggregationTypeAggregation_5060Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser orderTypeOrder_5061Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getOrderTypeOrder_5061Parser() {
+		if (orderTypeOrder_5061Parser == null) {
+							org.eclipse.emf.ecore.EAttribute editableFeature = dsml.DsmlPackage.eINSTANCE.getOrder_TypeOrder();
+				org.eclipse.gmf.tooling.runtime.parsers.EnumParser parser = new org.eclipse.gmf.tooling.runtime.parsers.EnumParser(editableFeature);
+			orderTypeOrder_5061Parser = parser;
+		}
+		return orderTypeOrder_5061Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser operatorOperator_5062Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getOperatorOperator_5062Parser() {
+		if (operatorOperator_5062Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				dsml.DsmlPackage.eINSTANCE.getOperator_Operator()
+			};
+				dsml.diagram.parsers.MessageFormatParser parser = new dsml.diagram.parsers.MessageFormatParser(features);
+								operatorOperator_5062Parser = parser;
+		}
+		return operatorOperator_5062Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser valueOperatorValueOperator_5063Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getValueOperatorValueOperator_5063Parser() {
+		if (valueOperatorValueOperator_5063Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				dsml.DsmlPackage.eINSTANCE.getValueOperator_ValueOperator()
+			};
+				dsml.diagram.parsers.MessageFormatParser parser = new dsml.diagram.parsers.MessageFormatParser(features);
+								valueOperatorValueOperator_5063Parser = parser;
+		}
+		return valueOperatorValueOperator_5063Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser unaryOperatorPatternName_5064Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getUnaryOperatorPatternName_5064Parser() {
+		if (unaryOperatorPatternName_5064Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				dsml.DsmlPackage.eINSTANCE.getUnaryOperatorPattern_Name()
+			};
+				dsml.diagram.parsers.MessageFormatParser parser = new dsml.diagram.parsers.MessageFormatParser(features);
+								unaryOperatorPatternName_5064Parser = parser;
+		}
+		return unaryOperatorPatternName_5064Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser binaryOperatorPatternName_5065Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getBinaryOperatorPatternName_5065Parser() {
+		if (binaryOperatorPatternName_5065Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				dsml.DsmlPackage.eINSTANCE.getBinaryOperatorPattern_Name()
+			};
+				dsml.diagram.parsers.MessageFormatParser parser = new dsml.diagram.parsers.MessageFormatParser(features);
+								binaryOperatorPatternName_5065Parser = parser;
+		}
+		return binaryOperatorPatternName_5065Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser patternTimerPatternTimer_5066Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getPatternTimerPatternTimer_5066Parser() {
+		if (patternTimerPatternTimer_5066Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				dsml.DsmlPackage.eINSTANCE.getPatternTimer_PatternTimer()
+			};
+				dsml.diagram.parsers.MessageFormatParser parser = new dsml.diagram.parsers.MessageFormatParser(features);
+								patternTimerPatternTimer_5066Parser = parser;
+		}
+		return patternTimerPatternTimer_5066Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser conditionGroupConditionGroup_5067Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getConditionGroupConditionGroup_5067Parser() {
+		if (conditionGroupConditionGroup_5067Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				dsml.DsmlPackage.eINSTANCE.getConditionGroup_ConditionGroup()
+			};
+				dsml.diagram.parsers.MessageFormatParser parser = new dsml.diagram.parsers.MessageFormatParser(features);
+								conditionGroupConditionGroup_5067Parser = parser;
+		}
+		return conditionGroupConditionGroup_5067Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser targetTarget_5069Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getTargetTarget_5069Parser() {
+		if (targetTarget_5069Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				dsml.DsmlPackage.eINSTANCE.getTarget_Target()
+			};
+				dsml.diagram.parsers.MessageFormatParser parser = new dsml.diagram.parsers.MessageFormatParser(features);
+								targetTarget_5069Parser = parser;
+		}
+		return targetTarget_5069Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser notDescription_5068Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getNotDescription_5068Parser() {
+		if (notDescription_5068Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				dsml.DsmlPackage.eINSTANCE.getNot_Description()
+			};
+				dsml.diagram.parsers.MessageFormatParser parser = new dsml.diagram.parsers.MessageFormatParser(features);
+								notDescription_5068Parser = parser;
+		}
+		return notDescription_5068Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser aggregationTypeAggregation_5028Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getAggregationTypeAggregation_5028Parser() {
+		if (aggregationTypeAggregation_5028Parser == null) {
+							org.eclipse.emf.ecore.EAttribute editableFeature = dsml.DsmlPackage.eINSTANCE.getAggregation_TypeAggregation();
+				org.eclipse.gmf.tooling.runtime.parsers.EnumParser parser = new org.eclipse.gmf.tooling.runtime.parsers.EnumParser(editableFeature);
+			aggregationTypeAggregation_5028Parser = parser;
+		}
+		return aggregationTypeAggregation_5028Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser orderTypeOrder_5029Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getOrderTypeOrder_5029Parser() {
+		if (orderTypeOrder_5029Parser == null) {
+							org.eclipse.emf.ecore.EAttribute editableFeature = dsml.DsmlPackage.eINSTANCE.getOrder_TypeOrder();
+				org.eclipse.gmf.tooling.runtime.parsers.EnumParser parser = new org.eclipse.gmf.tooling.runtime.parsers.EnumParser(editableFeature);
+			orderTypeOrder_5029Parser = parser;
+		}
+		return orderTypeOrder_5029Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser operatorOperator_5030Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getOperatorOperator_5030Parser() {
+		if (operatorOperator_5030Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				dsml.DsmlPackage.eINSTANCE.getOperator_Operator()
+			};
+				dsml.diagram.parsers.MessageFormatParser parser = new dsml.diagram.parsers.MessageFormatParser(features);
+								operatorOperator_5030Parser = parser;
+		}
+		return operatorOperator_5030Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser valueOperatorValueOperator_5031Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getValueOperatorValueOperator_5031Parser() {
+		if (valueOperatorValueOperator_5031Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				dsml.DsmlPackage.eINSTANCE.getValueOperator_ValueOperator()
+			};
+				dsml.diagram.parsers.MessageFormatParser parser = new dsml.diagram.parsers.MessageFormatParser(features);
+								valueOperatorValueOperator_5031Parser = parser;
+		}
+		return valueOperatorValueOperator_5031Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser unaryOperatorPatternName_5032Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getUnaryOperatorPatternName_5032Parser() {
+		if (unaryOperatorPatternName_5032Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				dsml.DsmlPackage.eINSTANCE.getUnaryOperatorPattern_Name()
+			};
+				dsml.diagram.parsers.MessageFormatParser parser = new dsml.diagram.parsers.MessageFormatParser(features);
+								unaryOperatorPatternName_5032Parser = parser;
+		}
+		return unaryOperatorPatternName_5032Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser binaryOperatorPatternName_5033Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getBinaryOperatorPatternName_5033Parser() {
+		if (binaryOperatorPatternName_5033Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				dsml.DsmlPackage.eINSTANCE.getBinaryOperatorPattern_Name()
+			};
+				dsml.diagram.parsers.MessageFormatParser parser = new dsml.diagram.parsers.MessageFormatParser(features);
+								binaryOperatorPatternName_5033Parser = parser;
+		}
+		return binaryOperatorPatternName_5033Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser patternTimerPatternTimer_5034Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getPatternTimerPatternTimer_5034Parser() {
+		if (patternTimerPatternTimer_5034Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				dsml.DsmlPackage.eINSTANCE.getPatternTimer_PatternTimer()
+			};
+				dsml.diagram.parsers.MessageFormatParser parser = new dsml.diagram.parsers.MessageFormatParser(features);
+								patternTimerPatternTimer_5034Parser = parser;
+		}
+		return patternTimerPatternTimer_5034Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser conditionGroupConditionGroup_5035Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getConditionGroupConditionGroup_5035Parser() {
+		if (conditionGroupConditionGroup_5035Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				dsml.DsmlPackage.eINSTANCE.getConditionGroup_ConditionGroup()
+			};
+				dsml.diagram.parsers.MessageFormatParser parser = new dsml.diagram.parsers.MessageFormatParser(features);
+								conditionGroupConditionGroup_5035Parser = parser;
+		}
+		return conditionGroupConditionGroup_5035Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser targetTarget_5071Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getTargetTarget_5071Parser() {
+		if (targetTarget_5071Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				dsml.DsmlPackage.eINSTANCE.getTarget_Target()
+			};
+				dsml.diagram.parsers.MessageFormatParser parser = new dsml.diagram.parsers.MessageFormatParser(features);
+								targetTarget_5071Parser = parser;
+		}
+		return targetTarget_5071Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser notDescription_5036Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getNotDescription_5036Parser() {
+		if (notDescription_5036Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				dsml.DsmlPackage.eINSTANCE.getNot_Description()
+			};
+				dsml.diagram.parsers.MessageFormatParser parser = new dsml.diagram.parsers.MessageFormatParser(features);
+								notDescription_5036Parser = parser;
+		}
+		return notDescription_5036Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser aggregationTypeAggregation_5038Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getAggregationTypeAggregation_5038Parser() {
+		if (aggregationTypeAggregation_5038Parser == null) {
+							org.eclipse.emf.ecore.EAttribute editableFeature = dsml.DsmlPackage.eINSTANCE.getAggregation_TypeAggregation();
+				org.eclipse.gmf.tooling.runtime.parsers.EnumParser parser = new org.eclipse.gmf.tooling.runtime.parsers.EnumParser(editableFeature);
+			aggregationTypeAggregation_5038Parser = parser;
+		}
+		return aggregationTypeAggregation_5038Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser orderTypeOrder_5039Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getOrderTypeOrder_5039Parser() {
+		if (orderTypeOrder_5039Parser == null) {
+							org.eclipse.emf.ecore.EAttribute editableFeature = dsml.DsmlPackage.eINSTANCE.getOrder_TypeOrder();
+				org.eclipse.gmf.tooling.runtime.parsers.EnumParser parser = new org.eclipse.gmf.tooling.runtime.parsers.EnumParser(editableFeature);
+			orderTypeOrder_5039Parser = parser;
+		}
+		return orderTypeOrder_5039Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser operatorOperator_5040Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getOperatorOperator_5040Parser() {
+		if (operatorOperator_5040Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				dsml.DsmlPackage.eINSTANCE.getOperator_Operator()
+			};
+				dsml.diagram.parsers.MessageFormatParser parser = new dsml.diagram.parsers.MessageFormatParser(features);
+								operatorOperator_5040Parser = parser;
+		}
+		return operatorOperator_5040Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser valueOperatorValueOperator_5041Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getValueOperatorValueOperator_5041Parser() {
+		if (valueOperatorValueOperator_5041Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				dsml.DsmlPackage.eINSTANCE.getValueOperator_ValueOperator()
+			};
+				dsml.diagram.parsers.MessageFormatParser parser = new dsml.diagram.parsers.MessageFormatParser(features);
+								valueOperatorValueOperator_5041Parser = parser;
+		}
+		return valueOperatorValueOperator_5041Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser unaryOperatorPatternName_5042Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getUnaryOperatorPatternName_5042Parser() {
+		if (unaryOperatorPatternName_5042Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				dsml.DsmlPackage.eINSTANCE.getUnaryOperatorPattern_Name()
+			};
+				dsml.diagram.parsers.MessageFormatParser parser = new dsml.diagram.parsers.MessageFormatParser(features);
+								unaryOperatorPatternName_5042Parser = parser;
+		}
+		return unaryOperatorPatternName_5042Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser binaryOperatorPatternName_5043Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getBinaryOperatorPatternName_5043Parser() {
+		if (binaryOperatorPatternName_5043Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				dsml.DsmlPackage.eINSTANCE.getBinaryOperatorPattern_Name()
+			};
+				dsml.diagram.parsers.MessageFormatParser parser = new dsml.diagram.parsers.MessageFormatParser(features);
+								binaryOperatorPatternName_5043Parser = parser;
+		}
+		return binaryOperatorPatternName_5043Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser patternTimerPatternTimer_5044Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getPatternTimerPatternTimer_5044Parser() {
+		if (patternTimerPatternTimer_5044Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				dsml.DsmlPackage.eINSTANCE.getPatternTimer_PatternTimer()
+			};
+				dsml.diagram.parsers.MessageFormatParser parser = new dsml.diagram.parsers.MessageFormatParser(features);
+								patternTimerPatternTimer_5044Parser = parser;
+		}
+		return patternTimerPatternTimer_5044Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser conditionGroupConditionGroup_5045Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getConditionGroupConditionGroup_5045Parser() {
+		if (conditionGroupConditionGroup_5045Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				dsml.DsmlPackage.eINSTANCE.getConditionGroup_ConditionGroup()
+			};
+				dsml.diagram.parsers.MessageFormatParser parser = new dsml.diagram.parsers.MessageFormatParser(features);
+								conditionGroupConditionGroup_5045Parser = parser;
+		}
+		return conditionGroupConditionGroup_5045Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser targetTarget_5072Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getTargetTarget_5072Parser() {
+		if (targetTarget_5072Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				dsml.DsmlPackage.eINSTANCE.getTarget_Target()
+			};
+				dsml.diagram.parsers.MessageFormatParser parser = new dsml.diagram.parsers.MessageFormatParser(features);
+								targetTarget_5072Parser = parser;
+		}
+		return targetTarget_5072Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser notDescription_5046Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getNotDescription_5046Parser() {
+		if (notDescription_5046Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				dsml.DsmlPackage.eINSTANCE.getNot_Description()
+			};
+				dsml.diagram.parsers.MessageFormatParser parser = new dsml.diagram.parsers.MessageFormatParser(features);
+								notDescription_5046Parser = parser;
+		}
+		return notDescription_5046Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser attributeNameType_5049Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getAttributeNameType_5049Parser() {
+		if (attributeNameType_5049Parser == null) {
+						org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
+				dsml.DsmlPackage.eINSTANCE.getAttribute_Name(), dsml.DsmlPackage.eINSTANCE.getAttribute_Type()
+			};
+				dsml.diagram.parsers.MessageFormatParser parser = new dsml.diagram.parsers.MessageFormatParser(features);
+					parser.setViewPattern("{0}:{1}"); //$NON-NLS-1$
+				parser.setEditorPattern("{0}:{1}"); //$NON-NLS-1$
+				parser.setEditPattern("{0}:{1}"); //$NON-NLS-1$
+				attributeNameType_5049Parser = parser;
+		}
+		return attributeNameType_5049Parser;
+	}
+
+
+	
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser comparisonComparison_6001Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getComparisonComparison_6001Parser() {
+		if (comparisonComparison_6001Parser == null) {
+							org.eclipse.emf.ecore.EAttribute editableFeature = dsml.DsmlPackage.eINSTANCE.getComparison_Comparison();
+				org.eclipse.gmf.tooling.runtime.parsers.EnumParser parser = new org.eclipse.gmf.tooling.runtime.parsers.EnumParser(editableFeature);
+			comparisonComparison_6001Parser = parser;
+		}
+		return comparisonComparison_6001Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser arithmeticArithmetic_6002Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getArithmeticArithmetic_6002Parser() {
+		if (arithmeticArithmetic_6002Parser == null) {
+							org.eclipse.emf.ecore.EAttribute editableFeature = dsml.DsmlPackage.eINSTANCE.getArithmetic_Arithmetic();
+				org.eclipse.gmf.tooling.runtime.parsers.EnumParser parser = new org.eclipse.gmf.tooling.runtime.parsers.EnumParser(editableFeature);
+			arithmeticArithmetic_6002Parser = parser;
+		}
+		return arithmeticArithmetic_6002Parser;
+	}
+
+
+	
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser logicalConnectorTypeLogical_6003Parser;
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser getLogicalConnectorTypeLogical_6003Parser() {
+		if (logicalConnectorTypeLogical_6003Parser == null) {
+							org.eclipse.emf.ecore.EAttribute editableFeature = dsml.DsmlPackage.eINSTANCE.getLogicalConnector_TypeLogical();
+				org.eclipse.gmf.tooling.runtime.parsers.EnumParser parser = new org.eclipse.gmf.tooling.runtime.parsers.EnumParser(editableFeature);
+			logicalConnectorTypeLogical_6003Parser = parser;
+		}
+		return logicalConnectorTypeLogical_6003Parser;
+	}
+
+
+
+		/**
+ * @generated
+ */
+	protected org.eclipse.gmf.runtime.common.ui.services.parser.IParser getParser(int visualID) {
+		switch (visualID) {
+		
+		case dsml.diagram.edit.parts.AggregationTypeAggregationEditPart.VISUAL_ID: return getAggregationTypeAggregation_5051Parser();
+
+		case dsml.diagram.edit.parts.OrderTypeOrderEditPart.VISUAL_ID: return getOrderTypeOrder_5052Parser();
+		case dsml.diagram.edit.parts.OperatorOperatorEditPart.VISUAL_ID: return getOperatorOperator_5053Parser();
+		case dsml.diagram.edit.parts.ValueOperatorValueOperatorEditPart.VISUAL_ID: return getValueOperatorValueOperator_5054Parser();
+		case dsml.diagram.edit.parts.UnaryOperatorPatternNameEditPart.VISUAL_ID: return getUnaryOperatorPatternName_5055Parser();
+		case dsml.diagram.edit.parts.BinaryOperatorPatternNameEditPart.VISUAL_ID: return getBinaryOperatorPatternName_5056Parser();
+		case dsml.diagram.edit.parts.PatternTimerPatternTimerEditPart.VISUAL_ID: return getPatternTimerPatternTimer_5057Parser();
+		case dsml.diagram.edit.parts.ConditionGroupConditionGroupEditPart.VISUAL_ID: return getConditionGroupConditionGroup_5058Parser();
+		case dsml.diagram.edit.parts.TargetTargetEditPart.VISUAL_ID: return getTargetTarget_5070Parser();
+		case dsml.diagram.edit.parts.NotDescriptionEditPart.VISUAL_ID: return getNotDescription_5059Parser();
+		case dsml.diagram.edit.parts.RuleRuleNameEditPart.VISUAL_ID: return getRuleRuleName_5037Parser();
+		case dsml.diagram.edit.parts.EventPatternEventPatternEditPart.VISUAL_ID: return getEventPatternEventPattern_5047Parser();
+		case dsml.diagram.edit.parts.WindowWindowEditPart.VISUAL_ID: return getWindowWindow_5048Parser();
+		case dsml.diagram.edit.parts.EventEventNameEditPart.VISUAL_ID: return getEventEventName_5050Parser();
+				case dsml.diagram.edit.parts.LimitValueLimitEditPart.VISUAL_ID: return getLimitValueLimit_5008Parser();
+		case dsml.diagram.edit.parts.OperatorOperator2EditPart.VISUAL_ID: return getOperatorOperator_5015Parser();
+		case dsml.diagram.edit.parts.ValueOperatorValueOperator2EditPart.VISUAL_ID: return getValueOperatorValueOperator_5016Parser();
+
+		case dsml.diagram.edit.parts.AggregationTypeAggregation2EditPart.VISUAL_ID: return getAggregationTypeAggregation_5060Parser();
+
+		case dsml.diagram.edit.parts.OrderTypeOrder2EditPart.VISUAL_ID: return getOrderTypeOrder_5061Parser();
+		case dsml.diagram.edit.parts.OperatorOperator3EditPart.VISUAL_ID: return getOperatorOperator_5062Parser();
+		case dsml.diagram.edit.parts.ValueOperatorValueOperator3EditPart.VISUAL_ID: return getValueOperatorValueOperator_5063Parser();
+		case dsml.diagram.edit.parts.UnaryOperatorPatternName2EditPart.VISUAL_ID: return getUnaryOperatorPatternName_5064Parser();
+		case dsml.diagram.edit.parts.BinaryOperatorPatternName2EditPart.VISUAL_ID: return getBinaryOperatorPatternName_5065Parser();
+		case dsml.diagram.edit.parts.PatternTimerPatternTimer2EditPart.VISUAL_ID: return getPatternTimerPatternTimer_5066Parser();
+		case dsml.diagram.edit.parts.ConditionGroupConditionGroup2EditPart.VISUAL_ID: return getConditionGroupConditionGroup_5067Parser();
+		case dsml.diagram.edit.parts.TargetTarget2EditPart.VISUAL_ID: return getTargetTarget_5069Parser();
+		case dsml.diagram.edit.parts.NotDescription2EditPart.VISUAL_ID: return getNotDescription_5068Parser();
+
+		case dsml.diagram.edit.parts.AggregationTypeAggregation3EditPart.VISUAL_ID: return getAggregationTypeAggregation_5028Parser();
+
+		case dsml.diagram.edit.parts.OrderTypeOrder3EditPart.VISUAL_ID: return getOrderTypeOrder_5029Parser();
+		case dsml.diagram.edit.parts.OperatorOperator4EditPart.VISUAL_ID: return getOperatorOperator_5030Parser();
+		case dsml.diagram.edit.parts.ValueOperatorValueOperator4EditPart.VISUAL_ID: return getValueOperatorValueOperator_5031Parser();
+		case dsml.diagram.edit.parts.UnaryOperatorPatternName3EditPart.VISUAL_ID: return getUnaryOperatorPatternName_5032Parser();
+		case dsml.diagram.edit.parts.BinaryOperatorPatternName3EditPart.VISUAL_ID: return getBinaryOperatorPatternName_5033Parser();
+		case dsml.diagram.edit.parts.PatternTimerPatternTimer3EditPart.VISUAL_ID: return getPatternTimerPatternTimer_5034Parser();
+		case dsml.diagram.edit.parts.ConditionGroupConditionGroup3EditPart.VISUAL_ID: return getConditionGroupConditionGroup_5035Parser();
+		case dsml.diagram.edit.parts.TargetTarget3EditPart.VISUAL_ID: return getTargetTarget_5071Parser();
+		case dsml.diagram.edit.parts.NotDescription3EditPart.VISUAL_ID: return getNotDescription_5036Parser();
+
+		case dsml.diagram.edit.parts.AggregationTypeAggregation4EditPart.VISUAL_ID: return getAggregationTypeAggregation_5038Parser();
+
+		case dsml.diagram.edit.parts.OrderTypeOrder4EditPart.VISUAL_ID: return getOrderTypeOrder_5039Parser();
+		case dsml.diagram.edit.parts.OperatorOperator5EditPart.VISUAL_ID: return getOperatorOperator_5040Parser();
+		case dsml.diagram.edit.parts.ValueOperatorValueOperator5EditPart.VISUAL_ID: return getValueOperatorValueOperator_5041Parser();
+		case dsml.diagram.edit.parts.UnaryOperatorPatternName4EditPart.VISUAL_ID: return getUnaryOperatorPatternName_5042Parser();
+		case dsml.diagram.edit.parts.BinaryOperatorPatternName4EditPart.VISUAL_ID: return getBinaryOperatorPatternName_5043Parser();
+		case dsml.diagram.edit.parts.PatternTimerPatternTimer4EditPart.VISUAL_ID: return getPatternTimerPatternTimer_5044Parser();
+		case dsml.diagram.edit.parts.ConditionGroupConditionGroup4EditPart.VISUAL_ID: return getConditionGroupConditionGroup_5045Parser();
+		case dsml.diagram.edit.parts.TargetTarget4EditPart.VISUAL_ID: return getTargetTarget_5072Parser();
+		case dsml.diagram.edit.parts.NotDescription4EditPart.VISUAL_ID: return getNotDescription_5046Parser();
+		case dsml.diagram.edit.parts.AttributeNameTypeEditPart.VISUAL_ID: return getAttributeNameType_5049Parser();
+		
+		case dsml.diagram.edit.parts.ComparisonComparisonEditPart.VISUAL_ID: return getComparisonComparison_6001Parser();
+
+		case dsml.diagram.edit.parts.ArithmeticArithmeticEditPart.VISUAL_ID: return getArithmeticArithmetic_6002Parser();
+
+		case dsml.diagram.edit.parts.LogicalConnectorTypeLogicalEditPart.VISUAL_ID: return getLogicalConnectorTypeLogical_6003Parser();
+		}
+		return null;
+	}
+		/**
+ * Utility method that consults ParserService
+ * @generated
+ */
+	public static org.eclipse.gmf.runtime.common.ui.services.parser.IParser getParser(org.eclipse.gmf.runtime.emf.type.core.IElementType type, org.eclipse.emf.ecore.EObject object, String parserHint) {
+		return org.eclipse.gmf.runtime.common.ui.services.parser.ParserService.getInstance().getParser(new HintAdapter(type, object, parserHint));
+	}
+		/**
+ * @generated
+ */
+	public org.eclipse.gmf.runtime.common.ui.services.parser.IParser getParser(
+			org.eclipse.core.runtime.IAdaptable hint) {
+		String vid = (String) hint.getAdapter(String.class);
+		if (vid != null) {
+			return getParser(dsml.diagram.part.DsmlVisualIDRegistry.getVisualID(vid));
+		}
+		org.eclipse.gmf.runtime.notation.View view =
+				(org.eclipse.gmf.runtime.notation.View) hint.getAdapter(org.eclipse.gmf.runtime.notation.View.class);
+		if (view != null) {
+			return getParser(dsml.diagram.part.DsmlVisualIDRegistry.getVisualID(view));
+		}
+		return null;
+	}
+
+		/**
+ * @generated
+ */
+	public boolean provides(org.eclipse.gmf.runtime.common.core.service.IOperation operation) {
+		if (operation instanceof org.eclipse.gmf.runtime.common.ui.services.parser.GetParserOperation) {
+			org.eclipse.core.runtime.IAdaptable hint =
+					((org.eclipse.gmf.runtime.common.ui.services.parser.GetParserOperation) operation).getHint();
+			if (dsml.diagram.providers.DsmlElementTypes.getElement(hint) == null) {
+				return false;
+			}
+			return getParser(hint) != null;
+		}
+		return false;
+	}
+
+		/**
+ * @generated
+ */
+	private static class HintAdapter extends org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter {
+
+		/**
+ * @generated
+ */
+		private final org.eclipse.gmf.runtime.emf.type.core.IElementType elementType;
+
+		/**
+ * @generated
+ */
+		public HintAdapter(org.eclipse.gmf.runtime.emf.type.core.IElementType type,
+				org.eclipse.emf.ecore.EObject object, String parserHint) {
+			super(object, parserHint);
+			assert type != null;
+			elementType = type;
+		}
+
+		/**
+ * @generated
+ */
+		public Object getAdapter(Class adapter) {
+			if (org.eclipse.gmf.runtime.emf.type.core.IElementType.class.equals(adapter)) {
+				return elementType;
+			}
+			return super.getAdapter(adapter);
+		}
+	}
+
+	}

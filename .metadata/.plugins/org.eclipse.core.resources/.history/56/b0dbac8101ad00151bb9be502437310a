@@ -1,0 +1,127 @@
+/**
+ */
+package dsml;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EObject;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Area Desenho</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * <ul>
+ *   <li>{@link dsml.AreaDesenho#getComponent <em>Component</em>}</li>
+ *   <li>{@link dsml.AreaDesenho#getLinks <em>Links</em>}</li>
+ *   <li>{@link dsml.AreaDesenho#getComparison <em>Comparison</em>}</li>
+ *   <li>{@link dsml.AreaDesenho#getArithmetic <em>Arithmetic</em>}</li>
+ *   <li>{@link dsml.AreaDesenho#getFollowedby <em>Followedby</em>}</li>
+ *   <li>{@link dsml.AreaDesenho#getLogicalConnector <em>Logical Connector</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @see dsml.DsmlPackage#getAreaDesenho()
+ * @model annotation="gmf.diagram foo='bar' rcp='false' onefile='true' diagram.extension='dsml'"
+ * @generated
+ */
+public interface AreaDesenho extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Component</b></em>' containment reference list.
+	 * The list contents are of type {@link dsml.Component}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Component</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Component</em>' containment reference list.
+	 * @see dsml.DsmlPackage#getAreaDesenho_Component()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Component> getComponent();
+
+	/**
+	 * Returns the value of the '<em><b>Links</b></em>' containment reference list.
+	 * The list contents are of type {@link dsml.Link}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Links</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Links</em>' containment reference list.
+	 * @see dsml.DsmlPackage#getAreaDesenho_Links()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Link> getLinks();
+
+	/**
+	 * Returns the value of the '<em><b>Comparison</b></em>' containment reference list.
+	 * The list contents are of type {@link dsml.Comparison}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Comparison</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Comparison</em>' containment reference list.
+	 * @see dsml.DsmlPackage#getAreaDesenho_Comparison()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Comparison> getComparison();
+
+	/**
+	 * Returns the value of the '<em><b>Arithmetic</b></em>' containment reference list.
+	 * The list contents are of type {@link dsml.Arithmetic}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Arithmetic</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Arithmetic</em>' containment reference list.
+	 * @see dsml.DsmlPackage#getAreaDesenho_Arithmetic()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Arithmetic> getArithmetic();
+
+	/**
+	 * Returns the value of the '<em><b>Followedby</b></em>' containment reference list.
+	 * The list contents are of type {@link dsml.Followedby}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Followedby</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Followedby</em>' containment reference list.
+	 * @see dsml.DsmlPackage#getAreaDesenho_Followedby()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Followedby> getFollowedby();
+
+	/**
+	 * Returns the value of the '<em><b>Logical Connector</b></em>' containment reference list.
+	 * The list contents are of type {@link dsml.LogicalConnector}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Logical Connector</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Logical Connector</em>' containment reference list.
+	 * @see dsml.DsmlPackage#getAreaDesenho_LogicalConnector()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<LogicalConnector> getLogicalConnector();
+
+} // AreaDesenho

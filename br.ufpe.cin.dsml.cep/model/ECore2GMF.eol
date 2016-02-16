@@ -1,0 +1,65 @@
+var paletteTool := GmfTool!Palette.all.first();
+
+var groupObjects      = GmfTool!ToolGroup.all.selectOne(r|r.title = 'Objects');
+var groupConnections  = GmfTool!ToolGroup.all.selectOne(r|r.title = 'Connections');
+
+var bringGroup        = groupObjects.tools.selectOne(r|r.title = 'BringGroup');
+var target            = groupObjects.tools.selectOne(r|r.title = 'Target');
+var conditionGroup    = groupObjects.tools.selectOne(r|r.title = 'ConditionGroup');
+var groupbyCondition  = groupObjects.tools.selectOne(r|r.title = 'GroupbyCondition');
+var operator          = groupObjects.tools.selectOne(r|r.title = 'Operator');
+var valueOperator     = groupObjects.tools.selectOne(r|r.title = 'ValueOperator');
+var aggregation       = groupObjects.tools.selectOne(r|r.title = 'Aggregation');
+var negative          = groupObjects.tools.selectOne(r|r.title = 'Not');
+var arithmetic        = groupConnections.tools.selectOne(r|r.title = 'Arithmetic');
+var comparison        = groupConnections.tools.selectOne(r|r.title = 'Comparison');
+var logicalConnector  = groupConnections.tools.selectOne(r|r.title = 'LogicalConnector');
+var unaryPattern      = groupObjects.tools.selectOne(r|r.title = 'UnaryPattern');
+var repeatPattern     = groupObjects.tools.selectOne(r|r.title = 'RepeatPattern');
+var patternTimer      = groupObjects.tools.selectOne(r|r.title = 'PatternTimer');
+var linkPatternTarget = groupConnections.tools.selectOne(r|r.title = 'LinkPatternTarget');
+var linkTarget        = groupConnections.tools.selectOne(r|r.title = 'LinkTarget');
+
+var toolGroup0 = new GmfTool!ToolGroup;
+toolGroup0.title := 'Emsembles';
+toolGroup0.collapsible := true;
+paletteTool.tools.add(toolGroup0);
+toolGroup0.tools.add(bringGroup);
+toolGroup0.tools.add(target);
+toolGroup0.tools.add(conditionGroup);
+toolGroup0.tools.add(groupbyCondition);
+
+var toolGroup1 = new GmfTool!ToolGroup;
+toolGroup1.title := 'Target Connector';
+toolGroup1.collapsible := true;
+paletteTool.tools.add(toolGroup1);
+toolGroup1.tools.add(linkTarget);
+
+
+var toolGroup2 = new GmfTool!ToolGroup;
+toolGroup2.title := 'Operacional Components';
+toolGroup2.collapsible := true;
+paletteTool.tools.add(toolGroup2);
+toolGroup2.tools.add(operator);
+toolGroup2.tools.add(valueOperator);
+toolGroup2.tools.add(aggregation);
+toolGroup2.tools.add(negative);
+
+var toolGroup3 = new GmfTool!ToolGroup;
+toolGroup3.title := 'Operacional Connectors';
+toolGroup3.collapsible := true;
+paletteTool.tools.add(toolGroup3);
+toolGroup3.tools.add(arithmetic);
+toolGroup3.tools.add(comparison);
+toolGroup3.tools.add(logicalConnector);
+
+var toolGroup4 = new GmfTool!ToolGroup;
+toolGroup4.title := 'Pattern Components';
+toolGroup4.collapsible := true;
+paletteTool.tools.add(toolGroup4);
+toolGroup4.tools.add(unaryPattern);
+toolGroup4.tools.add(repeatPattern);
+toolGroup4.tools.add(patternTimer);
+toolGroup4.tools.add(linkPatternTarget);
+
+paletteTool.tools.remove(groupConnections);

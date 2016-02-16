@@ -1,0 +1,71 @@
+/*
+ * 
+ */
+package dsml.diagram.edit.policies;
+
+import org.eclipse.gef.commands.Command;
+import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
+
+import dsml.diagram.edit.commands.Aggregation2CreateCommand;
+import dsml.diagram.edit.commands.BinaryOperatorPattern2CreateCommand;
+import dsml.diagram.edit.commands.ConditionGroup2CreateCommand;
+import dsml.diagram.edit.commands.Not2CreateCommand;
+import dsml.diagram.edit.commands.Operator3CreateCommand;
+import dsml.diagram.edit.commands.Order2CreateCommand;
+import dsml.diagram.edit.commands.PatternTimer2CreateCommand;
+import dsml.diagram.edit.commands.Target2CreateCommand;
+import dsml.diagram.edit.commands.UnaryOperatorPattern2CreateCommand;
+import dsml.diagram.edit.commands.ValueOperator3CreateCommand;
+import dsml.diagram.providers.DsmlElementTypes;
+
+/**
+ * @generated
+ */
+public class TargetTargetNodesCompartmentItemSemanticEditPolicy extends
+		DsmlBaseItemSemanticEditPolicy {
+
+	/**
+	 * @generated
+	 */
+	public TargetTargetNodesCompartmentItemSemanticEditPolicy() {
+		super(DsmlElementTypes.Target_2026);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Command getCreateCommand(CreateElementRequest req) {
+		if (DsmlElementTypes.Aggregation_3035 == req.getElementType()) {
+			return getGEFWrapper(new Aggregation2CreateCommand(req));
+		}
+		if (DsmlElementTypes.Order_3036 == req.getElementType()) {
+			return getGEFWrapper(new Order2CreateCommand(req));
+		}
+		if (DsmlElementTypes.Operator_3037 == req.getElementType()) {
+			return getGEFWrapper(new Operator3CreateCommand(req));
+		}
+		if (DsmlElementTypes.ValueOperator_3038 == req.getElementType()) {
+			return getGEFWrapper(new ValueOperator3CreateCommand(req));
+		}
+		if (DsmlElementTypes.UnaryOperatorPattern_3039 == req.getElementType()) {
+			return getGEFWrapper(new UnaryOperatorPattern2CreateCommand(req));
+		}
+		if (DsmlElementTypes.BinaryOperatorPattern_3040 == req.getElementType()) {
+			return getGEFWrapper(new BinaryOperatorPattern2CreateCommand(req));
+		}
+		if (DsmlElementTypes.PatternTimer_3041 == req.getElementType()) {
+			return getGEFWrapper(new PatternTimer2CreateCommand(req));
+		}
+		if (DsmlElementTypes.ConditionGroup_3042 == req.getElementType()) {
+			return getGEFWrapper(new ConditionGroup2CreateCommand(req));
+		}
+		if (DsmlElementTypes.Target_3043 == req.getElementType()) {
+			return getGEFWrapper(new Target2CreateCommand(req));
+		}
+		if (DsmlElementTypes.Not_3044 == req.getElementType()) {
+			return getGEFWrapper(new Not2CreateCommand(req));
+		}
+		return super.getCreateCommand(req);
+	}
+
+}

@@ -1,0 +1,1874 @@
+/**
+ */
+package dsml.impl;
+
+import dsml.Aggregation;
+import dsml.AreaDesenho;
+import dsml.Arithmetic;
+import dsml.Attribute;
+import dsml.BinaryOperatorPattern;
+import dsml.Comparison;
+import dsml.Component;
+import dsml.ConditionGroup;
+import dsml.DsmlFactory;
+import dsml.DsmlPackage;
+import dsml.Event;
+import dsml.EventPattern;
+import dsml.Followedby;
+import dsml.Limit;
+import dsml.Link;
+import dsml.LinkComponent;
+import dsml.LinkTarget;
+import dsml.LogicalConnector;
+import dsml.Node;
+import dsml.Not;
+import dsml.OperationType;
+import dsml.Operator;
+import dsml.Order;
+import dsml.Pattern;
+import dsml.PatternTimer;
+import dsml.Query;
+import dsml.Rule;
+import dsml.Target;
+import dsml.TypeAggregation;
+import dsml.TypeArithmetic;
+import dsml.TypeBinaryOperatorPattern;
+import dsml.TypeBringAll;
+import dsml.TypeComparison;
+import dsml.TypeLogical;
+import dsml.TypeOrder;
+import dsml.TypePatternTimer;
+import dsml.TypeRule;
+import dsml.TypeUnaryOperatorPattern;
+import dsml.TypeWindow;
+import dsml.UnaryOperatorPattern;
+import dsml.ValueOperator;
+import dsml.Window;
+
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+
+import org.eclipse.emf.ecore.impl.EPackageImpl;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model <b>Package</b>.
+ * <!-- end-user-doc -->
+ * @generated
+ */
+public class DsmlPackageImpl extends EPackageImpl implements DsmlPackage {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass areaDesenhoEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass attributeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass componentEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass ruleEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass eventPatternEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass windowEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass eventEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass nodeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass conditionGroupEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass targetEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass notEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass queryEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass aggregationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass orderEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass limitEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass operationTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass operatorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass valueOperatorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass patternEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass unaryOperatorPatternEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass binaryOperatorPatternEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass patternTimerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass linkEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass linkComponentEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass linkTargetEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass comparisonEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass arithmeticEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass followedbyEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass logicalConnectorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum typeRuleEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum typeWindowEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum typeOrderEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum typeUnaryOperatorPatternEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum typeBinaryOperatorPatternEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum typeLogicalEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum typeComparisonEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum typeArithmeticEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum typeAggregationEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum typePatternTimerEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum typeBringAllEEnum = null;
+
+	/**
+	 * Creates an instance of the model <b>Package</b>, registered with
+	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
+	 * package URI value.
+	 * <p>Note: the correct way to create the package is via the static
+	 * factory method {@link #init init()}, which also performs
+	 * initialization of the package, or returns the registered package,
+	 * if one already exists.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.emf.ecore.EPackage.Registry
+	 * @see dsml.DsmlPackage#eNS_URI
+	 * @see #init()
+	 * @generated
+	 */
+	private DsmlPackageImpl() {
+		super(eNS_URI, DsmlFactory.eINSTANCE);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private static boolean isInited = false;
+
+	/**
+	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
+	 * 
+	 * <p>This method is used to initialize {@link DsmlPackage#eINSTANCE} when that field is accessed.
+	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #eNS_URI
+	 * @see #createPackageContents()
+	 * @see #initializePackageContents()
+	 * @generated
+	 */
+	public static DsmlPackage init() {
+		if (isInited) return (DsmlPackage)EPackage.Registry.INSTANCE.getEPackage(DsmlPackage.eNS_URI);
+
+		// Obtain or create and register package
+		DsmlPackageImpl theDsmlPackage = (DsmlPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof DsmlPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new DsmlPackageImpl());
+
+		isInited = true;
+
+		// Create package meta-data objects
+		theDsmlPackage.createPackageContents();
+
+		// Initialize created meta-data
+		theDsmlPackage.initializePackageContents();
+
+		// Mark meta-data to indicate it can't be changed
+		theDsmlPackage.freeze();
+
+  
+		// Update the registry and return the package
+		EPackage.Registry.INSTANCE.put(DsmlPackage.eNS_URI, theDsmlPackage);
+		return theDsmlPackage;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAreaDesenho() {
+		return areaDesenhoEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAreaDesenho_Component() {
+		return (EReference)areaDesenhoEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAreaDesenho_Links() {
+		return (EReference)areaDesenhoEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAttribute() {
+		return attributeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAttribute_Name() {
+		return (EAttribute)attributeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAttribute_Type() {
+		return (EAttribute)attributeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getComponent() {
+		return componentEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getRule() {
+		return ruleEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRule_RuleName() {
+		return (EAttribute)ruleEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRule_Node() {
+		return (EReference)ruleEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRule_Attributes() {
+		return (EReference)ruleEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRule_BringAll() {
+		return (EAttribute)ruleEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getEventPattern() {
+		return eventPatternEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEventPattern_EventPattern() {
+		return (EAttribute)eventPatternEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEventPattern_Node() {
+		return (EReference)eventPatternEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getWindow() {
+		return windowEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getWindow_Window() {
+		return (EAttribute)windowEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getWindow_TypeWindow() {
+		return (EAttribute)windowEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getWindow_Value() {
+		return (EAttribute)windowEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getEvent() {
+		return eventEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEvent_EventName() {
+		return (EAttribute)eventEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEvent_Attributes() {
+		return (EReference)eventEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getNode() {
+		return nodeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getConditionGroup() {
+		return conditionGroupEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getConditionGroup_ConditionGroup() {
+		return (EAttribute)conditionGroupEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getConditionGroup_OperationTypes() {
+		return (EReference)conditionGroupEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getTarget() {
+		return targetEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTarget_Alias() {
+		return (EAttribute)targetEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getTarget_OperationTypes() {
+		return (EReference)targetEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getNot() {
+		return notEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getNot_Description() {
+		return (EAttribute)notEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getQuery() {
+		return queryEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAggregation() {
+		return aggregationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAggregation_TypeAggregation() {
+		return (EAttribute)aggregationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getOrder() {
+		return orderEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getOrder_TypeOrder() {
+		return (EAttribute)orderEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getOrder_Attribute() {
+		return (EReference)orderEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getOrder_Limit() {
+		return (EReference)orderEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getLimit() {
+		return limitEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLimit_ValueLimit() {
+		return (EAttribute)limitEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getOperationType() {
+		return operationTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getOperator() {
+		return operatorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getOperator_Operator() {
+		return (EAttribute)operatorEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getOperator_Attribute() {
+		return (EReference)operatorEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getValueOperator() {
+		return valueOperatorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getValueOperator_ValueOperator() {
+		return (EAttribute)valueOperatorEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getPattern() {
+		return patternEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getUnaryOperatorPattern() {
+		return unaryOperatorPatternEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getUnaryOperatorPattern_Name() {
+		return (EAttribute)unaryOperatorPatternEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getUnaryOperatorPattern_TypeUnaryOperatorPattern() {
+		return (EAttribute)unaryOperatorPatternEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getBinaryOperatorPattern() {
+		return binaryOperatorPatternEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getBinaryOperatorPattern_Name() {
+		return (EAttribute)binaryOperatorPatternEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getBinaryOperatorPattern_TypeBinaryOperatorPattern() {
+		return (EAttribute)binaryOperatorPatternEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getPatternTimer() {
+		return patternTimerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPatternTimer_PatternTimer() {
+		return (EAttribute)patternTimerEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPatternTimer_TypePatternTimer() {
+		return (EAttribute)patternTimerEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPatternTimer_Value() {
+		return (EAttribute)patternTimerEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getLink() {
+		return linkEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getLinkComponent() {
+		return linkComponentEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getLinkComponent_Origem() {
+		return (EReference)linkComponentEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getLinkComponent_Destino() {
+		return (EReference)linkComponentEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getLinkTarget() {
+		return linkTargetEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getLinkTarget_Origem() {
+		return (EReference)linkTargetEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getLinkTarget_Destino() {
+		return (EReference)linkTargetEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getComparison() {
+		return comparisonEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getComparison_Origem() {
+		return (EReference)comparisonEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getComparison_Destino() {
+		return (EReference)comparisonEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getComparison_Comparison() {
+		return (EAttribute)comparisonEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getArithmetic() {
+		return arithmeticEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getArithmetic_Origem() {
+		return (EReference)arithmeticEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getArithmetic_Destino() {
+		return (EReference)arithmeticEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getArithmetic_Arithmetic() {
+		return (EAttribute)arithmeticEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getFollowedby() {
+		return followedbyEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getFollowedby_Origem() {
+		return (EReference)followedbyEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getFollowedby_Destino() {
+		return (EReference)followedbyEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getLogicalConnector() {
+		return logicalConnectorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getLogicalConnector_Origem() {
+		return (EReference)logicalConnectorEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getLogicalConnector_Destino() {
+		return (EReference)logicalConnectorEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLogicalConnector_TypeLogical() {
+		return (EAttribute)logicalConnectorEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getTypeRule() {
+		return typeRuleEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getTypeWindow() {
+		return typeWindowEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getTypeOrder() {
+		return typeOrderEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getTypeUnaryOperatorPattern() {
+		return typeUnaryOperatorPatternEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getTypeBinaryOperatorPattern() {
+		return typeBinaryOperatorPatternEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getTypeLogical() {
+		return typeLogicalEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getTypeComparison() {
+		return typeComparisonEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getTypeArithmetic() {
+		return typeArithmeticEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getTypeAggregation() {
+		return typeAggregationEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getTypePatternTimer() {
+		return typePatternTimerEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getTypeBringAll() {
+		return typeBringAllEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DsmlFactory getDsmlFactory() {
+		return (DsmlFactory)getEFactoryInstance();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private boolean isCreated = false;
+
+	/**
+	 * Creates the meta-model objects for the package.  This method is
+	 * guarded to have no affect on any invocation but its first.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void createPackageContents() {
+		if (isCreated) return;
+		isCreated = true;
+
+		// Create classes and their features
+		areaDesenhoEClass = createEClass(AREA_DESENHO);
+		createEReference(areaDesenhoEClass, AREA_DESENHO__COMPONENT);
+		createEReference(areaDesenhoEClass, AREA_DESENHO__LINKS);
+
+		componentEClass = createEClass(COMPONENT);
+
+		ruleEClass = createEClass(RULE);
+		createEAttribute(ruleEClass, RULE__RULE_NAME);
+		createEAttribute(ruleEClass, RULE__BRING_ALL);
+		createEReference(ruleEClass, RULE__ATTRIBUTES);
+		createEReference(ruleEClass, RULE__NODE);
+
+		eventPatternEClass = createEClass(EVENT_PATTERN);
+		createEAttribute(eventPatternEClass, EVENT_PATTERN__EVENT_PATTERN);
+		createEReference(eventPatternEClass, EVENT_PATTERN__NODE);
+
+		windowEClass = createEClass(WINDOW);
+		createEAttribute(windowEClass, WINDOW__WINDOW);
+		createEAttribute(windowEClass, WINDOW__TYPE_WINDOW);
+		createEAttribute(windowEClass, WINDOW__VALUE);
+
+		eventEClass = createEClass(EVENT);
+		createEAttribute(eventEClass, EVENT__EVENT_NAME);
+		createEReference(eventEClass, EVENT__ATTRIBUTES);
+
+		nodeEClass = createEClass(NODE);
+
+		attributeEClass = createEClass(ATTRIBUTE);
+		createEAttribute(attributeEClass, ATTRIBUTE__NAME);
+		createEAttribute(attributeEClass, ATTRIBUTE__TYPE);
+
+		conditionGroupEClass = createEClass(CONDITION_GROUP);
+		createEAttribute(conditionGroupEClass, CONDITION_GROUP__CONDITION_GROUP);
+		createEReference(conditionGroupEClass, CONDITION_GROUP__OPERATION_TYPES);
+
+		targetEClass = createEClass(TARGET);
+		createEAttribute(targetEClass, TARGET__ALIAS);
+		createEReference(targetEClass, TARGET__OPERATION_TYPES);
+
+		notEClass = createEClass(NOT);
+		createEAttribute(notEClass, NOT__DESCRIPTION);
+
+		queryEClass = createEClass(QUERY);
+
+		aggregationEClass = createEClass(AGGREGATION);
+		createEAttribute(aggregationEClass, AGGREGATION__TYPE_AGGREGATION);
+
+		orderEClass = createEClass(ORDER);
+		createEAttribute(orderEClass, ORDER__TYPE_ORDER);
+		createEReference(orderEClass, ORDER__ATTRIBUTE);
+		createEReference(orderEClass, ORDER__LIMIT);
+
+		limitEClass = createEClass(LIMIT);
+		createEAttribute(limitEClass, LIMIT__VALUE_LIMIT);
+
+		operationTypeEClass = createEClass(OPERATION_TYPE);
+
+		operatorEClass = createEClass(OPERATOR);
+		createEAttribute(operatorEClass, OPERATOR__OPERATOR);
+		createEReference(operatorEClass, OPERATOR__ATTRIBUTE);
+
+		valueOperatorEClass = createEClass(VALUE_OPERATOR);
+		createEAttribute(valueOperatorEClass, VALUE_OPERATOR__VALUE_OPERATOR);
+
+		patternEClass = createEClass(PATTERN);
+
+		unaryOperatorPatternEClass = createEClass(UNARY_OPERATOR_PATTERN);
+		createEAttribute(unaryOperatorPatternEClass, UNARY_OPERATOR_PATTERN__NAME);
+		createEAttribute(unaryOperatorPatternEClass, UNARY_OPERATOR_PATTERN__TYPE_UNARY_OPERATOR_PATTERN);
+
+		binaryOperatorPatternEClass = createEClass(BINARY_OPERATOR_PATTERN);
+		createEAttribute(binaryOperatorPatternEClass, BINARY_OPERATOR_PATTERN__NAME);
+		createEAttribute(binaryOperatorPatternEClass, BINARY_OPERATOR_PATTERN__TYPE_BINARY_OPERATOR_PATTERN);
+
+		patternTimerEClass = createEClass(PATTERN_TIMER);
+		createEAttribute(patternTimerEClass, PATTERN_TIMER__PATTERN_TIMER);
+		createEAttribute(patternTimerEClass, PATTERN_TIMER__TYPE_PATTERN_TIMER);
+		createEAttribute(patternTimerEClass, PATTERN_TIMER__VALUE);
+
+		linkEClass = createEClass(LINK);
+
+		linkComponentEClass = createEClass(LINK_COMPONENT);
+		createEReference(linkComponentEClass, LINK_COMPONENT__ORIGEM);
+		createEReference(linkComponentEClass, LINK_COMPONENT__DESTINO);
+
+		linkTargetEClass = createEClass(LINK_TARGET);
+		createEReference(linkTargetEClass, LINK_TARGET__ORIGEM);
+		createEReference(linkTargetEClass, LINK_TARGET__DESTINO);
+
+		comparisonEClass = createEClass(COMPARISON);
+		createEReference(comparisonEClass, COMPARISON__ORIGEM);
+		createEReference(comparisonEClass, COMPARISON__DESTINO);
+		createEAttribute(comparisonEClass, COMPARISON__COMPARISON);
+
+		arithmeticEClass = createEClass(ARITHMETIC);
+		createEReference(arithmeticEClass, ARITHMETIC__ORIGEM);
+		createEReference(arithmeticEClass, ARITHMETIC__DESTINO);
+		createEAttribute(arithmeticEClass, ARITHMETIC__ARITHMETIC);
+
+		followedbyEClass = createEClass(FOLLOWEDBY);
+		createEReference(followedbyEClass, FOLLOWEDBY__ORIGEM);
+		createEReference(followedbyEClass, FOLLOWEDBY__DESTINO);
+
+		logicalConnectorEClass = createEClass(LOGICAL_CONNECTOR);
+		createEReference(logicalConnectorEClass, LOGICAL_CONNECTOR__ORIGEM);
+		createEReference(logicalConnectorEClass, LOGICAL_CONNECTOR__DESTINO);
+		createEAttribute(logicalConnectorEClass, LOGICAL_CONNECTOR__TYPE_LOGICAL);
+
+		// Create enums
+		typeRuleEEnum = createEEnum(TYPE_RULE);
+		typeWindowEEnum = createEEnum(TYPE_WINDOW);
+		typeOrderEEnum = createEEnum(TYPE_ORDER);
+		typeUnaryOperatorPatternEEnum = createEEnum(TYPE_UNARY_OPERATOR_PATTERN);
+		typeBinaryOperatorPatternEEnum = createEEnum(TYPE_BINARY_OPERATOR_PATTERN);
+		typeLogicalEEnum = createEEnum(TYPE_LOGICAL);
+		typeComparisonEEnum = createEEnum(TYPE_COMPARISON);
+		typeArithmeticEEnum = createEEnum(TYPE_ARITHMETIC);
+		typeAggregationEEnum = createEEnum(TYPE_AGGREGATION);
+		typePatternTimerEEnum = createEEnum(TYPE_PATTERN_TIMER);
+		typeBringAllEEnum = createEEnum(TYPE_BRING_ALL);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private boolean isInitialized = false;
+
+	/**
+	 * Complete the initialization of the package and its meta-model.  This
+	 * method is guarded to have no affect on any invocation but its first.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void initializePackageContents() {
+		if (isInitialized) return;
+		isInitialized = true;
+
+		// Initialize package
+		setName(eNAME);
+		setNsPrefix(eNS_PREFIX);
+		setNsURI(eNS_URI);
+
+		// Create type parameters
+
+		// Set bounds for type parameters
+
+		// Add supertypes to classes
+		ruleEClass.getESuperTypes().add(this.getComponent());
+		eventPatternEClass.getESuperTypes().add(this.getComponent());
+		windowEClass.getESuperTypes().add(this.getComponent());
+		eventEClass.getESuperTypes().add(this.getComponent());
+		nodeEClass.getESuperTypes().add(this.getComponent());
+		attributeEClass.getESuperTypes().add(this.getNode());
+		conditionGroupEClass.getESuperTypes().add(this.getNode());
+		targetEClass.getESuperTypes().add(this.getNode());
+		notEClass.getESuperTypes().add(this.getNode());
+		queryEClass.getESuperTypes().add(this.getNode());
+		aggregationEClass.getESuperTypes().add(this.getQuery());
+		orderEClass.getESuperTypes().add(this.getQuery());
+		operationTypeEClass.getESuperTypes().add(this.getNode());
+		operatorEClass.getESuperTypes().add(this.getOperationType());
+		valueOperatorEClass.getESuperTypes().add(this.getOperationType());
+		patternEClass.getESuperTypes().add(this.getNode());
+		unaryOperatorPatternEClass.getESuperTypes().add(this.getPattern());
+		binaryOperatorPatternEClass.getESuperTypes().add(this.getPattern());
+		patternTimerEClass.getESuperTypes().add(this.getPattern());
+		linkComponentEClass.getESuperTypes().add(this.getLink());
+		linkTargetEClass.getESuperTypes().add(this.getLink());
+		comparisonEClass.getESuperTypes().add(this.getLink());
+		arithmeticEClass.getESuperTypes().add(this.getLink());
+		followedbyEClass.getESuperTypes().add(this.getLink());
+		logicalConnectorEClass.getESuperTypes().add(this.getLink());
+
+		// Initialize classes and features; add operations and parameters
+		initEClass(areaDesenhoEClass, AreaDesenho.class, "AreaDesenho", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAreaDesenho_Component(), this.getComponent(), null, "component", null, 0, -1, AreaDesenho.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAreaDesenho_Links(), this.getLink(), null, "links", null, 0, -1, AreaDesenho.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(componentEClass, Component.class, "Component", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(ruleEClass, Rule.class, "Rule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRule_RuleName(), ecorePackage.getEString(), "ruleName", "Rule", 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRule_BringAll(), this.getTypeBringAll(), "BringAll", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRule_Attributes(), this.getNode(), null, "attributes", null, 0, -1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRule_Node(), this.getNode(), null, "node", null, 0, -1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(eventPatternEClass, EventPattern.class, "EventPattern", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEventPattern_EventPattern(), ecorePackage.getEString(), "eventPattern", "EventPattern", 0, 1, EventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEventPattern_Node(), this.getNode(), null, "node", null, 0, -1, EventPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(windowEClass, Window.class, "Window", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getWindow_Window(), ecorePackage.getEString(), "window", "Window", 0, 1, Window.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getWindow_TypeWindow(), this.getTypeWindow(), "typeWindow", null, 0, 1, Window.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getWindow_Value(), ecorePackage.getEString(), "value", null, 0, 1, Window.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(eventEClass, Event.class, "Event", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEvent_EventName(), ecorePackage.getEString(), "eventName", null, 0, 1, Event.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEvent_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, Event.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(nodeEClass, Node.class, "Node", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(attributeEClass, Attribute.class, "Attribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getAttribute_Name(), ecorePackage.getEString(), "name", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAttribute_Type(), ecorePackage.getEString(), "type", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(conditionGroupEClass, ConditionGroup.class, "ConditionGroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getConditionGroup_ConditionGroup(), ecorePackage.getEString(), "conditionGroup", "ConditionGroup", 0, 1, ConditionGroup.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConditionGroup_OperationTypes(), this.getOperationType(), null, "operationTypes", null, 0, -1, ConditionGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(targetEClass, Target.class, "Target", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTarget_Alias(), ecorePackage.getEString(), "alias", "Target", 0, 1, Target.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTarget_OperationTypes(), this.getOperationType(), null, "operationTypes", null, 0, -1, Target.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(notEClass, Not.class, "Not", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getNot_Description(), ecorePackage.getEString(), "description", "NOT", 0, 1, Not.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(queryEClass, Query.class, "Query", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(aggregationEClass, Aggregation.class, "Aggregation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getAggregation_TypeAggregation(), this.getTypeAggregation(), "typeAggregation", null, 0, 1, Aggregation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(orderEClass, Order.class, "Order", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getOrder_TypeOrder(), this.getTypeOrder(), "typeOrder", null, 0, 1, Order.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOrder_Attribute(), this.getAttribute(), null, "attribute", null, 0, -1, Order.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOrder_Limit(), this.getLimit(), null, "limit", null, 0, 1, Order.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(limitEClass, Limit.class, "Limit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getLimit_ValueLimit(), ecorePackage.getEString(), "valueLimit", null, 0, 1, Limit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(operationTypeEClass, OperationType.class, "OperationType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(operatorEClass, Operator.class, "Operator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getOperator_Operator(), ecorePackage.getEString(), "operator", "Operator", 0, 1, Operator.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOperator_Attribute(), this.getAttribute(), null, "attribute", null, 0, 1, Operator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(valueOperatorEClass, ValueOperator.class, "ValueOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getValueOperator_ValueOperator(), ecorePackage.getEString(), "valueOperator", null, 0, 1, ValueOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(patternEClass, Pattern.class, "Pattern", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(unaryOperatorPatternEClass, UnaryOperatorPattern.class, "UnaryOperatorPattern", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getUnaryOperatorPattern_Name(), ecorePackage.getEString(), "name", "UnaryOperatorPattern", 0, 1, UnaryOperatorPattern.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getUnaryOperatorPattern_TypeUnaryOperatorPattern(), this.getTypeUnaryOperatorPattern(), "typeUnaryOperatorPattern", null, 0, 1, UnaryOperatorPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(binaryOperatorPatternEClass, BinaryOperatorPattern.class, "BinaryOperatorPattern", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getBinaryOperatorPattern_Name(), ecorePackage.getEString(), "name", "BinaryOperatorPattern", 0, 1, BinaryOperatorPattern.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBinaryOperatorPattern_TypeBinaryOperatorPattern(), this.getTypeBinaryOperatorPattern(), "typeBinaryOperatorPattern", null, 0, 1, BinaryOperatorPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(patternTimerEClass, PatternTimer.class, "PatternTimer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPatternTimer_PatternTimer(), ecorePackage.getEString(), "patternTimer", "PatternTimer", 0, 1, PatternTimer.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPatternTimer_TypePatternTimer(), this.getTypePatternTimer(), "typePatternTimer", null, 0, 1, PatternTimer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPatternTimer_Value(), ecorePackage.getEString(), "value", null, 0, 1, PatternTimer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(linkEClass, Link.class, "Link", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(linkComponentEClass, LinkComponent.class, "LinkComponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getLinkComponent_Origem(), this.getComponent(), null, "origem", null, 1, 1, LinkComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLinkComponent_Destino(), this.getComponent(), null, "destino", null, 1, 1, LinkComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(linkTargetEClass, LinkTarget.class, "LinkTarget", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getLinkTarget_Origem(), this.getComponent(), null, "origem", null, 1, 1, LinkTarget.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLinkTarget_Destino(), this.getTarget(), null, "destino", null, 1, -1, LinkTarget.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(comparisonEClass, Comparison.class, "Comparison", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getComparison_Origem(), this.getNode(), null, "origem", null, 1, 1, Comparison.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComparison_Destino(), this.getNode(), null, "destino", null, 1, 1, Comparison.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComparison_Comparison(), this.getTypeComparison(), "comparison", null, 0, 1, Comparison.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(arithmeticEClass, Arithmetic.class, "Arithmetic", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getArithmetic_Origem(), this.getNode(), null, "origem", null, 1, 1, Arithmetic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getArithmetic_Destino(), this.getNode(), null, "destino", null, 1, 1, Arithmetic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getArithmetic_Arithmetic(), this.getTypeArithmetic(), "arithmetic", null, 0, 1, Arithmetic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(followedbyEClass, Followedby.class, "Followedby", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getFollowedby_Origem(), this.getTarget(), null, "origem", null, 1, 1, Followedby.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFollowedby_Destino(), this.getTarget(), null, "destino", null, 1, 1, Followedby.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(logicalConnectorEClass, LogicalConnector.class, "LogicalConnector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getLogicalConnector_Origem(), this.getNode(), null, "origem", null, 1, 1, LogicalConnector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLogicalConnector_Destino(), this.getNode(), null, "destino", null, 1, 1, LogicalConnector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLogicalConnector_TypeLogical(), this.getTypeLogical(), "typeLogical", null, 0, 1, LogicalConnector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		// Initialize enums and add enum literals
+		initEEnum(typeRuleEEnum, TypeRule.class, "TypeRule");
+		addEEnumLiteral(typeRuleEEnum, TypeRule.QUERY);
+		addEEnumLiteral(typeRuleEEnum, TypeRule.PATTERN);
+
+		initEEnum(typeWindowEEnum, TypeWindow.class, "TypeWindow");
+		addEEnumLiteral(typeWindowEEnum, TypeWindow.COUNT);
+		addEEnumLiteral(typeWindowEEnum, TypeWindow.TIME_SEC);
+
+		initEEnum(typeOrderEEnum, TypeOrder.class, "TypeOrder");
+		addEEnumLiteral(typeOrderEEnum, TypeOrder.ASC);
+		addEEnumLiteral(typeOrderEEnum, TypeOrder.DESC);
+
+		initEEnum(typeUnaryOperatorPatternEEnum, TypeUnaryOperatorPattern.class, "TypeUnaryOperatorPattern");
+		addEEnumLiteral(typeUnaryOperatorPatternEEnum, TypeUnaryOperatorPattern.EVERY);
+		addEEnumLiteral(typeUnaryOperatorPatternEEnum, TypeUnaryOperatorPattern.EVERY_DISTINCT);
+		addEEnumLiteral(typeUnaryOperatorPatternEEnum, TypeUnaryOperatorPattern.RANGE);
+		addEEnumLiteral(typeUnaryOperatorPatternEEnum, TypeUnaryOperatorPattern.REPEAT);
+
+		initEEnum(typeBinaryOperatorPatternEEnum, TypeBinaryOperatorPattern.class, "TypeBinaryOperatorPattern");
+		addEEnumLiteral(typeBinaryOperatorPatternEEnum, TypeBinaryOperatorPattern.UNTIL);
+		addEEnumLiteral(typeBinaryOperatorPatternEEnum, TypeBinaryOperatorPattern.WHILE);
+
+		initEEnum(typeLogicalEEnum, TypeLogical.class, "TypeLogical");
+		addEEnumLiteral(typeLogicalEEnum, TypeLogical.AND);
+		addEEnumLiteral(typeLogicalEEnum, TypeLogical.OR);
+
+		initEEnum(typeComparisonEEnum, TypeComparison.class, "TypeComparison");
+		addEEnumLiteral(typeComparisonEEnum, TypeComparison.EQUAL);
+		addEEnumLiteral(typeComparisonEEnum, TypeComparison.GREATER_EQUAL);
+		addEEnumLiteral(typeComparisonEEnum, TypeComparison.GREATER_THAN);
+		addEEnumLiteral(typeComparisonEEnum, TypeComparison.LESS_EQUAL);
+		addEEnumLiteral(typeComparisonEEnum, TypeComparison.LESS_THAN);
+		addEEnumLiteral(typeComparisonEEnum, TypeComparison.NOT_EQUAL);
+
+		initEEnum(typeArithmeticEEnum, TypeArithmetic.class, "TypeArithmetic");
+		addEEnumLiteral(typeArithmeticEEnum, TypeArithmetic.ADDITION);
+		addEEnumLiteral(typeArithmeticEEnum, TypeArithmetic.DIVISION);
+		addEEnumLiteral(typeArithmeticEEnum, TypeArithmetic.MODULUS);
+		addEEnumLiteral(typeArithmeticEEnum, TypeArithmetic.MULTIPLICATION);
+		addEEnumLiteral(typeArithmeticEEnum, TypeArithmetic.SUBTRACTION);
+
+		initEEnum(typeAggregationEEnum, TypeAggregation.class, "TypeAggregation");
+		addEEnumLiteral(typeAggregationEEnum, TypeAggregation.AVG);
+		addEEnumLiteral(typeAggregationEEnum, TypeAggregation.COUNT);
+		addEEnumLiteral(typeAggregationEEnum, TypeAggregation.MAX);
+		addEEnumLiteral(typeAggregationEEnum, TypeAggregation.MIN);
+		addEEnumLiteral(typeAggregationEEnum, TypeAggregation.SUM);
+
+		initEEnum(typePatternTimerEEnum, TypePatternTimer.class, "TypePatternTimer");
+		addEEnumLiteral(typePatternTimerEEnum, TypePatternTimer.WITHIN_TIMER);
+		addEEnumLiteral(typePatternTimerEEnum, TypePatternTimer.WITHIN_MAX_TIMER);
+
+		initEEnum(typeBringAllEEnum, TypeBringAll.class, "TypeBringAll");
+		addEEnumLiteral(typeBringAllEEnum, TypeBringAll.NO);
+		addEEnumLiteral(typeBringAllEEnum, TypeBringAll.YES);
+
+		// Create resource
+		createResource(eNS_URI);
+
+		// Create annotations
+		// gmf.diagram
+		createGmfAnnotations();
+		// gmf.node
+		createGmf_1Annotations();
+		// gmf.compartment
+		createGmf_2Annotations();
+		// gmf.link
+		createGmf_3Annotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>gmf.diagram</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createGmfAnnotations() {
+		String source = "gmf.diagram";	
+		addAnnotation
+		  (areaDesenhoEClass, 
+		   source, 
+		   new String[] {
+			 "foo", "bar",
+			 "rcp", "false",
+			 "onefile", "true",
+			 "diagram.extension", "dsml"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>gmf.node</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createGmf_1Annotations() {
+		String source = "gmf.node";	
+		addAnnotation
+		  (ruleEClass, 
+		   source, 
+		   new String[] {
+			 "label", "ruleName",
+			 "figure", "rounded",
+			 "border.color", "0,0,0"
+		   });	
+		addAnnotation
+		  (eventPatternEClass, 
+		   source, 
+		   new String[] {
+			 "label", "eventPattern",
+			 "figure", "rounded",
+			 "border.color", "0,0,0"
+		   });	
+		addAnnotation
+		  (windowEClass, 
+		   source, 
+		   new String[] {
+			 "label", "window",
+			 "figure", "rectangle"
+		   });	
+		addAnnotation
+		  (eventEClass, 
+		   source, 
+		   new String[] {
+			 "label", "eventName",
+			 "figure", "rectangle"
+		   });	
+		addAnnotation
+		  (attributeEClass, 
+		   source, 
+		   new String[] {
+			 "label", "name,type",
+			 "figure", "rectangle",
+			 "label.icon", "false",
+			 "label.pattern", "{0}:{1}"
+		   });	
+		addAnnotation
+		  (conditionGroupEClass, 
+		   source, 
+		   new String[] {
+			 "label", "conditionGroup",
+			 "figure", "rectangle"
+		   });	
+		addAnnotation
+		  (targetEClass, 
+		   source, 
+		   new String[] {
+			 "label", "alias",
+			 "figure", "rectangle"
+		   });	
+		addAnnotation
+		  (notEClass, 
+		   source, 
+		   new String[] {
+			 "label", "description",
+			 "figure", "rectangle"
+		   });	
+		addAnnotation
+		  (aggregationEClass, 
+		   source, 
+		   new String[] {
+			 "label", "typeAggregation",
+			 "figure", "rectangle"
+		   });	
+		addAnnotation
+		  (orderEClass, 
+		   source, 
+		   new String[] {
+			 "label", "typeOrder",
+			 "figure", "rectangle"
+		   });	
+		addAnnotation
+		  (limitEClass, 
+		   source, 
+		   new String[] {
+			 "label", "valueLimit",
+			 "figure", "rectangle"
+		   });	
+		addAnnotation
+		  (operatorEClass, 
+		   source, 
+		   new String[] {
+			 "label", "operator",
+			 "figure", "rectangle"
+		   });	
+		addAnnotation
+		  (valueOperatorEClass, 
+		   source, 
+		   new String[] {
+			 "label", "valueOperator",
+			 "figure", "ellipse",
+			 "border.color", "0,0,0"
+		   });	
+		addAnnotation
+		  (unaryOperatorPatternEClass, 
+		   source, 
+		   new String[] {
+			 "label", "name",
+			 "figure", "rectangle"
+		   });	
+		addAnnotation
+		  (binaryOperatorPatternEClass, 
+		   source, 
+		   new String[] {
+			 "label", "name",
+			 "figure", "rectangle"
+		   });	
+		addAnnotation
+		  (patternTimerEClass, 
+		   source, 
+		   new String[] {
+			 "label", "patternTimer",
+			 "figure", "rectangle"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>gmf.compartment</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createGmf_2Annotations() {
+		String source = "gmf.compartment";	
+		addAnnotation
+		  (getRule_Node(), 
+		   source, 
+		   new String[] {
+			 "collapsible", "true",
+			 "layout", "free"
+		   });	
+		addAnnotation
+		  (getEventPattern_Node(), 
+		   source, 
+		   new String[] {
+			 "collapsible", "true",
+			 "layout", "free"
+		   });	
+		addAnnotation
+		  (getEvent_Attributes(), 
+		   source, 
+		   new String[] {
+			 "layout", "list",
+			 "collapsible", "false"
+		   });	
+		addAnnotation
+		  (getConditionGroup_OperationTypes(), 
+		   source, 
+		   new String[] {
+			 "layout", "free",
+			 "collapsible", "true"
+		   });	
+		addAnnotation
+		  (getTarget_OperationTypes(), 
+		   source, 
+		   new String[] {
+			 "layout", "free",
+			 "collapsible", "true"
+		   });	
+		addAnnotation
+		  (getOrder_Limit(), 
+		   source, 
+		   new String[] {
+			 "layout", "list",
+			 "collapsible", "false"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>gmf.link</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createGmf_3Annotations() {
+		String source = "gmf.link";	
+		addAnnotation
+		  (linkComponentEClass, 
+		   source, 
+		   new String[] {
+			 "source", "origem",
+			 "target", "destino",
+			 "incoming", "true",
+			 "color", "0,0,0",
+			 "width", "1"
+		   });	
+		addAnnotation
+		  (linkTargetEClass, 
+		   source, 
+		   new String[] {
+			 "source", "origem",
+			 "target", "destino",
+			 "incoming", "true",
+			 "color", "0,0,0",
+			 "width", "1"
+		   });	
+		addAnnotation
+		  (comparisonEClass, 
+		   source, 
+		   new String[] {
+			 "label", "comparison",
+			 "source", "origem",
+			 "target", "destino",
+			 "target.decoration", "arrow",
+			 "incoming", "true",
+			 "color", "0,0,0",
+			 "width", "2",
+			 "tool.description", "Operations: [=, >=, >, <=, <, <>]"
+		   });	
+		addAnnotation
+		  (arithmeticEClass, 
+		   source, 
+		   new String[] {
+			 "label", "arithmetic",
+			 "source", "origem",
+			 "target", "destino",
+			 "target.decoration", "arrow",
+			 "incoming", "true",
+			 "color", "0,0,0",
+			 "width", "2",
+			 "tool.description", "Operations: [+, /, %, *, -]"
+		   });	
+		addAnnotation
+		  (followedbyEClass, 
+		   source, 
+		   new String[] {
+			 "source", "origem",
+			 "target", "destino",
+			 "target.decoration", "arrow",
+			 "incoming", "true",
+			 "color", "0,0,0",
+			 "width", "1"
+		   });	
+		addAnnotation
+		  (logicalConnectorEClass, 
+		   source, 
+		   new String[] {
+			 "label", "typeLogical",
+			 "source", "origem",
+			 "target", "destino",
+			 "incoming", "true",
+			 "color", "0,0,0",
+			 "width", "1"
+		   });
+	}
+
+} //DsmlPackageImpl

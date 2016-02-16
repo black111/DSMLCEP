@@ -1,0 +1,58 @@
+/**
+ */
+package dsml;
+
+import org.eclipse.emf.common.util.EList;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Condition Group</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * <ul>
+ *   <li>{@link dsml.ConditionGroup#getConditionGroup <em>Condition Group</em>}</li>
+ *   <li>{@link dsml.ConditionGroup#getOperationTypes <em>Operation Types</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @see dsml.DsmlPackage#getConditionGroup()
+ * @model annotation="gmf.node label='conditionGroup' figure='rectangle'"
+ * @generated
+ */
+public interface ConditionGroup extends Query {
+	/**
+	 * Returns the value of the '<em><b>Condition Group</b></em>' attribute.
+	 * The default value is <code>"ConditionGroup"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Condition Group</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Condition Group</em>' attribute.
+	 * @see dsml.DsmlPackage#getConditionGroup_ConditionGroup()
+	 * @model default="ConditionGroup" changeable="false"
+	 * @generated
+	 */
+	String getConditionGroup();
+
+	/**
+	 * Returns the value of the '<em><b>Operation Types</b></em>' containment reference list.
+	 * The list contents are of type {@link dsml.OperationType}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Operation Types</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Operation Types</em>' containment reference list.
+	 * @see dsml.DsmlPackage#getConditionGroup_OperationTypes()
+	 * @model containment="true"
+	 *        annotation="gmf.compartment layout='free' collapsible='true'"
+	 * @generated
+	 */
+	EList<OperationType> getOperationTypes();
+
+} // ConditionGroup

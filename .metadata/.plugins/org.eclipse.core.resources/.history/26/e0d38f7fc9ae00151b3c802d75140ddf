@@ -1,0 +1,30 @@
+/*
+ * 
+ */
+package dsml.diagram.preferences;
+
+/**
+ * @generated
+ */
+public class DiagramPreferenceInitializer extends org.eclipse.core.runtime.preferences.AbstractPreferenceInitializer {
+
+	/**
+ * @generated
+ */
+	public void initializeDefaultPreferences() {
+		org.eclipse.jface.preference.IPreferenceStore store = getPreferenceStore();
+		dsml.diagram.preferences.DiagramGeneralPreferencePage.initDefaults(store);
+dsml.diagram.preferences.DiagramAppearancePreferencePage.initDefaults(store);
+dsml.diagram.preferences.DiagramConnectionsPreferencePage.initDefaults(store);
+dsml.diagram.preferences.DiagramPrintingPreferencePage.initDefaults(store);
+dsml.diagram.preferences.DiagramRulersAndGridPreferencePage.initDefaults(store);
+
+	}
+
+	/**
+ * @generated
+ */
+	protected org.eclipse.jface.preference.IPreferenceStore getPreferenceStore() {
+		return dsml.diagram.part.DsmlDiagramEditorPlugin.getInstance().getPreferenceStore();
+	}
+} 

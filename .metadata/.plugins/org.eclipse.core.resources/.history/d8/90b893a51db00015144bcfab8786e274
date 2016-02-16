@@ -1,0 +1,216 @@
+/**
+ */
+package dsml.impl;
+
+import dsml.Component;
+import dsml.DsmlPackage;
+import dsml.LinkComponent;
+
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Link Component</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * <ul>
+ *   <li>{@link dsml.impl.LinkComponentImpl#getOrigem <em>Origem</em>}</li>
+ *   <li>{@link dsml.impl.LinkComponentImpl#getDestino <em>Destino</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @generated
+ */
+public class LinkComponentImpl extends LinkImpl implements LinkComponent {
+	/**
+	 * The cached value of the '{@link #getOrigem() <em>Origem</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrigem()
+	 * @generated
+	 * @ordered
+	 */
+	protected Component origem;
+
+	/**
+	 * The cached value of the '{@link #getDestino() <em>Destino</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDestino()
+	 * @generated
+	 * @ordered
+	 */
+	protected Component destino;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected LinkComponentImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return DsmlPackage.Literals.LINK_COMPONENT;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Component getOrigem() {
+		if (origem != null && origem.eIsProxy()) {
+			InternalEObject oldOrigem = (InternalEObject)origem;
+			origem = (Component)eResolveProxy(oldOrigem);
+			if (origem != oldOrigem) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DsmlPackage.LINK_COMPONENT__ORIGEM, oldOrigem, origem));
+			}
+		}
+		return origem;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Component basicGetOrigem() {
+		return origem;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOrigem(Component newOrigem) {
+		Component oldOrigem = origem;
+		origem = newOrigem;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DsmlPackage.LINK_COMPONENT__ORIGEM, oldOrigem, origem));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Component getDestino() {
+		if (destino != null && destino.eIsProxy()) {
+			InternalEObject oldDestino = (InternalEObject)destino;
+			destino = (Component)eResolveProxy(oldDestino);
+			if (destino != oldDestino) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DsmlPackage.LINK_COMPONENT__DESTINO, oldDestino, destino));
+			}
+		}
+		return destino;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Component basicGetDestino() {
+		return destino;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDestino(Component newDestino) {
+		Component oldDestino = destino;
+		destino = newDestino;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DsmlPackage.LINK_COMPONENT__DESTINO, oldDestino, destino));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case DsmlPackage.LINK_COMPONENT__ORIGEM:
+				if (resolve) return getOrigem();
+				return basicGetOrigem();
+			case DsmlPackage.LINK_COMPONENT__DESTINO:
+				if (resolve) return getDestino();
+				return basicGetDestino();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case DsmlPackage.LINK_COMPONENT__ORIGEM:
+				setOrigem((Component)newValue);
+				return;
+			case DsmlPackage.LINK_COMPONENT__DESTINO:
+				setDestino((Component)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case DsmlPackage.LINK_COMPONENT__ORIGEM:
+				setOrigem((Component)null);
+				return;
+			case DsmlPackage.LINK_COMPONENT__DESTINO:
+				setDestino((Component)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case DsmlPackage.LINK_COMPONENT__ORIGEM:
+				return origem != null;
+			case DsmlPackage.LINK_COMPONENT__DESTINO:
+				return destino != null;
+		}
+		return super.eIsSet(featureID);
+	}
+
+} //LinkComponentImpl

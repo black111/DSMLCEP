@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="" modelDirectory="/br.ufpe.cin.dsml.cep/src" modelPluginID="br.ufpe.cin.dsml.cep"
+    modelName="Dsml" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
+    copyrightFields="false">
+  <foreignModel>dsml.emf</foreignModel>
+  <genPackages prefix="Dsml" disposableProviderFactory="true" ecorePackage="dsml.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="dsml.ecore#//TypeRule">
+      <genEnumLiterals ecoreEnumLiteral="dsml.ecore#//TypeRule/QUERY"/>
+      <genEnumLiterals ecoreEnumLiteral="dsml.ecore#//TypeRule/PATTERN"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="dsml.ecore#//TypeWindow">
+      <genEnumLiterals ecoreEnumLiteral="dsml.ecore#//TypeWindow/COUNT"/>
+      <genEnumLiterals ecoreEnumLiteral="dsml.ecore#//TypeWindow/TIME_SEC"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="dsml.ecore#//TypeOrder">
+      <genEnumLiterals ecoreEnumLiteral="dsml.ecore#//TypeOrder/ASC"/>
+      <genEnumLiterals ecoreEnumLiteral="dsml.ecore#//TypeOrder/DESC"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="dsml.ecore#//TypeUnaryOperatorPattern">
+      <genEnumLiterals ecoreEnumLiteral="dsml.ecore#//TypeUnaryOperatorPattern/EVERY"/>
+      <genEnumLiterals ecoreEnumLiteral="dsml.ecore#//TypeUnaryOperatorPattern/EVERY_DISTINCT"/>
+      <genEnumLiterals ecoreEnumLiteral="dsml.ecore#//TypeUnaryOperatorPattern/RANGE"/>
+      <genEnumLiterals ecoreEnumLiteral="dsml.ecore#//TypeUnaryOperatorPattern/REPEAT"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="dsml.ecore#//TypeBinaryOperatorPattern">
+      <genEnumLiterals ecoreEnumLiteral="dsml.ecore#//TypeBinaryOperatorPattern/UNTIL"/>
+      <genEnumLiterals ecoreEnumLiteral="dsml.ecore#//TypeBinaryOperatorPattern/WHILE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="dsml.ecore#//TypeLogical">
+      <genEnumLiterals ecoreEnumLiteral="dsml.ecore#//TypeLogical/AND"/>
+      <genEnumLiterals ecoreEnumLiteral="dsml.ecore#//TypeLogical/OR"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="dsml.ecore#//TypeComparison">
+      <genEnumLiterals ecoreEnumLiteral="dsml.ecore#//TypeComparison/EQUAL"/>
+      <genEnumLiterals ecoreEnumLiteral="dsml.ecore#//TypeComparison/GREATER_EQUAL"/>
+      <genEnumLiterals ecoreEnumLiteral="dsml.ecore#//TypeComparison/GREATER_THAN"/>
+      <genEnumLiterals ecoreEnumLiteral="dsml.ecore#//TypeComparison/LESS_EQUAL"/>
+      <genEnumLiterals ecoreEnumLiteral="dsml.ecore#//TypeComparison/LESS_THAN"/>
+      <genEnumLiterals ecoreEnumLiteral="dsml.ecore#//TypeComparison/NOT_EQUAL"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="dsml.ecore#//TypeArithmetic">
+      <genEnumLiterals ecoreEnumLiteral="dsml.ecore#//TypeArithmetic/ADDITION"/>
+      <genEnumLiterals ecoreEnumLiteral="dsml.ecore#//TypeArithmetic/DIVISION"/>
+      <genEnumLiterals ecoreEnumLiteral="dsml.ecore#//TypeArithmetic/MODULUS"/>
+      <genEnumLiterals ecoreEnumLiteral="dsml.ecore#//TypeArithmetic/MULTIPLICATION"/>
+      <genEnumLiterals ecoreEnumLiteral="dsml.ecore#//TypeArithmetic/SUBTRACTION"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="dsml.ecore#//TypeAggregation">
+      <genEnumLiterals ecoreEnumLiteral="dsml.ecore#//TypeAggregation/AVG"/>
+      <genEnumLiterals ecoreEnumLiteral="dsml.ecore#//TypeAggregation/COUNT"/>
+      <genEnumLiterals ecoreEnumLiteral="dsml.ecore#//TypeAggregation/MAX"/>
+      <genEnumLiterals ecoreEnumLiteral="dsml.ecore#//TypeAggregation/MIN"/>
+      <genEnumLiterals ecoreEnumLiteral="dsml.ecore#//TypeAggregation/SUM"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="dsml.ecore#//TypePatternTimer">
+      <genEnumLiterals ecoreEnumLiteral="dsml.ecore#//TypePatternTimer/WITHIN_TIMER"/>
+      <genEnumLiterals ecoreEnumLiteral="dsml.ecore#//TypePatternTimer/WITHIN_MAX_TIMER"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="dsml.ecore#//TypeBringAll">
+      <genEnumLiterals ecoreEnumLiteral="dsml.ecore#//TypeBringAll/NO"/>
+      <genEnumLiterals ecoreEnumLiteral="dsml.ecore#//TypeBringAll/YES"/>
+    </genEnums>
+    <genClasses ecoreClass="dsml.ecore#//AreaDesenho">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dsml.ecore#//AreaDesenho/events"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dsml.ecore#//AreaDesenho/rule"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dsml.ecore#//AreaDesenho/patterns"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dsml.ecore#//AreaDesenho/windows"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dsml.ecore#//AreaDesenho/links"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="dsml.ecore#//Component"/>
+    <genClasses ecoreClass="dsml.ecore#//Rule">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute dsml.ecore#//Rule/ruleName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dsml.ecore#//Rule/bringAll"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dsml.ecore#//Rule/queries"/>
+    </genClasses>
+    <genClasses ecoreClass="dsml.ecore#//EventPattern">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute dsml.ecore#//EventPattern/eventPattern"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dsml.ecore#//EventPattern/node"/>
+    </genClasses>
+    <genClasses ecoreClass="dsml.ecore#//Window">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute dsml.ecore#//Window/window"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dsml.ecore#//Window/typeWindow"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dsml.ecore#//Window/value"/>
+    </genClasses>
+    <genClasses ecoreClass="dsml.ecore#//Event">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dsml.ecore#//Event/eventName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dsml.ecore#//Event/attributes"/>
+    </genClasses>
+    <genClasses ecoreClass="dsml.ecore#//Attribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dsml.ecore#//Attribute/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dsml.ecore#//Attribute/type"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="dsml.ecore#//GroupRelacional"/>
+    <genClasses ecoreClass="dsml.ecore#//ConditionGroup">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute dsml.ecore#//ConditionGroup/conditionGroup"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dsml.ecore#//ConditionGroup/operationTypes"/>
+    </genClasses>
+    <genClasses ecoreClass="dsml.ecore#//BringGroup">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute dsml.ecore#//BringGroup/bringGroup"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dsml.ecore#//BringGroup/operationTypes"/>
+    </genClasses>
+    <genClasses ecoreClass="dsml.ecore#//Target">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dsml.ecore#//Target/alias"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dsml.ecore#//Target/operationTypes"/>
+    </genClasses>
+    <genClasses ecoreClass="dsml.ecore#//Not">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute dsml.ecore#//Not/description"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="dsml.ecore#//Query"/>
+    <genClasses ecoreClass="dsml.ecore#//Aggregation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dsml.ecore#//Aggregation/typeAggregation"/>
+    </genClasses>
+    <genClasses ecoreClass="dsml.ecore#//Order">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dsml.ecore#//Order/typeOrder"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dsml.ecore#//Order/attribute"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dsml.ecore#//Order/limit"/>
+    </genClasses>
+    <genClasses ecoreClass="dsml.ecore#//Limit">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dsml.ecore#//Limit/valueLimit"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="dsml.ecore#//OperationType"/>
+    <genClasses ecoreClass="dsml.ecore#//Operator">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute dsml.ecore#//Operator/operator"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dsml.ecore#//Operator/attribute"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dsml.ecore#//Operator/alias"/>
+    </genClasses>
+    <genClasses ecoreClass="dsml.ecore#//ValueOperator">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dsml.ecore#//ValueOperator/valueOperator"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="dsml.ecore#//Pattern"/>
+    <genClasses ecoreClass="dsml.ecore#//UnaryOperatorPattern">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute dsml.ecore#//UnaryOperatorPattern/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dsml.ecore#//UnaryOperatorPattern/typeUnaryOperatorPattern"/>
+    </genClasses>
+    <genClasses ecoreClass="dsml.ecore#//BinaryOperatorPattern">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute dsml.ecore#//BinaryOperatorPattern/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dsml.ecore#//BinaryOperatorPattern/typeBinaryOperatorPattern"/>
+    </genClasses>
+    <genClasses ecoreClass="dsml.ecore#//PatternTimer">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute dsml.ecore#//PatternTimer/patternTimer"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dsml.ecore#//PatternTimer/typePatternTimer"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dsml.ecore#//PatternTimer/value"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="dsml.ecore#//Link"/>
+    <genClasses ecoreClass="dsml.ecore#//LinkComponent">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dsml.ecore#//LinkComponent/origem"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dsml.ecore#//LinkComponent/destino"/>
+    </genClasses>
+    <genClasses ecoreClass="dsml.ecore#//LinkTarget">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dsml.ecore#//LinkTarget/origem"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dsml.ecore#//LinkTarget/destino"/>
+    </genClasses>
+    <genClasses ecoreClass="dsml.ecore#//Comparison">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dsml.ecore#//Comparison/origem"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dsml.ecore#//Comparison/destino"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dsml.ecore#//Comparison/comparison"/>
+    </genClasses>
+    <genClasses ecoreClass="dsml.ecore#//Arithmetic">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dsml.ecore#//Arithmetic/origem"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dsml.ecore#//Arithmetic/destino"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dsml.ecore#//Arithmetic/arithmetic"/>
+    </genClasses>
+    <genClasses ecoreClass="dsml.ecore#//Followedby">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dsml.ecore#//Followedby/origem"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dsml.ecore#//Followedby/destino"/>
+    </genClasses>
+    <genClasses ecoreClass="dsml.ecore#//LogicalConnector">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dsml.ecore#//LogicalConnector/origem"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dsml.ecore#//LogicalConnector/destino"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dsml.ecore#//LogicalConnector/typeLogical"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

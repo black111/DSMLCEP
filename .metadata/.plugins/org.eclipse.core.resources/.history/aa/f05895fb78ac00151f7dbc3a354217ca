@@ -1,0 +1,259 @@
+/**
+ */
+package dsml.impl;
+
+import dsml.DsmlPackage;
+import dsml.Event;
+import dsml.Node;
+import dsml.OperationType;
+import dsml.Target;
+
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Target</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * <ul>
+ *   <li>{@link dsml.impl.TargetImpl#getTarget <em>Target</em>}</li>
+ *   <li>{@link dsml.impl.TargetImpl#getAlias <em>Alias</em>}</li>
+ *   <li>{@link dsml.impl.TargetImpl#getOperationTypes <em>Operation Types</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @generated
+ */
+public class TargetImpl extends NodeImpl implements Target {
+	/**
+	 * The default value of the '{@link #getTarget() <em>Target</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTarget()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TARGET_EDEFAULT = "Target";
+
+	/**
+	 * The cached value of the '{@link #getTarget() <em>Target</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTarget()
+	 * @generated
+	 * @ordered
+	 */
+	protected String target = TARGET_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getAlias() <em>Alias</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAlias()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ALIAS_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getAlias() <em>Alias</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAlias()
+	 * @generated
+	 * @ordered
+	 */
+	protected String alias = ALIAS_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getOperationTypes() <em>Operation Types</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOperationTypes()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<OperationType> operationTypes;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected TargetImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return DsmlPackage.Literals.TARGET;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getTarget() {
+		return target;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getAlias() {
+		return alias;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAlias(String newAlias) {
+		String oldAlias = alias;
+		alias = newAlias;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DsmlPackage.TARGET__ALIAS, oldAlias, alias));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<OperationType> getOperationTypes() {
+		if (operationTypes == null) {
+			operationTypes = new EObjectContainmentEList<OperationType>(OperationType.class, this, DsmlPackage.TARGET__OPERATION_TYPES);
+		}
+		return operationTypes;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case DsmlPackage.TARGET__OPERATION_TYPES:
+				return ((InternalEList<?>)getOperationTypes()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case DsmlPackage.TARGET__TARGET:
+				return getTarget();
+			case DsmlPackage.TARGET__ALIAS:
+				return getAlias();
+			case DsmlPackage.TARGET__OPERATION_TYPES:
+				return getOperationTypes();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case DsmlPackage.TARGET__ALIAS:
+				setAlias((String)newValue);
+				return;
+			case DsmlPackage.TARGET__OPERATION_TYPES:
+				getOperationTypes().clear();
+				getOperationTypes().addAll((Collection<? extends OperationType>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case DsmlPackage.TARGET__ALIAS:
+				setAlias(ALIAS_EDEFAULT);
+				return;
+			case DsmlPackage.TARGET__OPERATION_TYPES:
+				getOperationTypes().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case DsmlPackage.TARGET__TARGET:
+				return TARGET_EDEFAULT == null ? target != null : !TARGET_EDEFAULT.equals(target);
+			case DsmlPackage.TARGET__ALIAS:
+				return ALIAS_EDEFAULT == null ? alias != null : !ALIAS_EDEFAULT.equals(alias);
+			case DsmlPackage.TARGET__OPERATION_TYPES:
+				return operationTypes != null && !operationTypes.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (target: ");
+		result.append(target);
+		result.append(", alias: ");
+		result.append(alias);
+		result.append(')');
+		return result.toString();
+	}
+
+} //TargetImpl

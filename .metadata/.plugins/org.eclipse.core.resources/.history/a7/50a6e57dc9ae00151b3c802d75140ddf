@@ -1,0 +1,25 @@
+	/*
+ * 
+ */
+package dsml.diagram.edit.policies;
+
+/**
+ * @generated
+ */
+public class FollowedbyItemSemanticEditPolicy extends dsml.diagram.edit.policies.DsmlBaseItemSemanticEditPolicy {
+
+		/**
+ * @generated
+ */
+	public FollowedbyItemSemanticEditPolicy() {
+				super(dsml.diagram.providers.DsmlElementTypes.Followedby_4005);
+	}
+
+			/**
+ * @generated
+ */
+	protected org.eclipse.gef.commands.Command getDestroyElementCommand(org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest req) {
+		return getGEFWrapper(new org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand(req));
+	}
+					
+	}

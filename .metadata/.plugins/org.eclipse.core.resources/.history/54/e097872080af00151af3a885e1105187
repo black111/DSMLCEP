@@ -1,0 +1,15 @@
+   [%
+        out.println("select");
+   %]
+   [%for (component in AreaDesenho) {%]
+       [%for (r in component.rule) {%]
+          [%for (q in r.queries) {%]
+             [%if(q.isKindOf(BringGroup)) {%]
+                    [%=q.bringAll%] 
+                    [%if(q.bringAll=true) {%]
+                    * [%=q.bringAll%]  
+                    [%}%]   
+             [%}%]
+          [%}%]
+       [%}%]
+   [%}%]

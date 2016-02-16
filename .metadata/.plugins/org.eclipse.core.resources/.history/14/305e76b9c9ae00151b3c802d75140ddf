@@ -1,0 +1,37 @@
+context Event {
+	constraint EventHasName {
+		check : self.eventName.isDefined()	
+		message : self.eclass().name +	' without name not allowed.'
+		
+	}
+	
+	constraint NameIsValid {
+		guard : self.satisfies('EventHasName')
+		check : not(("#")->isSubstringOf(self.eventName))
+		message : 'The character "#" can not be used in the Event names.'
+	}
+	
+	constraint AtLeastOneAttribute{
+		guard : self.satisfies('EventHasName')
+		check {
+			if(self.attributes->size = 0){
+				return false;
+			}
+		return true; 
+		}
+		message : 'Uma Evento deve ter ao menos um atributo'
+	}
+}
+
+context Rule {
+
+	constraint AtLeastOneAttributeOrBringAll{
+		check {
+			if(self.attributes->size = 0 and self.bringAll = false){
+				return false;
+			}
+		return true; 
+		}
+		message : 'Uma Evento deve ter ao menos um atributo ou bringAll = true'
+	}
+}

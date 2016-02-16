@@ -1,0 +1,18 @@
+/*
+ * 
+ */
+package dsml.diagram.edit.helpers;
+
+/**
+ * @generated
+ */
+public class DsmlBaseEditHelper extends org.eclipse.gmf.tooling.runtime.edit.helpers.GeneratedEditHelperBase {
+
+		
+		
+	
+	
+	
+	
+	
+	}

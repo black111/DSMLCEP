@@ -1,0 +1,47 @@
+/*
+ * 
+ */
+package dsml.diagram.edit.policies;
+
+import org.eclipse.gef.commands.Command;
+import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
+
+import dsml.diagram.edit.commands.Aggregation3CreateCommand;
+import dsml.diagram.edit.commands.Operator2CreateCommand;
+import dsml.diagram.edit.commands.Order3CreateCommand;
+import dsml.diagram.edit.commands.ValueOperator2CreateCommand;
+import dsml.diagram.providers.DsmlElementTypes;
+
+/**
+ * @generated
+ */
+public class ConditionGroupConditionGroupOperationTypesCompartmentItemSemanticEditPolicy
+		extends DsmlBaseItemSemanticEditPolicy {
+
+	/**
+	 * @generated
+	 */
+	public ConditionGroupConditionGroupOperationTypesCompartmentItemSemanticEditPolicy() {
+		super(DsmlElementTypes.ConditionGroup_3010);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Command getCreateCommand(CreateElementRequest req) {
+		if (DsmlElementTypes.Aggregation_3011 == req.getElementType()) {
+			return getGEFWrapper(new Aggregation3CreateCommand(req));
+		}
+		if (DsmlElementTypes.Order_3012 == req.getElementType()) {
+			return getGEFWrapper(new Order3CreateCommand(req));
+		}
+		if (DsmlElementTypes.Operator_3013 == req.getElementType()) {
+			return getGEFWrapper(new Operator2CreateCommand(req));
+		}
+		if (DsmlElementTypes.ValueOperator_3014 == req.getElementType()) {
+			return getGEFWrapper(new ValueOperator2CreateCommand(req));
+		}
+		return super.getCreateCommand(req);
+	}
+
+}

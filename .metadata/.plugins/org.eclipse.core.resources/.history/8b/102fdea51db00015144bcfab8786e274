@@ -1,0 +1,69 @@
+/**
+ */
+package dsml;
+
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Binary Operator Pattern</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * <ul>
+ *   <li>{@link dsml.BinaryOperatorPattern#getName <em>Name</em>}</li>
+ *   <li>{@link dsml.BinaryOperatorPattern#getTypeBinaryOperatorPattern <em>Type Binary Operator Pattern</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @see dsml.DsmlPackage#getBinaryOperatorPattern()
+ * @model annotation="gmf.node label='name' figure='rectangle'"
+ * @generated
+ */
+public interface BinaryOperatorPattern extends Pattern {
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * The default value is <code>"BinaryOperatorPattern"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see dsml.DsmlPackage#getBinaryOperatorPattern_Name()
+	 * @model default="BinaryOperatorPattern" changeable="false"
+	 * @generated
+	 */
+	String getName();
+
+	/**
+	 * Returns the value of the '<em><b>Type Binary Operator Pattern</b></em>' attribute.
+	 * The literals are from the enumeration {@link dsml.TypeBinaryOperatorPattern}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Type Binary Operator Pattern</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Type Binary Operator Pattern</em>' attribute.
+	 * @see dsml.TypeBinaryOperatorPattern
+	 * @see #setTypeBinaryOperatorPattern(TypeBinaryOperatorPattern)
+	 * @see dsml.DsmlPackage#getBinaryOperatorPattern_TypeBinaryOperatorPattern()
+	 * @model
+	 * @generated
+	 */
+	TypeBinaryOperatorPattern getTypeBinaryOperatorPattern();
+
+	/**
+	 * Sets the value of the '{@link dsml.BinaryOperatorPattern#getTypeBinaryOperatorPattern <em>Type Binary Operator Pattern</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Type Binary Operator Pattern</em>' attribute.
+	 * @see dsml.TypeBinaryOperatorPattern
+	 * @see #getTypeBinaryOperatorPattern()
+	 * @generated
+	 */
+	void setTypeBinaryOperatorPattern(TypeBinaryOperatorPattern value);
+
+} // BinaryOperatorPattern

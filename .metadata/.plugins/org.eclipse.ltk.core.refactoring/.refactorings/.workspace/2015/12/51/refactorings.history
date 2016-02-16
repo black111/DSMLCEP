@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;br.ufpe.eercase.figure&apos;" deleteContents="true" description="Delete resource &apos;br.ufpe.eercase.figure&apos;" element1="/br.ufpe.eercase.figure" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1450061663189"/>&#x0A;<refactoring comment="Delete 4 resources" deleteContents="true" description="Delete 4 resources" element1="/br.ufpe.cin.dsml.cep.diagram" element2="/br.ufpe.cin.dsml.cep.edit" element3="/br.ufpe.cin.dsml.cep.editor" element4="/br.ufpe.cin.dsml.cep.tests" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="4" stamp="1450062739925"/>
+</session>

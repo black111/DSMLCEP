@@ -1,0 +1,30 @@
+/*
+ * 
+ */
+package prediqt.diagram.preferences;
+
+/**
+ * @generated
+ */
+public class DiagramPreferenceInitializer extends org.eclipse.core.runtime.preferences.AbstractPreferenceInitializer {
+
+	/**
+ * @generated
+ */
+	public void initializeDefaultPreferences() {
+		org.eclipse.jface.preference.IPreferenceStore store = getPreferenceStore();
+		prediqt.diagram.preferences.DiagramGeneralPreferencePage.initDefaults(store);
+prediqt.diagram.preferences.DiagramAppearancePreferencePage.initDefaults(store);
+prediqt.diagram.preferences.DiagramConnectionsPreferencePage.initDefaults(store);
+prediqt.diagram.preferences.DiagramPrintingPreferencePage.initDefaults(store);
+prediqt.diagram.preferences.DiagramRulersAndGridPreferencePage.initDefaults(store);
+
+	}
+
+	/**
+ * @generated
+ */
+	protected org.eclipse.jface.preference.IPreferenceStore getPreferenceStore() {
+		return prediqt.diagram.part.PrediqtDiagramEditorPlugin.getInstance().getPreferenceStore();
+	}
+} 

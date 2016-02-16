@@ -1,0 +1,113 @@
+pluginName=Dsml Plugin
+providerName=Sample Plugin Provider, Inc
+
+editorName=Dsml Diagram Editing
+context.description=Dsml Diagram Editing
+context.name=In Dsml Diagram Editor
+newWizardName=Dsml Diagram
+newWizardDesc=Creates Dsml diagram.
+
+initDiagramActionLabel=Initialize dsml diagram file
+
+
+navigatorContentName=*.dsml diagram contents
+domainNavigatorContentName=*.dsml model contents
+update.diagram.name=Update Dsml diagram
+update.diagram.description=Perform Dsml diagram update
+
+
+# Property Sheet
+tab.appearance=Appearance
+tab.diagram=Rulers & Grid
+tab.domain=Core
+
+# Preferences
+prefpage.br.ufpe.cin.dsml.cep.diagram.general=Dsml Diagram
+prefpage.br.ufpe.cin.dsml.cep.diagram.appearance=Appearance
+prefpage.br.ufpe.cin.dsml.cep.diagram.connections=Connections
+prefpage.br.ufpe.cin.dsml.cep.diagram.printing=Printing
+prefpage.br.ufpe.cin.dsml.cep.diagram.rulersAndGrid=Rulers And Grid
+
+
+# Providers
+metatype.name.AreaDesenho_1000=Undefined
+metatype.name.Aggregation_2004=Aggregation
+metatype.name.Order_2005=Order
+metatype.name.Operator_2006=Operator
+metatype.name.ValueOperator_2007=ValueOperator
+metatype.name.UnaryOperatorPattern_2008=UnaryOperatorPattern
+metatype.name.BinaryOperatorPattern_2009=BinaryOperatorPattern
+metatype.name.PatternTimer_2010=PatternTimer
+metatype.name.ConditionGroup_2011=ConditionGroup
+metatype.name.Not_2012=Not
+metatype.name.Rule_2013=Rule
+metatype.name.EventPattern_2014=EventPattern
+metatype.name.Window_2015=Window
+metatype.name.Event_2016=Event
+metatype.name.Limit_3004=Limit
+metatype.name.Operator_3005=Operator
+metatype.name.ValueOperator_3006=ValueOperator
+metatype.name.Aggregation_3007=Aggregation
+metatype.name.Order_3008=Order
+metatype.name.Operator_3009=Operator
+metatype.name.ValueOperator_3010=ValueOperator
+metatype.name.UnaryOperatorPattern_3011=UnaryOperatorPattern
+metatype.name.BinaryOperatorPattern_3012=BinaryOperatorPattern
+metatype.name.PatternTimer_3013=PatternTimer
+metatype.name.ConditionGroup_3014=ConditionGroup
+metatype.name.Not_3015=Not
+metatype.name.Aggregation_3016=Aggregation
+metatype.name.Order_3017=Order
+metatype.name.Operator_3018=Operator
+metatype.name.ValueOperator_3019=ValueOperator
+metatype.name.UnaryOperatorPattern_3020=UnaryOperatorPattern
+metatype.name.BinaryOperatorPattern_3021=BinaryOperatorPattern
+metatype.name.PatternTimer_3022=PatternTimer
+metatype.name.ConditionGroup_3023=ConditionGroup
+metatype.name.Not_3024=Not
+metatype.name.Aggregation_3025=Aggregation
+metatype.name.Order_3026=Order
+metatype.name.Operator_3027=Operator
+metatype.name.ValueOperator_3028=ValueOperator
+metatype.name.UnaryOperatorPattern_3029=UnaryOperatorPattern
+metatype.name.BinaryOperatorPattern_3030=BinaryOperatorPattern
+metatype.name.PatternTimer_3031=PatternTimer
+metatype.name.ConditionGroup_3032=ConditionGroup
+metatype.name.Not_3033=Not
+metatype.name.Attribute_3034=Attribute
+metatype.name.Link_4001=Link
+metatype.name.Comparison_4002=Comparison
+metatype.name.Arithmetic_4003=Arithmetic
+metatype.name.Followedby_4004=Followedby
+metatype.name.LogicalConnector_4005=LogicalConnector
+
+# Commands and menu actions
+cmdcategory.name=Dsml Editor Commands
+cmdcategory.desc=Dsml Editor Commands
+
+metatype.name.Aggregation_2017=Aggregation
+metatype.name.Order_2018=Order
+metatype.name.Operator_2019=Operator
+metatype.name.ValueOperator_2020=ValueOperator
+metatype.name.UnaryOperatorPattern_2021=UnaryOperatorPattern
+metatype.name.BinaryOperatorPattern_2022=BinaryOperatorPattern
+metatype.name.PatternTimer_2023=PatternTimer
+metatype.name.ConditionGroup_2024=ConditionGroup
+metatype.name.Not_2025=Not
+metatype.name.Target_2026=Target
+metatype.name.Aggregation_3035=Aggregation
+metatype.name.Order_3036=Order
+metatype.name.Operator_3037=Operator
+metatype.name.ValueOperator_3038=ValueOperator
+metatype.name.UnaryOperatorPattern_3039=UnaryOperatorPattern
+metatype.name.BinaryOperatorPattern_3040=BinaryOperatorPattern
+metatype.name.PatternTimer_3041=PatternTimer
+metatype.name.ConditionGroup_3042=ConditionGroup
+metatype.name.Target_3043=Target
+metatype.name.Not_3044=Not
+metatype.name.Target_3045=Target
+metatype.name.Target_3046=Target
+metatype.name.Operator_3047=Operator
+metatype.name.ValueOperator_3048=ValueOperator
+metatype.name.LinkComponent_4006=LinkComponent
+metatype.name.LinkTarget_4007=LinkTarget

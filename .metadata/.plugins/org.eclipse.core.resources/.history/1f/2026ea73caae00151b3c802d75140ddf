@@ -1,0 +1,63 @@
+/*
+ * 
+ */
+package dsml.diagram.edit.policies;
+
+import org.eclipse.gef.commands.Command;
+import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
+
+import dsml.diagram.edit.commands.Aggregation4CreateCommand;
+import dsml.diagram.edit.commands.BringGroup4CreateCommand;
+import dsml.diagram.edit.commands.ConditionGroup4CreateCommand;
+import dsml.diagram.edit.commands.Not4CreateCommand;
+import dsml.diagram.edit.commands.Operator4CreateCommand;
+import dsml.diagram.edit.commands.Order4CreateCommand;
+import dsml.diagram.edit.commands.TargetCreateCommand;
+import dsml.diagram.edit.commands.ValueOperator4CreateCommand;
+import dsml.diagram.providers.DsmlElementTypes;
+
+/**
+ * @generated
+ */
+public class RuleRuleQueriesCompartmentItemSemanticEditPolicy extends
+		DsmlBaseItemSemanticEditPolicy {
+
+	/**
+	 * @generated
+	 */
+	public RuleRuleQueriesCompartmentItemSemanticEditPolicy() {
+		super(DsmlElementTypes.Rule_2002);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Command getCreateCommand(CreateElementRequest req) {
+		if (DsmlElementTypes.Target_3002 == req.getElementType()) {
+			return getGEFWrapper(new TargetCreateCommand(req));
+		}
+		if (DsmlElementTypes.ConditionGroup_3028 == req.getElementType()) {
+			return getGEFWrapper(new ConditionGroup4CreateCommand(req));
+		}
+		if (DsmlElementTypes.BringGroup_3029 == req.getElementType()) {
+			return getGEFWrapper(new BringGroup4CreateCommand(req));
+		}
+		if (DsmlElementTypes.Not_3030 == req.getElementType()) {
+			return getGEFWrapper(new Not4CreateCommand(req));
+		}
+		if (DsmlElementTypes.Operator_3031 == req.getElementType()) {
+			return getGEFWrapper(new Operator4CreateCommand(req));
+		}
+		if (DsmlElementTypes.ValueOperator_3032 == req.getElementType()) {
+			return getGEFWrapper(new ValueOperator4CreateCommand(req));
+		}
+		if (DsmlElementTypes.Aggregation_3033 == req.getElementType()) {
+			return getGEFWrapper(new Aggregation4CreateCommand(req));
+		}
+		if (DsmlElementTypes.Order_3034 == req.getElementType()) {
+			return getGEFWrapper(new Order4CreateCommand(req));
+		}
+		return super.getCreateCommand(req);
+	}
+
+}

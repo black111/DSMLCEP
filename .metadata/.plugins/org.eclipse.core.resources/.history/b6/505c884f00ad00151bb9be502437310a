@@ -1,0 +1,28 @@
+/*
+ * 
+ */
+package dsml.diagram.providers;
+
+/**
+ * @generated
+ */
+public class ElementInitializers {
+
+	protected ElementInitializers() {
+		// use #getInstance to access cached instance
+	} 
+
+			
+	
+	
+	/**
+ * @generated
+ */
+	public static ElementInitializers getInstance() {
+		ElementInitializers cached = dsml.diagram.part.DsmlDiagramEditorPlugin.getInstance().getElementInitializers();
+		if (cached == null) {
+			dsml.diagram.part.DsmlDiagramEditorPlugin.getInstance().setElementInitializers(cached = new ElementInitializers());
+		}
+		return cached;
+	}
+}

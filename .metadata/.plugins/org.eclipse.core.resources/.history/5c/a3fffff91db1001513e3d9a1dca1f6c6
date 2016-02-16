@@ -1,0 +1,106 @@
+/**
+ */
+package dsml;
+
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Comparison</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * <ul>
+ *   <li>{@link dsml.Comparison#getOutboundLink <em>Outbound Link</em>}</li>
+ *   <li>{@link dsml.Comparison#getInboundLink <em>Inbound Link</em>}</li>
+ *   <li>{@link dsml.Comparison#getComparison <em>Comparison</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @see dsml.DsmlPackage#getComparison()
+ * @model annotation="gmf.link label='comparison' source='outboundLink' target='inboundLink' target.decoration='arrow' incoming='true' color='0,0,0' width='2' tool.description='Operations: [=, >=, >, <=, <, <>]'"
+ * @generated
+ */
+public interface Comparison extends Link {
+	/**
+	 * Returns the value of the '<em><b>Outbound Link</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Outbound Link</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Outbound Link</em>' reference.
+	 * @see #setOutboundLink(Query)
+	 * @see dsml.DsmlPackage#getComparison_OutboundLink()
+	 * @model required="true"
+	 * @generated
+	 */
+	Query getOutboundLink();
+
+	/**
+	 * Sets the value of the '{@link dsml.Comparison#getOutboundLink <em>Outbound Link</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Outbound Link</em>' reference.
+	 * @see #getOutboundLink()
+	 * @generated
+	 */
+	void setOutboundLink(Query value);
+
+	/**
+	 * Returns the value of the '<em><b>Inbound Link</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Inbound Link</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Inbound Link</em>' reference.
+	 * @see #setInboundLink(Query)
+	 * @see dsml.DsmlPackage#getComparison_InboundLink()
+	 * @model required="true"
+	 * @generated
+	 */
+	Query getInboundLink();
+
+	/**
+	 * Sets the value of the '{@link dsml.Comparison#getInboundLink <em>Inbound Link</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Inbound Link</em>' reference.
+	 * @see #getInboundLink()
+	 * @generated
+	 */
+	void setInboundLink(Query value);
+
+	/**
+	 * Returns the value of the '<em><b>Comparison</b></em>' attribute.
+	 * The literals are from the enumeration {@link dsml.TypeComparison}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Comparison</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Comparison</em>' attribute.
+	 * @see dsml.TypeComparison
+	 * @see #setComparison(TypeComparison)
+	 * @see dsml.DsmlPackage#getComparison_Comparison()
+	 * @model
+	 * @generated
+	 */
+	TypeComparison getComparison();
+
+	/**
+	 * Sets the value of the '{@link dsml.Comparison#getComparison <em>Comparison</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Comparison</em>' attribute.
+	 * @see dsml.TypeComparison
+	 * @see #getComparison()
+	 * @generated
+	 */
+	void setComparison(TypeComparison value);
+
+} // Comparison

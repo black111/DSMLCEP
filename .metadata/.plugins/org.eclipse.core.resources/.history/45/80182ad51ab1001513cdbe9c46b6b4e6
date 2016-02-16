@@ -1,0 +1,295 @@
+@namespace(uri="dsml", prefix="dsml")
+package dsml;
+
+@gmf.diagram(foo="bar", rcp="false", onefile="true", diagram.extension="dsml")
+class  AreaDesenho {
+	val Event[*] events;
+	val Rule[1] rule;
+	val EventPattern[1] patterns;
+	val Window[*] windows;
+	val Link[*] links;
+}
+
+
+
+@gmf.node(label="name", label.icon="false")
+class PNode extends GroupRelacional{
+
+   attr String name;
+   
+   ref PArc[*]#target incoming;
+  
+   ref PArc[*]#source outgoing;
+}
+
+@gmf.link(label="impact", source="source", target="target", target.decoration="arrow")
+class PArc extends Link{
+	
+   attr EBigDecimal impact;
+   ref PNode#outgoing source;
+
+   @adapt.forward(k="")
+   ref PNode#incoming target;
+}
+
+
+abstract class Component{}
+
+@gmf.node(label="ruleName", figure="rounded", border.color="0,0,0")
+class Rule extends Component {
+    readonly attr String ruleName = "Rule";
+    
+	@gmf.compartment(collapsible="true", layout="free")
+	val Query[*] queries;
+}
+
+@gmf.node(label="eventPattern", figure="rounded", border.color="0,0,0")
+class EventPattern extends Component {
+    readonly attr String eventPattern = "EventPattern";
+	@gmf.compartment(collapsible="true", layout="free")
+	val Pattern[*] node;
+}
+
+@gmf.node(label="window",figure="rectangle")
+class Window extends Component{
+   readonly attr String window = "Window";
+   attr TypeWindow typeWindow;
+   attr String value;
+}
+
+@gmf.node(label="eventName", figure="rounded", border.color="0,0,0")
+class Event extends Component{
+   attr String eventName;
+   @gmf.compartment(layout="list", collapsible="false")
+   val Attribute[*] attributes;
+}
+
+
+@gmf.node(label="name,type", figure="rectangle", label.icon="false", label.pattern="{0}:{1}")
+class Attribute{
+   attr String name;
+   attr String type;
+}
+
+
+
+abstract class Query {}
+
+@gmf.node(label="typeAggregation",figure="rectangle")
+class Aggregation extends Query{						
+	attr TypeAggregation typeAggregation;
+}
+
+@gmf.node(label="typeOrder", figure="rectangle")
+class Order extends Query{
+	attr TypeOrder typeOrder;
+	ref Attribute[*] attribute;
+    @gmf.compartment(layout="list", collapsible="false")
+    val Limit[0..1] limit;
+}
+
+@gmf.node(label="valueLimit",figure="rectangle")
+class Limit{
+    attr String valueLimit;
+}
+
+
+
+
+abstract class GroupRelacional extends Query{
+	
+}
+
+
+@gmf.node(label="conditionGroup", figure="rectangle")
+@gmf.label(classname="ConditionGroupCustomLabeler", depends="outgoing")
+class ConditionGroup extends GroupRelacional{
+   attr String conditionGroup = "ConditionGroup";
+   @gmf.compartment(layout="free", collapsible="true")
+   val Query[*] operationTypes;
+   
+   ref LogicalConnector[*]#target incoming;
+   @adapt.onchange(invokeMethod="ConditionGroup")
+   ref LogicalConnector[*]#source outgoing;
+   
+}
+
+@gmf.node(label="bringGroup", figure="rectangle")
+class BringGroup extends GroupRelacional{
+   readonly attr String bringGroup = "BringGroup";
+   attr boolean bringAll = false;	
+   ref Attribute[*] attributes;
+   @gmf.compartment(layout="free", collapsible="true")
+   val Query[*] operationTypes;
+}
+
+@gmf.node(label="targetAlias", figure="rectangle")
+class Target extends Pattern, GroupRelacional{
+   attr String targetAlias = "Target"; 
+   @gmf.compartment(layout="free", collapsible="true")
+   val Query[*] operationTypes;
+}
+
+
+@gmf.node(label="description", figure="rectangle")
+class Not extends Query, Pattern{
+   readonly attr String description = "NOT";
+}
+
+
+
+
+
+abstract class OperationType extends Query{}
+
+@gmf.node(label="operator",figure="rectangle")
+class Operator extends OperationType{
+    readonly attr String operator = "Operator";
+    ref Attribute attribute;
+    attr String operatorAlias;						
+}
+
+@gmf.node(label="valueOperator", figure="ellipse", border.color="0,0,0")
+class ValueOperator extends OperationType{
+    attr String valueOperator;						
+}
+
+
+
+
+abstract class Pattern {}
+
+@gmf.node(label="name", figure="rectangle")
+class UnaryOperatorPattern extends Pattern{
+   readonly attr String name = "UnaryOperatorPattern";
+    attr TypeUnaryOperatorPattern typeUnaryOperatorPattern;
+}
+
+@gmf.node(label="name", figure="rectangle")
+class BinaryOperatorPattern extends Pattern{
+   readonly attr String name = "BinaryOperatorPattern";
+    attr TypeBinaryOperatorPattern typeBinaryOperatorPattern;
+}
+
+@gmf.node(label="patternTimer",figure="rectangle")
+class PatternTimer extends Pattern{
+   readonly attr String patternTimer = "PatternTimer";
+   attr TypePatternTimer typePatternTimer;
+   attr String value;
+}
+
+
+
+
+
+abstract class Link{
+} 
+
+@gmf.link(source="outboundLink", target="inboundLink", incoming="true", color="0,0,0", width="1")
+class LinkComponent extends Link {
+  ref Component[1] outboundLink;
+  ref Component[1] inboundLink;
+}
+
+@gmf.link(source="outboundLink", target="inboundLink", incoming="true", color="0,0,0", width="1")
+class LinkTarget extends Link{
+  ref Component[1] outboundLink;
+  ref Target[1..*] inboundLink;
+}
+
+@gmf.link(label="comparison", source="outboundLink", target="inboundLink", target.decoration="arrow", incoming="true", color="0,0,0", width="2", tool.description="Operations: [=, >=, >, <=, <, <>]")
+class Comparison extends Link{
+  ref Query[1] outboundLink;
+  ref Query[1] inboundLink;
+  attr TypeComparison comparison;
+}
+
+@gmf.link(label="arithmetic", source="outboundLink", target="inboundLink", target.decoration="arrow", incoming="true", color="0,0,0", width="2", tool.description="Operations: [+, /, %, *, -]")
+class Arithmetic extends Link{
+  ref Query[1] outboundLink;
+  ref Query[1] inboundLink;
+  attr TypeArithmetic arithmetic;
+}
+
+@gmf.link(source="outboundLink", target="inboundLink", target.decoration="arrow", incoming="true", color="0,0,0", width="1")
+class Followedby extends Link{
+  ref Target[1] outboundLink;
+  ref Target[1] inboundLink;
+}
+
+@gmf.link(label="typeLogical", source="source", target="target", target.decoration="arrow")
+class LogicalConnector extends Link{
+
+  ref GroupRelacional#outgoing source;
+  @adapt.forward(k="")
+  ref GroupRelacional#incoming target;
+  
+  attr TypeLogical typeLogical;
+}
+
+enum TypeRule {
+	QUERY = 0;
+	PATTERN = 1;
+}
+
+enum TypeWindow {
+	COUNT = 0;
+	TIME_SEC = 1;
+}
+
+enum TypeOrder {
+	ASC = 0;
+	DESC = 1;
+}
+
+enum TypeUnaryOperatorPattern {
+	EVERY = 0;
+	EVERY_DISTINCT = 1;
+	RANGE = 2;
+	REPEAT = 3;
+}
+
+enum TypeBinaryOperatorPattern {
+	UNTIL = 0;
+	WHILE = 1;
+}
+
+enum TypeLogical {
+	AND = 0;
+	OR = 1;
+}
+
+enum TypeComparison {
+	EQUAL = 0;
+	GREATER_EQUAL = 1;
+	GREATER_THAN  = 2;
+	LESS_EQUAL = 3;
+	LESS_THAN = 4;
+	NOT_EQUAL = 5;
+}
+
+enum TypeArithmetic {
+	ADDITION = 0;
+	DIVISION = 1;
+	MODULUS  = 2;
+	MULTIPLICATION = 3;
+	SUBTRACTION = 4;
+}
+
+enum TypeAggregation {
+	AVG = 0;
+	COUNT = 1;
+	MAX = 2;
+	MIN = 3;
+	SUM = 4;
+}
+
+enum TypePatternTimer {
+	WITHIN_TIMER = 0;
+	WITHIN_MAX_TIMER = 1;
+}
+
+enum TypeBringAll {
+	NO = 0;
+	YES = 1;
+}

@@ -1,0 +1,41 @@
+	/*
+ * 
+ */
+package dsml.diagram.edit.policies;
+
+	/**
+ * @generated
+ */
+public class EventPatternEventPatternNodeCompartmentItemSemanticEditPolicy extends dsml.diagram.edit.policies.DsmlBaseItemSemanticEditPolicy {
+
+		/**
+ * @generated
+ */
+	public EventPatternEventPatternNodeCompartmentItemSemanticEditPolicy() {
+				super(dsml.diagram.providers.DsmlElementTypes.EventPattern_2003);
+	}
+
+	
+	/**
+ * @generated
+ */
+	protected org.eclipse.gef.commands.Command getCreateCommand(org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest req) {
+		if (dsml.diagram.providers.DsmlElementTypes.Target_3017 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.Target2CreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.Not_3018 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.Not2CreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.UnaryOperatorPattern_3019 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.UnaryOperatorPatternCreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.BinaryOperatorPattern_3020 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.BinaryOperatorPatternCreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.PatternTimer_3021 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.PatternTimerCreateCommand(req));
+}
+		return super.getCreateCommand(req);
+	}
+	
+	}

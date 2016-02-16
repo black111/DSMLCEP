@@ -1,0 +1,76 @@
+/**
+ */
+package dsml;
+
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Link Component</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * <ul>
+ *   <li>{@link dsml.LinkComponent#getOrigem <em>Origem</em>}</li>
+ *   <li>{@link dsml.LinkComponent#getDestino <em>Destino</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @see dsml.DsmlPackage#getLinkComponent()
+ * @model annotation="gmf.link source='origem' target='destino' incoming='true' color='0,0,0' width='1'"
+ * @generated
+ */
+public interface LinkComponent extends Link {
+	/**
+	 * Returns the value of the '<em><b>Origem</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Origem</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Origem</em>' reference.
+	 * @see #setOrigem(Query)
+	 * @see dsml.DsmlPackage#getLinkComponent_Origem()
+	 * @model required="true"
+	 * @generated
+	 */
+	Query getOrigem();
+
+	/**
+	 * Sets the value of the '{@link dsml.LinkComponent#getOrigem <em>Origem</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Origem</em>' reference.
+	 * @see #getOrigem()
+	 * @generated
+	 */
+	void setOrigem(Query value);
+
+	/**
+	 * Returns the value of the '<em><b>Destino</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Destino</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Destino</em>' reference.
+	 * @see #setDestino(Query)
+	 * @see dsml.DsmlPackage#getLinkComponent_Destino()
+	 * @model required="true"
+	 * @generated
+	 */
+	Query getDestino();
+
+	/**
+	 * Sets the value of the '{@link dsml.LinkComponent#getDestino <em>Destino</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Destino</em>' reference.
+	 * @see #getDestino()
+	 * @generated
+	 */
+	void setDestino(Query value);
+
+} // LinkComponent

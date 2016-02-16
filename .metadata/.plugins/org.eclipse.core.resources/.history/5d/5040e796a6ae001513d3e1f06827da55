@@ -1,0 +1,39 @@
+/*
+ * 
+ */
+package dsml.diagram.edit.policies;
+
+import org.eclipse.gef.commands.Command;
+import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
+
+import dsml.diagram.edit.commands.Operator3CreateCommand;
+import dsml.diagram.edit.commands.ValueOperator3CreateCommand;
+import dsml.diagram.providers.DsmlElementTypes;
+
+/**
+ * @generated
+ */
+public class BringGroupBringGroupOperationTypesCompartment2ItemSemanticEditPolicy
+		extends DsmlBaseItemSemanticEditPolicy {
+
+	/**
+	 * @generated
+	 */
+	public BringGroupBringGroupOperationTypesCompartment2ItemSemanticEditPolicy() {
+		super(DsmlElementTypes.BringGroup_3022);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Command getCreateCommand(CreateElementRequest req) {
+		if (DsmlElementTypes.Operator_3009 == req.getElementType()) {
+			return getGEFWrapper(new Operator3CreateCommand(req));
+		}
+		if (DsmlElementTypes.ValueOperator_3010 == req.getElementType()) {
+			return getGEFWrapper(new ValueOperator3CreateCommand(req));
+		}
+		return super.getCreateCommand(req);
+	}
+
+}

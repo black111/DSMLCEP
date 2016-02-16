@@ -1,0 +1,337 @@
+/**
+ */
+package dsml.impl;
+
+import dsml.AreaDesenho;
+import dsml.Arithmetic;
+import dsml.Comparison;
+import dsml.Component;
+import dsml.DsmlPackage;
+import dsml.Followedby;
+import dsml.Link;
+import dsml.LogicalConnector;
+
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.EObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Area Desenho</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * <ul>
+ *   <li>{@link dsml.impl.AreaDesenhoImpl#getComponent <em>Component</em>}</li>
+ *   <li>{@link dsml.impl.AreaDesenhoImpl#getLinks <em>Links</em>}</li>
+ *   <li>{@link dsml.impl.AreaDesenhoImpl#getComparison <em>Comparison</em>}</li>
+ *   <li>{@link dsml.impl.AreaDesenhoImpl#getArithmetic <em>Arithmetic</em>}</li>
+ *   <li>{@link dsml.impl.AreaDesenhoImpl#getFollowedby <em>Followedby</em>}</li>
+ *   <li>{@link dsml.impl.AreaDesenhoImpl#getLogicalConnector <em>Logical Connector</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @generated
+ */
+public class AreaDesenhoImpl extends EObjectImpl implements AreaDesenho {
+	/**
+	 * The cached value of the '{@link #getComponent() <em>Component</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getComponent()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Component> component;
+
+	/**
+	 * The cached value of the '{@link #getLinks() <em>Links</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLinks()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Link> links;
+
+	/**
+	 * The cached value of the '{@link #getComparison() <em>Comparison</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getComparison()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Comparison> comparison;
+
+	/**
+	 * The cached value of the '{@link #getArithmetic() <em>Arithmetic</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getArithmetic()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Arithmetic> arithmetic;
+
+	/**
+	 * The cached value of the '{@link #getFollowedby() <em>Followedby</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFollowedby()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Followedby> followedby;
+
+	/**
+	 * The cached value of the '{@link #getLogicalConnector() <em>Logical Connector</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLogicalConnector()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<LogicalConnector> logicalConnector;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AreaDesenhoImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return DsmlPackage.Literals.AREA_DESENHO;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Component> getComponent() {
+		if (component == null) {
+			component = new EObjectContainmentEList<Component>(Component.class, this, DsmlPackage.AREA_DESENHO__COMPONENT);
+		}
+		return component;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Link> getLinks() {
+		if (links == null) {
+			links = new EObjectContainmentEList<Link>(Link.class, this, DsmlPackage.AREA_DESENHO__LINKS);
+		}
+		return links;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Comparison> getComparison() {
+		if (comparison == null) {
+			comparison = new EObjectContainmentEList<Comparison>(Comparison.class, this, DsmlPackage.AREA_DESENHO__COMPARISON);
+		}
+		return comparison;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Arithmetic> getArithmetic() {
+		if (arithmetic == null) {
+			arithmetic = new EObjectContainmentEList<Arithmetic>(Arithmetic.class, this, DsmlPackage.AREA_DESENHO__ARITHMETIC);
+		}
+		return arithmetic;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Followedby> getFollowedby() {
+		if (followedby == null) {
+			followedby = new EObjectContainmentEList<Followedby>(Followedby.class, this, DsmlPackage.AREA_DESENHO__FOLLOWEDBY);
+		}
+		return followedby;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<LogicalConnector> getLogicalConnector() {
+		if (logicalConnector == null) {
+			logicalConnector = new EObjectContainmentEList<LogicalConnector>(LogicalConnector.class, this, DsmlPackage.AREA_DESENHO__LOGICAL_CONNECTOR);
+		}
+		return logicalConnector;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case DsmlPackage.AREA_DESENHO__COMPONENT:
+				return ((InternalEList<?>)getComponent()).basicRemove(otherEnd, msgs);
+			case DsmlPackage.AREA_DESENHO__LINKS:
+				return ((InternalEList<?>)getLinks()).basicRemove(otherEnd, msgs);
+			case DsmlPackage.AREA_DESENHO__COMPARISON:
+				return ((InternalEList<?>)getComparison()).basicRemove(otherEnd, msgs);
+			case DsmlPackage.AREA_DESENHO__ARITHMETIC:
+				return ((InternalEList<?>)getArithmetic()).basicRemove(otherEnd, msgs);
+			case DsmlPackage.AREA_DESENHO__FOLLOWEDBY:
+				return ((InternalEList<?>)getFollowedby()).basicRemove(otherEnd, msgs);
+			case DsmlPackage.AREA_DESENHO__LOGICAL_CONNECTOR:
+				return ((InternalEList<?>)getLogicalConnector()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case DsmlPackage.AREA_DESENHO__COMPONENT:
+				return getComponent();
+			case DsmlPackage.AREA_DESENHO__LINKS:
+				return getLinks();
+			case DsmlPackage.AREA_DESENHO__COMPARISON:
+				return getComparison();
+			case DsmlPackage.AREA_DESENHO__ARITHMETIC:
+				return getArithmetic();
+			case DsmlPackage.AREA_DESENHO__FOLLOWEDBY:
+				return getFollowedby();
+			case DsmlPackage.AREA_DESENHO__LOGICAL_CONNECTOR:
+				return getLogicalConnector();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case DsmlPackage.AREA_DESENHO__COMPONENT:
+				getComponent().clear();
+				getComponent().addAll((Collection<? extends Component>)newValue);
+				return;
+			case DsmlPackage.AREA_DESENHO__LINKS:
+				getLinks().clear();
+				getLinks().addAll((Collection<? extends Link>)newValue);
+				return;
+			case DsmlPackage.AREA_DESENHO__COMPARISON:
+				getComparison().clear();
+				getComparison().addAll((Collection<? extends Comparison>)newValue);
+				return;
+			case DsmlPackage.AREA_DESENHO__ARITHMETIC:
+				getArithmetic().clear();
+				getArithmetic().addAll((Collection<? extends Arithmetic>)newValue);
+				return;
+			case DsmlPackage.AREA_DESENHO__FOLLOWEDBY:
+				getFollowedby().clear();
+				getFollowedby().addAll((Collection<? extends Followedby>)newValue);
+				return;
+			case DsmlPackage.AREA_DESENHO__LOGICAL_CONNECTOR:
+				getLogicalConnector().clear();
+				getLogicalConnector().addAll((Collection<? extends LogicalConnector>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case DsmlPackage.AREA_DESENHO__COMPONENT:
+				getComponent().clear();
+				return;
+			case DsmlPackage.AREA_DESENHO__LINKS:
+				getLinks().clear();
+				return;
+			case DsmlPackage.AREA_DESENHO__COMPARISON:
+				getComparison().clear();
+				return;
+			case DsmlPackage.AREA_DESENHO__ARITHMETIC:
+				getArithmetic().clear();
+				return;
+			case DsmlPackage.AREA_DESENHO__FOLLOWEDBY:
+				getFollowedby().clear();
+				return;
+			case DsmlPackage.AREA_DESENHO__LOGICAL_CONNECTOR:
+				getLogicalConnector().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case DsmlPackage.AREA_DESENHO__COMPONENT:
+				return component != null && !component.isEmpty();
+			case DsmlPackage.AREA_DESENHO__LINKS:
+				return links != null && !links.isEmpty();
+			case DsmlPackage.AREA_DESENHO__COMPARISON:
+				return comparison != null && !comparison.isEmpty();
+			case DsmlPackage.AREA_DESENHO__ARITHMETIC:
+				return arithmetic != null && !arithmetic.isEmpty();
+			case DsmlPackage.AREA_DESENHO__FOLLOWEDBY:
+				return followedby != null && !followedby.isEmpty();
+			case DsmlPackage.AREA_DESENHO__LOGICAL_CONNECTOR:
+				return logicalConnector != null && !logicalConnector.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
+
+} //AreaDesenhoImpl

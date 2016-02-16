@@ -1,0 +1,36 @@
+SELECT 
+   [%for (component in AreaDesenho) {%]
+       [%for (r in component.rule) {%]
+          [%for (q in r.queries) {%]
+          
+          
+             [%if(q.isKindOf(BringGroup)) {%]
+                   
+                    [%if(q.bringAll=true) {%]
+                    *  
+                    [%}%]   
+                    [%=q.attributes.name %] 
+                    
+                    [% for (qbg in q.operationTypes){%]
+                     [%=qbg%]----------------
+                       [%if(qbg.isKindOf(Operator)) {%]
+                          [%=qbg.attribute.name %] 
+                       [%}%]   
+                       
+                    [%}%]
+                    
+             [%}%]
+             
+             [%if(q.isKindOf(Target)) {%]
+                        
+             [%}%]
+             
+             [%if(q.isKindOf(ConditionGroup)) {%]
+                  
+             [%}%]
+             
+             
+                
+          [%}%]
+       [%}%]
+   [%}%]

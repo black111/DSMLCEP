@@ -1,0 +1,17 @@
+/*
+ * 
+ */
+package dsml.diagram.preferences;
+
+/**
+ * @generated
+ */
+public class DiagramRulersAndGridPreferencePage extends org.eclipse.gmf.runtime.diagram.ui.preferences.RulerGridPreferencePage {
+
+	/**
+ * @generated
+ */
+	public DiagramRulersAndGridPreferencePage() {
+		setPreferenceStore(dsml.diagram.part.DsmlDiagramEditorPlugin.getInstance().getPreferenceStore());
+	}
+}

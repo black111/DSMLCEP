@@ -1,0 +1,108 @@
+/**
+ */
+package dsml;
+
+import org.eclipse.emf.common.util.EList;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Condition Group</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * <ul>
+ *   <li>{@link dsml.ConditionGroup#getConditionGroup <em>Condition Group</em>}</li>
+ *   <li>{@link dsml.ConditionGroup#getOperationTypes <em>Operation Types</em>}</li>
+ *   <li>{@link dsml.ConditionGroup#getIncoming <em>Incoming</em>}</li>
+ *   <li>{@link dsml.ConditionGroup#getOutgoing <em>Outgoing</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @see dsml.DsmlPackage#getConditionGroup()
+ * @model annotation="gmf.node label='conditionGroup' figure='rectangle'"
+ * @generated
+ */
+public interface ConditionGroup extends GroupRelacional {
+	/**
+	 * Returns the value of the '<em><b>Condition Group</b></em>' attribute.
+	 * The default value is <code>"ConditionGroup"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Condition Group</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Condition Group</em>' attribute.
+	 * @see #setConditionGroup(String)
+	 * @see dsml.DsmlPackage#getConditionGroup_ConditionGroup()
+	 * @model default="ConditionGroup"
+	 * @generated
+	 */
+	String getConditionGroup();
+
+	/**
+	 * Sets the value of the '{@link dsml.ConditionGroup#getConditionGroup <em>Condition Group</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Condition Group</em>' attribute.
+	 * @see #getConditionGroup()
+	 * @generated
+	 */
+	void setConditionGroup(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Operation Types</b></em>' containment reference list.
+	 * The list contents are of type {@link dsml.Query}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Operation Types</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Operation Types</em>' containment reference list.
+	 * @see dsml.DsmlPackage#getConditionGroup_OperationTypes()
+	 * @model containment="true"
+	 *        annotation="gmf.compartment layout='free' collapsible='true'"
+	 * @generated
+	 */
+	EList<Query> getOperationTypes();
+
+	/**
+	 * Returns the value of the '<em><b>Incoming</b></em>' reference list.
+	 * The list contents are of type {@link dsml.LogicalConnector}.
+	 * It is bidirectional and its opposite is '{@link dsml.LogicalConnector#getTarget <em>Target</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Incoming</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Incoming</em>' reference list.
+	 * @see dsml.DsmlPackage#getConditionGroup_Incoming()
+	 * @see dsml.LogicalConnector#getTarget
+	 * @model opposite="target"
+	 * @generated
+	 */
+	EList<LogicalConnector> getIncoming();
+
+	/**
+	 * Returns the value of the '<em><b>Outgoing</b></em>' reference list.
+	 * The list contents are of type {@link dsml.LogicalConnector}.
+	 * It is bidirectional and its opposite is '{@link dsml.LogicalConnector#getSource <em>Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Outgoing</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Outgoing</em>' reference list.
+	 * @see dsml.DsmlPackage#getConditionGroup_Outgoing()
+	 * @see dsml.LogicalConnector#getSource
+	 * @model opposite="source"
+	 *        annotation="adapt.onchange invokeMethod='ConditionGroup'"
+	 * @generated
+	 */
+	EList<LogicalConnector> getOutgoing();
+
+} // ConditionGroup

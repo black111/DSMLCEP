@@ -1,0 +1,221 @@
+/**
+ */
+package dsml.impl;
+
+import dsml.BringGroup;
+import dsml.DsmlPackage;
+import dsml.OperationType;
+
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Bring Group</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * <ul>
+ *   <li>{@link dsml.impl.BringGroupImpl#getBringGroup <em>Bring Group</em>}</li>
+ *   <li>{@link dsml.impl.BringGroupImpl#getOperationTypes <em>Operation Types</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @generated
+ */
+public class BringGroupImpl extends NodeImpl implements BringGroup {
+	/**
+	 * The default value of the '{@link #getBringGroup() <em>Bring Group</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBringGroup()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String BRING_GROUP_EDEFAULT = "BringGroup";
+
+	/**
+	 * The cached value of the '{@link #getBringGroup() <em>Bring Group</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBringGroup()
+	 * @generated
+	 * @ordered
+	 */
+	protected String bringGroup = BRING_GROUP_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getOperationTypes() <em>Operation Types</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOperationTypes()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<OperationType> operationTypes;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected BringGroupImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return DsmlPackage.Literals.BRING_GROUP;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getBringGroup() {
+		return bringGroup;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setBringGroup(String newBringGroup) {
+		String oldBringGroup = bringGroup;
+		bringGroup = newBringGroup;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DsmlPackage.BRING_GROUP__BRING_GROUP, oldBringGroup, bringGroup));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<OperationType> getOperationTypes() {
+		if (operationTypes == null) {
+			operationTypes = new EObjectContainmentEList<OperationType>(OperationType.class, this, DsmlPackage.BRING_GROUP__OPERATION_TYPES);
+		}
+		return operationTypes;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case DsmlPackage.BRING_GROUP__OPERATION_TYPES:
+				return ((InternalEList<?>)getOperationTypes()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case DsmlPackage.BRING_GROUP__BRING_GROUP:
+				return getBringGroup();
+			case DsmlPackage.BRING_GROUP__OPERATION_TYPES:
+				return getOperationTypes();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case DsmlPackage.BRING_GROUP__BRING_GROUP:
+				setBringGroup((String)newValue);
+				return;
+			case DsmlPackage.BRING_GROUP__OPERATION_TYPES:
+				getOperationTypes().clear();
+				getOperationTypes().addAll((Collection<? extends OperationType>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case DsmlPackage.BRING_GROUP__BRING_GROUP:
+				setBringGroup(BRING_GROUP_EDEFAULT);
+				return;
+			case DsmlPackage.BRING_GROUP__OPERATION_TYPES:
+				getOperationTypes().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case DsmlPackage.BRING_GROUP__BRING_GROUP:
+				return BRING_GROUP_EDEFAULT == null ? bringGroup != null : !BRING_GROUP_EDEFAULT.equals(bringGroup);
+			case DsmlPackage.BRING_GROUP__OPERATION_TYPES:
+				return operationTypes != null && !operationTypes.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (bringGroup: ");
+		result.append(bringGroup);
+		result.append(')');
+		return result.toString();
+	}
+
+} //BringGroupImpl

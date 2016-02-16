@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated dsml -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="dsml.presentation.DsmlModelWizardID"
+            name="%_UI_DsmlModelWizard_label"
+            class="dsml.presentation.DsmlModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/DsmlModelFile.gif">
+         <description>%_UI_DsmlModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated dsml -->
+      <editor
+            id="dsml.presentation.DsmlEditorID"
+            name="%_UI_DsmlEditor_label"
+            icon="icons/full/obj16/DsmlModelFile.gif"
+            extensions="dsml"
+            class="dsml.presentation.DsmlEditor"
+            contributorClass="dsml.presentation.DsmlActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

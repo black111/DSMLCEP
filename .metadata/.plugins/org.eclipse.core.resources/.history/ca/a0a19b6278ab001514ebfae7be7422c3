@@ -1,0 +1,76 @@
+/*
+ * 
+ */
+package dsml.diagram.edit.policies;
+
+import org.eclipse.gef.commands.Command;
+import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
+
+import dsml.diagram.edit.commands.Aggregation2CreateCommand;
+import dsml.diagram.edit.commands.AggregationCreateCommand;
+import dsml.diagram.edit.commands.BinaryOperatorPattern2CreateCommand;
+import dsml.diagram.edit.commands.BinaryOperatorPatternCreateCommand;
+import dsml.diagram.edit.commands.ConditionGroup2CreateCommand;
+import dsml.diagram.edit.commands.ConditionGroupCreateCommand;
+import dsml.diagram.edit.commands.Not2CreateCommand;
+import dsml.diagram.edit.commands.NotCreateCommand;
+import dsml.diagram.edit.commands.Operator3CreateCommand;
+import dsml.diagram.edit.commands.OperatorCreateCommand;
+import dsml.diagram.edit.commands.Order2CreateCommand;
+import dsml.diagram.edit.commands.OrderCreateCommand;
+import dsml.diagram.edit.commands.PatternTimer2CreateCommand;
+import dsml.diagram.edit.commands.PatternTimerCreateCommand;
+import dsml.diagram.edit.commands.UnaryOperatorPattern2CreateCommand;
+import dsml.diagram.edit.commands.UnaryOperatorPatternCreateCommand;
+import dsml.diagram.edit.commands.ValueOperator3CreateCommand;
+import dsml.diagram.edit.commands.ValueOperatorCreateCommand;
+import dsml.diagram.providers.DsmlElementTypes;
+
+/**
+ * @generated
+ */
+public class RuleRuleNodeCompartmentItemSemanticEditPolicy extends
+		DsmlBaseItemSemanticEditPolicy {
+
+	/**
+	 * @generated
+	 */
+	public RuleRuleNodeCompartmentItemSemanticEditPolicy() {
+		super(DsmlElementTypes.Rule_2013);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Command getCreateCommand(CreateElementRequest req) {
+		if (DsmlElementTypes.Aggregation_3016 == req.getElementType()) {
+			return getGEFWrapper(new AggregationCreateCommand(req));
+		}
+		if (DsmlElementTypes.Order_3017 == req.getElementType()) {
+			return getGEFWrapper(new OrderCreateCommand(req));
+		}
+		if (DsmlElementTypes.Operator_3018 == req.getElementType()) {
+			return getGEFWrapper(new OperatorCreateCommand(req));
+		}
+		if (DsmlElementTypes.ValueOperator_3019 == req.getElementType()) {
+			return getGEFWrapper(new ValueOperatorCreateCommand(req));
+		}
+		if (DsmlElementTypes.UnaryOperatorPattern_3020 == req.getElementType()) {
+			return getGEFWrapper(new UnaryOperatorPatternCreateCommand(req));
+		}
+		if (DsmlElementTypes.BinaryOperatorPattern_3021 == req.getElementType()) {
+			return getGEFWrapper(new BinaryOperatorPatternCreateCommand(req));
+		}
+		if (DsmlElementTypes.PatternTimer_3022 == req.getElementType()) {
+			return getGEFWrapper(new PatternTimerCreateCommand(req));
+		}
+		if (DsmlElementTypes.ConditionGroup_3023 == req.getElementType()) {
+			return getGEFWrapper(new ConditionGroupCreateCommand(req));
+		}
+		if (DsmlElementTypes.Not_3024 == req.getElementType()) {
+			return getGEFWrapper(new NotCreateCommand(req));
+		}
+		return super.getCreateCommand(req);
+	}
+
+}

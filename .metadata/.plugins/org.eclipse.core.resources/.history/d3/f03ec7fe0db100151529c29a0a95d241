@@ -1,0 +1,292 @@
+/**
+ */
+package dsml.impl;
+
+import dsml.ConditionGroup;
+import dsml.DsmlPackage;
+import dsml.LogicalConnector;
+import dsml.Query;
+
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Condition Group</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * <ul>
+ *   <li>{@link dsml.impl.ConditionGroupImpl#getConditionGroup <em>Condition Group</em>}</li>
+ *   <li>{@link dsml.impl.ConditionGroupImpl#getOperationTypes <em>Operation Types</em>}</li>
+ *   <li>{@link dsml.impl.ConditionGroupImpl#getSource <em>Source</em>}</li>
+ *   <li>{@link dsml.impl.ConditionGroupImpl#getTarget <em>Target</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @generated
+ */
+public class ConditionGroupImpl extends GroupRelacionalImpl implements ConditionGroup {
+	/**
+	 * The default value of the '{@link #getConditionGroup() <em>Condition Group</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getConditionGroup()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String CONDITION_GROUP_EDEFAULT = "ConditionGroup";
+
+	/**
+	 * The cached value of the '{@link #getConditionGroup() <em>Condition Group</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getConditionGroup()
+	 * @generated
+	 * @ordered
+	 */
+	protected String conditionGroup = CONDITION_GROUP_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getOperationTypes() <em>Operation Types</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOperationTypes()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Query> operationTypes;
+
+	/**
+	 * The cached value of the '{@link #getSource() <em>Source</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSource()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<LogicalConnector> source;
+
+	/**
+	 * The cached value of the '{@link #getTarget() <em>Target</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTarget()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<LogicalConnector> target;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ConditionGroupImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return DsmlPackage.Literals.CONDITION_GROUP;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getConditionGroup() {
+		return conditionGroup;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Query> getOperationTypes() {
+		if (operationTypes == null) {
+			operationTypes = new EObjectContainmentEList<Query>(Query.class, this, DsmlPackage.CONDITION_GROUP__OPERATION_TYPES);
+		}
+		return operationTypes;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<LogicalConnector> getSource() {
+		if (source == null) {
+			source = new EObjectWithInverseResolvingEList<LogicalConnector>(LogicalConnector.class, this, DsmlPackage.CONDITION_GROUP__SOURCE, DsmlPackage.LOGICAL_CONNECTOR__SOURCE);
+		}
+		return source;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<LogicalConnector> getTarget() {
+		if (target == null) {
+			target = new EObjectWithInverseResolvingEList<LogicalConnector>(LogicalConnector.class, this, DsmlPackage.CONDITION_GROUP__TARGET, DsmlPackage.LOGICAL_CONNECTOR__TARGET);
+		}
+		return target;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case DsmlPackage.CONDITION_GROUP__SOURCE:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSource()).basicAdd(otherEnd, msgs);
+			case DsmlPackage.CONDITION_GROUP__TARGET:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getTarget()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case DsmlPackage.CONDITION_GROUP__OPERATION_TYPES:
+				return ((InternalEList<?>)getOperationTypes()).basicRemove(otherEnd, msgs);
+			case DsmlPackage.CONDITION_GROUP__SOURCE:
+				return ((InternalEList<?>)getSource()).basicRemove(otherEnd, msgs);
+			case DsmlPackage.CONDITION_GROUP__TARGET:
+				return ((InternalEList<?>)getTarget()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case DsmlPackage.CONDITION_GROUP__CONDITION_GROUP:
+				return getConditionGroup();
+			case DsmlPackage.CONDITION_GROUP__OPERATION_TYPES:
+				return getOperationTypes();
+			case DsmlPackage.CONDITION_GROUP__SOURCE:
+				return getSource();
+			case DsmlPackage.CONDITION_GROUP__TARGET:
+				return getTarget();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case DsmlPackage.CONDITION_GROUP__OPERATION_TYPES:
+				getOperationTypes().clear();
+				getOperationTypes().addAll((Collection<? extends Query>)newValue);
+				return;
+			case DsmlPackage.CONDITION_GROUP__SOURCE:
+				getSource().clear();
+				getSource().addAll((Collection<? extends LogicalConnector>)newValue);
+				return;
+			case DsmlPackage.CONDITION_GROUP__TARGET:
+				getTarget().clear();
+				getTarget().addAll((Collection<? extends LogicalConnector>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case DsmlPackage.CONDITION_GROUP__OPERATION_TYPES:
+				getOperationTypes().clear();
+				return;
+			case DsmlPackage.CONDITION_GROUP__SOURCE:
+				getSource().clear();
+				return;
+			case DsmlPackage.CONDITION_GROUP__TARGET:
+				getTarget().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case DsmlPackage.CONDITION_GROUP__CONDITION_GROUP:
+				return CONDITION_GROUP_EDEFAULT == null ? conditionGroup != null : !CONDITION_GROUP_EDEFAULT.equals(conditionGroup);
+			case DsmlPackage.CONDITION_GROUP__OPERATION_TYPES:
+				return operationTypes != null && !operationTypes.isEmpty();
+			case DsmlPackage.CONDITION_GROUP__SOURCE:
+				return source != null && !source.isEmpty();
+			case DsmlPackage.CONDITION_GROUP__TARGET:
+				return target != null && !target.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (conditionGroup: ");
+		result.append(conditionGroup);
+		result.append(')');
+		return result.toString();
+	}
+
+} //ConditionGroupImpl

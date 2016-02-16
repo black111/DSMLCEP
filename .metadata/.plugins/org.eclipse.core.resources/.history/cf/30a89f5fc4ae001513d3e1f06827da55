@@ -1,0 +1,63 @@
+/*
+ * 
+ */
+package dsml.diagram.edit.policies;
+
+import org.eclipse.gef.commands.Command;
+import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
+
+import dsml.diagram.edit.commands.Aggregation2CreateCommand;
+import dsml.diagram.edit.commands.BringGroupCreateCommand;
+import dsml.diagram.edit.commands.ConditionGroupCreateCommand;
+import dsml.diagram.edit.commands.NotCreateCommand;
+import dsml.diagram.edit.commands.Operator4CreateCommand;
+import dsml.diagram.edit.commands.Order2CreateCommand;
+import dsml.diagram.edit.commands.TargetCreateCommand;
+import dsml.diagram.edit.commands.ValueOperator4CreateCommand;
+import dsml.diagram.providers.DsmlElementTypes;
+
+/**
+ * @generated
+ */
+public class RuleRuleQueriesCompartmentItemSemanticEditPolicy extends
+		DsmlBaseItemSemanticEditPolicy {
+
+	/**
+	 * @generated
+	 */
+	public RuleRuleQueriesCompartmentItemSemanticEditPolicy() {
+		super(DsmlElementTypes.Rule_2002);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Command getCreateCommand(CreateElementRequest req) {
+		if (DsmlElementTypes.Target_3002 == req.getElementType()) {
+			return getGEFWrapper(new TargetCreateCommand(req));
+		}
+		if (DsmlElementTypes.Aggregation_3008 == req.getElementType()) {
+			return getGEFWrapper(new Aggregation2CreateCommand(req));
+		}
+		if (DsmlElementTypes.Order_3009 == req.getElementType()) {
+			return getGEFWrapper(new Order2CreateCommand(req));
+		}
+		if (DsmlElementTypes.ConditionGroup_3010 == req.getElementType()) {
+			return getGEFWrapper(new ConditionGroupCreateCommand(req));
+		}
+		if (DsmlElementTypes.BringGroup_3015 == req.getElementType()) {
+			return getGEFWrapper(new BringGroupCreateCommand(req));
+		}
+		if (DsmlElementTypes.Not_3020 == req.getElementType()) {
+			return getGEFWrapper(new NotCreateCommand(req));
+		}
+		if (DsmlElementTypes.Operator_3021 == req.getElementType()) {
+			return getGEFWrapper(new Operator4CreateCommand(req));
+		}
+		if (DsmlElementTypes.ValueOperator_3022 == req.getElementType()) {
+			return getGEFWrapper(new ValueOperator4CreateCommand(req));
+		}
+		return super.getCreateCommand(req);
+	}
+
+}

@@ -1,0 +1,760 @@
+[%for (component in DrawingArea) {%] 
+     
+       [%for (output in component.output) {%]
+       [%if(output<>null){%]
+          [%for (q in output.queries) {%]
+             [%if(component.linkTaget.source.select(e : Event | e.isKindOf(Event)).size()>0){%]
+                     [% var haveRule : Boolean = false;%] 
+                     [% var result : String = '';%] 
+                     [%for(linkTarget in component.linkTaget.select(lt : LinkTarget | lt.isKindOf(LinkTarget))) {%]
+                          [%if(q == linkTarget.target.at(0)){%]
+                             [%if(linkTarget.source.isKindOf(Rule)){%]
+                               [% haveRule  = true;%]
+                             [%}%]
+                             [%if(linkTarget.source.isKindOf(Event)){%]
+                               [% result = '' +linkTarget.source.eventName;%]
+                             [%}%]
+                          [%}%]
+                     [%}%]
+                     [%if(haveRule){%]
+                          [% out.println('INSERT INTO  '+result);%]
+                     [%}%]
+             [%}%]
+          
+          [%}%] 
+       [%}%]  
+     [%}%]  
+ [%}%]     
+
+ [% out.print('SELECT  ');%] 
+   [%for (component in DrawingArea) {%]
+       [%for (r in component.rule) {%]
+          [%for (q in r.queries) {%]
+          
+           
+             [%if(q.isKindOf(BringGroup)) {%]
+                [% -- ---------- BringAll ---------------------- 
+                %]    
+                [%if(q.bringAll==true) {%]
+                        [% out.print(' * ');%] 
+                      [%if(q.attributes.size() >0 or q.operationTypes.size()>0) {%]
+                        [% out.print(', ');%] 
+                      [%}%] 
+                [%}%]   
+ 
+                [% var first : Boolean = true;%] 
+                [% -- ---------- Attributes BringGroup ---------------------- 
+                %]   
+                [% for (attr in q.attributes){%]
+                    
+                       [%if(first==false) {%]
+                           [% out.print(', ');%] 
+                       [%}%]  
+                       [% out.print(attr.name); %]
+                       [%first=false;%] 
+                       
+                [%}%] 
+                       [%if(q.attributes.size() >0 and q.operationTypes.size()>0) {%]
+                           [% out.print(', ');%] 
+                       [%}%] 
+                    
+                [% first = true;%]
+                [% -- ----------conditions tree ---------------------- 
+                %]
+                [% var bringComponent : Boolean = true;%] 
+                [% var bringComponentTree : Boolean = false;%]  
+                [% for (qbg in q.operationTypes){%]
+                        
+                       [% bringComponent = true;%] 
+                       [% bringComponentTree = false;%]  
+                       [% if(qbg.outgoing<>null and qbg.outgoing<>""){%] 
+                           [% bringComponent = true; %]
+                           [% bringComponentTree = true; %]
+                       [%}%]
+                       
+                       [%if(qbg.incoming <> null and qbg.incoming <> ""){%] 
+                           [% bringComponent = false; %]
+                           [% bringComponentTree = false; %]
+                           
+                           [%first=true;%] 
+                       [%}%]
+                       
+                       [%if(qbg.incoming == null and qbg.incoming == ""){%] 
+                           [%if(qbg.outgoing == null and qbg.outgoing ==""){%] 
+                              [% bringComponent = true; %]
+                              [% bringComponentTree = false; %]    
+                           [%}%]
+                       [%}%]
+                       
+                       [%if(first==false) {%]
+                           [% out.print(", ");%]
+                       [%}%]  
+                       
+                       [%if(bringComponent == true) {%]
+                       
+                         [% -- ----------- tipo operator---------------------- 
+                         %]
+                         [%if(qbg.isKindOf(Operator)) {%]
+                       
+                            [%if(qbg.operatorAlias <> null and qbg.operatorAlias <>'') {%]
+                              [% out.print(qbg.operatorAlias+'.'+qbg.attribute.name);%] 
+                            [%}else{%]  
+                              [% out.print(qbg.attribute.name);%]
+                            [%}%] 
+                         [%}%] 
+                            
+                         [% -- ---------- tipo Aggregation -------------------- 
+                         %]
+                         [%if(qbg.isKindOf(Aggregation)) {%]   
+                            [% out.print(qbg.typeAggregation +'('+qbg.attribute.name +')');%]
+                         [%}%]  
+                         
+                         [% -- ----------- tipo ValueOperator ------------------ 
+                         %] 
+                         [%if(qbg.isKindOf(ValueOperator)) {%]                         
+                            [% out.print(qbg.valueOperator);%]
+                         [%}%] 
+                    [%}%]
+                    [% if(bringComponentTree == true){%] 
+                      [% out.print(getTree(qbg));%]
+                    [%}%]
+                    [% bringComponent = false;%] 
+                    [% bringComponentTree = false;%] 
+                    [%first=false;%]      
+                       
+                [%}%]
+             [%}%]
+              
+          [%}%]
+       [%}%]
+   [%}%]
+   
+   [% out.println('');%]
+   [% out.print('FROM ');%]
+
+   [%for (component in DrawingArea) {%]
+       [%for (r in component.rule) {%]
+          [%for (q in r.queries) {%]
+                    
+             [%if(q.isKindOf(Target)) {%]
+                
+                 [%for(component in DrawingArea) {%]
+                      
+                      [% var firstTime : Boolean = true;%] 
+                      [%for(tg in component.linkTaget.target) {%]
+                          [%if(tg.at(0) == q and firstTime) {%]                              
+                                            
+                           [% var event : String; %]
+                           [% var pattern : String; %]
+                           [% var window : String; %]
+                           [% var targetGroup : String; %]                        
+                           [% var firstEvent : Event; %]
+                           
+                          
+                           [% -- --------------------- EVENT PATTERN -------------------------------- 
+                           %] 
+                           
+                           [%if(component.linkTaget.source.select(ep : EventPattern | ep.isKindOf(EventPattern)).size>0) {%]
+                             [%if(component.linkPatternTarget.select(l : LinkPatternTarget | l.isKindOf(LinkPatternTarget)).size>0) {%]
+                              [%for(lnkTarget in component.linkPatternTarget.select(l : LinkPatternTarget | l.isKindOf(LinkPatternTarget))) {%]
+                              
+                                [% if(lnkTarget.source <> null){%] 
+                               
+                                  [% if(lnkTarget.source.incomingTarget == null){%] 
+                                   [% if(lnkTarget.source.isKindOf(Target)){%]
+                                       [% pattern = getTree(lnkTarget.source);%]
+                                   [%}%]
+                                  [%}%]
+                                 [%}%] 
+                              [%}%] 
+                             [%}else{ %] 
+                                 [%var t : Target = component.patterns.node.selectOne(tg : Target | tg.isKindOf(Target)); %] 
+                                 [% pattern = getTree(t);%]
+                             [%}%] 
+                             
+                             [%for(patt in component.patterns.node.select(p : Pattern | p.isKindOf(Pattern))) {%]
+                               [%if(patt.isKindOf(PatternTimer)) {%]
+                                 [%if(patt.incoming == null and patt.outgoing == null) {%] 
+                                    [%if(''+patt.typePatternTimer =="WITHIN_TIMER") {%]
+                                      [% pattern = "("+pattern+") where timer:within("+patt.value+")";%]
+                                   [%}%] 
+                                   [%if(''+patt.typePatternTimer =="WITHIN_MAX_TIMER") {%]
+                                      [% pattern = "("+pattern+") where timer:withinmax("+patt.value+")";%]
+                                   [%}%]
+                                   [%if(''+patt.typePatternTimer =="INTERVAL") {%]
+                                      [% pattern = "("+pattern+") timer:interval("+patt.value+")";%]
+                                   [%}%]
+                                    [%if(''+patt.typePatternTimer =="AT") {%]
+                                      [% pattern = "("+pattern+") timer:at("+patt.value+")";%]
+                                   [%}%]
+                                 [%}%] 
+                               [%}%] 
+                               
+                               
+                               [%if(patt.isKindOf(UnaryPattern)) {%]
+                                 [%if(patt.incoming == null and patt.outgoing == null) {%] 
+                                    [%if(''+patt.typeUnaryPattern =="EVERY") {%]
+                                      [% pattern = "EVERY("+pattern+")";%]
+                                   [%}%] 
+                                   
+                                   [%if(''+patt.typeUnaryPattern =="EVERY_DISTINCT") {%]
+                                      [% pattern = "EVERY-DISTINCT("+pattern+")";%]
+                                    [%}%]
+                                   
+                                 [%}%] 
+                               [%}%] 
+                               
+                               [%if(patt.isKindOf(RepeatPattern)) {%]
+                                 [%if(patt.incoming == null and patt.outgoing == null) {%] 
+                                    [%if(''+patt.typePatternTimer =="REPEAT" or ''+patt.typePatternTimer =="RANGE" ) {%]
+                                      [% pattern = "["+patt.value+"] "+pattern;%]
+                                   [%}%]                                   
+                                 [%}%] 
+                               [%}%]
+                               
+                               
+                             [%}%] 
+
+                            
+                           [% out.print('pattern ['+pattern+']');%] 
+                           [%} else{ %] 
+                           
+                           [% -- ----------- EVENTO SIMPLES -> if not existis event pattern------------------ 
+                           %] 
+                            [%if(component.linkTaget.source.select(e : Event | e.isKindOf(Event)).size()>0){%]
+                            [%for(firstEvent in component.linkTaget.source.select(e : Event | e.isKindOf(Event))) {%]
+                                [% event =firstEvent.eventName;%]
+                            [%}%]
+                            [%if(component.rule.queries.selectOne(tg : Target | tg.isKindOf(Target)).size()>0){%]
+                                [%var t : Target = component.rule.queries.selectOne(tg : Target | tg.isKindOf(Target)); %] 
+                                [%if(t <> null){%]
+                                  [% event =  getTree(t);%]
+                                [%}%]
+                             [%}%]
+                             
+                             [% out.print(event);%]
+                            [%}%]
+                           
+                            [% -- ----------- TARGETGROUP ------------------ 
+                            %] 
+                            [%if(component.linkTaget.source.select(tg : TargetGroupby | tg.isKindOf(TargetGroupby)).size()>0) {%]
+                            [%for (lnkTg in component.linkTaget.source.select(tg : TargetGroupby | tg.isKindOf(TargetGroupby))) {%]
+                                   
+                                       
+                                       [% var f : Boolean = true;%] 
+                                       [% var att : String = '';%] 
+                                       [%for (attr in lnkTg.attributes){%]
+                                          
+                                     	   [%if(f == false) {%]                              
+                                              [% att = att +', '+attr.name;%]
+                     					   [%}else{%] 
+                                              [% att = attr.name;%]
+                                           [%}%]
+                                           [% f=false;%]  
+                                       [%}%]
+                                       [% targetGroup = '.std:groupby('+att+')';%]
+                                                                             
+                                [%}%] 
+                            [% out.print(targetGroup);%]
+                            [%}%]  
+                           [%}%]             
+                           
+                            
+                           [% -- ----------- WINDOW ------------------ 
+                           %] 
+                           [%if(component.linkTaget.source.select(w : Window | w.isKindOf(Window)).size>0) {%]
+                           [%for (win in component.linkTaget.source.select(w : Window | w.isKindOf(Window))) {%]
+                               
+                                    [%for (w in win){%]
+                                       [% window = '.win:'+w.typeWindow+'('+w.value+')';%]
+                                    [%}%] 
+                                
+                           [%}%] 
+                                              
+                           [% out.print(window);%]
+                           [%}%] 
+                         [% firstTime  = false;%]                                                                            
+                     [%}%] 
+                   [%}%]  
+                 [%}%]           
+             [%}%]
+             
+          [%}%]
+       [%}%]
+   [%}%]
+   
+   
+
+   [%for (component in DrawingArea) {%]
+       [%for (r in component.rule) {%]
+          [% var firstCondition : Boolean = true;%] 
+          [%for (q in r.queries) {%]
+
+             [%if(q.isKindOf(ConditionGroup)) {%]
+                    
+              [%if(firstCondition == true) {%]
+                [% firstCondition = false;%]
+                [% out.println('');%]
+                [% out.print('WHERE ');%]              
+              [%}else{%] 
+                [%if(q.incoming.isKindOf(LogicalConnector)){%]
+                 [% out.println(' '+q.incoming.typeLogical);%]
+                [%}%] 
+               [%}%]
+                                 
+                
+                [% -- ---------- tipo Not-------------------- 
+                %]
+                [%var n : Not = q.operationTypes.selectOne(nt : Not | nt.isKindOf(Not)); %] 
+                [%if(n.isKindOf(Not)) {%]   
+                   [% out.print(' NOT ');%]    
+                [%}%]
+                [% -- ----------conditions tree ---------------------- 
+                %]
+                [% var bringComponent : Boolean = true;%] 
+                [% var bringComponentTree : Boolean = false;%]  
+                [% for (qbg in q.operationTypes){%]
+                        
+                       [% bringComponent = true;%] 
+                       [% bringComponentTree = false;%]  
+                       [% if(qbg.outgoing<>null and qbg.outgoing<>""){%] 
+                           [% bringComponent = true; %]
+                           [% bringComponentTree = true; %]
+                       [%}%]
+                       
+                       [%if(qbg.incoming <> null and qbg.incoming <> ""){%] 
+                           [% bringComponent = false; %]
+                           [% bringComponentTree = false; %]
+                       [%}%]
+                       
+                       [%if(qbg.incoming == null and qbg.incoming == ""){%] 
+                           [%if(qbg.outgoing==null and qbg.outgoing==""){%] 
+                              [% bringComponent = true; %]
+                              [% bringComponentTree = false; %]    
+                           [%}%]
+                       [%}%]
+                       
+                                        
+                       [%if(bringComponent == true) {%]
+                          
+                         [% -- ----------- tipo operator---------------------- 
+                         %]
+                         [%if(qbg.isKindOf(Operator)) {%]
+                       
+                            [%if(qbg.operatorAlias <> null and qbg.operatorAlias <>'') {%]
+                               [% out.print(qbg.operatorAlias+'.'+qbg.attribute.name);%]
+                            [%}else{%] 
+                               [% out.print(qbg.attribute.name);%] 
+                            [%}%] 
+                         [%}%] 
+                            
+                         [% -- ---------- tipo Aggregation -------------------- 
+                         %]
+                         [%if(qbg.isKindOf(Aggregation)) {%]   
+                            [% out.print(qbg.typeAggregation +'('+qbg.attribute.name+')');%] 
+                            
+                         [%}%]  
+                         
+                         [% -- ----------- tipo ValueOperator ------------------ 
+                         %] 
+                         [%if(qbg.isKindOf(ValueOperator)) {%]   
+                            [% out.print(qbg.valueOperator); %]
+                         [%}%] 
+                    [%}%]
+                    [% if(bringComponentTree == true){%] 
+                         [% out.print(getTree(qbg));%]
+                    [%}%]
+                    [% bringComponent = false;%] 
+                    [% bringComponentTree = false;%]     
+                       
+                [%}%]
+                
+               [% firstCondition = false;%]
+           
+             [%}%]
+             
+             
+                
+          [%}%]
+       [%}%]
+   [%}%]
+   
+   
+[%for (component in DrawingArea) {%]
+       [%for (r in component.rule) {%]
+          [% var firstCondition : Boolean = true;%] 
+          [%for (q in r.queries) {%]
+
+             [%if(q.isKindOf(GroupbyCondition)) {%]
+                    
+           
+                [% firstCondition = false;%]
+                [% out.println('');%]
+                [% out.print('GROUP BY ');%]              
+            
+                [% var first : Boolean = true;%] 
+                [% -- ---------- Attributes BringGroup ---------------------- 
+                %]   
+                [% for (attr in q.attributes){%]
+                    
+                       [%if(first==false) {%]
+                           [% out.print(', ');%] 
+                       [%}%]  
+                       [% out.print(attr.name); %]
+                       [%first=false;%] 
+                       
+                [%}%]                 
+                
+                [% -- ---------- tipo Not-------------------- 
+                %]
+                [%var n : Not = q.operationTypes.selectOne(nt : Not | nt.isKindOf(Not)); %] 
+                [%if(n.isKindOf(Not)) {%]   
+                   [% out.print(' NOT ');%]    
+                [%}%]
+                
+                [% -- ----------conditions tree ---------------------- 
+                %]
+                [% if(q.operationTypes.size()>0){%]
+                    [% out.print(' HAVIN ');%]
+                [%}%]
+                
+                [% var bringComponent : Boolean = true;%] 
+                [% var bringComponentTree : Boolean = false;%]  
+                [% for (qbg in q.operationTypes){%]
+                        
+                       [% bringComponent = true;%] 
+                       [% bringComponentTree = false;%]  
+                       [% if(qbg.outgoing<>null and qbg.outgoing<>""){%] 
+                           [% bringComponent = true; %]
+                           [% bringComponentTree = true; %]
+                       [%}%]
+                       
+                       [%if(qbg.incoming <> null and qbg.incoming <> ""){%] 
+                           [% bringComponent = false; %]
+                           [% bringComponentTree = false; %]
+                       [%}%]
+                       
+                       [%if(qbg.incoming == null and qbg.incoming == ""){%] 
+                           [%if(qbg.outgoing==null and qbg.outgoing==""){%] 
+                              [% bringComponent = true; %]
+                              [% bringComponentTree = false; %]    
+                           [%}%]
+                       [%}%]
+                       
+                                        
+                       [%if(bringComponent == true) {%]
+                          
+                         [% -- ----------- tipo operator---------------------- 
+                         %]
+                         [%if(qbg.isKindOf(Operator)) {%]
+                       
+                            [%if(qbg.operatorAlias <> null and qbg.operatorAlias <>'') {%]
+                               [% out.print(qbg.operatorAlias+'.'+qbg.attribute.name);%]
+                            [%}else{%] 
+                               [% out.print(qbg.attribute.name);%] 
+                            [%}%] 
+                         [%}%] 
+                            
+                         [% -- ---------- tipo Aggregation -------------------- 
+                         %]
+                         [%if(qbg.isKindOf(Aggregation)) {%]   
+                            [% out.print(qbg.typeAggregation +'('+qbg.attribute.name+')');%] 
+                            
+                         [%}%]  
+                         
+                         [% -- ----------- tipo ValueOperator ------------------ 
+                         %] 
+                         [%if(qbg.isKindOf(ValueOperator)) {%]   
+                            [% out.print(qbg.valueOperator); %]
+                         [%}%] 
+                    [%}%]
+                    [% if(bringComponentTree == true){%] 
+                         [% out.print(getTree(qbg));%]
+                    [%}%]
+                    [% bringComponent = false;%] 
+                    [% bringComponentTree = false;%]     
+                       
+                [%}%]
+                
+               [% firstCondition = false;%]
+           
+             [%}%]
+             
+             
+                
+          [%}%]
+       [%}%]
+   [%}%]   
+   
+   
+   
+ 
+[% -- ----------- LINKS------------------ 
+%] 
+
+
+
+[%operation getTree(q):String{%]
+
+   [%for(component in DrawingArea) {%]
+   
+    [%if(q.isKindOf(Target)) {%]
+       
+          
+            [% var eventPattern : String = ''; %]
+            [% var incPattern : Boolean = false; %]
+            [% -- ---------- tipo Not-------------------- 
+            %]
+           	[% var n : Not = q.operationTypes.selectOne(nt : Not | nt.isKindOf(Not)); %]   
+            [%if(n.isKindOf(Not)) {%]   
+              [% eventPattern = ' NOT '+ eventPattern;%]    
+              [%incPattern  = true; %] 
+            [%}%]
+            
+            
+            [% var unary : UnaryPattern = q.operationTypes.selectOne(up : UnaryPattern | up.isKindOf(UnaryPattern)); %]   
+                [%if(unary.isKindOf(UnaryPattern)) {%]
+                    [%if(unary.incoming == null and unary.outgoing == null) {%] 
+                       [%if(''+unary.typeUnaryPattern =="EVERY") {%]
+                             [% eventPattern = "EVERY ";%]
+                       [%}%] 
+                                   
+                       [%if(''+unary.typeUnaryPattern =="EVERY_DISTINCT") {%]
+                             [% eventPattern = "EVERY-DISTINCT ";%]
+                       [%}%] 
+                       [%incPattern  = true; %]             
+                [%}%] 
+              [%}%] 
+              
+              [% var repeat : RepeatPattern = q.operationTypes.selectOne(rp : RepeatPattern | rp.isKindOf(RepeatPattern)); %]                  
+              [%if(repeat.isKindOf(RepeatPattern)) {%]
+                [%if(repeat.incoming == null and repeat.outgoing == null) {%] 
+                   [%if(''+repeat.typePatternTimer =="REPEAT" or ''+repeat.typePatternTimer =="RANGE" ) {%]
+                      [% eventPattern = "["+repeat.value+"] "+eventPattern;%]
+                      [%incPattern  = true; %] 
+                   [%}%]                                   
+                [%}%] 
+              [%}%]  
+            
+            [%for(component in DrawingArea) {%]
+            
+               [%for(l in component.linkTaget.select(l : LinkTarget | l.isKindOf(LinkTarget))) {%]
+                         
+                                            
+                    [%if(q == l.target.at(0)){%]
+                         [%if(q.targetAlias <> null and q.targetAlias <>''){%]
+                              [%eventPattern = eventPattern +q.targetAlias+'=';%]
+                             
+                         [%}%]
+                         [%if(l.source <> null){%]
+                            [%if(l.source.isKindOf(Event)){%]
+                               [%eventPattern = eventPattern +l.source.eventName;%]
+                            [%}%] 
+                         [%}%] 
+                    [%}%]   
+                [%}%]      
+                         	
+                			 
+					[% for(ptNode in q){%]
+                         
+                            [%if(ptNode <> null){%]
+                            
+                            [% var i : Integer = 0;%]
+                            [%var bringComponent2 : Boolean = true;%]
+                            [%var bringComponentTree2 : Boolean = false;%]
+                            
+                             
+                			 
+                          
+                          [%for (node in ptNode.operationTypes){%]
+                          
+                           [%if(not node.isKindOf(Not) and not node.isKindOf(UnaryPattern) and not node.isKindOf(RepeatPattern)) {%] 
+                            [%incPattern  = false; %]    
+                            [%bringComponent2 = true;%] 
+ 							[%bringComponentTree2 = false;%]  
+ 							
+ 							[%if(node.outgoing<>null and node.outgoing<>""){%] 
+ 								[% bringComponent2 = true;%] 
+ 								[% bringComponentTree2 = true;%] 
+  							[% }%]
+                       
+							[%if(node.incoming <> null and node.incoming <> ""){%] 
+ 								 [% bringComponent2 = false;%] 
+ 								 [%bringComponentTree2 = false;%] 
+                            [%}%]
+                       
+ 							[%if(node.incoming == null and node.incoming == ""){%] 
+ 							     [%if(node.outgoing == null and node.outgoing ==""){%] 
+						              [%bringComponent2 = true;%] 
+						              [%bringComponentTree2 = false; %]    
+ 							     [% }%]
+							[%}%]
+                            [%--out.println(i +" "+node+" "+ bringComponent2);%]                              
+                            [% if(bringComponent2 == true) {%] 
+                              [%if(i = 0) {%]
+       					     	[%eventPattern = eventPattern +'(';%]
+       						  [%}else{ %]
+       						     
+       						    [%eventPattern = eventPattern +', ';%]
+       						  [%}%] 
+       						   
+       						[% -- ----------- PATTERN type Operator ------------------ 
+              				 %]					                           									                   
+       						[%if(node.isKindOf(Operator)) {%]
+             				  [%if(node.operatorAlias <> null and node.operatorAlias <>'') {%]
+          						[%eventPattern = eventPattern +node.operatorAlias+'.'+node.attribute.name;%] 
+          					  [%}else{%]  
+           						[%eventPattern = eventPattern +node.attribute.name;%]
+               				  [%} %]
+               				[%}%] 
+               				
+       						[% -- ----------- PATTERN type ValueOperator ------------------ 
+              				 %]			                   
+  							[%if(node.isKindOf(ValueOperator)) { %]
+                                [%eventPattern = eventPattern +node.valueOperator;%]
+                            [%}%]
+                            
+                            [% -- ----------- PATTERN type Aggregation ------------------ 
+              				 %]
+                            [%if(node.isKindOf(Aggregation)) {%]   
+ 								[%eventPattern = eventPattern +node.typeAggregation +'('+node.attribute.name +')';%]
+ 							[%}%]     
+ 									                        
+               				[% }%]  
+               				[%if(bringComponentTree2 == true){%]   
+							[%eventPattern = eventPattern +getTree(node);%]
+ 							[% }%]
+               											  
+               				[%i = i + 1;%]
+							  
+               				[%}%]
+                           [%}%]                             
+                        [%}%]
+                          
+                          [%if(q.operationTypes.size()>1){%]
+                             [%if(not incPattern) {%] 
+                                [%eventPattern = eventPattern +')';%]
+                             [%}%]
+                          [%}%]
+                         
+                          
+                          [%if(q.outgoingTarget <> null) {%]
+                            [%if(''+q.outgoingTarget.comparisonTarget == 'FOLLOWEDBY'){%] 
+       						   [%eventPattern = eventPattern +' -> ';%]
+       						[%}else{%]
+       						   [%eventPattern = eventPattern +'  '+q.outgoingTarget.comparisonTarget+'  ';%]
+       						[%}%]
+       						[%eventPattern = eventPattern + getTree(q.outgoingTarget.target);%]
+       					  [%}%]
+       						
+                         
+                       [%}%]
+
+             [%}%]
+             [%return eventPattern;%]  
+    [%}%] 
+    
+    [%if(q.isKindOf(Query)) {%]
+       [%for (link in component.links) {%]
+           [%if(link.source == q) {%]
+           
+           [% var linkValue : String; var s : String; %]
+           
+           [% -- ----------- LINK type Arithmetic ------------------ 
+           %] 
+           [%if(link.isKindOf(Arithmetic)) {%]
+             [% var arithm : String; s = ''+link.arithmetic; %] 
+ 			 [% if(s == "ADDITION"){ %]
+ 			    [% arithm = "  +  "; %]
+			 [%}%] 
+			 [%if(s == "DIVISION"){ %]
+			    [% arithm = "  /  "; %]
+			  [%}%] 
+			 [%if(s == "MODULUS"){ %]
+  			    [% arithm = "  %  "; %]
+ 			 [%}%] 
+			 [%if(s == "MULTIPLICATION"){%]
+  			    [% arithm = "  *  "; %]
+ 			 [%}%] 
+ 			 [%if(s == "SUBTRACTION"){%]
+ 			    [% arithm = "  -  "; %]
+ 			 [%}%]
+ 			  [% linkValue = arithm; %]
+           [%}%]
+           
+           [% -- ----------- LINK type Comparison ------------------ 
+           %] 
+           [%if(link.isKindOf(Comparison)) {%]
+             [% var comp : String; s = ''+link.comparison; %] 
+ 			 [% if(s == "EQUAL"){ %]
+ 			    [% comp = "  =  "; %]
+			 [%}%] 
+			 [%if(s == "GREATER_EQUAL"){ %]
+			    [% comp = "  >=  "; %]
+			  [%}%] 
+			 [%if(s == "GREATER_THAN"){ %]
+  			    [% comp = "  >  "; %]
+ 			 [%}%] 
+			 [%if(s == "LESS_EQUAL"){%]
+  			    [% comp = "  <=  "; %]
+ 			 [%}%] 
+ 			 [%if(s == "LESS_THAN"){%]
+ 			    [% comp = "  <  "; %]
+ 			 [%}%]
+ 			 [%if(s == "NOT_EQUAL"){%]
+ 			    [% comp = "  <>  "; %]
+ 			 [%}%]
+ 			  [% linkValue = comp; %]
+           [%}%]
+           
+           
+           [% -- ----------- LINK type LogicalConnector ------------------ 
+           %] 
+           [%if(link.isKindOf(LogicalConnector)) {%]
+             [% linkValue = " "+link.typeLogical+" "; %] 			
+           [%}%]
+               
+               [% -- ----------- QUERY type Operator ------------------ 
+               %] 
+               [%if(link.target.isKindOf(Operator)) {%]     
+                  [% var opName : String; %] 
+                  [%if(link.target.operatorAlias <> null and link.target.operatorAlias <>'') {%]
+                      [% opName = ''+link.target.operatorAlias +'.'+ link.target.attribute.name; %] 
+                  [%}else{%]  
+                      [% opName = ''+link.target.attribute.name; %] 
+                  [%}%] 
+               
+                  [%if(link.target.outgoing <> null and link.target.outgoing <> "") {%]                        
+                      [% return linkValue + opName + getTree(link.target);  %]  
+                  [%}else{%]  
+                      [% return linkValue + opName; %]   
+                  [%}%]  
+               [%}%] 
+               
+               [% -- ----------- QUERY type ValueOperator ------------------ 
+               %] 
+               [%if(link.target.isKindOf(ValueOperator)) {%]     
+                  [%if(link.target.outgoing <> null and link.target.outgoing <> "") {%]                        
+                      [% return linkValue + link.target.valueOperator  + getTree(link.target);  %]  
+                  [%}else{%]  
+                      [% return linkValue + link.target.valueOperator;%]   
+                  [%}%]  
+               [%}%]  
+               
+               [% -- ----------- QUERY type Aggregation ------------------ 
+               %]
+               [%if(link.target.isKindOf(Aggregation)) {%] 
+                  [%if(link.target.attribute<>null and link.target.attribute<>"") {%]   
+                    [%if(link.target.outgoing<>null and link.target.outgoing<>"") {%] 
+                       [% return linkValue + link.target.typeAggregation +'('+link.target.attribute.name+')' + getTree(link.target);  %]
+                    [%}else{%]  
+                       [% return linkValue + link.target.typeAggregation +'('+link.target.attribute.name+')';%] 
+                    [%}%]   
+                  [%}%] 
+               [%}%]    
+           [%}%]
+        [%}%]
+       
+   [%}%]
+  [%}%]    
+[%}%]

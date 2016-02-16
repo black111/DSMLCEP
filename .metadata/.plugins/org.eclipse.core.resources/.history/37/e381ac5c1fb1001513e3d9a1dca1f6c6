@@ -1,0 +1,285 @@
+/**
+ */
+package dsml.impl;
+
+import dsml.Comparison;
+import dsml.DsmlPackage;
+import dsml.Query;
+import dsml.TypeComparison;
+
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Comparison</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * <ul>
+ *   <li>{@link dsml.impl.ComparisonImpl#getOutboundLink <em>Outbound Link</em>}</li>
+ *   <li>{@link dsml.impl.ComparisonImpl#getInboundLink <em>Inbound Link</em>}</li>
+ *   <li>{@link dsml.impl.ComparisonImpl#getComparison <em>Comparison</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @generated
+ */
+public class ComparisonImpl extends LinkImpl implements Comparison {
+	/**
+	 * The cached value of the '{@link #getOutboundLink() <em>Outbound Link</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOutboundLink()
+	 * @generated
+	 * @ordered
+	 */
+	protected Query outboundLink;
+
+	/**
+	 * The cached value of the '{@link #getInboundLink() <em>Inbound Link</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInboundLink()
+	 * @generated
+	 * @ordered
+	 */
+	protected Query inboundLink;
+
+	/**
+	 * The default value of the '{@link #getComparison() <em>Comparison</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getComparison()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final TypeComparison COMPARISON_EDEFAULT = TypeComparison.EQUAL;
+
+	/**
+	 * The cached value of the '{@link #getComparison() <em>Comparison</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getComparison()
+	 * @generated
+	 * @ordered
+	 */
+	protected TypeComparison comparison = COMPARISON_EDEFAULT;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ComparisonImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return DsmlPackage.Literals.COMPARISON;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Query getOutboundLink() {
+		if (outboundLink != null && outboundLink.eIsProxy()) {
+			InternalEObject oldOutboundLink = (InternalEObject)outboundLink;
+			outboundLink = (Query)eResolveProxy(oldOutboundLink);
+			if (outboundLink != oldOutboundLink) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DsmlPackage.COMPARISON__OUTBOUND_LINK, oldOutboundLink, outboundLink));
+			}
+		}
+		return outboundLink;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Query basicGetOutboundLink() {
+		return outboundLink;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOutboundLink(Query newOutboundLink) {
+		Query oldOutboundLink = outboundLink;
+		outboundLink = newOutboundLink;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DsmlPackage.COMPARISON__OUTBOUND_LINK, oldOutboundLink, outboundLink));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Query getInboundLink() {
+		if (inboundLink != null && inboundLink.eIsProxy()) {
+			InternalEObject oldInboundLink = (InternalEObject)inboundLink;
+			inboundLink = (Query)eResolveProxy(oldInboundLink);
+			if (inboundLink != oldInboundLink) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DsmlPackage.COMPARISON__INBOUND_LINK, oldInboundLink, inboundLink));
+			}
+		}
+		return inboundLink;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Query basicGetInboundLink() {
+		return inboundLink;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setInboundLink(Query newInboundLink) {
+		Query oldInboundLink = inboundLink;
+		inboundLink = newInboundLink;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DsmlPackage.COMPARISON__INBOUND_LINK, oldInboundLink, inboundLink));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TypeComparison getComparison() {
+		return comparison;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setComparison(TypeComparison newComparison) {
+		TypeComparison oldComparison = comparison;
+		comparison = newComparison == null ? COMPARISON_EDEFAULT : newComparison;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DsmlPackage.COMPARISON__COMPARISON, oldComparison, comparison));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case DsmlPackage.COMPARISON__OUTBOUND_LINK:
+				if (resolve) return getOutboundLink();
+				return basicGetOutboundLink();
+			case DsmlPackage.COMPARISON__INBOUND_LINK:
+				if (resolve) return getInboundLink();
+				return basicGetInboundLink();
+			case DsmlPackage.COMPARISON__COMPARISON:
+				return getComparison();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case DsmlPackage.COMPARISON__OUTBOUND_LINK:
+				setOutboundLink((Query)newValue);
+				return;
+			case DsmlPackage.COMPARISON__INBOUND_LINK:
+				setInboundLink((Query)newValue);
+				return;
+			case DsmlPackage.COMPARISON__COMPARISON:
+				setComparison((TypeComparison)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case DsmlPackage.COMPARISON__OUTBOUND_LINK:
+				setOutboundLink((Query)null);
+				return;
+			case DsmlPackage.COMPARISON__INBOUND_LINK:
+				setInboundLink((Query)null);
+				return;
+			case DsmlPackage.COMPARISON__COMPARISON:
+				setComparison(COMPARISON_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case DsmlPackage.COMPARISON__OUTBOUND_LINK:
+				return outboundLink != null;
+			case DsmlPackage.COMPARISON__INBOUND_LINK:
+				return inboundLink != null;
+			case DsmlPackage.COMPARISON__COMPARISON:
+				return comparison != COMPARISON_EDEFAULT;
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (comparison: ");
+		result.append(comparison);
+		result.append(')');
+		return result.toString();
+	}
+
+} //ComparisonImpl

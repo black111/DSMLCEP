@@ -1,0 +1,14 @@
+/*
+ * 
+ */
+package dsml.diagram.providers.assistants;
+
+/**
+ * @generated
+ */
+public class DsmlModelingAssistantProviderOfConditionGroupEditPart extends dsml.diagram.providers.DsmlModelingAssistantProvider {
+
+					
+	
+
+	}

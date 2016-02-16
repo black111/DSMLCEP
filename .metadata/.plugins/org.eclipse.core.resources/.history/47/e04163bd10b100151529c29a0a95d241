@@ -1,0 +1,10 @@
+/*
+ * 
+ */
+package prediqt.diagram.edit.helpers;
+
+/**
+ * @generated
+ */
+public class ProjectEditHelper extends prediqt.diagram.edit.helpers.PrediqtBaseEditHelper {
+	}

@@ -1,0 +1,14 @@
+/*
+ * 
+ */
+package dsml.diagram.providers.assistants;
+
+/**
+ * @generated
+ */
+public class DsmlModelingAssistantProviderOfNot2EditPart extends dsml.diagram.providers.DsmlModelingAssistantProvider {
+
+					
+	
+
+	}

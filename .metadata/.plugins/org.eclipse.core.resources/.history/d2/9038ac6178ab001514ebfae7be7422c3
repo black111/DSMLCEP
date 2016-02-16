@@ -1,0 +1,202 @@
+/*
+ * 
+ */
+package dsml.diagram.providers.assistants;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
+import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
+import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+
+import dsml.diagram.edit.parts.Aggregation2EditPart;
+import dsml.diagram.edit.parts.Aggregation3EditPart;
+import dsml.diagram.edit.parts.AggregationEditPart;
+import dsml.diagram.edit.parts.BinaryOperatorPattern2EditPart;
+import dsml.diagram.edit.parts.BinaryOperatorPattern3EditPart;
+import dsml.diagram.edit.parts.BinaryOperatorPatternEditPart;
+import dsml.diagram.edit.parts.ConditionGroup2EditPart;
+import dsml.diagram.edit.parts.ConditionGroup3EditPart;
+import dsml.diagram.edit.parts.ConditionGroupEditPart;
+import dsml.diagram.edit.parts.EventEditPart;
+import dsml.diagram.edit.parts.EventPatternEditPart;
+import dsml.diagram.edit.parts.Not2EditPart;
+import dsml.diagram.edit.parts.Not3EditPart;
+import dsml.diagram.edit.parts.NotEditPart;
+import dsml.diagram.edit.parts.Operator2EditPart;
+import dsml.diagram.edit.parts.Operator3EditPart;
+import dsml.diagram.edit.parts.Operator4EditPart;
+import dsml.diagram.edit.parts.OperatorEditPart;
+import dsml.diagram.edit.parts.Order2EditPart;
+import dsml.diagram.edit.parts.Order3EditPart;
+import dsml.diagram.edit.parts.OrderEditPart;
+import dsml.diagram.edit.parts.PatternTimer2EditPart;
+import dsml.diagram.edit.parts.PatternTimer3EditPart;
+import dsml.diagram.edit.parts.PatternTimerEditPart;
+import dsml.diagram.edit.parts.RuleEditPart;
+import dsml.diagram.edit.parts.UnaryOperatorPattern2EditPart;
+import dsml.diagram.edit.parts.UnaryOperatorPattern3EditPart;
+import dsml.diagram.edit.parts.UnaryOperatorPatternEditPart;
+import dsml.diagram.edit.parts.ValueOperator2EditPart;
+import dsml.diagram.edit.parts.ValueOperator3EditPart;
+import dsml.diagram.edit.parts.ValueOperator4EditPart;
+import dsml.diagram.edit.parts.ValueOperatorEditPart;
+import dsml.diagram.edit.parts.WindowEditPart;
+import dsml.diagram.providers.DsmlElementTypes;
+import dsml.diagram.providers.DsmlModelingAssistantProvider;
+
+/**
+ * @generated
+ */
+public class DsmlModelingAssistantProviderOfEventEditPart extends
+		DsmlModelingAssistantProvider {
+
+	/**
+	 * @generated
+	 */
+	@Override
+	public List<IElementType> getTypesForPopupBar(IAdaptable host) {
+		List<IElementType> types = new ArrayList<IElementType>(1);
+		types.add(DsmlElementTypes.Attribute_3034);
+		return types;
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	public List<IElementType> getRelTypesOnSource(IAdaptable source) {
+		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source
+				.getAdapter(IGraphicalEditPart.class);
+		return doGetRelTypesOnSource((EventEditPart) sourceEditPart);
+	}
+
+	/**
+	 * @generated
+	 */
+	public List<IElementType> doGetRelTypesOnSource(EventEditPart source) {
+		List<IElementType> types = new ArrayList<IElementType>(2);
+		types.add(DsmlElementTypes.Link_4001);
+		types.add(DsmlElementTypes.Followedby_4004);
+		return types;
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	public List<IElementType> getRelTypesOnSourceAndTarget(IAdaptable source,
+			IAdaptable target) {
+		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source
+				.getAdapter(IGraphicalEditPart.class);
+		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target
+				.getAdapter(IGraphicalEditPart.class);
+		return doGetRelTypesOnSourceAndTarget((EventEditPart) sourceEditPart,
+				targetEditPart);
+	}
+
+	/**
+	 * @generated
+	 */
+	public List<IElementType> doGetRelTypesOnSourceAndTarget(
+			EventEditPart source, IGraphicalEditPart targetEditPart) {
+		List<IElementType> types = new LinkedList<IElementType>();
+		if (targetEditPart instanceof RuleEditPart) {
+			types.add(DsmlElementTypes.Link_4001);
+		}
+		if (targetEditPart instanceof EventPatternEditPart) {
+			types.add(DsmlElementTypes.Link_4001);
+		}
+		if (targetEditPart instanceof WindowEditPart) {
+			types.add(DsmlElementTypes.Link_4001);
+		}
+		if (targetEditPart instanceof EventEditPart) {
+			types.add(DsmlElementTypes.Link_4001);
+		}
+		if (targetEditPart instanceof EventEditPart) {
+			types.add(DsmlElementTypes.Followedby_4004);
+		}
+		return types;
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	public List<IElementType> getTypesForTarget(IAdaptable source,
+			IElementType relationshipType) {
+		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source
+				.getAdapter(IGraphicalEditPart.class);
+		return doGetTypesForTarget((EventEditPart) sourceEditPart,
+				relationshipType);
+	}
+
+	/**
+	 * @generated
+	 */
+	public List<IElementType> doGetTypesForTarget(EventEditPart source,
+			IElementType relationshipType) {
+		List<IElementType> types = new ArrayList<IElementType>();
+		if (relationshipType == DsmlElementTypes.Link_4001) {
+			types.add(DsmlElementTypes.Rule_2013);
+			types.add(DsmlElementTypes.EventPattern_2014);
+			types.add(DsmlElementTypes.Window_2015);
+			types.add(DsmlElementTypes.Event_2016);
+		} else if (relationshipType == DsmlElementTypes.Followedby_4004) {
+			types.add(DsmlElementTypes.Event_2016);
+		}
+		return types;
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	public List<IElementType> getRelTypesOnTarget(IAdaptable target) {
+		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target
+				.getAdapter(IGraphicalEditPart.class);
+		return doGetRelTypesOnTarget((EventEditPart) targetEditPart);
+	}
+
+	/**
+	 * @generated
+	 */
+	public List<IElementType> doGetRelTypesOnTarget(EventEditPart target) {
+		List<IElementType> types = new ArrayList<IElementType>(2);
+		types.add(DsmlElementTypes.Link_4001);
+		types.add(DsmlElementTypes.Followedby_4004);
+		return types;
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	public List<IElementType> getTypesForSource(IAdaptable target,
+			IElementType relationshipType) {
+		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target
+				.getAdapter(IGraphicalEditPart.class);
+		return doGetTypesForSource((EventEditPart) targetEditPart,
+				relationshipType);
+	}
+
+	/**
+	 * @generated
+	 */
+	public List<IElementType> doGetTypesForSource(EventEditPart target,
+			IElementType relationshipType) {
+		List<IElementType> types = new ArrayList<IElementType>();
+		if (relationshipType == DsmlElementTypes.Link_4001) {
+			types.add(DsmlElementTypes.Rule_2013);
+			types.add(DsmlElementTypes.EventPattern_2014);
+			types.add(DsmlElementTypes.Window_2015);
+			types.add(DsmlElementTypes.Event_2016);
+		} else if (relationshipType == DsmlElementTypes.Followedby_4004) {
+			types.add(DsmlElementTypes.Event_2016);
+		}
+		return types;
+	}
+
+}

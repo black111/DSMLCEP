@@ -1,0 +1,63 @@
+/*
+ * 
+ */
+package dsml.diagram.edit.policies;
+
+import org.eclipse.gef.commands.Command;
+import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
+
+import dsml.diagram.edit.commands.AggregationCreateCommand;
+import dsml.diagram.edit.commands.BringGroupCreateCommand;
+import dsml.diagram.edit.commands.ConditionGroupCreateCommand;
+import dsml.diagram.edit.commands.NotCreateCommand;
+import dsml.diagram.edit.commands.OperatorCreateCommand;
+import dsml.diagram.edit.commands.OrderCreateCommand;
+import dsml.diagram.edit.commands.Target2CreateCommand;
+import dsml.diagram.edit.commands.ValueOperatorCreateCommand;
+import dsml.diagram.providers.DsmlElementTypes;
+
+/**
+ * @generated
+ */
+public class TargetTargetOperationTypesCompartment3ItemSemanticEditPolicy
+		extends DsmlBaseItemSemanticEditPolicy {
+
+	/**
+	 * @generated
+	 */
+	public TargetTargetOperationTypesCompartment3ItemSemanticEditPolicy() {
+		super(DsmlElementTypes.Target_3005);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Command getCreateCommand(CreateElementRequest req) {
+		if (DsmlElementTypes.Target_3003 == req.getElementType()) {
+			return getGEFWrapper(new Target2CreateCommand(req));
+		}
+		if (DsmlElementTypes.ConditionGroup_3004 == req.getElementType()) {
+			return getGEFWrapper(new ConditionGroupCreateCommand(req));
+		}
+		if (DsmlElementTypes.BringGroup_3006 == req.getElementType()) {
+			return getGEFWrapper(new BringGroupCreateCommand(req));
+		}
+		if (DsmlElementTypes.Not_3008 == req.getElementType()) {
+			return getGEFWrapper(new NotCreateCommand(req));
+		}
+		if (DsmlElementTypes.Operator_3009 == req.getElementType()) {
+			return getGEFWrapper(new OperatorCreateCommand(req));
+		}
+		if (DsmlElementTypes.ValueOperator_3010 == req.getElementType()) {
+			return getGEFWrapper(new ValueOperatorCreateCommand(req));
+		}
+		if (DsmlElementTypes.Aggregation_3011 == req.getElementType()) {
+			return getGEFWrapper(new AggregationCreateCommand(req));
+		}
+		if (DsmlElementTypes.Order_3012 == req.getElementType()) {
+			return getGEFWrapper(new OrderCreateCommand(req));
+		}
+		return super.getCreateCommand(req);
+	}
+
+}

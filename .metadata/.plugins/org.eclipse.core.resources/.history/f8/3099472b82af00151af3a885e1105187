@@ -1,0 +1,26 @@
+SELECT 
+   [%for (component in AreaDesenho) {%]
+       [%for (r in component.rule) {%]
+          [%for (q in r.queries) {%]
+          
+          
+             [%if(q.isKindOf(BringGroup)) {%]
+                    
+                    [%if(q.bringAll=true) {%]
+                    *  
+                    [%}%]   
+             [%}%]
+             
+             [%if(q.isKindOf(Target)) {%]
+                [%=q%]         
+             [%}%]
+             
+             [%if(q.isKindOf(ConditionGroup)) {%]
+                [%=q%]     
+             [%}%]
+             
+             
+                
+          [%}%]
+       [%}%]
+   [%}%]

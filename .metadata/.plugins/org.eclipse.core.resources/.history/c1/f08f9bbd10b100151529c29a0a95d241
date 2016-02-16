@@ -1,0 +1,21 @@
+/*
+ * 
+ */
+package prediqt.diagram.providers;
+
+/**
+ * @generated
+ */
+public class PrediqtEditPartProvider extends org.eclipse.gmf.tooling.runtime.providers.DefaultEditPartProvider {
+
+	
+	/**
+ * @generated
+ */
+	public PrediqtEditPartProvider() {
+		super(new prediqt.diagram.edit.parts.PrediqtEditPartFactory(), 			prediqt.diagram.part.PrediqtVisualIDRegistry.TYPED_INSTANCE, 			prediqt.diagram.edit.parts.ProjectEditPart.MODEL_ID			
+		);
+	}
+
+
+	}

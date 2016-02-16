@@ -1,0 +1,285 @@
+/**
+ */
+package dsml.impl;
+
+import dsml.DsmlPackage;
+import dsml.GroupRelacional;
+import dsml.LogicalConnector;
+import dsml.TypeLogical;
+
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Logical Connector</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * <ul>
+ *   <li>{@link dsml.impl.LogicalConnectorImpl#getOutboundLink <em>Outbound Link</em>}</li>
+ *   <li>{@link dsml.impl.LogicalConnectorImpl#getInboundLink <em>Inbound Link</em>}</li>
+ *   <li>{@link dsml.impl.LogicalConnectorImpl#getTypeLogical <em>Type Logical</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @generated
+ */
+public class LogicalConnectorImpl extends LinkImpl implements LogicalConnector {
+	/**
+	 * The cached value of the '{@link #getOutboundLink() <em>Outbound Link</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOutboundLink()
+	 * @generated
+	 * @ordered
+	 */
+	protected GroupRelacional outboundLink;
+
+	/**
+	 * The cached value of the '{@link #getInboundLink() <em>Inbound Link</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInboundLink()
+	 * @generated
+	 * @ordered
+	 */
+	protected GroupRelacional inboundLink;
+
+	/**
+	 * The default value of the '{@link #getTypeLogical() <em>Type Logical</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTypeLogical()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final TypeLogical TYPE_LOGICAL_EDEFAULT = TypeLogical.AND;
+
+	/**
+	 * The cached value of the '{@link #getTypeLogical() <em>Type Logical</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTypeLogical()
+	 * @generated
+	 * @ordered
+	 */
+	protected TypeLogical typeLogical = TYPE_LOGICAL_EDEFAULT;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected LogicalConnectorImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return DsmlPackage.Literals.LOGICAL_CONNECTOR;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GroupRelacional getOutboundLink() {
+		if (outboundLink != null && outboundLink.eIsProxy()) {
+			InternalEObject oldOutboundLink = (InternalEObject)outboundLink;
+			outboundLink = (GroupRelacional)eResolveProxy(oldOutboundLink);
+			if (outboundLink != oldOutboundLink) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DsmlPackage.LOGICAL_CONNECTOR__OUTBOUND_LINK, oldOutboundLink, outboundLink));
+			}
+		}
+		return outboundLink;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GroupRelacional basicGetOutboundLink() {
+		return outboundLink;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOutboundLink(GroupRelacional newOutboundLink) {
+		GroupRelacional oldOutboundLink = outboundLink;
+		outboundLink = newOutboundLink;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DsmlPackage.LOGICAL_CONNECTOR__OUTBOUND_LINK, oldOutboundLink, outboundLink));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GroupRelacional getInboundLink() {
+		if (inboundLink != null && inboundLink.eIsProxy()) {
+			InternalEObject oldInboundLink = (InternalEObject)inboundLink;
+			inboundLink = (GroupRelacional)eResolveProxy(oldInboundLink);
+			if (inboundLink != oldInboundLink) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DsmlPackage.LOGICAL_CONNECTOR__INBOUND_LINK, oldInboundLink, inboundLink));
+			}
+		}
+		return inboundLink;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GroupRelacional basicGetInboundLink() {
+		return inboundLink;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setInboundLink(GroupRelacional newInboundLink) {
+		GroupRelacional oldInboundLink = inboundLink;
+		inboundLink = newInboundLink;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DsmlPackage.LOGICAL_CONNECTOR__INBOUND_LINK, oldInboundLink, inboundLink));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TypeLogical getTypeLogical() {
+		return typeLogical;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTypeLogical(TypeLogical newTypeLogical) {
+		TypeLogical oldTypeLogical = typeLogical;
+		typeLogical = newTypeLogical == null ? TYPE_LOGICAL_EDEFAULT : newTypeLogical;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DsmlPackage.LOGICAL_CONNECTOR__TYPE_LOGICAL, oldTypeLogical, typeLogical));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case DsmlPackage.LOGICAL_CONNECTOR__OUTBOUND_LINK:
+				if (resolve) return getOutboundLink();
+				return basicGetOutboundLink();
+			case DsmlPackage.LOGICAL_CONNECTOR__INBOUND_LINK:
+				if (resolve) return getInboundLink();
+				return basicGetInboundLink();
+			case DsmlPackage.LOGICAL_CONNECTOR__TYPE_LOGICAL:
+				return getTypeLogical();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case DsmlPackage.LOGICAL_CONNECTOR__OUTBOUND_LINK:
+				setOutboundLink((GroupRelacional)newValue);
+				return;
+			case DsmlPackage.LOGICAL_CONNECTOR__INBOUND_LINK:
+				setInboundLink((GroupRelacional)newValue);
+				return;
+			case DsmlPackage.LOGICAL_CONNECTOR__TYPE_LOGICAL:
+				setTypeLogical((TypeLogical)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case DsmlPackage.LOGICAL_CONNECTOR__OUTBOUND_LINK:
+				setOutboundLink((GroupRelacional)null);
+				return;
+			case DsmlPackage.LOGICAL_CONNECTOR__INBOUND_LINK:
+				setInboundLink((GroupRelacional)null);
+				return;
+			case DsmlPackage.LOGICAL_CONNECTOR__TYPE_LOGICAL:
+				setTypeLogical(TYPE_LOGICAL_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case DsmlPackage.LOGICAL_CONNECTOR__OUTBOUND_LINK:
+				return outboundLink != null;
+			case DsmlPackage.LOGICAL_CONNECTOR__INBOUND_LINK:
+				return inboundLink != null;
+			case DsmlPackage.LOGICAL_CONNECTOR__TYPE_LOGICAL:
+				return typeLogical != TYPE_LOGICAL_EDEFAULT;
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (typeLogical: ");
+		result.append(typeLogical);
+		result.append(')');
+		return result.toString();
+	}
+
+} //LogicalConnectorImpl

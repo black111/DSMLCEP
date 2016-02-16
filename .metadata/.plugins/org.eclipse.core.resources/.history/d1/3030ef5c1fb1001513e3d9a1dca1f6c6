@@ -1,0 +1,69 @@
+/**
+ */
+package dsml;
+
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Unary Operator Pattern</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * <ul>
+ *   <li>{@link dsml.UnaryOperatorPattern#getName <em>Name</em>}</li>
+ *   <li>{@link dsml.UnaryOperatorPattern#getTypeUnaryOperatorPattern <em>Type Unary Operator Pattern</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @see dsml.DsmlPackage#getUnaryOperatorPattern()
+ * @model annotation="gmf.node label='name' figure='rectangle'"
+ * @generated
+ */
+public interface UnaryOperatorPattern extends Pattern {
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * The default value is <code>"UnaryOperatorPattern"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see dsml.DsmlPackage#getUnaryOperatorPattern_Name()
+	 * @model default="UnaryOperatorPattern" changeable="false"
+	 * @generated
+	 */
+	String getName();
+
+	/**
+	 * Returns the value of the '<em><b>Type Unary Operator Pattern</b></em>' attribute.
+	 * The literals are from the enumeration {@link dsml.TypeUnaryOperatorPattern}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Type Unary Operator Pattern</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Type Unary Operator Pattern</em>' attribute.
+	 * @see dsml.TypeUnaryOperatorPattern
+	 * @see #setTypeUnaryOperatorPattern(TypeUnaryOperatorPattern)
+	 * @see dsml.DsmlPackage#getUnaryOperatorPattern_TypeUnaryOperatorPattern()
+	 * @model
+	 * @generated
+	 */
+	TypeUnaryOperatorPattern getTypeUnaryOperatorPattern();
+
+	/**
+	 * Sets the value of the '{@link dsml.UnaryOperatorPattern#getTypeUnaryOperatorPattern <em>Type Unary Operator Pattern</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Type Unary Operator Pattern</em>' attribute.
+	 * @see dsml.TypeUnaryOperatorPattern
+	 * @see #getTypeUnaryOperatorPattern()
+	 * @generated
+	 */
+	void setTypeUnaryOperatorPattern(TypeUnaryOperatorPattern value);
+
+} // UnaryOperatorPattern

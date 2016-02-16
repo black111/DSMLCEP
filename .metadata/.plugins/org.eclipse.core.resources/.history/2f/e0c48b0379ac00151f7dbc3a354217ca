@@ -1,0 +1,347 @@
+/*
+ * 
+ */
+package dsml.diagram.edit.parts;
+
+/**
+ * @generated
+ */
+public class DsmlEditPartFactory implements org.eclipse.gef.EditPartFactory {
+
+		/**
+ * @generated
+ */
+	public org.eclipse.gef.EditPart createEditPart(org.eclipse.gef.EditPart context, Object model) {
+		if (model instanceof org.eclipse.gmf.runtime.notation.View) {
+			org.eclipse.gmf.runtime.notation.View view = (org.eclipse.gmf.runtime.notation.View) model;
+			switch (dsml.diagram.part.DsmlVisualIDRegistry.getVisualID(view)) {
+				
+	case dsml.diagram.edit.parts.AreaDesenhoEditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.AreaDesenhoEditPart(view);
+									
+	case dsml.diagram.edit.parts.AggregationEditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.AggregationEditPart(view);
+					
+	case dsml.diagram.edit.parts.AggregationTypeAggregationEditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.AggregationTypeAggregationEditPart(view);
+									
+	case dsml.diagram.edit.parts.OrderEditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.OrderEditPart(view);
+					
+	case dsml.diagram.edit.parts.OrderTypeOrderEditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.OrderTypeOrderEditPart(view);
+									
+	case dsml.diagram.edit.parts.OperatorEditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.OperatorEditPart(view);
+					
+	case dsml.diagram.edit.parts.OperatorOperatorEditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.OperatorOperatorEditPart(view);
+									
+	case dsml.diagram.edit.parts.ValueOperatorEditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.ValueOperatorEditPart(view);
+					
+	case dsml.diagram.edit.parts.ValueOperatorValueOperatorEditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.ValueOperatorValueOperatorEditPart(view);
+									
+	case dsml.diagram.edit.parts.UnaryOperatorPatternEditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.UnaryOperatorPatternEditPart(view);
+					
+	case dsml.diagram.edit.parts.UnaryOperatorPatternNameEditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.UnaryOperatorPatternNameEditPart(view);
+									
+	case dsml.diagram.edit.parts.BinaryOperatorPatternEditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.BinaryOperatorPatternEditPart(view);
+					
+	case dsml.diagram.edit.parts.BinaryOperatorPatternNameEditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.BinaryOperatorPatternNameEditPart(view);
+									
+	case dsml.diagram.edit.parts.PatternTimerEditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.PatternTimerEditPart(view);
+					
+	case dsml.diagram.edit.parts.PatternTimerPatternTimerEditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.PatternTimerPatternTimerEditPart(view);
+									
+	case dsml.diagram.edit.parts.ConditionGroupEditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.ConditionGroupEditPart(view);
+					
+	case dsml.diagram.edit.parts.ConditionGroupConditionGroupEditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.ConditionGroupConditionGroupEditPart(view);
+									
+	case dsml.diagram.edit.parts.TargetEditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.TargetEditPart(view);
+					
+	case dsml.diagram.edit.parts.TargetAliasEditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.TargetAliasEditPart(view);
+									
+	case dsml.diagram.edit.parts.NotEditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.NotEditPart(view);
+					
+	case dsml.diagram.edit.parts.NotDescriptionEditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.NotDescriptionEditPart(view);
+									
+	case dsml.diagram.edit.parts.RuleEditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.RuleEditPart(view);
+					
+	case dsml.diagram.edit.parts.RuleRuleNameEditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.RuleRuleNameEditPart(view);
+									
+	case dsml.diagram.edit.parts.EventPatternEditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.EventPatternEditPart(view);
+					
+	case dsml.diagram.edit.parts.EventPatternEventPatternEditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.EventPatternEventPatternEditPart(view);
+									
+	case dsml.diagram.edit.parts.WindowEditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.WindowEditPart(view);
+					
+	case dsml.diagram.edit.parts.WindowWindowEditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.WindowWindowEditPart(view);
+									
+	case dsml.diagram.edit.parts.EventEditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.EventEditPart(view);
+					
+	case dsml.diagram.edit.parts.EventEventNameEditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.EventEventNameEditPart(view);
+									
+	case dsml.diagram.edit.parts.LimitEditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.LimitEditPart(view);
+					
+	case dsml.diagram.edit.parts.LimitValueLimitEditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.LimitValueLimitEditPart(view);
+									
+	case dsml.diagram.edit.parts.Operator2EditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.Operator2EditPart(view);
+					
+	case dsml.diagram.edit.parts.OperatorOperator2EditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.OperatorOperator2EditPart(view);
+									
+	case dsml.diagram.edit.parts.ValueOperator2EditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.ValueOperator2EditPart(view);
+					
+	case dsml.diagram.edit.parts.ValueOperatorValueOperator2EditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.ValueOperatorValueOperator2EditPart(view);
+									
+	case dsml.diagram.edit.parts.Operator3EditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.Operator3EditPart(view);
+					
+	case dsml.diagram.edit.parts.OperatorOperator3EditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.OperatorOperator3EditPart(view);
+									
+	case dsml.diagram.edit.parts.ValueOperator3EditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.ValueOperator3EditPart(view);
+					
+	case dsml.diagram.edit.parts.ValueOperatorValueOperator3EditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.ValueOperatorValueOperator3EditPart(view);
+									
+	case dsml.diagram.edit.parts.Aggregation2EditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.Aggregation2EditPart(view);
+					
+	case dsml.diagram.edit.parts.AggregationTypeAggregation2EditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.AggregationTypeAggregation2EditPart(view);
+									
+	case dsml.diagram.edit.parts.Order2EditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.Order2EditPart(view);
+					
+	case dsml.diagram.edit.parts.OrderTypeOrder2EditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.OrderTypeOrder2EditPart(view);
+									
+	case dsml.diagram.edit.parts.Operator4EditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.Operator4EditPart(view);
+					
+	case dsml.diagram.edit.parts.OperatorOperator4EditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.OperatorOperator4EditPart(view);
+									
+	case dsml.diagram.edit.parts.ValueOperator4EditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.ValueOperator4EditPart(view);
+					
+	case dsml.diagram.edit.parts.ValueOperatorValueOperator4EditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.ValueOperatorValueOperator4EditPart(view);
+									
+	case dsml.diagram.edit.parts.UnaryOperatorPattern2EditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.UnaryOperatorPattern2EditPart(view);
+					
+	case dsml.diagram.edit.parts.UnaryOperatorPatternName2EditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.UnaryOperatorPatternName2EditPart(view);
+									
+	case dsml.diagram.edit.parts.BinaryOperatorPattern2EditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.BinaryOperatorPattern2EditPart(view);
+					
+	case dsml.diagram.edit.parts.BinaryOperatorPatternName2EditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.BinaryOperatorPatternName2EditPart(view);
+									
+	case dsml.diagram.edit.parts.PatternTimer2EditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.PatternTimer2EditPart(view);
+					
+	case dsml.diagram.edit.parts.PatternTimerPatternTimer2EditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.PatternTimerPatternTimer2EditPart(view);
+									
+	case dsml.diagram.edit.parts.ConditionGroup2EditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.ConditionGroup2EditPart(view);
+					
+	case dsml.diagram.edit.parts.ConditionGroupConditionGroup2EditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.ConditionGroupConditionGroup2EditPart(view);
+									
+	case dsml.diagram.edit.parts.Target2EditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.Target2EditPart(view);
+					
+	case dsml.diagram.edit.parts.TargetAlias2EditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.TargetAlias2EditPart(view);
+									
+	case dsml.diagram.edit.parts.Not2EditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.Not2EditPart(view);
+					
+	case dsml.diagram.edit.parts.NotDescription2EditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.NotDescription2EditPart(view);
+									
+	case dsml.diagram.edit.parts.Aggregation3EditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.Aggregation3EditPart(view);
+					
+	case dsml.diagram.edit.parts.AggregationTypeAggregation3EditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.AggregationTypeAggregation3EditPart(view);
+									
+	case dsml.diagram.edit.parts.Order3EditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.Order3EditPart(view);
+					
+	case dsml.diagram.edit.parts.OrderTypeOrder3EditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.OrderTypeOrder3EditPart(view);
+									
+	case dsml.diagram.edit.parts.Operator5EditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.Operator5EditPart(view);
+					
+	case dsml.diagram.edit.parts.OperatorOperator5EditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.OperatorOperator5EditPart(view);
+									
+	case dsml.diagram.edit.parts.ValueOperator5EditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.ValueOperator5EditPart(view);
+					
+	case dsml.diagram.edit.parts.ValueOperatorValueOperator5EditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.ValueOperatorValueOperator5EditPart(view);
+									
+	case dsml.diagram.edit.parts.UnaryOperatorPattern3EditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.UnaryOperatorPattern3EditPart(view);
+					
+	case dsml.diagram.edit.parts.UnaryOperatorPatternName3EditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.UnaryOperatorPatternName3EditPart(view);
+									
+	case dsml.diagram.edit.parts.BinaryOperatorPattern3EditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.BinaryOperatorPattern3EditPart(view);
+					
+	case dsml.diagram.edit.parts.BinaryOperatorPatternName3EditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.BinaryOperatorPatternName3EditPart(view);
+									
+	case dsml.diagram.edit.parts.PatternTimer3EditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.PatternTimer3EditPart(view);
+					
+	case dsml.diagram.edit.parts.PatternTimerPatternTimer3EditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.PatternTimerPatternTimer3EditPart(view);
+									
+	case dsml.diagram.edit.parts.ConditionGroup3EditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.ConditionGroup3EditPart(view);
+					
+	case dsml.diagram.edit.parts.ConditionGroupConditionGroup3EditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.ConditionGroupConditionGroup3EditPart(view);
+									
+	case dsml.diagram.edit.parts.Target3EditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.Target3EditPart(view);
+					
+	case dsml.diagram.edit.parts.TargetAlias3EditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.TargetAlias3EditPart(view);
+									
+	case dsml.diagram.edit.parts.Not3EditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.Not3EditPart(view);
+					
+	case dsml.diagram.edit.parts.NotDescription3EditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.NotDescription3EditPart(view);
+									
+	case dsml.diagram.edit.parts.AttributeEditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.AttributeEditPart(view);
+					
+	case dsml.diagram.edit.parts.AttributeNameTypeEditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.AttributeNameTypeEditPart(view);
+								
+	case dsml.diagram.edit.parts.OrderOrderLimitCompartmentEditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.OrderOrderLimitCompartmentEditPart(view);
+
+	case dsml.diagram.edit.parts.ConditionGroupConditionGroupOperationTypesCompartmentEditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.ConditionGroupConditionGroupOperationTypesCompartmentEditPart(view);
+
+	case dsml.diagram.edit.parts.TargetTargetOperationTypesCompartmentEditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.TargetTargetOperationTypesCompartmentEditPart(view);
+
+	case dsml.diagram.edit.parts.RuleRuleNodeCompartmentEditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.RuleRuleNodeCompartmentEditPart(view);
+
+	case dsml.diagram.edit.parts.OrderOrderLimitCompartment2EditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.OrderOrderLimitCompartment2EditPart(view);
+
+	case dsml.diagram.edit.parts.ConditionGroupConditionGroupOperationTypesCompartment2EditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.ConditionGroupConditionGroupOperationTypesCompartment2EditPart(view);
+
+	case dsml.diagram.edit.parts.TargetTargetOperationTypesCompartment2EditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.TargetTargetOperationTypesCompartment2EditPart(view);
+
+	case dsml.diagram.edit.parts.EventPatternEventPatternNodeCompartmentEditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.EventPatternEventPatternNodeCompartmentEditPart(view);
+
+	case dsml.diagram.edit.parts.OrderOrderLimitCompartment3EditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.OrderOrderLimitCompartment3EditPart(view);
+
+	case dsml.diagram.edit.parts.ConditionGroupConditionGroupOperationTypesCompartment3EditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.ConditionGroupConditionGroupOperationTypesCompartment3EditPart(view);
+
+	case dsml.diagram.edit.parts.TargetTargetOperationTypesCompartment3EditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.TargetTargetOperationTypesCompartment3EditPart(view);
+
+	case dsml.diagram.edit.parts.EventEventAttributesCompartmentEditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.EventEventAttributesCompartmentEditPart(view);
+									
+	case dsml.diagram.edit.parts.LinkEditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.LinkEditPart(view);
+					
+									
+	case dsml.diagram.edit.parts.ComparisonEditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.ComparisonEditPart(view);
+					
+	case dsml.diagram.edit.parts.ComparisonComparisonEditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.ComparisonComparisonEditPart(view);
+
+									
+	case dsml.diagram.edit.parts.ArithmeticEditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.ArithmeticEditPart(view);
+					
+	case dsml.diagram.edit.parts.ArithmeticArithmeticEditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.ArithmeticArithmeticEditPart(view);
+
+									
+	case dsml.diagram.edit.parts.FollowedbyEditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.FollowedbyEditPart(view);
+					
+									
+	case dsml.diagram.edit.parts.LogicalConnectorEditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.LogicalConnectorEditPart(view);
+					
+	case dsml.diagram.edit.parts.LogicalConnectorTypeLogicalEditPart.VISUAL_ID:
+		return new dsml.diagram.edit.parts.LogicalConnectorTypeLogicalEditPart(view);
+
+							}
+		}
+		return createUnrecognizedEditPart(context, model);
+	}
+	
+		/**
+ * @generated
+ */
+	 private org.eclipse.gef.EditPart createUnrecognizedEditPart(org.eclipse.gef.EditPart context, Object model) {
+	 	// Handle creation of unrecognized child node EditParts here
+	 	return null;
+	 }
+	
+		/**
+ * @generated
+ */
+	public static org.eclipse.gef.tools.CellEditorLocator getTextCellEditorLocator(
+			org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart source) {
+		return org.eclipse.gmf.tooling.runtime.directedit.locator.CellEditorLocatorAccess.INSTANCE.getTextCellEditorLocator(source);
+	}
+	
+	}

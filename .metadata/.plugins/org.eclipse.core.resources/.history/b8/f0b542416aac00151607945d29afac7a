@@ -1,0 +1,90 @@
+	/*
+ * 
+ */
+package dsml.diagram.edit.policies;
+
+	/**
+ * @generated
+ */
+public class AreaDesenhoItemSemanticEditPolicy extends dsml.diagram.edit.policies.DsmlBaseItemSemanticEditPolicy {
+
+		/**
+ * @generated
+ */
+	public AreaDesenhoItemSemanticEditPolicy() {
+				super(dsml.diagram.providers.DsmlElementTypes.AreaDesenho_1000);
+	}
+
+	
+	/**
+ * @generated
+ */
+	protected org.eclipse.gef.commands.Command getCreateCommand(org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest req) {
+		if (dsml.diagram.providers.DsmlElementTypes.Aggregation_2017 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.AggregationCreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.Order_2018 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.OrderCreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.Operator_2019 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.OperatorCreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.ValueOperator_2020 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.ValueOperatorCreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.UnaryOperatorPattern_2021 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.UnaryOperatorPatternCreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.BinaryOperatorPattern_2022 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.BinaryOperatorPatternCreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.PatternTimer_2023 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.PatternTimerCreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.ConditionGroup_2024 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.ConditionGroupCreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.Target_2026 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.TargetCreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.Not_2025 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.NotCreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.Rule_2013 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.RuleCreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.EventPattern_2014 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.EventPatternCreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.Window_2015 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.WindowCreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.Event_2016 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.EventCreateCommand(req));
+}
+		return super.getCreateCommand(req);
+	}
+	
+		/**
+ * @generated
+ */
+protected org.eclipse.gef.commands.Command getDuplicateCommand(org.eclipse.gmf.runtime.emf.type.core.requests.DuplicateElementsRequest req) {
+	org.eclipse.emf.transaction.TransactionalEditingDomain editingDomain = ((org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart) getHost()).getEditingDomain();
+	return getGEFWrapper(new DuplicateAnythingCommand(editingDomain, req));
+}
+	
+		/**
+ * @generated
+ */
+private static class DuplicateAnythingCommand extends org.eclipse.gmf.runtime.emf.commands.core.commands.DuplicateEObjectsCommand {
+
+		/**
+ * @generated
+ */
+public DuplicateAnythingCommand(org.eclipse.emf.transaction.TransactionalEditingDomain editingDomain, org.eclipse.gmf.runtime.emf.type.core.requests.DuplicateElementsRequest req) {
+	super(editingDomain, req.getLabel(), req.getElementsToBeDuplicated(), req.getAllDuplicatedElementsMap());
+}
+
+	}
+	
+	}

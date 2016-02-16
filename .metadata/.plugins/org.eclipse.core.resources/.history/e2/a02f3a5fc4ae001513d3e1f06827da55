@@ -1,0 +1,39 @@
+/**
+ */
+package dsml.impl;
+
+import dsml.DsmlPackage;
+import dsml.GroupRelacional;
+
+import org.eclipse.emf.ecore.EClass;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Group Relacional</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * </p>
+ *
+ * @generated
+ */
+public abstract class GroupRelacionalImpl extends QueryImpl implements GroupRelacional {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected GroupRelacionalImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return DsmlPackage.Literals.GROUP_RELACIONAL;
+	}
+
+} //GroupRelacionalImpl

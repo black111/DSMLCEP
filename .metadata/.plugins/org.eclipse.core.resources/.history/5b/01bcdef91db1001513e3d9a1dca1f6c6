@@ -1,0 +1,199 @@
+/**
+ */
+package dsml.impl;
+
+import dsml.DsmlPackage;
+import dsml.TypeUnaryOperatorPattern;
+import dsml.UnaryOperatorPattern;
+
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Unary Operator Pattern</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * <ul>
+ *   <li>{@link dsml.impl.UnaryOperatorPatternImpl#getName <em>Name</em>}</li>
+ *   <li>{@link dsml.impl.UnaryOperatorPatternImpl#getTypeUnaryOperatorPattern <em>Type Unary Operator Pattern</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @generated
+ */
+public class UnaryOperatorPatternImpl extends PatternImpl implements UnaryOperatorPattern {
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = "UnaryOperatorPattern";
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getTypeUnaryOperatorPattern() <em>Type Unary Operator Pattern</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTypeUnaryOperatorPattern()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final TypeUnaryOperatorPattern TYPE_UNARY_OPERATOR_PATTERN_EDEFAULT = TypeUnaryOperatorPattern.EVERY;
+
+	/**
+	 * The cached value of the '{@link #getTypeUnaryOperatorPattern() <em>Type Unary Operator Pattern</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTypeUnaryOperatorPattern()
+	 * @generated
+	 * @ordered
+	 */
+	protected TypeUnaryOperatorPattern typeUnaryOperatorPattern = TYPE_UNARY_OPERATOR_PATTERN_EDEFAULT;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected UnaryOperatorPatternImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return DsmlPackage.Literals.UNARY_OPERATOR_PATTERN;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TypeUnaryOperatorPattern getTypeUnaryOperatorPattern() {
+		return typeUnaryOperatorPattern;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTypeUnaryOperatorPattern(TypeUnaryOperatorPattern newTypeUnaryOperatorPattern) {
+		TypeUnaryOperatorPattern oldTypeUnaryOperatorPattern = typeUnaryOperatorPattern;
+		typeUnaryOperatorPattern = newTypeUnaryOperatorPattern == null ? TYPE_UNARY_OPERATOR_PATTERN_EDEFAULT : newTypeUnaryOperatorPattern;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DsmlPackage.UNARY_OPERATOR_PATTERN__TYPE_UNARY_OPERATOR_PATTERN, oldTypeUnaryOperatorPattern, typeUnaryOperatorPattern));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case DsmlPackage.UNARY_OPERATOR_PATTERN__NAME:
+				return getName();
+			case DsmlPackage.UNARY_OPERATOR_PATTERN__TYPE_UNARY_OPERATOR_PATTERN:
+				return getTypeUnaryOperatorPattern();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case DsmlPackage.UNARY_OPERATOR_PATTERN__TYPE_UNARY_OPERATOR_PATTERN:
+				setTypeUnaryOperatorPattern((TypeUnaryOperatorPattern)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case DsmlPackage.UNARY_OPERATOR_PATTERN__TYPE_UNARY_OPERATOR_PATTERN:
+				setTypeUnaryOperatorPattern(TYPE_UNARY_OPERATOR_PATTERN_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case DsmlPackage.UNARY_OPERATOR_PATTERN__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case DsmlPackage.UNARY_OPERATOR_PATTERN__TYPE_UNARY_OPERATOR_PATTERN:
+				return typeUnaryOperatorPattern != TYPE_UNARY_OPERATOR_PATTERN_EDEFAULT;
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(", typeUnaryOperatorPattern: ");
+		result.append(typeUnaryOperatorPattern);
+		result.append(')');
+		return result.toString();
+	}
+
+} //UnaryOperatorPatternImpl

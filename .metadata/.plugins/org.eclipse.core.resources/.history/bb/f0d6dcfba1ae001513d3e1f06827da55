@@ -1,0 +1,2805 @@
+/*
+ * 
+ */
+package dsml.diagram.part;
+
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
+
+import dsml.Aggregation;
+import dsml.AreaDesenho;
+import dsml.Arithmetic;
+import dsml.Attribute;
+import dsml.BinaryOperatorPattern;
+import dsml.Comparison;
+import dsml.Component;
+import dsml.ConditionGroup;
+import dsml.DsmlPackage;
+import dsml.Event;
+import dsml.EventPattern;
+import dsml.Followedby;
+import dsml.GroupRelacional;
+import dsml.Limit;
+import dsml.LinkComponent;
+import dsml.LinkTarget;
+import dsml.LogicalConnector;
+import dsml.Node;
+import dsml.Not;
+import dsml.OperationType;
+import dsml.Operator;
+import dsml.Order;
+import dsml.PatternTimer;
+import dsml.Rule;
+import dsml.Target;
+import dsml.UnaryOperatorPattern;
+import dsml.ValueOperator;
+import dsml.Window;
+import dsml.diagram.edit.parts.Aggregation2EditPart;
+import dsml.diagram.edit.parts.AggregationEditPart;
+import dsml.diagram.edit.parts.AreaDesenhoEditPart;
+import dsml.diagram.edit.parts.ArithmeticEditPart;
+import dsml.diagram.edit.parts.Attribute2EditPart;
+import dsml.diagram.edit.parts.Attribute3EditPart;
+import dsml.diagram.edit.parts.AttributeEditPart;
+import dsml.diagram.edit.parts.BinaryOperatorPattern2EditPart;
+import dsml.diagram.edit.parts.BinaryOperatorPatternEditPart;
+import dsml.diagram.edit.parts.ComparisonEditPart;
+import dsml.diagram.edit.parts.ConditionGroup2EditPart;
+import dsml.diagram.edit.parts.ConditionGroupConditionGroupOperationTypesCompartment2EditPart;
+import dsml.diagram.edit.parts.ConditionGroupConditionGroupOperationTypesCompartmentEditPart;
+import dsml.diagram.edit.parts.ConditionGroupEditPart;
+import dsml.diagram.edit.parts.EventEditPart;
+import dsml.diagram.edit.parts.EventEventAttributesCompartmentEditPart;
+import dsml.diagram.edit.parts.EventPatternEditPart;
+import dsml.diagram.edit.parts.EventPatternEventPatternNodeCompartmentEditPart;
+import dsml.diagram.edit.parts.FollowedbyEditPart;
+import dsml.diagram.edit.parts.LimitEditPart;
+import dsml.diagram.edit.parts.LinkComponentEditPart;
+import dsml.diagram.edit.parts.LinkTargetEditPart;
+import dsml.diagram.edit.parts.LogicalConnectorEditPart;
+import dsml.diagram.edit.parts.Not2EditPart;
+import dsml.diagram.edit.parts.NotEditPart;
+import dsml.diagram.edit.parts.Operator2EditPart;
+import dsml.diagram.edit.parts.Operator3EditPart;
+import dsml.diagram.edit.parts.Operator4EditPart;
+import dsml.diagram.edit.parts.OperatorEditPart;
+import dsml.diagram.edit.parts.Order2EditPart;
+import dsml.diagram.edit.parts.OrderEditPart;
+import dsml.diagram.edit.parts.OrderOrderLimitCompartment2EditPart;
+import dsml.diagram.edit.parts.OrderOrderLimitCompartmentEditPart;
+import dsml.diagram.edit.parts.PatternTimer2EditPart;
+import dsml.diagram.edit.parts.PatternTimerEditPart;
+import dsml.diagram.edit.parts.RuleEditPart;
+import dsml.diagram.edit.parts.RuleRuleNodeCompartmentEditPart;
+import dsml.diagram.edit.parts.Target2EditPart;
+import dsml.diagram.edit.parts.TargetEditPart;
+import dsml.diagram.edit.parts.TargetTargetOperationTypesCompartment2EditPart;
+import dsml.diagram.edit.parts.TargetTargetOperationTypesCompartmentEditPart;
+import dsml.diagram.edit.parts.UnaryOperatorPattern2EditPart;
+import dsml.diagram.edit.parts.UnaryOperatorPatternEditPart;
+import dsml.diagram.edit.parts.ValueOperator2EditPart;
+import dsml.diagram.edit.parts.ValueOperator3EditPart;
+import dsml.diagram.edit.parts.ValueOperator4EditPart;
+import dsml.diagram.edit.parts.ValueOperatorEditPart;
+import dsml.diagram.edit.parts.WindowEditPart;
+import dsml.diagram.providers.DsmlElementTypes;
+
+/**
+ * @generated
+ */
+public class DsmlDiagramUpdater {
+
+	/**
+	 * @generated
+	 */
+	public static boolean isShortcutOrphaned(View view) {
+		return !view.isSetElement() || view.getElement() == null
+				|| view.getElement().eIsProxy();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlNodeDescriptor> getSemanticChildren(View view) {
+		switch (DsmlVisualIDRegistry.getVisualID(view)) {
+		case AreaDesenhoEditPart.VISUAL_ID:
+			return getAreaDesenho_1000SemanticChildren(view);
+		case EventEventAttributesCompartmentEditPart.VISUAL_ID:
+			return getEventEventAttributesCompartment_7001SemanticChildren(view);
+		case RuleRuleNodeCompartmentEditPart.VISUAL_ID:
+			return getRuleRuleNodeCompartment_7002SemanticChildren(view);
+		case ConditionGroupConditionGroupOperationTypesCompartmentEditPart.VISUAL_ID:
+			return getConditionGroupConditionGroupOperationTypesCompartment_7003SemanticChildren(view);
+		case TargetTargetOperationTypesCompartmentEditPart.VISUAL_ID:
+			return getTargetTargetOperationTypesCompartment_7004SemanticChildren(view);
+		case OrderOrderLimitCompartmentEditPart.VISUAL_ID:
+			return getOrderOrderLimitCompartment_7005SemanticChildren(view);
+		case EventPatternEventPatternNodeCompartmentEditPart.VISUAL_ID:
+			return getEventPatternEventPatternNodeCompartment_7006SemanticChildren(view);
+		case ConditionGroupConditionGroupOperationTypesCompartment2EditPart.VISUAL_ID:
+			return getConditionGroupConditionGroupOperationTypesCompartment_7007SemanticChildren(view);
+		case TargetTargetOperationTypesCompartment2EditPart.VISUAL_ID:
+			return getTargetTargetOperationTypesCompartment_7008SemanticChildren(view);
+		case OrderOrderLimitCompartment2EditPart.VISUAL_ID:
+			return getOrderOrderLimitCompartment_7009SemanticChildren(view);
+		}
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlNodeDescriptor> getAreaDesenho_1000SemanticChildren(
+			View view) {
+		if (!view.isSetElement()) {
+			return Collections.emptyList();
+		}
+		AreaDesenho modelElement = (AreaDesenho) view.getElement();
+		LinkedList<DsmlNodeDescriptor> result = new LinkedList<DsmlNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getEvents().iterator(); it.hasNext();) {
+			Event childElement = (Event) it.next();
+			int visualID = DsmlVisualIDRegistry.getNodeVisualID(view,
+					childElement);
+			if (visualID == EventEditPart.VISUAL_ID) {
+				result.add(new DsmlNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		{
+			Rule childElement = modelElement.getRule();
+			int visualID = DsmlVisualIDRegistry.getNodeVisualID(view,
+					childElement);
+			if (visualID == RuleEditPart.VISUAL_ID) {
+				result.add(new DsmlNodeDescriptor(childElement, visualID));
+			}
+		}
+		{
+			EventPattern childElement = modelElement.getPatterns();
+			int visualID = DsmlVisualIDRegistry.getNodeVisualID(view,
+					childElement);
+			if (visualID == EventPatternEditPart.VISUAL_ID) {
+				result.add(new DsmlNodeDescriptor(childElement, visualID));
+			}
+		}
+		for (Iterator<?> it = modelElement.getWindows().iterator(); it
+				.hasNext();) {
+			Window childElement = (Window) it.next();
+			int visualID = DsmlVisualIDRegistry.getNodeVisualID(view,
+					childElement);
+			if (visualID == WindowEditPart.VISUAL_ID) {
+				result.add(new DsmlNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlNodeDescriptor> getEventEventAttributesCompartment_7001SemanticChildren(
+			View view) {
+		if (false == view.eContainer() instanceof View) {
+			return Collections.emptyList();
+		}
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
+			return Collections.emptyList();
+		}
+		Event modelElement = (Event) containerView.getElement();
+		LinkedList<DsmlNodeDescriptor> result = new LinkedList<DsmlNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getAttributes().iterator(); it
+				.hasNext();) {
+			Attribute childElement = (Attribute) it.next();
+			int visualID = DsmlVisualIDRegistry.getNodeVisualID(view,
+					childElement);
+			if (visualID == AttributeEditPart.VISUAL_ID) {
+				result.add(new DsmlNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlNodeDescriptor> getRuleRuleNodeCompartment_7002SemanticChildren(
+			View view) {
+		if (false == view.eContainer() instanceof View) {
+			return Collections.emptyList();
+		}
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
+			return Collections.emptyList();
+		}
+		Rule modelElement = (Rule) containerView.getElement();
+		LinkedList<DsmlNodeDescriptor> result = new LinkedList<DsmlNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getNode().iterator(); it.hasNext();) {
+			Node childElement = (Node) it.next();
+			int visualID = DsmlVisualIDRegistry.getNodeVisualID(view,
+					childElement);
+			if (visualID == ConditionGroupEditPart.VISUAL_ID) {
+				result.add(new DsmlNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == TargetEditPart.VISUAL_ID) {
+				result.add(new DsmlNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == AggregationEditPart.VISUAL_ID) {
+				result.add(new DsmlNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == OrderEditPart.VISUAL_ID) {
+				result.add(new DsmlNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == Operator3EditPart.VISUAL_ID) {
+				result.add(new DsmlNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == ValueOperator3EditPart.VISUAL_ID) {
+				result.add(new DsmlNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == UnaryOperatorPatternEditPart.VISUAL_ID) {
+				result.add(new DsmlNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == BinaryOperatorPatternEditPart.VISUAL_ID) {
+				result.add(new DsmlNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == PatternTimerEditPart.VISUAL_ID) {
+				result.add(new DsmlNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == Attribute2EditPart.VISUAL_ID) {
+				result.add(new DsmlNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == NotEditPart.VISUAL_ID) {
+				result.add(new DsmlNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlNodeDescriptor> getConditionGroupConditionGroupOperationTypesCompartment_7003SemanticChildren(
+			View view) {
+		if (false == view.eContainer() instanceof View) {
+			return Collections.emptyList();
+		}
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
+			return Collections.emptyList();
+		}
+		ConditionGroup modelElement = (ConditionGroup) containerView
+				.getElement();
+		LinkedList<DsmlNodeDescriptor> result = new LinkedList<DsmlNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getOperationTypes().iterator(); it
+				.hasNext();) {
+			OperationType childElement = (OperationType) it.next();
+			int visualID = DsmlVisualIDRegistry.getNodeVisualID(view,
+					childElement);
+			if (visualID == OperatorEditPart.VISUAL_ID) {
+				result.add(new DsmlNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == ValueOperatorEditPart.VISUAL_ID) {
+				result.add(new DsmlNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlNodeDescriptor> getTargetTargetOperationTypesCompartment_7004SemanticChildren(
+			View view) {
+		if (false == view.eContainer() instanceof View) {
+			return Collections.emptyList();
+		}
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
+			return Collections.emptyList();
+		}
+		Target modelElement = (Target) containerView.getElement();
+		LinkedList<DsmlNodeDescriptor> result = new LinkedList<DsmlNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getOperationTypes().iterator(); it
+				.hasNext();) {
+			OperationType childElement = (OperationType) it.next();
+			int visualID = DsmlVisualIDRegistry.getNodeVisualID(view,
+					childElement);
+			if (visualID == Operator2EditPart.VISUAL_ID) {
+				result.add(new DsmlNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == ValueOperator2EditPart.VISUAL_ID) {
+				result.add(new DsmlNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlNodeDescriptor> getOrderOrderLimitCompartment_7005SemanticChildren(
+			View view) {
+		if (false == view.eContainer() instanceof View) {
+			return Collections.emptyList();
+		}
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
+			return Collections.emptyList();
+		}
+		Order modelElement = (Order) containerView.getElement();
+		LinkedList<DsmlNodeDescriptor> result = new LinkedList<DsmlNodeDescriptor>();
+		{
+			Limit childElement = modelElement.getLimit();
+			int visualID = DsmlVisualIDRegistry.getNodeVisualID(view,
+					childElement);
+			if (visualID == LimitEditPart.VISUAL_ID) {
+				result.add(new DsmlNodeDescriptor(childElement, visualID));
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlNodeDescriptor> getEventPatternEventPatternNodeCompartment_7006SemanticChildren(
+			View view) {
+		if (false == view.eContainer() instanceof View) {
+			return Collections.emptyList();
+		}
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
+			return Collections.emptyList();
+		}
+		EventPattern modelElement = (EventPattern) containerView.getElement();
+		LinkedList<DsmlNodeDescriptor> result = new LinkedList<DsmlNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getNode().iterator(); it.hasNext();) {
+			Node childElement = (Node) it.next();
+			int visualID = DsmlVisualIDRegistry.getNodeVisualID(view,
+					childElement);
+			if (visualID == ConditionGroup2EditPart.VISUAL_ID) {
+				result.add(new DsmlNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == Target2EditPart.VISUAL_ID) {
+				result.add(new DsmlNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == Aggregation2EditPart.VISUAL_ID) {
+				result.add(new DsmlNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == Order2EditPart.VISUAL_ID) {
+				result.add(new DsmlNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == Operator4EditPart.VISUAL_ID) {
+				result.add(new DsmlNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == ValueOperator4EditPart.VISUAL_ID) {
+				result.add(new DsmlNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == UnaryOperatorPattern2EditPart.VISUAL_ID) {
+				result.add(new DsmlNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == BinaryOperatorPattern2EditPart.VISUAL_ID) {
+				result.add(new DsmlNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == PatternTimer2EditPart.VISUAL_ID) {
+				result.add(new DsmlNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == Attribute3EditPart.VISUAL_ID) {
+				result.add(new DsmlNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == Not2EditPart.VISUAL_ID) {
+				result.add(new DsmlNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlNodeDescriptor> getConditionGroupConditionGroupOperationTypesCompartment_7007SemanticChildren(
+			View view) {
+		if (false == view.eContainer() instanceof View) {
+			return Collections.emptyList();
+		}
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
+			return Collections.emptyList();
+		}
+		ConditionGroup modelElement = (ConditionGroup) containerView
+				.getElement();
+		LinkedList<DsmlNodeDescriptor> result = new LinkedList<DsmlNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getOperationTypes().iterator(); it
+				.hasNext();) {
+			OperationType childElement = (OperationType) it.next();
+			int visualID = DsmlVisualIDRegistry.getNodeVisualID(view,
+					childElement);
+			if (visualID == OperatorEditPart.VISUAL_ID) {
+				result.add(new DsmlNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == ValueOperatorEditPart.VISUAL_ID) {
+				result.add(new DsmlNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlNodeDescriptor> getTargetTargetOperationTypesCompartment_7008SemanticChildren(
+			View view) {
+		if (false == view.eContainer() instanceof View) {
+			return Collections.emptyList();
+		}
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
+			return Collections.emptyList();
+		}
+		Target modelElement = (Target) containerView.getElement();
+		LinkedList<DsmlNodeDescriptor> result = new LinkedList<DsmlNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getOperationTypes().iterator(); it
+				.hasNext();) {
+			OperationType childElement = (OperationType) it.next();
+			int visualID = DsmlVisualIDRegistry.getNodeVisualID(view,
+					childElement);
+			if (visualID == Operator2EditPart.VISUAL_ID) {
+				result.add(new DsmlNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == ValueOperator2EditPart.VISUAL_ID) {
+				result.add(new DsmlNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlNodeDescriptor> getOrderOrderLimitCompartment_7009SemanticChildren(
+			View view) {
+		if (false == view.eContainer() instanceof View) {
+			return Collections.emptyList();
+		}
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
+			return Collections.emptyList();
+		}
+		Order modelElement = (Order) containerView.getElement();
+		LinkedList<DsmlNodeDescriptor> result = new LinkedList<DsmlNodeDescriptor>();
+		{
+			Limit childElement = modelElement.getLimit();
+			int visualID = DsmlVisualIDRegistry.getNodeVisualID(view,
+					childElement);
+			if (visualID == LimitEditPart.VISUAL_ID) {
+				result.add(new DsmlNodeDescriptor(childElement, visualID));
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getContainedLinks(View view) {
+		switch (DsmlVisualIDRegistry.getVisualID(view)) {
+		case AreaDesenhoEditPart.VISUAL_ID:
+			return getAreaDesenho_1000ContainedLinks(view);
+		case EventEditPart.VISUAL_ID:
+			return getEvent_2001ContainedLinks(view);
+		case RuleEditPart.VISUAL_ID:
+			return getRule_2002ContainedLinks(view);
+		case EventPatternEditPart.VISUAL_ID:
+			return getEventPattern_2003ContainedLinks(view);
+		case WindowEditPart.VISUAL_ID:
+			return getWindow_2004ContainedLinks(view);
+		case AttributeEditPart.VISUAL_ID:
+			return getAttribute_3001ContainedLinks(view);
+		case ConditionGroupEditPart.VISUAL_ID:
+			return getConditionGroup_3002ContainedLinks(view);
+		case OperatorEditPart.VISUAL_ID:
+			return getOperator_3003ContainedLinks(view);
+		case ValueOperatorEditPart.VISUAL_ID:
+			return getValueOperator_3004ContainedLinks(view);
+		case TargetEditPart.VISUAL_ID:
+			return getTarget_3005ContainedLinks(view);
+		case Operator2EditPart.VISUAL_ID:
+			return getOperator_3006ContainedLinks(view);
+		case ValueOperator2EditPart.VISUAL_ID:
+			return getValueOperator_3007ContainedLinks(view);
+		case AggregationEditPart.VISUAL_ID:
+			return getAggregation_3008ContainedLinks(view);
+		case OrderEditPart.VISUAL_ID:
+			return getOrder_3009ContainedLinks(view);
+		case LimitEditPart.VISUAL_ID:
+			return getLimit_3010ContainedLinks(view);
+		case Operator3EditPart.VISUAL_ID:
+			return getOperator_3011ContainedLinks(view);
+		case ValueOperator3EditPart.VISUAL_ID:
+			return getValueOperator_3012ContainedLinks(view);
+		case UnaryOperatorPatternEditPart.VISUAL_ID:
+			return getUnaryOperatorPattern_3013ContainedLinks(view);
+		case BinaryOperatorPatternEditPart.VISUAL_ID:
+			return getBinaryOperatorPattern_3014ContainedLinks(view);
+		case PatternTimerEditPart.VISUAL_ID:
+			return getPatternTimer_3015ContainedLinks(view);
+		case Attribute2EditPart.VISUAL_ID:
+			return getAttribute_3016ContainedLinks(view);
+		case NotEditPart.VISUAL_ID:
+			return getNot_3017ContainedLinks(view);
+		case ConditionGroup2EditPart.VISUAL_ID:
+			return getConditionGroup_3018ContainedLinks(view);
+		case Target2EditPart.VISUAL_ID:
+			return getTarget_3019ContainedLinks(view);
+		case Aggregation2EditPart.VISUAL_ID:
+			return getAggregation_3020ContainedLinks(view);
+		case Order2EditPart.VISUAL_ID:
+			return getOrder_3021ContainedLinks(view);
+		case Operator4EditPart.VISUAL_ID:
+			return getOperator_3022ContainedLinks(view);
+		case ValueOperator4EditPart.VISUAL_ID:
+			return getValueOperator_3023ContainedLinks(view);
+		case UnaryOperatorPattern2EditPart.VISUAL_ID:
+			return getUnaryOperatorPattern_3024ContainedLinks(view);
+		case BinaryOperatorPattern2EditPart.VISUAL_ID:
+			return getBinaryOperatorPattern_3025ContainedLinks(view);
+		case PatternTimer2EditPart.VISUAL_ID:
+			return getPatternTimer_3026ContainedLinks(view);
+		case Attribute3EditPart.VISUAL_ID:
+			return getAttribute_3027ContainedLinks(view);
+		case Not2EditPart.VISUAL_ID:
+			return getNot_3028ContainedLinks(view);
+		case LinkComponentEditPart.VISUAL_ID:
+			return getLinkComponent_4001ContainedLinks(view);
+		case LinkTargetEditPart.VISUAL_ID:
+			return getLinkTarget_4002ContainedLinks(view);
+		case ComparisonEditPart.VISUAL_ID:
+			return getComparison_4003ContainedLinks(view);
+		case ArithmeticEditPart.VISUAL_ID:
+			return getArithmetic_4004ContainedLinks(view);
+		case FollowedbyEditPart.VISUAL_ID:
+			return getFollowedby_4005ContainedLinks(view);
+		case LogicalConnectorEditPart.VISUAL_ID:
+			return getLogicalConnector_4006ContainedLinks(view);
+		}
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getIncomingLinks(View view) {
+		switch (DsmlVisualIDRegistry.getVisualID(view)) {
+		case EventEditPart.VISUAL_ID:
+			return getEvent_2001IncomingLinks(view);
+		case RuleEditPart.VISUAL_ID:
+			return getRule_2002IncomingLinks(view);
+		case EventPatternEditPart.VISUAL_ID:
+			return getEventPattern_2003IncomingLinks(view);
+		case WindowEditPart.VISUAL_ID:
+			return getWindow_2004IncomingLinks(view);
+		case AttributeEditPart.VISUAL_ID:
+			return getAttribute_3001IncomingLinks(view);
+		case ConditionGroupEditPart.VISUAL_ID:
+			return getConditionGroup_3002IncomingLinks(view);
+		case OperatorEditPart.VISUAL_ID:
+			return getOperator_3003IncomingLinks(view);
+		case ValueOperatorEditPart.VISUAL_ID:
+			return getValueOperator_3004IncomingLinks(view);
+		case TargetEditPart.VISUAL_ID:
+			return getTarget_3005IncomingLinks(view);
+		case Operator2EditPart.VISUAL_ID:
+			return getOperator_3006IncomingLinks(view);
+		case ValueOperator2EditPart.VISUAL_ID:
+			return getValueOperator_3007IncomingLinks(view);
+		case AggregationEditPart.VISUAL_ID:
+			return getAggregation_3008IncomingLinks(view);
+		case OrderEditPart.VISUAL_ID:
+			return getOrder_3009IncomingLinks(view);
+		case LimitEditPart.VISUAL_ID:
+			return getLimit_3010IncomingLinks(view);
+		case Operator3EditPart.VISUAL_ID:
+			return getOperator_3011IncomingLinks(view);
+		case ValueOperator3EditPart.VISUAL_ID:
+			return getValueOperator_3012IncomingLinks(view);
+		case UnaryOperatorPatternEditPart.VISUAL_ID:
+			return getUnaryOperatorPattern_3013IncomingLinks(view);
+		case BinaryOperatorPatternEditPart.VISUAL_ID:
+			return getBinaryOperatorPattern_3014IncomingLinks(view);
+		case PatternTimerEditPart.VISUAL_ID:
+			return getPatternTimer_3015IncomingLinks(view);
+		case Attribute2EditPart.VISUAL_ID:
+			return getAttribute_3016IncomingLinks(view);
+		case NotEditPart.VISUAL_ID:
+			return getNot_3017IncomingLinks(view);
+		case ConditionGroup2EditPart.VISUAL_ID:
+			return getConditionGroup_3018IncomingLinks(view);
+		case Target2EditPart.VISUAL_ID:
+			return getTarget_3019IncomingLinks(view);
+		case Aggregation2EditPart.VISUAL_ID:
+			return getAggregation_3020IncomingLinks(view);
+		case Order2EditPart.VISUAL_ID:
+			return getOrder_3021IncomingLinks(view);
+		case Operator4EditPart.VISUAL_ID:
+			return getOperator_3022IncomingLinks(view);
+		case ValueOperator4EditPart.VISUAL_ID:
+			return getValueOperator_3023IncomingLinks(view);
+		case UnaryOperatorPattern2EditPart.VISUAL_ID:
+			return getUnaryOperatorPattern_3024IncomingLinks(view);
+		case BinaryOperatorPattern2EditPart.VISUAL_ID:
+			return getBinaryOperatorPattern_3025IncomingLinks(view);
+		case PatternTimer2EditPart.VISUAL_ID:
+			return getPatternTimer_3026IncomingLinks(view);
+		case Attribute3EditPart.VISUAL_ID:
+			return getAttribute_3027IncomingLinks(view);
+		case Not2EditPart.VISUAL_ID:
+			return getNot_3028IncomingLinks(view);
+		case LinkComponentEditPart.VISUAL_ID:
+			return getLinkComponent_4001IncomingLinks(view);
+		case LinkTargetEditPart.VISUAL_ID:
+			return getLinkTarget_4002IncomingLinks(view);
+		case ComparisonEditPart.VISUAL_ID:
+			return getComparison_4003IncomingLinks(view);
+		case ArithmeticEditPart.VISUAL_ID:
+			return getArithmetic_4004IncomingLinks(view);
+		case FollowedbyEditPart.VISUAL_ID:
+			return getFollowedby_4005IncomingLinks(view);
+		case LogicalConnectorEditPart.VISUAL_ID:
+			return getLogicalConnector_4006IncomingLinks(view);
+		}
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getOutgoingLinks(View view) {
+		switch (DsmlVisualIDRegistry.getVisualID(view)) {
+		case EventEditPart.VISUAL_ID:
+			return getEvent_2001OutgoingLinks(view);
+		case RuleEditPart.VISUAL_ID:
+			return getRule_2002OutgoingLinks(view);
+		case EventPatternEditPart.VISUAL_ID:
+			return getEventPattern_2003OutgoingLinks(view);
+		case WindowEditPart.VISUAL_ID:
+			return getWindow_2004OutgoingLinks(view);
+		case AttributeEditPart.VISUAL_ID:
+			return getAttribute_3001OutgoingLinks(view);
+		case ConditionGroupEditPart.VISUAL_ID:
+			return getConditionGroup_3002OutgoingLinks(view);
+		case OperatorEditPart.VISUAL_ID:
+			return getOperator_3003OutgoingLinks(view);
+		case ValueOperatorEditPart.VISUAL_ID:
+			return getValueOperator_3004OutgoingLinks(view);
+		case TargetEditPart.VISUAL_ID:
+			return getTarget_3005OutgoingLinks(view);
+		case Operator2EditPart.VISUAL_ID:
+			return getOperator_3006OutgoingLinks(view);
+		case ValueOperator2EditPart.VISUAL_ID:
+			return getValueOperator_3007OutgoingLinks(view);
+		case AggregationEditPart.VISUAL_ID:
+			return getAggregation_3008OutgoingLinks(view);
+		case OrderEditPart.VISUAL_ID:
+			return getOrder_3009OutgoingLinks(view);
+		case LimitEditPart.VISUAL_ID:
+			return getLimit_3010OutgoingLinks(view);
+		case Operator3EditPart.VISUAL_ID:
+			return getOperator_3011OutgoingLinks(view);
+		case ValueOperator3EditPart.VISUAL_ID:
+			return getValueOperator_3012OutgoingLinks(view);
+		case UnaryOperatorPatternEditPart.VISUAL_ID:
+			return getUnaryOperatorPattern_3013OutgoingLinks(view);
+		case BinaryOperatorPatternEditPart.VISUAL_ID:
+			return getBinaryOperatorPattern_3014OutgoingLinks(view);
+		case PatternTimerEditPart.VISUAL_ID:
+			return getPatternTimer_3015OutgoingLinks(view);
+		case Attribute2EditPart.VISUAL_ID:
+			return getAttribute_3016OutgoingLinks(view);
+		case NotEditPart.VISUAL_ID:
+			return getNot_3017OutgoingLinks(view);
+		case ConditionGroup2EditPart.VISUAL_ID:
+			return getConditionGroup_3018OutgoingLinks(view);
+		case Target2EditPart.VISUAL_ID:
+			return getTarget_3019OutgoingLinks(view);
+		case Aggregation2EditPart.VISUAL_ID:
+			return getAggregation_3020OutgoingLinks(view);
+		case Order2EditPart.VISUAL_ID:
+			return getOrder_3021OutgoingLinks(view);
+		case Operator4EditPart.VISUAL_ID:
+			return getOperator_3022OutgoingLinks(view);
+		case ValueOperator4EditPart.VISUAL_ID:
+			return getValueOperator_3023OutgoingLinks(view);
+		case UnaryOperatorPattern2EditPart.VISUAL_ID:
+			return getUnaryOperatorPattern_3024OutgoingLinks(view);
+		case BinaryOperatorPattern2EditPart.VISUAL_ID:
+			return getBinaryOperatorPattern_3025OutgoingLinks(view);
+		case PatternTimer2EditPart.VISUAL_ID:
+			return getPatternTimer_3026OutgoingLinks(view);
+		case Attribute3EditPart.VISUAL_ID:
+			return getAttribute_3027OutgoingLinks(view);
+		case Not2EditPart.VISUAL_ID:
+			return getNot_3028OutgoingLinks(view);
+		case LinkComponentEditPart.VISUAL_ID:
+			return getLinkComponent_4001OutgoingLinks(view);
+		case LinkTargetEditPart.VISUAL_ID:
+			return getLinkTarget_4002OutgoingLinks(view);
+		case ComparisonEditPart.VISUAL_ID:
+			return getComparison_4003OutgoingLinks(view);
+		case ArithmeticEditPart.VISUAL_ID:
+			return getArithmetic_4004OutgoingLinks(view);
+		case FollowedbyEditPart.VISUAL_ID:
+			return getFollowedby_4005OutgoingLinks(view);
+		case LogicalConnectorEditPart.VISUAL_ID:
+			return getLogicalConnector_4006OutgoingLinks(view);
+		}
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getAreaDesenho_1000ContainedLinks(
+			View view) {
+		AreaDesenho modelElement = (AreaDesenho) view.getElement();
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getContainedTypeModelFacetLinks_LinkComponent_4001(modelElement));
+		result.addAll(getContainedTypeModelFacetLinks_LinkTarget_4002(modelElement));
+		result.addAll(getContainedTypeModelFacetLinks_Comparison_4003(modelElement));
+		result.addAll(getContainedTypeModelFacetLinks_Arithmetic_4004(modelElement));
+		result.addAll(getContainedTypeModelFacetLinks_Followedby_4005(modelElement));
+		result.addAll(getContainedTypeModelFacetLinks_LogicalConnector_4006(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getEvent_2001ContainedLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getRule_2002ContainedLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getEventPattern_2003ContainedLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getWindow_2004ContainedLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getAttribute_3001ContainedLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getConditionGroup_3002ContainedLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getOperator_3003ContainedLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getValueOperator_3004ContainedLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getTarget_3005ContainedLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getOperator_3006ContainedLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getValueOperator_3007ContainedLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getAggregation_3008ContainedLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getOrder_3009ContainedLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getLimit_3010ContainedLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getOperator_3011ContainedLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getValueOperator_3012ContainedLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getUnaryOperatorPattern_3013ContainedLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getBinaryOperatorPattern_3014ContainedLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getPatternTimer_3015ContainedLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getAttribute_3016ContainedLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getNot_3017ContainedLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getConditionGroup_3018ContainedLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getTarget_3019ContainedLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getAggregation_3020ContainedLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getOrder_3021ContainedLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getOperator_3022ContainedLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getValueOperator_3023ContainedLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getUnaryOperatorPattern_3024ContainedLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getBinaryOperatorPattern_3025ContainedLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getPatternTimer_3026ContainedLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getAttribute_3027ContainedLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getNot_3028ContainedLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getLinkComponent_4001ContainedLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getLinkTarget_4002ContainedLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getComparison_4003ContainedLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getArithmetic_4004ContainedLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getFollowedby_4005ContainedLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getLogicalConnector_4006ContainedLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getEvent_2001IncomingLinks(View view) {
+		Event modelElement = (Event) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4001(
+				modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getRule_2002IncomingLinks(View view) {
+		Rule modelElement = (Rule) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4001(
+				modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getEventPattern_2003IncomingLinks(
+			View view) {
+		EventPattern modelElement = (EventPattern) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4001(
+				modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getWindow_2004IncomingLinks(View view) {
+		Window modelElement = (Window) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4001(
+				modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getAttribute_3001IncomingLinks(
+			View view) {
+		Attribute modelElement = (Attribute) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4001(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Comparison_4003(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Arithmetic_4004(
+				modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getConditionGroup_3002IncomingLinks(
+			View view) {
+		ConditionGroup modelElement = (ConditionGroup) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4001(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Comparison_4003(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Arithmetic_4004(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_LogicalConnector_4006(
+				modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getOperator_3003IncomingLinks(
+			View view) {
+		Operator modelElement = (Operator) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4001(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Comparison_4003(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Arithmetic_4004(
+				modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getValueOperator_3004IncomingLinks(
+			View view) {
+		ValueOperator modelElement = (ValueOperator) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4001(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Comparison_4003(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Arithmetic_4004(
+				modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getTarget_3005IncomingLinks(View view) {
+		Target modelElement = (Target) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4001(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_LinkTarget_4002(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Comparison_4003(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Arithmetic_4004(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Followedby_4005(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_LogicalConnector_4006(
+				modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getOperator_3006IncomingLinks(
+			View view) {
+		Operator modelElement = (Operator) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4001(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Comparison_4003(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Arithmetic_4004(
+				modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getValueOperator_3007IncomingLinks(
+			View view) {
+		ValueOperator modelElement = (ValueOperator) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4001(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Comparison_4003(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Arithmetic_4004(
+				modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getAggregation_3008IncomingLinks(
+			View view) {
+		Aggregation modelElement = (Aggregation) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4001(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Comparison_4003(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Arithmetic_4004(
+				modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getOrder_3009IncomingLinks(View view) {
+		Order modelElement = (Order) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4001(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Comparison_4003(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Arithmetic_4004(
+				modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getLimit_3010IncomingLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getOperator_3011IncomingLinks(
+			View view) {
+		Operator modelElement = (Operator) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4001(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Comparison_4003(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Arithmetic_4004(
+				modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getValueOperator_3012IncomingLinks(
+			View view) {
+		ValueOperator modelElement = (ValueOperator) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4001(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Comparison_4003(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Arithmetic_4004(
+				modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getUnaryOperatorPattern_3013IncomingLinks(
+			View view) {
+		UnaryOperatorPattern modelElement = (UnaryOperatorPattern) view
+				.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4001(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Comparison_4003(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Arithmetic_4004(
+				modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getBinaryOperatorPattern_3014IncomingLinks(
+			View view) {
+		BinaryOperatorPattern modelElement = (BinaryOperatorPattern) view
+				.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4001(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Comparison_4003(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Arithmetic_4004(
+				modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getPatternTimer_3015IncomingLinks(
+			View view) {
+		PatternTimer modelElement = (PatternTimer) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4001(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Comparison_4003(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Arithmetic_4004(
+				modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getAttribute_3016IncomingLinks(
+			View view) {
+		Attribute modelElement = (Attribute) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4001(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Comparison_4003(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Arithmetic_4004(
+				modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getNot_3017IncomingLinks(View view) {
+		Not modelElement = (Not) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4001(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Comparison_4003(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Arithmetic_4004(
+				modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getConditionGroup_3018IncomingLinks(
+			View view) {
+		ConditionGroup modelElement = (ConditionGroup) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4001(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Comparison_4003(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Arithmetic_4004(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_LogicalConnector_4006(
+				modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getTarget_3019IncomingLinks(View view) {
+		Target modelElement = (Target) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4001(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_LinkTarget_4002(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Comparison_4003(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Arithmetic_4004(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Followedby_4005(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_LogicalConnector_4006(
+				modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getAggregation_3020IncomingLinks(
+			View view) {
+		Aggregation modelElement = (Aggregation) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4001(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Comparison_4003(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Arithmetic_4004(
+				modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getOrder_3021IncomingLinks(View view) {
+		Order modelElement = (Order) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4001(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Comparison_4003(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Arithmetic_4004(
+				modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getOperator_3022IncomingLinks(
+			View view) {
+		Operator modelElement = (Operator) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4001(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Comparison_4003(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Arithmetic_4004(
+				modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getValueOperator_3023IncomingLinks(
+			View view) {
+		ValueOperator modelElement = (ValueOperator) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4001(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Comparison_4003(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Arithmetic_4004(
+				modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getUnaryOperatorPattern_3024IncomingLinks(
+			View view) {
+		UnaryOperatorPattern modelElement = (UnaryOperatorPattern) view
+				.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4001(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Comparison_4003(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Arithmetic_4004(
+				modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getBinaryOperatorPattern_3025IncomingLinks(
+			View view) {
+		BinaryOperatorPattern modelElement = (BinaryOperatorPattern) view
+				.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4001(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Comparison_4003(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Arithmetic_4004(
+				modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getPatternTimer_3026IncomingLinks(
+			View view) {
+		PatternTimer modelElement = (PatternTimer) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4001(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Comparison_4003(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Arithmetic_4004(
+				modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getAttribute_3027IncomingLinks(
+			View view) {
+		Attribute modelElement = (Attribute) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4001(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Comparison_4003(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Arithmetic_4004(
+				modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getNot_3028IncomingLinks(View view) {
+		Not modelElement = (Not) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4001(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Comparison_4003(
+				modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Arithmetic_4004(
+				modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getLinkComponent_4001IncomingLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getLinkTarget_4002IncomingLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getComparison_4003IncomingLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getArithmetic_4004IncomingLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getFollowedby_4005IncomingLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getLogicalConnector_4006IncomingLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getEvent_2001OutgoingLinks(View view) {
+		Event modelElement = (Event) view.getElement();
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4001(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4002(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getRule_2002OutgoingLinks(View view) {
+		Rule modelElement = (Rule) view.getElement();
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4001(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4002(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getEventPattern_2003OutgoingLinks(
+			View view) {
+		EventPattern modelElement = (EventPattern) view.getElement();
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4001(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4002(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getWindow_2004OutgoingLinks(View view) {
+		Window modelElement = (Window) view.getElement();
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4001(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4002(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getAttribute_3001OutgoingLinks(
+			View view) {
+		Attribute modelElement = (Attribute) view.getElement();
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4001(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4002(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Comparison_4003(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Arithmetic_4004(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getConditionGroup_3002OutgoingLinks(
+			View view) {
+		ConditionGroup modelElement = (ConditionGroup) view.getElement();
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4001(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4002(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Comparison_4003(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Arithmetic_4004(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_LogicalConnector_4006(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getOperator_3003OutgoingLinks(
+			View view) {
+		Operator modelElement = (Operator) view.getElement();
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4001(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4002(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Comparison_4003(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Arithmetic_4004(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getValueOperator_3004OutgoingLinks(
+			View view) {
+		ValueOperator modelElement = (ValueOperator) view.getElement();
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4001(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4002(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Comparison_4003(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Arithmetic_4004(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getTarget_3005OutgoingLinks(View view) {
+		Target modelElement = (Target) view.getElement();
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4001(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4002(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Comparison_4003(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Arithmetic_4004(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Followedby_4005(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_LogicalConnector_4006(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getOperator_3006OutgoingLinks(
+			View view) {
+		Operator modelElement = (Operator) view.getElement();
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4001(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4002(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Comparison_4003(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Arithmetic_4004(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getValueOperator_3007OutgoingLinks(
+			View view) {
+		ValueOperator modelElement = (ValueOperator) view.getElement();
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4001(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4002(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Comparison_4003(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Arithmetic_4004(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getAggregation_3008OutgoingLinks(
+			View view) {
+		Aggregation modelElement = (Aggregation) view.getElement();
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4001(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4002(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Comparison_4003(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Arithmetic_4004(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getOrder_3009OutgoingLinks(View view) {
+		Order modelElement = (Order) view.getElement();
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4001(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4002(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Comparison_4003(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Arithmetic_4004(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getLimit_3010OutgoingLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getOperator_3011OutgoingLinks(
+			View view) {
+		Operator modelElement = (Operator) view.getElement();
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4001(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4002(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Comparison_4003(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Arithmetic_4004(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getValueOperator_3012OutgoingLinks(
+			View view) {
+		ValueOperator modelElement = (ValueOperator) view.getElement();
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4001(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4002(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Comparison_4003(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Arithmetic_4004(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getUnaryOperatorPattern_3013OutgoingLinks(
+			View view) {
+		UnaryOperatorPattern modelElement = (UnaryOperatorPattern) view
+				.getElement();
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4001(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4002(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Comparison_4003(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Arithmetic_4004(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getBinaryOperatorPattern_3014OutgoingLinks(
+			View view) {
+		BinaryOperatorPattern modelElement = (BinaryOperatorPattern) view
+				.getElement();
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4001(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4002(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Comparison_4003(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Arithmetic_4004(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getPatternTimer_3015OutgoingLinks(
+			View view) {
+		PatternTimer modelElement = (PatternTimer) view.getElement();
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4001(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4002(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Comparison_4003(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Arithmetic_4004(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getAttribute_3016OutgoingLinks(
+			View view) {
+		Attribute modelElement = (Attribute) view.getElement();
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4001(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4002(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Comparison_4003(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Arithmetic_4004(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getNot_3017OutgoingLinks(View view) {
+		Not modelElement = (Not) view.getElement();
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4001(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4002(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Comparison_4003(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Arithmetic_4004(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getConditionGroup_3018OutgoingLinks(
+			View view) {
+		ConditionGroup modelElement = (ConditionGroup) view.getElement();
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4001(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4002(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Comparison_4003(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Arithmetic_4004(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_LogicalConnector_4006(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getTarget_3019OutgoingLinks(View view) {
+		Target modelElement = (Target) view.getElement();
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4001(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4002(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Comparison_4003(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Arithmetic_4004(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Followedby_4005(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_LogicalConnector_4006(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getAggregation_3020OutgoingLinks(
+			View view) {
+		Aggregation modelElement = (Aggregation) view.getElement();
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4001(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4002(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Comparison_4003(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Arithmetic_4004(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getOrder_3021OutgoingLinks(View view) {
+		Order modelElement = (Order) view.getElement();
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4001(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4002(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Comparison_4003(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Arithmetic_4004(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getOperator_3022OutgoingLinks(
+			View view) {
+		Operator modelElement = (Operator) view.getElement();
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4001(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4002(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Comparison_4003(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Arithmetic_4004(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getValueOperator_3023OutgoingLinks(
+			View view) {
+		ValueOperator modelElement = (ValueOperator) view.getElement();
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4001(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4002(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Comparison_4003(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Arithmetic_4004(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getUnaryOperatorPattern_3024OutgoingLinks(
+			View view) {
+		UnaryOperatorPattern modelElement = (UnaryOperatorPattern) view
+				.getElement();
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4001(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4002(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Comparison_4003(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Arithmetic_4004(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getBinaryOperatorPattern_3025OutgoingLinks(
+			View view) {
+		BinaryOperatorPattern modelElement = (BinaryOperatorPattern) view
+				.getElement();
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4001(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4002(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Comparison_4003(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Arithmetic_4004(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getPatternTimer_3026OutgoingLinks(
+			View view) {
+		PatternTimer modelElement = (PatternTimer) view.getElement();
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4001(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4002(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Comparison_4003(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Arithmetic_4004(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getAttribute_3027OutgoingLinks(
+			View view) {
+		Attribute modelElement = (Attribute) view.getElement();
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4001(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4002(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Comparison_4003(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Arithmetic_4004(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getNot_3028OutgoingLinks(View view) {
+		Not modelElement = (Not) view.getElement();
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4001(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4002(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Comparison_4003(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Arithmetic_4004(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getLinkComponent_4001OutgoingLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getLinkTarget_4002OutgoingLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getComparison_4003OutgoingLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getArithmetic_4004OutgoingLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getFollowedby_4005OutgoingLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<DsmlLinkDescriptor> getLogicalConnector_4006OutgoingLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	private static Collection<DsmlLinkDescriptor> getContainedTypeModelFacetLinks_LinkComponent_4001(
+			AreaDesenho container) {
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		for (Iterator<?> links = container.getLinks().iterator(); links
+				.hasNext();) {
+			EObject linkObject = (EObject) links.next();
+			if (false == linkObject instanceof LinkComponent) {
+				continue;
+			}
+			LinkComponent link = (LinkComponent) linkObject;
+			if (LinkComponentEditPart.VISUAL_ID != DsmlVisualIDRegistry
+					.getLinkWithClassVisualID(link)) {
+				continue;
+			}
+			Component dst = link.getDestino();
+			Component src = link.getOrigem();
+			result.add(new DsmlLinkDescriptor(src, dst, link,
+					DsmlElementTypes.LinkComponent_4001,
+					LinkComponentEditPart.VISUAL_ID));
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static Collection<DsmlLinkDescriptor> getContainedTypeModelFacetLinks_LinkTarget_4002(
+			AreaDesenho container) {
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		for (Iterator<?> links = container.getLinks().iterator(); links
+				.hasNext();) {
+			EObject linkObject = (EObject) links.next();
+			if (false == linkObject instanceof LinkTarget) {
+				continue;
+			}
+			LinkTarget link = (LinkTarget) linkObject;
+			if (LinkTargetEditPart.VISUAL_ID != DsmlVisualIDRegistry
+					.getLinkWithClassVisualID(link)) {
+				continue;
+			}
+			List targets = link.getDestino();
+			Object theTarget = targets.size() == 1 ? targets.get(0) : null;
+			if (false == theTarget instanceof Target) {
+				continue;
+			}
+			Target dst = (Target) theTarget;
+			Component src = link.getOrigem();
+			result.add(new DsmlLinkDescriptor(src, dst, link,
+					DsmlElementTypes.LinkTarget_4002,
+					LinkTargetEditPart.VISUAL_ID));
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static Collection<DsmlLinkDescriptor> getContainedTypeModelFacetLinks_Comparison_4003(
+			AreaDesenho container) {
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		for (Iterator<?> links = container.getLinks().iterator(); links
+				.hasNext();) {
+			EObject linkObject = (EObject) links.next();
+			if (false == linkObject instanceof Comparison) {
+				continue;
+			}
+			Comparison link = (Comparison) linkObject;
+			if (ComparisonEditPart.VISUAL_ID != DsmlVisualIDRegistry
+					.getLinkWithClassVisualID(link)) {
+				continue;
+			}
+			Node dst = link.getDestino();
+			Node src = link.getOrigem();
+			result.add(new DsmlLinkDescriptor(src, dst, link,
+					DsmlElementTypes.Comparison_4003,
+					ComparisonEditPart.VISUAL_ID));
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static Collection<DsmlLinkDescriptor> getContainedTypeModelFacetLinks_Arithmetic_4004(
+			AreaDesenho container) {
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		for (Iterator<?> links = container.getLinks().iterator(); links
+				.hasNext();) {
+			EObject linkObject = (EObject) links.next();
+			if (false == linkObject instanceof Arithmetic) {
+				continue;
+			}
+			Arithmetic link = (Arithmetic) linkObject;
+			if (ArithmeticEditPart.VISUAL_ID != DsmlVisualIDRegistry
+					.getLinkWithClassVisualID(link)) {
+				continue;
+			}
+			Node dst = link.getDestino();
+			Node src = link.getOrigem();
+			result.add(new DsmlLinkDescriptor(src, dst, link,
+					DsmlElementTypes.Arithmetic_4004,
+					ArithmeticEditPart.VISUAL_ID));
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static Collection<DsmlLinkDescriptor> getContainedTypeModelFacetLinks_Followedby_4005(
+			AreaDesenho container) {
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		for (Iterator<?> links = container.getLinks().iterator(); links
+				.hasNext();) {
+			EObject linkObject = (EObject) links.next();
+			if (false == linkObject instanceof Followedby) {
+				continue;
+			}
+			Followedby link = (Followedby) linkObject;
+			if (FollowedbyEditPart.VISUAL_ID != DsmlVisualIDRegistry
+					.getLinkWithClassVisualID(link)) {
+				continue;
+			}
+			Target dst = link.getDestino();
+			Target src = link.getOrigem();
+			result.add(new DsmlLinkDescriptor(src, dst, link,
+					DsmlElementTypes.Followedby_4005,
+					FollowedbyEditPart.VISUAL_ID));
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static Collection<DsmlLinkDescriptor> getContainedTypeModelFacetLinks_LogicalConnector_4006(
+			AreaDesenho container) {
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		for (Iterator<?> links = container.getLinks().iterator(); links
+				.hasNext();) {
+			EObject linkObject = (EObject) links.next();
+			if (false == linkObject instanceof LogicalConnector) {
+				continue;
+			}
+			LogicalConnector link = (LogicalConnector) linkObject;
+			if (LogicalConnectorEditPart.VISUAL_ID != DsmlVisualIDRegistry
+					.getLinkWithClassVisualID(link)) {
+				continue;
+			}
+			GroupRelacional dst = link.getDestino();
+			GroupRelacional src = link.getOrigem();
+			result.add(new DsmlLinkDescriptor(src, dst, link,
+					DsmlElementTypes.LogicalConnector_4006,
+					LogicalConnectorEditPart.VISUAL_ID));
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static Collection<DsmlLinkDescriptor> getIncomingTypeModelFacetLinks_LinkComponent_4001(
+			Component target,
+			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		Collection<EStructuralFeature.Setting> settings = crossReferences
+				.get(target);
+		for (EStructuralFeature.Setting setting : settings) {
+			if (setting.getEStructuralFeature() != DsmlPackage.eINSTANCE
+					.getLinkComponent_Destino()
+					|| false == setting.getEObject() instanceof LinkComponent) {
+				continue;
+			}
+			LinkComponent link = (LinkComponent) setting.getEObject();
+			if (LinkComponentEditPart.VISUAL_ID != DsmlVisualIDRegistry
+					.getLinkWithClassVisualID(link)) {
+				continue;
+			}
+			Component src = link.getOrigem();
+			result.add(new DsmlLinkDescriptor(src, target, link,
+					DsmlElementTypes.LinkComponent_4001,
+					LinkComponentEditPart.VISUAL_ID));
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static Collection<DsmlLinkDescriptor> getIncomingTypeModelFacetLinks_LinkTarget_4002(
+			Target target,
+			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		Collection<EStructuralFeature.Setting> settings = crossReferences
+				.get(target);
+		for (EStructuralFeature.Setting setting : settings) {
+			if (setting.getEStructuralFeature() != DsmlPackage.eINSTANCE
+					.getLinkTarget_Destino()
+					|| false == setting.getEObject() instanceof LinkTarget) {
+				continue;
+			}
+			LinkTarget link = (LinkTarget) setting.getEObject();
+			if (LinkTargetEditPart.VISUAL_ID != DsmlVisualIDRegistry
+					.getLinkWithClassVisualID(link)) {
+				continue;
+			}
+			Component src = link.getOrigem();
+			result.add(new DsmlLinkDescriptor(src, target, link,
+					DsmlElementTypes.LinkTarget_4002,
+					LinkTargetEditPart.VISUAL_ID));
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static Collection<DsmlLinkDescriptor> getIncomingTypeModelFacetLinks_Comparison_4003(
+			Node target,
+			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		Collection<EStructuralFeature.Setting> settings = crossReferences
+				.get(target);
+		for (EStructuralFeature.Setting setting : settings) {
+			if (setting.getEStructuralFeature() != DsmlPackage.eINSTANCE
+					.getComparison_Destino()
+					|| false == setting.getEObject() instanceof Comparison) {
+				continue;
+			}
+			Comparison link = (Comparison) setting.getEObject();
+			if (ComparisonEditPart.VISUAL_ID != DsmlVisualIDRegistry
+					.getLinkWithClassVisualID(link)) {
+				continue;
+			}
+			Node src = link.getOrigem();
+			result.add(new DsmlLinkDescriptor(src, target, link,
+					DsmlElementTypes.Comparison_4003,
+					ComparisonEditPart.VISUAL_ID));
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static Collection<DsmlLinkDescriptor> getIncomingTypeModelFacetLinks_Arithmetic_4004(
+			Node target,
+			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		Collection<EStructuralFeature.Setting> settings = crossReferences
+				.get(target);
+		for (EStructuralFeature.Setting setting : settings) {
+			if (setting.getEStructuralFeature() != DsmlPackage.eINSTANCE
+					.getArithmetic_Destino()
+					|| false == setting.getEObject() instanceof Arithmetic) {
+				continue;
+			}
+			Arithmetic link = (Arithmetic) setting.getEObject();
+			if (ArithmeticEditPart.VISUAL_ID != DsmlVisualIDRegistry
+					.getLinkWithClassVisualID(link)) {
+				continue;
+			}
+			Node src = link.getOrigem();
+			result.add(new DsmlLinkDescriptor(src, target, link,
+					DsmlElementTypes.Arithmetic_4004,
+					ArithmeticEditPart.VISUAL_ID));
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static Collection<DsmlLinkDescriptor> getIncomingTypeModelFacetLinks_Followedby_4005(
+			Target target,
+			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		Collection<EStructuralFeature.Setting> settings = crossReferences
+				.get(target);
+		for (EStructuralFeature.Setting setting : settings) {
+			if (setting.getEStructuralFeature() != DsmlPackage.eINSTANCE
+					.getFollowedby_Destino()
+					|| false == setting.getEObject() instanceof Followedby) {
+				continue;
+			}
+			Followedby link = (Followedby) setting.getEObject();
+			if (FollowedbyEditPart.VISUAL_ID != DsmlVisualIDRegistry
+					.getLinkWithClassVisualID(link)) {
+				continue;
+			}
+			Target src = link.getOrigem();
+			result.add(new DsmlLinkDescriptor(src, target, link,
+					DsmlElementTypes.Followedby_4005,
+					FollowedbyEditPart.VISUAL_ID));
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static Collection<DsmlLinkDescriptor> getIncomingTypeModelFacetLinks_LogicalConnector_4006(
+			GroupRelacional target,
+			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		Collection<EStructuralFeature.Setting> settings = crossReferences
+				.get(target);
+		for (EStructuralFeature.Setting setting : settings) {
+			if (setting.getEStructuralFeature() != DsmlPackage.eINSTANCE
+					.getLogicalConnector_Destino()
+					|| false == setting.getEObject() instanceof LogicalConnector) {
+				continue;
+			}
+			LogicalConnector link = (LogicalConnector) setting.getEObject();
+			if (LogicalConnectorEditPart.VISUAL_ID != DsmlVisualIDRegistry
+					.getLinkWithClassVisualID(link)) {
+				continue;
+			}
+			GroupRelacional src = link.getOrigem();
+			result.add(new DsmlLinkDescriptor(src, target, link,
+					DsmlElementTypes.LogicalConnector_4006,
+					LogicalConnectorEditPart.VISUAL_ID));
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static Collection<DsmlLinkDescriptor> getOutgoingTypeModelFacetLinks_LinkComponent_4001(
+			Component source) {
+		AreaDesenho container = null;
+		// Find container element for the link.
+		// Climb up by containment hierarchy starting from the source
+		// and return the first element that is instance of the container class.
+		for (EObject element = source; element != null && container == null; element = element
+				.eContainer()) {
+			if (element instanceof AreaDesenho) {
+				container = (AreaDesenho) element;
+			}
+		}
+		if (container == null) {
+			return Collections.emptyList();
+		}
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		for (Iterator<?> links = container.getLinks().iterator(); links
+				.hasNext();) {
+			EObject linkObject = (EObject) links.next();
+			if (false == linkObject instanceof LinkComponent) {
+				continue;
+			}
+			LinkComponent link = (LinkComponent) linkObject;
+			if (LinkComponentEditPart.VISUAL_ID != DsmlVisualIDRegistry
+					.getLinkWithClassVisualID(link)) {
+				continue;
+			}
+			Component dst = link.getDestino();
+			Component src = link.getOrigem();
+			if (src != source) {
+				continue;
+			}
+			result.add(new DsmlLinkDescriptor(src, dst, link,
+					DsmlElementTypes.LinkComponent_4001,
+					LinkComponentEditPart.VISUAL_ID));
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static Collection<DsmlLinkDescriptor> getOutgoingTypeModelFacetLinks_LinkTarget_4002(
+			Component source) {
+		AreaDesenho container = null;
+		// Find container element for the link.
+		// Climb up by containment hierarchy starting from the source
+		// and return the first element that is instance of the container class.
+		for (EObject element = source; element != null && container == null; element = element
+				.eContainer()) {
+			if (element instanceof AreaDesenho) {
+				container = (AreaDesenho) element;
+			}
+		}
+		if (container == null) {
+			return Collections.emptyList();
+		}
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		for (Iterator<?> links = container.getLinks().iterator(); links
+				.hasNext();) {
+			EObject linkObject = (EObject) links.next();
+			if (false == linkObject instanceof LinkTarget) {
+				continue;
+			}
+			LinkTarget link = (LinkTarget) linkObject;
+			if (LinkTargetEditPart.VISUAL_ID != DsmlVisualIDRegistry
+					.getLinkWithClassVisualID(link)) {
+				continue;
+			}
+			List targets = link.getDestino();
+			Object theTarget = targets.size() == 1 ? targets.get(0) : null;
+			if (false == theTarget instanceof Target) {
+				continue;
+			}
+			Target dst = (Target) theTarget;
+			Component src = link.getOrigem();
+			if (src != source) {
+				continue;
+			}
+			result.add(new DsmlLinkDescriptor(src, dst, link,
+					DsmlElementTypes.LinkTarget_4002,
+					LinkTargetEditPart.VISUAL_ID));
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static Collection<DsmlLinkDescriptor> getOutgoingTypeModelFacetLinks_Comparison_4003(
+			Node source) {
+		AreaDesenho container = null;
+		// Find container element for the link.
+		// Climb up by containment hierarchy starting from the source
+		// and return the first element that is instance of the container class.
+		for (EObject element = source; element != null && container == null; element = element
+				.eContainer()) {
+			if (element instanceof AreaDesenho) {
+				container = (AreaDesenho) element;
+			}
+		}
+		if (container == null) {
+			return Collections.emptyList();
+		}
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		for (Iterator<?> links = container.getLinks().iterator(); links
+				.hasNext();) {
+			EObject linkObject = (EObject) links.next();
+			if (false == linkObject instanceof Comparison) {
+				continue;
+			}
+			Comparison link = (Comparison) linkObject;
+			if (ComparisonEditPart.VISUAL_ID != DsmlVisualIDRegistry
+					.getLinkWithClassVisualID(link)) {
+				continue;
+			}
+			Node dst = link.getDestino();
+			Node src = link.getOrigem();
+			if (src != source) {
+				continue;
+			}
+			result.add(new DsmlLinkDescriptor(src, dst, link,
+					DsmlElementTypes.Comparison_4003,
+					ComparisonEditPart.VISUAL_ID));
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static Collection<DsmlLinkDescriptor> getOutgoingTypeModelFacetLinks_Arithmetic_4004(
+			Node source) {
+		AreaDesenho container = null;
+		// Find container element for the link.
+		// Climb up by containment hierarchy starting from the source
+		// and return the first element that is instance of the container class.
+		for (EObject element = source; element != null && container == null; element = element
+				.eContainer()) {
+			if (element instanceof AreaDesenho) {
+				container = (AreaDesenho) element;
+			}
+		}
+		if (container == null) {
+			return Collections.emptyList();
+		}
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		for (Iterator<?> links = container.getLinks().iterator(); links
+				.hasNext();) {
+			EObject linkObject = (EObject) links.next();
+			if (false == linkObject instanceof Arithmetic) {
+				continue;
+			}
+			Arithmetic link = (Arithmetic) linkObject;
+			if (ArithmeticEditPart.VISUAL_ID != DsmlVisualIDRegistry
+					.getLinkWithClassVisualID(link)) {
+				continue;
+			}
+			Node dst = link.getDestino();
+			Node src = link.getOrigem();
+			if (src != source) {
+				continue;
+			}
+			result.add(new DsmlLinkDescriptor(src, dst, link,
+					DsmlElementTypes.Arithmetic_4004,
+					ArithmeticEditPart.VISUAL_ID));
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static Collection<DsmlLinkDescriptor> getOutgoingTypeModelFacetLinks_Followedby_4005(
+			Target source) {
+		AreaDesenho container = null;
+		// Find container element for the link.
+		// Climb up by containment hierarchy starting from the source
+		// and return the first element that is instance of the container class.
+		for (EObject element = source; element != null && container == null; element = element
+				.eContainer()) {
+			if (element instanceof AreaDesenho) {
+				container = (AreaDesenho) element;
+			}
+		}
+		if (container == null) {
+			return Collections.emptyList();
+		}
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		for (Iterator<?> links = container.getLinks().iterator(); links
+				.hasNext();) {
+			EObject linkObject = (EObject) links.next();
+			if (false == linkObject instanceof Followedby) {
+				continue;
+			}
+			Followedby link = (Followedby) linkObject;
+			if (FollowedbyEditPart.VISUAL_ID != DsmlVisualIDRegistry
+					.getLinkWithClassVisualID(link)) {
+				continue;
+			}
+			Target dst = link.getDestino();
+			Target src = link.getOrigem();
+			if (src != source) {
+				continue;
+			}
+			result.add(new DsmlLinkDescriptor(src, dst, link,
+					DsmlElementTypes.Followedby_4005,
+					FollowedbyEditPart.VISUAL_ID));
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static Collection<DsmlLinkDescriptor> getOutgoingTypeModelFacetLinks_LogicalConnector_4006(
+			GroupRelacional source) {
+		AreaDesenho container = null;
+		// Find container element for the link.
+		// Climb up by containment hierarchy starting from the source
+		// and return the first element that is instance of the container class.
+		for (EObject element = source; element != null && container == null; element = element
+				.eContainer()) {
+			if (element instanceof AreaDesenho) {
+				container = (AreaDesenho) element;
+			}
+		}
+		if (container == null) {
+			return Collections.emptyList();
+		}
+		LinkedList<DsmlLinkDescriptor> result = new LinkedList<DsmlLinkDescriptor>();
+		for (Iterator<?> links = container.getLinks().iterator(); links
+				.hasNext();) {
+			EObject linkObject = (EObject) links.next();
+			if (false == linkObject instanceof LogicalConnector) {
+				continue;
+			}
+			LogicalConnector link = (LogicalConnector) linkObject;
+			if (LogicalConnectorEditPart.VISUAL_ID != DsmlVisualIDRegistry
+					.getLinkWithClassVisualID(link)) {
+				continue;
+			}
+			GroupRelacional dst = link.getDestino();
+			GroupRelacional src = link.getOrigem();
+			if (src != source) {
+				continue;
+			}
+			result.add(new DsmlLinkDescriptor(src, dst, link,
+					DsmlElementTypes.LogicalConnector_4006,
+					LogicalConnectorEditPart.VISUAL_ID));
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static final DiagramUpdater TYPED_INSTANCE = new DiagramUpdater() {
+		/**
+		 * @generated
+		 */
+		@Override
+		public List<DsmlNodeDescriptor> getSemanticChildren(View view) {
+			return DsmlDiagramUpdater.getSemanticChildren(view);
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public List<DsmlLinkDescriptor> getContainedLinks(View view) {
+			return DsmlDiagramUpdater.getContainedLinks(view);
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public List<DsmlLinkDescriptor> getIncomingLinks(View view) {
+			return DsmlDiagramUpdater.getIncomingLinks(view);
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public List<DsmlLinkDescriptor> getOutgoingLinks(View view) {
+			return DsmlDiagramUpdater.getOutgoingLinks(view);
+		}
+	};
+
+}

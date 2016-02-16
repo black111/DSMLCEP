@@ -1,0 +1,97 @@
+	/*
+ * 
+ */
+package prediqt.diagram.navigator;
+
+	/**
+ * @generated
+ */
+public class PrediqtNavigatorGroup extends prediqt.diagram.navigator.PrediqtAbstractNavigatorItem {
+
+		/**
+ * @generated
+ */
+private String myGroupName;
+	
+	/**
+ * @generated
+ */
+private String myIcon;
+	
+	/**
+ * @generated
+ */
+private java.util.Collection myChildren = new java.util.LinkedList();
+
+		/**
+ * @generated
+ */
+PrediqtNavigatorGroup(String groupName, String icon, Object parent) {
+	super(parent);
+	myGroupName = groupName;
+	myIcon = icon;
+}
+	
+		/**
+ * @generated
+ */
+public String getGroupName() {
+	return myGroupName;
+}
+	
+		/**
+ * @generated
+ */
+public String getIcon() {
+	return myIcon;
+}
+	
+		/**
+ * @generated
+ */
+public Object[] getChildren() {
+	return myChildren.toArray();
+}
+	
+		/**
+ * @generated
+ */
+public void addChildren(java.util.Collection children) {
+	myChildren.addAll(children);
+}
+	
+		/**
+ * @generated
+ */
+public void addChild(Object child) {
+	myChildren.add(child);
+}
+	
+		/**
+ * @generated
+ */
+public boolean isEmpty() {
+	return myChildren.size() == 0;
+}
+	
+		/**
+ * @generated
+ */
+public boolean equals(Object obj) {
+	if (obj instanceof prediqt.diagram.navigator.PrediqtNavigatorGroup) {
+		prediqt.diagram.navigator.PrediqtNavigatorGroup anotherGroup = (prediqt.diagram.navigator.PrediqtNavigatorGroup) obj;
+		if (getGroupName().equals(anotherGroup.getGroupName())) {
+			return getParent().equals(anotherGroup.getParent());
+		}
+	}
+	return super.equals(obj);
+}
+	
+		/**
+ * @generated
+ */
+public int hashCode() {
+	return getGroupName().hashCode();
+}
+
+	}

@@ -1,0 +1,7 @@
+# Tracing options for the br.ufpe.cin.dsml.cep.diagram plug-in
+
+# Common issues
+br.ufpe.cin.dsml.cep.diagram/debug=false
+
+# Visual IDs
+br.ufpe.cin.dsml.cep.diagram/debug/visualID=false

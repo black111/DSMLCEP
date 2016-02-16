@@ -1,0 +1,66 @@
+/*
+ * 
+ */
+package prediqt.diagram.edit.parts;
+
+/**
+ * @generated
+ */
+public class ProjectEditPart extends org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart  {
+
+		/**
+ * @generated
+ */
+	public final static String MODEL_ID = "Prediqt";  //$NON-NLS-1$
+	
+		/**
+ * @generated
+ */
+	public static final int VISUAL_ID = 1000;
+	
+		/**
+ * @generated
+ */
+	public ProjectEditPart(org.eclipse.gmf.runtime.notation.View view) {
+		super(view);
+	}
+	
+		/**
+ * @generated
+ */
+	protected void createDefaultEditPolicies() {
+			super.createDefaultEditPolicies();
+		installEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.SEMANTIC_ROLE, new prediqt.diagram.edit.policies.ProjectItemSemanticEditPolicy());
+			installEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CANONICAL_ROLE, new prediqt.diagram.edit.policies.ProjectCanonicalEditPolicy());
+		installEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CREATION_ROLE, new org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent(prediqt.diagram.part.PrediqtVisualIDRegistry.TYPED_INSTANCE));
+					installEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.DRAG_DROP_ROLE, new org.eclipse.gmf.runtime.diagram.ui.editpolicies.DiagramDragDropEditPolicy() {
+			public org.eclipse.gef.commands.Command getDropObjectsCommand(org.eclipse.gmf.runtime.diagram.ui.requests.DropObjectsRequest dropRequest) {
+				java.util.ArrayList<org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest.ViewDescriptor> viewDescriptors = new java.util.ArrayList<org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest.ViewDescriptor>();
+				for (java.util.Iterator<?> it = dropRequest.getObjects().iterator(); it.hasNext();) {
+					Object nextObject = it.next();
+					if (false == nextObject instanceof org.eclipse.emf.ecore.EObject) {
+						continue;
+					}
+					viewDescriptors.add(new org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest.ViewDescriptor(new org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter((org.eclipse.emf.ecore.EObject) nextObject), org.eclipse.gmf.runtime.notation.Node.class, null, getDiagramPreferencesHint()));
+				}
+				return createShortcutsCommand(dropRequest, viewDescriptors);
+			}
+
+			private org.eclipse.gef.commands.Command createShortcutsCommand(org.eclipse.gmf.runtime.diagram.ui.requests.DropObjectsRequest dropRequest, java.util.List<org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest.ViewDescriptor> viewDescriptors) {
+				org.eclipse.gef.commands.Command command = createViewsAndArrangeCommand(dropRequest, viewDescriptors);
+				if (command != null) {
+					return command.chain(new org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy(new prediqt.diagram.edit.commands.PrediqtCreateShortcutDecorationsCommand(getEditingDomain(), (org.eclipse.gmf.runtime.notation.View) getModel(), viewDescriptors)));
+				}
+				return null;
+			}
+		});
+						// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.POPUPBAR_ROLE);
+		}
+	
+		
+	
+
+	
+
+
+	}

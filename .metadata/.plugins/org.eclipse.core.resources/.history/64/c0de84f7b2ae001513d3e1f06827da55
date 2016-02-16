@@ -1,0 +1,44 @@
+	/*
+ * 
+ */
+package dsml.diagram.edit.policies;
+
+	/**
+ * @generated
+ */
+public class RuleRuleQueriesCompartmentItemSemanticEditPolicy extends dsml.diagram.edit.policies.DsmlBaseItemSemanticEditPolicy {
+
+		/**
+ * @generated
+ */
+	public RuleRuleQueriesCompartmentItemSemanticEditPolicy() {
+				super(dsml.diagram.providers.DsmlElementTypes.Rule_2002);
+	}
+
+	
+	/**
+ * @generated
+ */
+	protected org.eclipse.gef.commands.Command getCreateCommand(org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest req) {
+		if (dsml.diagram.providers.DsmlElementTypes.Target_3048 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.TargetCreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.ConditionGroup_3049 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.ConditionGroupCreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.BringGroup_3053 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.BringGroupCreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.Not_3050 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.NotCreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.Aggregation_3051 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.AggregationCreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.Order_3052 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.OrderCreateCommand(req));
+}
+		return super.getCreateCommand(req);
+	}
+	
+	}

@@ -1,0 +1,76 @@
+/**
+ */
+package dsml;
+
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Link Component</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * <ul>
+ *   <li>{@link dsml.LinkComponent#getOutboundLink <em>Outbound Link</em>}</li>
+ *   <li>{@link dsml.LinkComponent#getInboundLink <em>Inbound Link</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @see dsml.DsmlPackage#getLinkComponent()
+ * @model annotation="gmf.link source='outboundLink' target='inboundLink' incoming='true' color='0,0,0' width='1'"
+ * @generated
+ */
+public interface LinkComponent extends Link {
+	/**
+	 * Returns the value of the '<em><b>Outbound Link</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Outbound Link</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Outbound Link</em>' reference.
+	 * @see #setOutboundLink(Component)
+	 * @see dsml.DsmlPackage#getLinkComponent_OutboundLink()
+	 * @model required="true"
+	 * @generated
+	 */
+	Component getOutboundLink();
+
+	/**
+	 * Sets the value of the '{@link dsml.LinkComponent#getOutboundLink <em>Outbound Link</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Outbound Link</em>' reference.
+	 * @see #getOutboundLink()
+	 * @generated
+	 */
+	void setOutboundLink(Component value);
+
+	/**
+	 * Returns the value of the '<em><b>Inbound Link</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Inbound Link</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Inbound Link</em>' reference.
+	 * @see #setInboundLink(Component)
+	 * @see dsml.DsmlPackage#getLinkComponent_InboundLink()
+	 * @model required="true"
+	 * @generated
+	 */
+	Component getInboundLink();
+
+	/**
+	 * Sets the value of the '{@link dsml.LinkComponent#getInboundLink <em>Inbound Link</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Inbound Link</em>' reference.
+	 * @see #getInboundLink()
+	 * @generated
+	 */
+	void setInboundLink(Component value);
+
+} // LinkComponent

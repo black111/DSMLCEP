@@ -1,0 +1,325 @@
+
+/*
+ * 
+ */
+package dsml.diagram.part;
+
+/**
+ * @generated
+ */
+public class DsmlPaletteFactory {
+
+	/**
+ * @generated
+ */
+	public void fillPalette(org.eclipse.gef.palette.PaletteRoot paletteRoot) {
+		paletteRoot.add(createObjects1Group());
+paletteRoot.add(createConnections2Group());
+	}
+
+	/**
+ * Creates "Objects" palette tool group
+ * @generated
+ */
+	private org.eclipse.gef.palette.PaletteContainer createObjects1Group() {
+				org.eclipse.gef.palette.PaletteDrawer paletteContainer = new org.eclipse.gef.palette.PaletteDrawer(dsml.diagram.part.Messages.Objects1Group_title);
+				 paletteContainer.setId("createObjects1Group"); //$NON-NLS-1$
+								paletteContainer.add(createAggregation1CreationTool());
+paletteContainer.add(createAttribute2CreationTool());
+paletteContainer.add(createBinaryOperatorPattern3CreationTool());
+paletteContainer.add(createConditionGroup4CreationTool());
+paletteContainer.add(createEvent5CreationTool());
+paletteContainer.add(createEventPattern6CreationTool());
+paletteContainer.add(createLimit7CreationTool());
+paletteContainer.add(createNot8CreationTool());
+paletteContainer.add(createOperator9CreationTool());
+paletteContainer.add(createOrder10CreationTool());
+paletteContainer.add(createPatternTimer11CreationTool());
+paletteContainer.add(createRule12CreationTool());
+paletteContainer.add(createTarget13CreationTool());
+paletteContainer.add(createUnaryOperatorPattern14CreationTool());
+paletteContainer.add(createValueOperator15CreationTool());
+paletteContainer.add(createWindow16CreationTool());
+		return paletteContainer;
+	}
+	/**
+ * Creates "Connections" palette tool group
+ * @generated
+ */
+	private org.eclipse.gef.palette.PaletteContainer createConnections2Group() {
+				org.eclipse.gef.palette.PaletteDrawer paletteContainer = new org.eclipse.gef.palette.PaletteDrawer(dsml.diagram.part.Messages.Connections2Group_title);
+				 paletteContainer.setId("createConnections2Group"); //$NON-NLS-1$
+								paletteContainer.add(createArithmetic1CreationTool());
+paletteContainer.add(createComparison2CreationTool());
+paletteContainer.add(createFollowedby3CreationTool());
+paletteContainer.add(createLink4CreationTool());
+paletteContainer.add(createLogicalConnector5CreationTool());
+		return paletteContainer;
+	}
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createAggregation1CreationTool() {
+		java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType> types = new java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType>(4);
+types.add(dsml.diagram.providers.DsmlElementTypes.Aggregation_2017);
+types.add(dsml.diagram.providers.DsmlElementTypes.Aggregation_3035);
+types.add(dsml.diagram.providers.DsmlElementTypes.Aggregation_3016);
+types.add(dsml.diagram.providers.DsmlElementTypes.Aggregation_3025);
+org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry(dsml.diagram.part.Messages.Aggregation1CreationTool_title, dsml.diagram.part.Messages.Aggregation1CreationTool_desc, types);
+				 entry.setId("createAggregation1CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(dsml.diagram.providers.DsmlElementTypes.getImageDescriptor(dsml.diagram.providers.DsmlElementTypes.Aggregation_2017));
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createAttribute2CreationTool() {
+		org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry(dsml.diagram.part.Messages.Attribute2CreationTool_title, dsml.diagram.part.Messages.Attribute2CreationTool_desc, java.util.Collections.singletonList(dsml.diagram.providers.DsmlElementTypes.Attribute_3034));
+				 entry.setId("createAttribute2CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(dsml.diagram.providers.DsmlElementTypes.getImageDescriptor(dsml.diagram.providers.DsmlElementTypes.Attribute_3034));
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createBinaryOperatorPattern3CreationTool() {
+		java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType> types = new java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType>(4);
+types.add(dsml.diagram.providers.DsmlElementTypes.BinaryOperatorPattern_2022);
+types.add(dsml.diagram.providers.DsmlElementTypes.BinaryOperatorPattern_3040);
+types.add(dsml.diagram.providers.DsmlElementTypes.BinaryOperatorPattern_3021);
+types.add(dsml.diagram.providers.DsmlElementTypes.BinaryOperatorPattern_3030);
+org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry(dsml.diagram.part.Messages.BinaryOperatorPattern3CreationTool_title, dsml.diagram.part.Messages.BinaryOperatorPattern3CreationTool_desc, types);
+				 entry.setId("createBinaryOperatorPattern3CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(dsml.diagram.providers.DsmlElementTypes.getImageDescriptor(dsml.diagram.providers.DsmlElementTypes.BinaryOperatorPattern_2022));
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createConditionGroup4CreationTool() {
+		java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType> types = new java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType>(4);
+types.add(dsml.diagram.providers.DsmlElementTypes.ConditionGroup_2024);
+types.add(dsml.diagram.providers.DsmlElementTypes.ConditionGroup_3042);
+types.add(dsml.diagram.providers.DsmlElementTypes.ConditionGroup_3023);
+types.add(dsml.diagram.providers.DsmlElementTypes.ConditionGroup_3032);
+org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry(dsml.diagram.part.Messages.ConditionGroup4CreationTool_title, dsml.diagram.part.Messages.ConditionGroup4CreationTool_desc, types);
+				 entry.setId("createConditionGroup4CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(dsml.diagram.providers.DsmlElementTypes.getImageDescriptor(dsml.diagram.providers.DsmlElementTypes.ConditionGroup_2024));
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createEvent5CreationTool() {
+		org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry(dsml.diagram.part.Messages.Event5CreationTool_title, dsml.diagram.part.Messages.Event5CreationTool_desc, java.util.Collections.singletonList(dsml.diagram.providers.DsmlElementTypes.Event_2016));
+				 entry.setId("createEvent5CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(dsml.diagram.providers.DsmlElementTypes.getImageDescriptor(dsml.diagram.providers.DsmlElementTypes.Event_2016));
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createEventPattern6CreationTool() {
+		org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry(dsml.diagram.part.Messages.EventPattern6CreationTool_title, dsml.diagram.part.Messages.EventPattern6CreationTool_desc, java.util.Collections.singletonList(dsml.diagram.providers.DsmlElementTypes.EventPattern_2014));
+				 entry.setId("createEventPattern6CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(dsml.diagram.providers.DsmlElementTypes.getImageDescriptor(dsml.diagram.providers.DsmlElementTypes.EventPattern_2014));
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createLimit7CreationTool() {
+		org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry(dsml.diagram.part.Messages.Limit7CreationTool_title, dsml.diagram.part.Messages.Limit7CreationTool_desc, java.util.Collections.singletonList(dsml.diagram.providers.DsmlElementTypes.Limit_3004));
+				 entry.setId("createLimit7CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(dsml.diagram.providers.DsmlElementTypes.getImageDescriptor(dsml.diagram.providers.DsmlElementTypes.Limit_3004));
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createNot8CreationTool() {
+		java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType> types = new java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType>(4);
+types.add(dsml.diagram.providers.DsmlElementTypes.Not_3044);
+types.add(dsml.diagram.providers.DsmlElementTypes.Not_2025);
+types.add(dsml.diagram.providers.DsmlElementTypes.Not_3024);
+types.add(dsml.diagram.providers.DsmlElementTypes.Not_3033);
+org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry(dsml.diagram.part.Messages.Not8CreationTool_title, dsml.diagram.part.Messages.Not8CreationTool_desc, types);
+				 entry.setId("createNot8CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(dsml.diagram.providers.DsmlElementTypes.getImageDescriptor(dsml.diagram.providers.DsmlElementTypes.Not_3044));
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createOperator9CreationTool() {
+		java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType> types = new java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType>(5);
+types.add(dsml.diagram.providers.DsmlElementTypes.Operator_2019);
+types.add(dsml.diagram.providers.DsmlElementTypes.Operator_3005);
+types.add(dsml.diagram.providers.DsmlElementTypes.Operator_3037);
+types.add(dsml.diagram.providers.DsmlElementTypes.Operator_3018);
+types.add(dsml.diagram.providers.DsmlElementTypes.Operator_3027);
+org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry(dsml.diagram.part.Messages.Operator9CreationTool_title, dsml.diagram.part.Messages.Operator9CreationTool_desc, types);
+				 entry.setId("createOperator9CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(dsml.diagram.providers.DsmlElementTypes.getImageDescriptor(dsml.diagram.providers.DsmlElementTypes.Operator_2019));
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createOrder10CreationTool() {
+		java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType> types = new java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType>(4);
+types.add(dsml.diagram.providers.DsmlElementTypes.Order_2018);
+types.add(dsml.diagram.providers.DsmlElementTypes.Order_3036);
+types.add(dsml.diagram.providers.DsmlElementTypes.Order_3017);
+types.add(dsml.diagram.providers.DsmlElementTypes.Order_3026);
+org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry(dsml.diagram.part.Messages.Order10CreationTool_title, dsml.diagram.part.Messages.Order10CreationTool_desc, types);
+				 entry.setId("createOrder10CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(dsml.diagram.providers.DsmlElementTypes.getImageDescriptor(dsml.diagram.providers.DsmlElementTypes.Order_2018));
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createPatternTimer11CreationTool() {
+		java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType> types = new java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType>(4);
+types.add(dsml.diagram.providers.DsmlElementTypes.PatternTimer_2023);
+types.add(dsml.diagram.providers.DsmlElementTypes.PatternTimer_3041);
+types.add(dsml.diagram.providers.DsmlElementTypes.PatternTimer_3022);
+types.add(dsml.diagram.providers.DsmlElementTypes.PatternTimer_3031);
+org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry(dsml.diagram.part.Messages.PatternTimer11CreationTool_title, dsml.diagram.part.Messages.PatternTimer11CreationTool_desc, types);
+				 entry.setId("createPatternTimer11CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(dsml.diagram.providers.DsmlElementTypes.getImageDescriptor(dsml.diagram.providers.DsmlElementTypes.PatternTimer_2023));
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createRule12CreationTool() {
+		org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry(dsml.diagram.part.Messages.Rule12CreationTool_title, dsml.diagram.part.Messages.Rule12CreationTool_desc, java.util.Collections.singletonList(dsml.diagram.providers.DsmlElementTypes.Rule_2013));
+				 entry.setId("createRule12CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(dsml.diagram.providers.DsmlElementTypes.getImageDescriptor(dsml.diagram.providers.DsmlElementTypes.Rule_2013));
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createTarget13CreationTool() {
+		java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType> types = new java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType>(4);
+types.add(dsml.diagram.providers.DsmlElementTypes.Target_2026);
+types.add(dsml.diagram.providers.DsmlElementTypes.Target_3043);
+types.add(dsml.diagram.providers.DsmlElementTypes.Target_3045);
+types.add(dsml.diagram.providers.DsmlElementTypes.Target_3046);
+org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry(dsml.diagram.part.Messages.Target13CreationTool_title, dsml.diagram.part.Messages.Target13CreationTool_desc, types);
+				 entry.setId("createTarget13CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(dsml.diagram.providers.DsmlElementTypes.getImageDescriptor(dsml.diagram.providers.DsmlElementTypes.Target_2026));
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createUnaryOperatorPattern14CreationTool() {
+		java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType> types = new java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType>(4);
+types.add(dsml.diagram.providers.DsmlElementTypes.UnaryOperatorPattern_2021);
+types.add(dsml.diagram.providers.DsmlElementTypes.UnaryOperatorPattern_3039);
+types.add(dsml.diagram.providers.DsmlElementTypes.UnaryOperatorPattern_3020);
+types.add(dsml.diagram.providers.DsmlElementTypes.UnaryOperatorPattern_3029);
+org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry(dsml.diagram.part.Messages.UnaryOperatorPattern14CreationTool_title, dsml.diagram.part.Messages.UnaryOperatorPattern14CreationTool_desc, types);
+				 entry.setId("createUnaryOperatorPattern14CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(dsml.diagram.providers.DsmlElementTypes.getImageDescriptor(dsml.diagram.providers.DsmlElementTypes.UnaryOperatorPattern_2021));
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createValueOperator15CreationTool() {
+		java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType> types = new java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType>(5);
+types.add(dsml.diagram.providers.DsmlElementTypes.ValueOperator_2020);
+types.add(dsml.diagram.providers.DsmlElementTypes.ValueOperator_3006);
+types.add(dsml.diagram.providers.DsmlElementTypes.ValueOperator_3038);
+types.add(dsml.diagram.providers.DsmlElementTypes.ValueOperator_3019);
+types.add(dsml.diagram.providers.DsmlElementTypes.ValueOperator_3028);
+org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry(dsml.diagram.part.Messages.ValueOperator15CreationTool_title, dsml.diagram.part.Messages.ValueOperator15CreationTool_desc, types);
+				 entry.setId("createValueOperator15CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(dsml.diagram.providers.DsmlElementTypes.getImageDescriptor(dsml.diagram.providers.DsmlElementTypes.ValueOperator_2020));
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createWindow16CreationTool() {
+		org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry(dsml.diagram.part.Messages.Window16CreationTool_title, dsml.diagram.part.Messages.Window16CreationTool_desc, java.util.Collections.singletonList(dsml.diagram.providers.DsmlElementTypes.Window_2015));
+				 entry.setId("createWindow16CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(dsml.diagram.providers.DsmlElementTypes.getImageDescriptor(dsml.diagram.providers.DsmlElementTypes.Window_2015));
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createArithmetic1CreationTool() {
+		org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry(dsml.diagram.part.Messages.Arithmetic1CreationTool_title, dsml.diagram.part.Messages.Arithmetic1CreationTool_desc, java.util.Collections.singletonList(dsml.diagram.providers.DsmlElementTypes.Arithmetic_4003));
+				 entry.setId("createArithmetic1CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(dsml.diagram.providers.DsmlElementTypes.getImageDescriptor(dsml.diagram.providers.DsmlElementTypes.Arithmetic_4003));
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createComparison2CreationTool() {
+		org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry(dsml.diagram.part.Messages.Comparison2CreationTool_title, dsml.diagram.part.Messages.Comparison2CreationTool_desc, java.util.Collections.singletonList(dsml.diagram.providers.DsmlElementTypes.Comparison_4002));
+				 entry.setId("createComparison2CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(dsml.diagram.providers.DsmlElementTypes.getImageDescriptor(dsml.diagram.providers.DsmlElementTypes.Comparison_4002));
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createFollowedby3CreationTool() {
+		org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry(dsml.diagram.part.Messages.Followedby3CreationTool_title, dsml.diagram.part.Messages.Followedby3CreationTool_desc, java.util.Collections.singletonList(dsml.diagram.providers.DsmlElementTypes.Followedby_4004));
+				 entry.setId("createFollowedby3CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(dsml.diagram.providers.DsmlElementTypes.getImageDescriptor(dsml.diagram.providers.DsmlElementTypes.Followedby_4004));
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createLink4CreationTool() {
+		org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry(dsml.diagram.part.Messages.Link4CreationTool_title, dsml.diagram.part.Messages.Link4CreationTool_desc, java.util.Collections.singletonList(dsml.diagram.providers.DsmlElementTypes.Link_4001));
+				 entry.setId("createLink4CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(dsml.diagram.providers.DsmlElementTypes.getImageDescriptor(dsml.diagram.providers.DsmlElementTypes.Link_4001));
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createLogicalConnector5CreationTool() {
+		org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry(dsml.diagram.part.Messages.LogicalConnector5CreationTool_title, dsml.diagram.part.Messages.LogicalConnector5CreationTool_desc, java.util.Collections.singletonList(dsml.diagram.providers.DsmlElementTypes.LogicalConnector_4005));
+				 entry.setId("createLogicalConnector5CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(dsml.diagram.providers.DsmlElementTypes.getImageDescriptor(dsml.diagram.providers.DsmlElementTypes.LogicalConnector_4005));
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+
+
+		
+}

@@ -1,0 +1,2348 @@
+	/*
+ * 
+ */
+package dsml.diagram.part;
+
+	/**
+ * @generated
+ */
+public class DsmlDiagramUpdater {
+		
+	/**
+ * @generated
+ */
+public static boolean isShortcutOrphaned(org.eclipse.gmf.runtime.notation.View view) {
+	return !view.isSetElement() || view.getElement() == null || view.getElement().eIsProxy();
+}
+	
+		/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlNodeDescriptor> getSemanticChildren(org.eclipse.gmf.runtime.notation.View view) {
+		switch (dsml.diagram.part.DsmlVisualIDRegistry.getVisualID(view)) {
+		case dsml.diagram.edit.parts.AreaDesenhoEditPart.VISUAL_ID:
+	return getAreaDesenho_1000SemanticChildren(view);
+case dsml.diagram.edit.parts.EventEventAttributesCompartmentEditPart.VISUAL_ID:
+	return getEventEventAttributesCompartment_7026SemanticChildren(view);
+case dsml.diagram.edit.parts.RuleRuleNodeCompartmentEditPart.VISUAL_ID:
+	return getRuleRuleNodeCompartment_7027SemanticChildren(view);
+case dsml.diagram.edit.parts.ConditionGroupConditionGroupOperationTypesCompartmentEditPart.VISUAL_ID:
+	return getConditionGroupConditionGroupOperationTypesCompartment_7011SemanticChildren(view);
+case dsml.diagram.edit.parts.TargetTargetOperationTypesCompartmentEditPart.VISUAL_ID:
+	return getTargetTargetOperationTypesCompartment_7024SemanticChildren(view);
+case dsml.diagram.edit.parts.OrderOrderLimitCompartmentEditPart.VISUAL_ID:
+	return getOrderOrderLimitCompartment_7010SemanticChildren(view);
+case dsml.diagram.edit.parts.EventPatternEventPatternNodeCompartmentEditPart.VISUAL_ID:
+	return getEventPatternEventPatternNodeCompartment_7028SemanticChildren(view);
+case dsml.diagram.edit.parts.ConditionGroupConditionGroupOperationTypesCompartment2EditPart.VISUAL_ID:
+	return getConditionGroupConditionGroupOperationTypesCompartment_7015SemanticChildren(view);
+case dsml.diagram.edit.parts.TargetTargetOperationTypesCompartment2EditPart.VISUAL_ID:
+	return getTargetTargetOperationTypesCompartment_7025SemanticChildren(view);
+case dsml.diagram.edit.parts.OrderOrderLimitCompartment2EditPart.VISUAL_ID:
+	return getOrderOrderLimitCompartment_7014SemanticChildren(view);
+	}
+		return java.util.Collections.emptyList();
+}
+	
+	/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlNodeDescriptor> getAreaDesenho_1000SemanticChildren(org.eclipse.gmf.runtime.notation.View view) {
+		if (!view.isSetElement()) {
+	return java.util.Collections.emptyList();
+}
+dsml.AreaDesenho modelElement = (dsml.AreaDesenho) view.getElement();
+	java.util.LinkedList<dsml.diagram.part.DsmlNodeDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlNodeDescriptor>();
+						for (java.util.Iterator<?> it = modelElement.getEvents().iterator(); it.hasNext();) {
+		dsml.Event childElement = (dsml.Event) it.next();
+					int visualID = dsml.diagram.part.DsmlVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == dsml.diagram.edit.parts.EventEditPart.VISUAL_ID) {
+	result.add(new dsml.diagram.part.DsmlNodeDescriptor(childElement, visualID));
+	continue;
+}
+	}
+						{ dsml.Rule childElement = modelElement.getRule();
+					int visualID = dsml.diagram.part.DsmlVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == dsml.diagram.edit.parts.RuleEditPart.VISUAL_ID) {
+	result.add(new dsml.diagram.part.DsmlNodeDescriptor(childElement, visualID));
+}
+	}
+						{ dsml.EventPattern childElement = modelElement.getPatterns();
+					int visualID = dsml.diagram.part.DsmlVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == dsml.diagram.edit.parts.EventPatternEditPart.VISUAL_ID) {
+	result.add(new dsml.diagram.part.DsmlNodeDescriptor(childElement, visualID));
+}
+	}
+						for (java.util.Iterator<?> it = modelElement.getWindows().iterator(); it.hasNext();) {
+		dsml.Window childElement = (dsml.Window) it.next();
+					int visualID = dsml.diagram.part.DsmlVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == dsml.diagram.edit.parts.WindowEditPart.VISUAL_ID) {
+	result.add(new dsml.diagram.part.DsmlNodeDescriptor(childElement, visualID));
+	continue;
+}
+	}
+			return result;
+	}
+
+	/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlNodeDescriptor> getEventEventAttributesCompartment_7026SemanticChildren(org.eclipse.gmf.runtime.notation.View view) {
+		if (false == view.eContainer() instanceof org.eclipse.gmf.runtime.notation.View) {
+	return java.util.Collections.emptyList();
+}
+org.eclipse.gmf.runtime.notation.View containerView = (org.eclipse.gmf.runtime.notation.View) view.eContainer();
+if (!containerView.isSetElement()) {
+	return java.util.Collections.emptyList();
+}
+dsml.Event modelElement = (dsml.Event) containerView.getElement();
+	java.util.LinkedList<dsml.diagram.part.DsmlNodeDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlNodeDescriptor>();
+						for (java.util.Iterator<?> it = modelElement.getAttributes().iterator(); it.hasNext();) {
+		dsml.Attribute childElement = (dsml.Attribute) it.next();
+					int visualID = dsml.diagram.part.DsmlVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == dsml.diagram.edit.parts.AttributeEditPart.VISUAL_ID) {
+	result.add(new dsml.diagram.part.DsmlNodeDescriptor(childElement, visualID));
+	continue;
+}
+	}
+			return result;
+	}
+
+	/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlNodeDescriptor> getRuleRuleNodeCompartment_7027SemanticChildren(org.eclipse.gmf.runtime.notation.View view) {
+		if (false == view.eContainer() instanceof org.eclipse.gmf.runtime.notation.View) {
+	return java.util.Collections.emptyList();
+}
+org.eclipse.gmf.runtime.notation.View containerView = (org.eclipse.gmf.runtime.notation.View) view.eContainer();
+if (!containerView.isSetElement()) {
+	return java.util.Collections.emptyList();
+}
+dsml.Rule modelElement = (dsml.Rule) containerView.getElement();
+	java.util.LinkedList<dsml.diagram.part.DsmlNodeDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlNodeDescriptor>();
+						for (java.util.Iterator<?> it = modelElement.getNode().iterator(); it.hasNext();) {
+		dsml.Node childElement = (dsml.Node) it.next();
+					int visualID = dsml.diagram.part.DsmlVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == dsml.diagram.edit.parts.ConditionGroupEditPart.VISUAL_ID) {
+	result.add(new dsml.diagram.part.DsmlNodeDescriptor(childElement, visualID));
+	continue;
+}
+if (visualID == dsml.diagram.edit.parts.TargetEditPart.VISUAL_ID) {
+	result.add(new dsml.diagram.part.DsmlNodeDescriptor(childElement, visualID));
+	continue;
+}
+if (visualID == dsml.diagram.edit.parts.AggregationEditPart.VISUAL_ID) {
+	result.add(new dsml.diagram.part.DsmlNodeDescriptor(childElement, visualID));
+	continue;
+}
+if (visualID == dsml.diagram.edit.parts.OrderEditPart.VISUAL_ID) {
+	result.add(new dsml.diagram.part.DsmlNodeDescriptor(childElement, visualID));
+	continue;
+}
+if (visualID == dsml.diagram.edit.parts.Operator3EditPart.VISUAL_ID) {
+	result.add(new dsml.diagram.part.DsmlNodeDescriptor(childElement, visualID));
+	continue;
+}
+if (visualID == dsml.diagram.edit.parts.ValueOperator3EditPart.VISUAL_ID) {
+	result.add(new dsml.diagram.part.DsmlNodeDescriptor(childElement, visualID));
+	continue;
+}
+if (visualID == dsml.diagram.edit.parts.UnaryOperatorPatternEditPart.VISUAL_ID) {
+	result.add(new dsml.diagram.part.DsmlNodeDescriptor(childElement, visualID));
+	continue;
+}
+if (visualID == dsml.diagram.edit.parts.BinaryOperatorPatternEditPart.VISUAL_ID) {
+	result.add(new dsml.diagram.part.DsmlNodeDescriptor(childElement, visualID));
+	continue;
+}
+if (visualID == dsml.diagram.edit.parts.PatternTimerEditPart.VISUAL_ID) {
+	result.add(new dsml.diagram.part.DsmlNodeDescriptor(childElement, visualID));
+	continue;
+}
+if (visualID == dsml.diagram.edit.parts.Attribute2EditPart.VISUAL_ID) {
+	result.add(new dsml.diagram.part.DsmlNodeDescriptor(childElement, visualID));
+	continue;
+}
+if (visualID == dsml.diagram.edit.parts.NotEditPart.VISUAL_ID) {
+	result.add(new dsml.diagram.part.DsmlNodeDescriptor(childElement, visualID));
+	continue;
+}
+	}
+			return result;
+	}
+
+	/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlNodeDescriptor> getConditionGroupConditionGroupOperationTypesCompartment_7011SemanticChildren(org.eclipse.gmf.runtime.notation.View view) {
+		if (false == view.eContainer() instanceof org.eclipse.gmf.runtime.notation.View) {
+	return java.util.Collections.emptyList();
+}
+org.eclipse.gmf.runtime.notation.View containerView = (org.eclipse.gmf.runtime.notation.View) view.eContainer();
+if (!containerView.isSetElement()) {
+	return java.util.Collections.emptyList();
+}
+dsml.ConditionGroup modelElement = (dsml.ConditionGroup) containerView.getElement();
+	java.util.LinkedList<dsml.diagram.part.DsmlNodeDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlNodeDescriptor>();
+						for (java.util.Iterator<?> it = modelElement.getOperationTypes().iterator(); it.hasNext();) {
+		dsml.OperationType childElement = (dsml.OperationType) it.next();
+					int visualID = dsml.diagram.part.DsmlVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == dsml.diagram.edit.parts.OperatorEditPart.VISUAL_ID) {
+	result.add(new dsml.diagram.part.DsmlNodeDescriptor(childElement, visualID));
+	continue;
+}
+if (visualID == dsml.diagram.edit.parts.ValueOperatorEditPart.VISUAL_ID) {
+	result.add(new dsml.diagram.part.DsmlNodeDescriptor(childElement, visualID));
+	continue;
+}
+	}
+			return result;
+	}
+
+	/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlNodeDescriptor> getTargetTargetOperationTypesCompartment_7024SemanticChildren(org.eclipse.gmf.runtime.notation.View view) {
+		if (false == view.eContainer() instanceof org.eclipse.gmf.runtime.notation.View) {
+	return java.util.Collections.emptyList();
+}
+org.eclipse.gmf.runtime.notation.View containerView = (org.eclipse.gmf.runtime.notation.View) view.eContainer();
+if (!containerView.isSetElement()) {
+	return java.util.Collections.emptyList();
+}
+dsml.Target modelElement = (dsml.Target) containerView.getElement();
+	java.util.LinkedList<dsml.diagram.part.DsmlNodeDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlNodeDescriptor>();
+						for (java.util.Iterator<?> it = modelElement.getOperationTypes().iterator(); it.hasNext();) {
+		dsml.OperationType childElement = (dsml.OperationType) it.next();
+					int visualID = dsml.diagram.part.DsmlVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == dsml.diagram.edit.parts.Operator2EditPart.VISUAL_ID) {
+	result.add(new dsml.diagram.part.DsmlNodeDescriptor(childElement, visualID));
+	continue;
+}
+if (visualID == dsml.diagram.edit.parts.ValueOperator2EditPart.VISUAL_ID) {
+	result.add(new dsml.diagram.part.DsmlNodeDescriptor(childElement, visualID));
+	continue;
+}
+	}
+			return result;
+	}
+
+	/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlNodeDescriptor> getOrderOrderLimitCompartment_7010SemanticChildren(org.eclipse.gmf.runtime.notation.View view) {
+		if (false == view.eContainer() instanceof org.eclipse.gmf.runtime.notation.View) {
+	return java.util.Collections.emptyList();
+}
+org.eclipse.gmf.runtime.notation.View containerView = (org.eclipse.gmf.runtime.notation.View) view.eContainer();
+if (!containerView.isSetElement()) {
+	return java.util.Collections.emptyList();
+}
+dsml.Order modelElement = (dsml.Order) containerView.getElement();
+	java.util.LinkedList<dsml.diagram.part.DsmlNodeDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlNodeDescriptor>();
+						{ dsml.Limit childElement = modelElement.getLimit();
+					int visualID = dsml.diagram.part.DsmlVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == dsml.diagram.edit.parts.LimitEditPart.VISUAL_ID) {
+	result.add(new dsml.diagram.part.DsmlNodeDescriptor(childElement, visualID));
+}
+	}
+			return result;
+	}
+
+	/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlNodeDescriptor> getEventPatternEventPatternNodeCompartment_7028SemanticChildren(org.eclipse.gmf.runtime.notation.View view) {
+		if (false == view.eContainer() instanceof org.eclipse.gmf.runtime.notation.View) {
+	return java.util.Collections.emptyList();
+}
+org.eclipse.gmf.runtime.notation.View containerView = (org.eclipse.gmf.runtime.notation.View) view.eContainer();
+if (!containerView.isSetElement()) {
+	return java.util.Collections.emptyList();
+}
+dsml.EventPattern modelElement = (dsml.EventPattern) containerView.getElement();
+	java.util.LinkedList<dsml.diagram.part.DsmlNodeDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlNodeDescriptor>();
+						for (java.util.Iterator<?> it = modelElement.getNode().iterator(); it.hasNext();) {
+		dsml.Node childElement = (dsml.Node) it.next();
+					int visualID = dsml.diagram.part.DsmlVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == dsml.diagram.edit.parts.ConditionGroup2EditPart.VISUAL_ID) {
+	result.add(new dsml.diagram.part.DsmlNodeDescriptor(childElement, visualID));
+	continue;
+}
+if (visualID == dsml.diagram.edit.parts.Target2EditPart.VISUAL_ID) {
+	result.add(new dsml.diagram.part.DsmlNodeDescriptor(childElement, visualID));
+	continue;
+}
+if (visualID == dsml.diagram.edit.parts.Aggregation2EditPart.VISUAL_ID) {
+	result.add(new dsml.diagram.part.DsmlNodeDescriptor(childElement, visualID));
+	continue;
+}
+if (visualID == dsml.diagram.edit.parts.Order2EditPart.VISUAL_ID) {
+	result.add(new dsml.diagram.part.DsmlNodeDescriptor(childElement, visualID));
+	continue;
+}
+if (visualID == dsml.diagram.edit.parts.Operator4EditPart.VISUAL_ID) {
+	result.add(new dsml.diagram.part.DsmlNodeDescriptor(childElement, visualID));
+	continue;
+}
+if (visualID == dsml.diagram.edit.parts.ValueOperator4EditPart.VISUAL_ID) {
+	result.add(new dsml.diagram.part.DsmlNodeDescriptor(childElement, visualID));
+	continue;
+}
+if (visualID == dsml.diagram.edit.parts.UnaryOperatorPattern2EditPart.VISUAL_ID) {
+	result.add(new dsml.diagram.part.DsmlNodeDescriptor(childElement, visualID));
+	continue;
+}
+if (visualID == dsml.diagram.edit.parts.BinaryOperatorPattern2EditPart.VISUAL_ID) {
+	result.add(new dsml.diagram.part.DsmlNodeDescriptor(childElement, visualID));
+	continue;
+}
+if (visualID == dsml.diagram.edit.parts.PatternTimer2EditPart.VISUAL_ID) {
+	result.add(new dsml.diagram.part.DsmlNodeDescriptor(childElement, visualID));
+	continue;
+}
+if (visualID == dsml.diagram.edit.parts.Attribute3EditPart.VISUAL_ID) {
+	result.add(new dsml.diagram.part.DsmlNodeDescriptor(childElement, visualID));
+	continue;
+}
+if (visualID == dsml.diagram.edit.parts.Not2EditPart.VISUAL_ID) {
+	result.add(new dsml.diagram.part.DsmlNodeDescriptor(childElement, visualID));
+	continue;
+}
+	}
+			return result;
+	}
+
+	/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlNodeDescriptor> getConditionGroupConditionGroupOperationTypesCompartment_7015SemanticChildren(org.eclipse.gmf.runtime.notation.View view) {
+		if (false == view.eContainer() instanceof org.eclipse.gmf.runtime.notation.View) {
+	return java.util.Collections.emptyList();
+}
+org.eclipse.gmf.runtime.notation.View containerView = (org.eclipse.gmf.runtime.notation.View) view.eContainer();
+if (!containerView.isSetElement()) {
+	return java.util.Collections.emptyList();
+}
+dsml.ConditionGroup modelElement = (dsml.ConditionGroup) containerView.getElement();
+	java.util.LinkedList<dsml.diagram.part.DsmlNodeDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlNodeDescriptor>();
+						for (java.util.Iterator<?> it = modelElement.getOperationTypes().iterator(); it.hasNext();) {
+		dsml.OperationType childElement = (dsml.OperationType) it.next();
+					int visualID = dsml.diagram.part.DsmlVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == dsml.diagram.edit.parts.OperatorEditPart.VISUAL_ID) {
+	result.add(new dsml.diagram.part.DsmlNodeDescriptor(childElement, visualID));
+	continue;
+}
+if (visualID == dsml.diagram.edit.parts.ValueOperatorEditPart.VISUAL_ID) {
+	result.add(new dsml.diagram.part.DsmlNodeDescriptor(childElement, visualID));
+	continue;
+}
+	}
+			return result;
+	}
+
+	/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlNodeDescriptor> getTargetTargetOperationTypesCompartment_7025SemanticChildren(org.eclipse.gmf.runtime.notation.View view) {
+		if (false == view.eContainer() instanceof org.eclipse.gmf.runtime.notation.View) {
+	return java.util.Collections.emptyList();
+}
+org.eclipse.gmf.runtime.notation.View containerView = (org.eclipse.gmf.runtime.notation.View) view.eContainer();
+if (!containerView.isSetElement()) {
+	return java.util.Collections.emptyList();
+}
+dsml.Target modelElement = (dsml.Target) containerView.getElement();
+	java.util.LinkedList<dsml.diagram.part.DsmlNodeDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlNodeDescriptor>();
+						for (java.util.Iterator<?> it = modelElement.getOperationTypes().iterator(); it.hasNext();) {
+		dsml.OperationType childElement = (dsml.OperationType) it.next();
+					int visualID = dsml.diagram.part.DsmlVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == dsml.diagram.edit.parts.Operator2EditPart.VISUAL_ID) {
+	result.add(new dsml.diagram.part.DsmlNodeDescriptor(childElement, visualID));
+	continue;
+}
+if (visualID == dsml.diagram.edit.parts.ValueOperator2EditPart.VISUAL_ID) {
+	result.add(new dsml.diagram.part.DsmlNodeDescriptor(childElement, visualID));
+	continue;
+}
+	}
+			return result;
+	}
+
+	/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlNodeDescriptor> getOrderOrderLimitCompartment_7014SemanticChildren(org.eclipse.gmf.runtime.notation.View view) {
+		if (false == view.eContainer() instanceof org.eclipse.gmf.runtime.notation.View) {
+	return java.util.Collections.emptyList();
+}
+org.eclipse.gmf.runtime.notation.View containerView = (org.eclipse.gmf.runtime.notation.View) view.eContainer();
+if (!containerView.isSetElement()) {
+	return java.util.Collections.emptyList();
+}
+dsml.Order modelElement = (dsml.Order) containerView.getElement();
+	java.util.LinkedList<dsml.diagram.part.DsmlNodeDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlNodeDescriptor>();
+						{ dsml.Limit childElement = modelElement.getLimit();
+					int visualID = dsml.diagram.part.DsmlVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == dsml.diagram.edit.parts.LimitEditPart.VISUAL_ID) {
+	result.add(new dsml.diagram.part.DsmlNodeDescriptor(childElement, visualID));
+}
+	}
+			return result;
+	}
+	
+		/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
+		switch (dsml.diagram.part.DsmlVisualIDRegistry.getVisualID(view)) {
+		case dsml.diagram.edit.parts.AreaDesenhoEditPart.VISUAL_ID:
+	return getAreaDesenho_1000ContainedLinks(view);
+case dsml.diagram.edit.parts.EventEditPart.VISUAL_ID:
+	return getEvent_2028ContainedLinks(view);
+case dsml.diagram.edit.parts.RuleEditPart.VISUAL_ID:
+	return getRule_2029ContainedLinks(view);
+case dsml.diagram.edit.parts.EventPatternEditPart.VISUAL_ID:
+	return getEventPattern_2030ContainedLinks(view);
+case dsml.diagram.edit.parts.WindowEditPart.VISUAL_ID:
+	return getWindow_2031ContainedLinks(view);
+case dsml.diagram.edit.parts.AttributeEditPart.VISUAL_ID:
+	return getAttribute_3034ContainedLinks(view);
+case dsml.diagram.edit.parts.ConditionGroupEditPart.VISUAL_ID:
+	return getConditionGroup_3023ContainedLinks(view);
+case dsml.diagram.edit.parts.OperatorEditPart.VISUAL_ID:
+	return getOperator_3005ContainedLinks(view);
+case dsml.diagram.edit.parts.ValueOperatorEditPart.VISUAL_ID:
+	return getValueOperator_3006ContainedLinks(view);
+case dsml.diagram.edit.parts.TargetEditPart.VISUAL_ID:
+	return getTarget_3045ContainedLinks(view);
+case dsml.diagram.edit.parts.Operator2EditPart.VISUAL_ID:
+	return getOperator_3047ContainedLinks(view);
+case dsml.diagram.edit.parts.ValueOperator2EditPart.VISUAL_ID:
+	return getValueOperator_3048ContainedLinks(view);
+case dsml.diagram.edit.parts.AggregationEditPart.VISUAL_ID:
+	return getAggregation_3016ContainedLinks(view);
+case dsml.diagram.edit.parts.OrderEditPart.VISUAL_ID:
+	return getOrder_3017ContainedLinks(view);
+case dsml.diagram.edit.parts.LimitEditPart.VISUAL_ID:
+	return getLimit_3004ContainedLinks(view);
+case dsml.diagram.edit.parts.Operator3EditPart.VISUAL_ID:
+	return getOperator_3018ContainedLinks(view);
+case dsml.diagram.edit.parts.ValueOperator3EditPart.VISUAL_ID:
+	return getValueOperator_3019ContainedLinks(view);
+case dsml.diagram.edit.parts.UnaryOperatorPatternEditPart.VISUAL_ID:
+	return getUnaryOperatorPattern_3020ContainedLinks(view);
+case dsml.diagram.edit.parts.BinaryOperatorPatternEditPart.VISUAL_ID:
+	return getBinaryOperatorPattern_3021ContainedLinks(view);
+case dsml.diagram.edit.parts.PatternTimerEditPart.VISUAL_ID:
+	return getPatternTimer_3022ContainedLinks(view);
+case dsml.diagram.edit.parts.Attribute2EditPart.VISUAL_ID:
+	return getAttribute_3049ContainedLinks(view);
+case dsml.diagram.edit.parts.NotEditPart.VISUAL_ID:
+	return getNot_3024ContainedLinks(view);
+case dsml.diagram.edit.parts.ConditionGroup2EditPart.VISUAL_ID:
+	return getConditionGroup_3032ContainedLinks(view);
+case dsml.diagram.edit.parts.Target2EditPart.VISUAL_ID:
+	return getTarget_3046ContainedLinks(view);
+case dsml.diagram.edit.parts.Aggregation2EditPart.VISUAL_ID:
+	return getAggregation_3025ContainedLinks(view);
+case dsml.diagram.edit.parts.Order2EditPart.VISUAL_ID:
+	return getOrder_3026ContainedLinks(view);
+case dsml.diagram.edit.parts.Operator4EditPart.VISUAL_ID:
+	return getOperator_3027ContainedLinks(view);
+case dsml.diagram.edit.parts.ValueOperator4EditPart.VISUAL_ID:
+	return getValueOperator_3028ContainedLinks(view);
+case dsml.diagram.edit.parts.UnaryOperatorPattern2EditPart.VISUAL_ID:
+	return getUnaryOperatorPattern_3029ContainedLinks(view);
+case dsml.diagram.edit.parts.BinaryOperatorPattern2EditPart.VISUAL_ID:
+	return getBinaryOperatorPattern_3030ContainedLinks(view);
+case dsml.diagram.edit.parts.PatternTimer2EditPart.VISUAL_ID:
+	return getPatternTimer_3031ContainedLinks(view);
+case dsml.diagram.edit.parts.Attribute3EditPart.VISUAL_ID:
+	return getAttribute_3050ContainedLinks(view);
+case dsml.diagram.edit.parts.Not2EditPart.VISUAL_ID:
+	return getNot_3033ContainedLinks(view);
+case dsml.diagram.edit.parts.LinkComponentEditPart.VISUAL_ID:
+	return getLinkComponent_4006ContainedLinks(view);
+case dsml.diagram.edit.parts.LinkTargetEditPart.VISUAL_ID:
+	return getLinkTarget_4007ContainedLinks(view);
+case dsml.diagram.edit.parts.ComparisonEditPart.VISUAL_ID:
+	return getComparison_4002ContainedLinks(view);
+case dsml.diagram.edit.parts.ArithmeticEditPart.VISUAL_ID:
+	return getArithmetic_4003ContainedLinks(view);
+case dsml.diagram.edit.parts.FollowedbyEditPart.VISUAL_ID:
+	return getFollowedby_4004ContainedLinks(view);
+case dsml.diagram.edit.parts.LogicalConnectorEditPart.VISUAL_ID:
+	return getLogicalConnector_4005ContainedLinks(view);
+	}
+		return java.util.Collections.emptyList();
+}
+	
+		/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getIncomingLinks(org.eclipse.gmf.runtime.notation.View view) {
+		switch (dsml.diagram.part.DsmlVisualIDRegistry.getVisualID(view)) {
+		case dsml.diagram.edit.parts.EventEditPart.VISUAL_ID:
+	return getEvent_2028IncomingLinks(view);
+case dsml.diagram.edit.parts.RuleEditPart.VISUAL_ID:
+	return getRule_2029IncomingLinks(view);
+case dsml.diagram.edit.parts.EventPatternEditPart.VISUAL_ID:
+	return getEventPattern_2030IncomingLinks(view);
+case dsml.diagram.edit.parts.WindowEditPart.VISUAL_ID:
+	return getWindow_2031IncomingLinks(view);
+case dsml.diagram.edit.parts.AttributeEditPart.VISUAL_ID:
+	return getAttribute_3034IncomingLinks(view);
+case dsml.diagram.edit.parts.ConditionGroupEditPart.VISUAL_ID:
+	return getConditionGroup_3023IncomingLinks(view);
+case dsml.diagram.edit.parts.OperatorEditPart.VISUAL_ID:
+	return getOperator_3005IncomingLinks(view);
+case dsml.diagram.edit.parts.ValueOperatorEditPart.VISUAL_ID:
+	return getValueOperator_3006IncomingLinks(view);
+case dsml.diagram.edit.parts.TargetEditPart.VISUAL_ID:
+	return getTarget_3045IncomingLinks(view);
+case dsml.diagram.edit.parts.Operator2EditPart.VISUAL_ID:
+	return getOperator_3047IncomingLinks(view);
+case dsml.diagram.edit.parts.ValueOperator2EditPart.VISUAL_ID:
+	return getValueOperator_3048IncomingLinks(view);
+case dsml.diagram.edit.parts.AggregationEditPart.VISUAL_ID:
+	return getAggregation_3016IncomingLinks(view);
+case dsml.diagram.edit.parts.OrderEditPart.VISUAL_ID:
+	return getOrder_3017IncomingLinks(view);
+case dsml.diagram.edit.parts.LimitEditPart.VISUAL_ID:
+	return getLimit_3004IncomingLinks(view);
+case dsml.diagram.edit.parts.Operator3EditPart.VISUAL_ID:
+	return getOperator_3018IncomingLinks(view);
+case dsml.diagram.edit.parts.ValueOperator3EditPart.VISUAL_ID:
+	return getValueOperator_3019IncomingLinks(view);
+case dsml.diagram.edit.parts.UnaryOperatorPatternEditPart.VISUAL_ID:
+	return getUnaryOperatorPattern_3020IncomingLinks(view);
+case dsml.diagram.edit.parts.BinaryOperatorPatternEditPart.VISUAL_ID:
+	return getBinaryOperatorPattern_3021IncomingLinks(view);
+case dsml.diagram.edit.parts.PatternTimerEditPart.VISUAL_ID:
+	return getPatternTimer_3022IncomingLinks(view);
+case dsml.diagram.edit.parts.Attribute2EditPart.VISUAL_ID:
+	return getAttribute_3049IncomingLinks(view);
+case dsml.diagram.edit.parts.NotEditPart.VISUAL_ID:
+	return getNot_3024IncomingLinks(view);
+case dsml.diagram.edit.parts.ConditionGroup2EditPart.VISUAL_ID:
+	return getConditionGroup_3032IncomingLinks(view);
+case dsml.diagram.edit.parts.Target2EditPart.VISUAL_ID:
+	return getTarget_3046IncomingLinks(view);
+case dsml.diagram.edit.parts.Aggregation2EditPart.VISUAL_ID:
+	return getAggregation_3025IncomingLinks(view);
+case dsml.diagram.edit.parts.Order2EditPart.VISUAL_ID:
+	return getOrder_3026IncomingLinks(view);
+case dsml.diagram.edit.parts.Operator4EditPart.VISUAL_ID:
+	return getOperator_3027IncomingLinks(view);
+case dsml.diagram.edit.parts.ValueOperator4EditPart.VISUAL_ID:
+	return getValueOperator_3028IncomingLinks(view);
+case dsml.diagram.edit.parts.UnaryOperatorPattern2EditPart.VISUAL_ID:
+	return getUnaryOperatorPattern_3029IncomingLinks(view);
+case dsml.diagram.edit.parts.BinaryOperatorPattern2EditPart.VISUAL_ID:
+	return getBinaryOperatorPattern_3030IncomingLinks(view);
+case dsml.diagram.edit.parts.PatternTimer2EditPart.VISUAL_ID:
+	return getPatternTimer_3031IncomingLinks(view);
+case dsml.diagram.edit.parts.Attribute3EditPart.VISUAL_ID:
+	return getAttribute_3050IncomingLinks(view);
+case dsml.diagram.edit.parts.Not2EditPart.VISUAL_ID:
+	return getNot_3033IncomingLinks(view);
+case dsml.diagram.edit.parts.LinkComponentEditPart.VISUAL_ID:
+	return getLinkComponent_4006IncomingLinks(view);
+case dsml.diagram.edit.parts.LinkTargetEditPart.VISUAL_ID:
+	return getLinkTarget_4007IncomingLinks(view);
+case dsml.diagram.edit.parts.ComparisonEditPart.VISUAL_ID:
+	return getComparison_4002IncomingLinks(view);
+case dsml.diagram.edit.parts.ArithmeticEditPart.VISUAL_ID:
+	return getArithmetic_4003IncomingLinks(view);
+case dsml.diagram.edit.parts.FollowedbyEditPart.VISUAL_ID:
+	return getFollowedby_4004IncomingLinks(view);
+case dsml.diagram.edit.parts.LogicalConnectorEditPart.VISUAL_ID:
+	return getLogicalConnector_4005IncomingLinks(view);
+	}
+		return java.util.Collections.emptyList();
+}
+	
+		/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getOutgoingLinks(org.eclipse.gmf.runtime.notation.View view) {
+		switch (dsml.diagram.part.DsmlVisualIDRegistry.getVisualID(view)) {
+		case dsml.diagram.edit.parts.EventEditPart.VISUAL_ID:
+	return getEvent_2028OutgoingLinks(view);
+case dsml.diagram.edit.parts.RuleEditPart.VISUAL_ID:
+	return getRule_2029OutgoingLinks(view);
+case dsml.diagram.edit.parts.EventPatternEditPart.VISUAL_ID:
+	return getEventPattern_2030OutgoingLinks(view);
+case dsml.diagram.edit.parts.WindowEditPart.VISUAL_ID:
+	return getWindow_2031OutgoingLinks(view);
+case dsml.diagram.edit.parts.AttributeEditPart.VISUAL_ID:
+	return getAttribute_3034OutgoingLinks(view);
+case dsml.diagram.edit.parts.ConditionGroupEditPart.VISUAL_ID:
+	return getConditionGroup_3023OutgoingLinks(view);
+case dsml.diagram.edit.parts.OperatorEditPart.VISUAL_ID:
+	return getOperator_3005OutgoingLinks(view);
+case dsml.diagram.edit.parts.ValueOperatorEditPart.VISUAL_ID:
+	return getValueOperator_3006OutgoingLinks(view);
+case dsml.diagram.edit.parts.TargetEditPart.VISUAL_ID:
+	return getTarget_3045OutgoingLinks(view);
+case dsml.diagram.edit.parts.Operator2EditPart.VISUAL_ID:
+	return getOperator_3047OutgoingLinks(view);
+case dsml.diagram.edit.parts.ValueOperator2EditPart.VISUAL_ID:
+	return getValueOperator_3048OutgoingLinks(view);
+case dsml.diagram.edit.parts.AggregationEditPart.VISUAL_ID:
+	return getAggregation_3016OutgoingLinks(view);
+case dsml.diagram.edit.parts.OrderEditPart.VISUAL_ID:
+	return getOrder_3017OutgoingLinks(view);
+case dsml.diagram.edit.parts.LimitEditPart.VISUAL_ID:
+	return getLimit_3004OutgoingLinks(view);
+case dsml.diagram.edit.parts.Operator3EditPart.VISUAL_ID:
+	return getOperator_3018OutgoingLinks(view);
+case dsml.diagram.edit.parts.ValueOperator3EditPart.VISUAL_ID:
+	return getValueOperator_3019OutgoingLinks(view);
+case dsml.diagram.edit.parts.UnaryOperatorPatternEditPart.VISUAL_ID:
+	return getUnaryOperatorPattern_3020OutgoingLinks(view);
+case dsml.diagram.edit.parts.BinaryOperatorPatternEditPart.VISUAL_ID:
+	return getBinaryOperatorPattern_3021OutgoingLinks(view);
+case dsml.diagram.edit.parts.PatternTimerEditPart.VISUAL_ID:
+	return getPatternTimer_3022OutgoingLinks(view);
+case dsml.diagram.edit.parts.Attribute2EditPart.VISUAL_ID:
+	return getAttribute_3049OutgoingLinks(view);
+case dsml.diagram.edit.parts.NotEditPart.VISUAL_ID:
+	return getNot_3024OutgoingLinks(view);
+case dsml.diagram.edit.parts.ConditionGroup2EditPart.VISUAL_ID:
+	return getConditionGroup_3032OutgoingLinks(view);
+case dsml.diagram.edit.parts.Target2EditPart.VISUAL_ID:
+	return getTarget_3046OutgoingLinks(view);
+case dsml.diagram.edit.parts.Aggregation2EditPart.VISUAL_ID:
+	return getAggregation_3025OutgoingLinks(view);
+case dsml.diagram.edit.parts.Order2EditPart.VISUAL_ID:
+	return getOrder_3026OutgoingLinks(view);
+case dsml.diagram.edit.parts.Operator4EditPart.VISUAL_ID:
+	return getOperator_3027OutgoingLinks(view);
+case dsml.diagram.edit.parts.ValueOperator4EditPart.VISUAL_ID:
+	return getValueOperator_3028OutgoingLinks(view);
+case dsml.diagram.edit.parts.UnaryOperatorPattern2EditPart.VISUAL_ID:
+	return getUnaryOperatorPattern_3029OutgoingLinks(view);
+case dsml.diagram.edit.parts.BinaryOperatorPattern2EditPart.VISUAL_ID:
+	return getBinaryOperatorPattern_3030OutgoingLinks(view);
+case dsml.diagram.edit.parts.PatternTimer2EditPart.VISUAL_ID:
+	return getPatternTimer_3031OutgoingLinks(view);
+case dsml.diagram.edit.parts.Attribute3EditPart.VISUAL_ID:
+	return getAttribute_3050OutgoingLinks(view);
+case dsml.diagram.edit.parts.Not2EditPart.VISUAL_ID:
+	return getNot_3033OutgoingLinks(view);
+case dsml.diagram.edit.parts.LinkComponentEditPart.VISUAL_ID:
+	return getLinkComponent_4006OutgoingLinks(view);
+case dsml.diagram.edit.parts.LinkTargetEditPart.VISUAL_ID:
+	return getLinkTarget_4007OutgoingLinks(view);
+case dsml.diagram.edit.parts.ComparisonEditPart.VISUAL_ID:
+	return getComparison_4002OutgoingLinks(view);
+case dsml.diagram.edit.parts.ArithmeticEditPart.VISUAL_ID:
+	return getArithmetic_4003OutgoingLinks(view);
+case dsml.diagram.edit.parts.FollowedbyEditPart.VISUAL_ID:
+	return getFollowedby_4004OutgoingLinks(view);
+case dsml.diagram.edit.parts.LogicalConnectorEditPart.VISUAL_ID:
+	return getLogicalConnector_4005OutgoingLinks(view);
+	}
+		return java.util.Collections.emptyList();
+}
+		
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getAreaDesenho_1000ContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.AreaDesenho modelElement = (dsml.AreaDesenho) view.getElement();
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getContainedTypeModelFacetLinks_LinkComponent_4006(modelElement));	
+	result.addAll(getContainedTypeModelFacetLinks_LinkTarget_4007(modelElement));	
+	result.addAll(getContainedTypeModelFacetLinks_Comparison_4002(modelElement));	
+	result.addAll(getContainedTypeModelFacetLinks_Arithmetic_4003(modelElement));	
+	result.addAll(getContainedTypeModelFacetLinks_Followedby_4004(modelElement));	
+	result.addAll(getContainedTypeModelFacetLinks_LogicalConnector_4005(modelElement));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getEvent_2028ContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getRule_2029ContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getEventPattern_2030ContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getWindow_2031ContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getAttribute_3034ContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getConditionGroup_3023ContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getOperator_3005ContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getValueOperator_3006ContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getTarget_3045ContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getOperator_3047ContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getValueOperator_3048ContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getAggregation_3016ContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getOrder_3017ContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getLimit_3004ContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getOperator_3018ContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getValueOperator_3019ContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getUnaryOperatorPattern_3020ContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getBinaryOperatorPattern_3021ContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getPatternTimer_3022ContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getAttribute_3049ContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getNot_3024ContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getConditionGroup_3032ContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getTarget_3046ContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getAggregation_3025ContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getOrder_3026ContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getOperator_3027ContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getValueOperator_3028ContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getUnaryOperatorPattern_3029ContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getBinaryOperatorPattern_3030ContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getPatternTimer_3031ContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getAttribute_3050ContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getNot_3033ContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getLinkComponent_4006ContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getLinkTarget_4007ContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getComparison_4002ContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getArithmetic_4003ContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getFollowedby_4004ContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getLogicalConnector_4005ContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+		
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getEvent_2028IncomingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.Event modelElement = (dsml.Event) view.getElement();
+	java.util.Map<org.eclipse.emf.ecore.EObject, java.util.Collection<org.eclipse.emf.ecore.EStructuralFeature.Setting>> crossReferences = org.eclipse.emf.ecore.util.EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4006(modelElement, crossReferences));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getRule_2029IncomingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.Rule modelElement = (dsml.Rule) view.getElement();
+	java.util.Map<org.eclipse.emf.ecore.EObject, java.util.Collection<org.eclipse.emf.ecore.EStructuralFeature.Setting>> crossReferences = org.eclipse.emf.ecore.util.EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4006(modelElement, crossReferences));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getEventPattern_2030IncomingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.EventPattern modelElement = (dsml.EventPattern) view.getElement();
+	java.util.Map<org.eclipse.emf.ecore.EObject, java.util.Collection<org.eclipse.emf.ecore.EStructuralFeature.Setting>> crossReferences = org.eclipse.emf.ecore.util.EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4006(modelElement, crossReferences));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getWindow_2031IncomingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.Window modelElement = (dsml.Window) view.getElement();
+	java.util.Map<org.eclipse.emf.ecore.EObject, java.util.Collection<org.eclipse.emf.ecore.EStructuralFeature.Setting>> crossReferences = org.eclipse.emf.ecore.util.EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4006(modelElement, crossReferences));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getAttribute_3034IncomingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.Attribute modelElement = (dsml.Attribute) view.getElement();
+	java.util.Map<org.eclipse.emf.ecore.EObject, java.util.Collection<org.eclipse.emf.ecore.EStructuralFeature.Setting>> crossReferences = org.eclipse.emf.ecore.util.EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4006(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_Comparison_4002(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_Arithmetic_4003(modelElement, crossReferences));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getConditionGroup_3023IncomingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.ConditionGroup modelElement = (dsml.ConditionGroup) view.getElement();
+	java.util.Map<org.eclipse.emf.ecore.EObject, java.util.Collection<org.eclipse.emf.ecore.EStructuralFeature.Setting>> crossReferences = org.eclipse.emf.ecore.util.EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4006(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_Comparison_4002(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_Arithmetic_4003(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_LogicalConnector_4005(modelElement, crossReferences));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getOperator_3005IncomingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.Operator modelElement = (dsml.Operator) view.getElement();
+	java.util.Map<org.eclipse.emf.ecore.EObject, java.util.Collection<org.eclipse.emf.ecore.EStructuralFeature.Setting>> crossReferences = org.eclipse.emf.ecore.util.EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4006(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_Comparison_4002(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_Arithmetic_4003(modelElement, crossReferences));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getValueOperator_3006IncomingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.ValueOperator modelElement = (dsml.ValueOperator) view.getElement();
+	java.util.Map<org.eclipse.emf.ecore.EObject, java.util.Collection<org.eclipse.emf.ecore.EStructuralFeature.Setting>> crossReferences = org.eclipse.emf.ecore.util.EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4006(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_Comparison_4002(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_Arithmetic_4003(modelElement, crossReferences));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getTarget_3045IncomingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.Target modelElement = (dsml.Target) view.getElement();
+	java.util.Map<org.eclipse.emf.ecore.EObject, java.util.Collection<org.eclipse.emf.ecore.EStructuralFeature.Setting>> crossReferences = org.eclipse.emf.ecore.util.EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4006(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_LinkTarget_4007(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_Comparison_4002(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_Arithmetic_4003(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_Followedby_4004(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_LogicalConnector_4005(modelElement, crossReferences));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getOperator_3047IncomingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.Operator modelElement = (dsml.Operator) view.getElement();
+	java.util.Map<org.eclipse.emf.ecore.EObject, java.util.Collection<org.eclipse.emf.ecore.EStructuralFeature.Setting>> crossReferences = org.eclipse.emf.ecore.util.EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4006(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_Comparison_4002(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_Arithmetic_4003(modelElement, crossReferences));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getValueOperator_3048IncomingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.ValueOperator modelElement = (dsml.ValueOperator) view.getElement();
+	java.util.Map<org.eclipse.emf.ecore.EObject, java.util.Collection<org.eclipse.emf.ecore.EStructuralFeature.Setting>> crossReferences = org.eclipse.emf.ecore.util.EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4006(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_Comparison_4002(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_Arithmetic_4003(modelElement, crossReferences));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getAggregation_3016IncomingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.Aggregation modelElement = (dsml.Aggregation) view.getElement();
+	java.util.Map<org.eclipse.emf.ecore.EObject, java.util.Collection<org.eclipse.emf.ecore.EStructuralFeature.Setting>> crossReferences = org.eclipse.emf.ecore.util.EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4006(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_Comparison_4002(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_Arithmetic_4003(modelElement, crossReferences));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getOrder_3017IncomingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.Order modelElement = (dsml.Order) view.getElement();
+	java.util.Map<org.eclipse.emf.ecore.EObject, java.util.Collection<org.eclipse.emf.ecore.EStructuralFeature.Setting>> crossReferences = org.eclipse.emf.ecore.util.EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4006(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_Comparison_4002(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_Arithmetic_4003(modelElement, crossReferences));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getLimit_3004IncomingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getOperator_3018IncomingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.Operator modelElement = (dsml.Operator) view.getElement();
+	java.util.Map<org.eclipse.emf.ecore.EObject, java.util.Collection<org.eclipse.emf.ecore.EStructuralFeature.Setting>> crossReferences = org.eclipse.emf.ecore.util.EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4006(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_Comparison_4002(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_Arithmetic_4003(modelElement, crossReferences));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getValueOperator_3019IncomingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.ValueOperator modelElement = (dsml.ValueOperator) view.getElement();
+	java.util.Map<org.eclipse.emf.ecore.EObject, java.util.Collection<org.eclipse.emf.ecore.EStructuralFeature.Setting>> crossReferences = org.eclipse.emf.ecore.util.EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4006(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_Comparison_4002(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_Arithmetic_4003(modelElement, crossReferences));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getUnaryOperatorPattern_3020IncomingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.UnaryOperatorPattern modelElement = (dsml.UnaryOperatorPattern) view.getElement();
+	java.util.Map<org.eclipse.emf.ecore.EObject, java.util.Collection<org.eclipse.emf.ecore.EStructuralFeature.Setting>> crossReferences = org.eclipse.emf.ecore.util.EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4006(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_Comparison_4002(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_Arithmetic_4003(modelElement, crossReferences));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getBinaryOperatorPattern_3021IncomingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.BinaryOperatorPattern modelElement = (dsml.BinaryOperatorPattern) view.getElement();
+	java.util.Map<org.eclipse.emf.ecore.EObject, java.util.Collection<org.eclipse.emf.ecore.EStructuralFeature.Setting>> crossReferences = org.eclipse.emf.ecore.util.EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4006(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_Comparison_4002(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_Arithmetic_4003(modelElement, crossReferences));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getPatternTimer_3022IncomingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.PatternTimer modelElement = (dsml.PatternTimer) view.getElement();
+	java.util.Map<org.eclipse.emf.ecore.EObject, java.util.Collection<org.eclipse.emf.ecore.EStructuralFeature.Setting>> crossReferences = org.eclipse.emf.ecore.util.EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4006(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_Comparison_4002(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_Arithmetic_4003(modelElement, crossReferences));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getAttribute_3049IncomingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.Attribute modelElement = (dsml.Attribute) view.getElement();
+	java.util.Map<org.eclipse.emf.ecore.EObject, java.util.Collection<org.eclipse.emf.ecore.EStructuralFeature.Setting>> crossReferences = org.eclipse.emf.ecore.util.EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4006(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_Comparison_4002(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_Arithmetic_4003(modelElement, crossReferences));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getNot_3024IncomingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.Not modelElement = (dsml.Not) view.getElement();
+	java.util.Map<org.eclipse.emf.ecore.EObject, java.util.Collection<org.eclipse.emf.ecore.EStructuralFeature.Setting>> crossReferences = org.eclipse.emf.ecore.util.EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4006(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_Comparison_4002(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_Arithmetic_4003(modelElement, crossReferences));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getConditionGroup_3032IncomingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.ConditionGroup modelElement = (dsml.ConditionGroup) view.getElement();
+	java.util.Map<org.eclipse.emf.ecore.EObject, java.util.Collection<org.eclipse.emf.ecore.EStructuralFeature.Setting>> crossReferences = org.eclipse.emf.ecore.util.EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4006(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_Comparison_4002(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_Arithmetic_4003(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_LogicalConnector_4005(modelElement, crossReferences));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getTarget_3046IncomingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.Target modelElement = (dsml.Target) view.getElement();
+	java.util.Map<org.eclipse.emf.ecore.EObject, java.util.Collection<org.eclipse.emf.ecore.EStructuralFeature.Setting>> crossReferences = org.eclipse.emf.ecore.util.EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4006(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_LinkTarget_4007(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_Comparison_4002(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_Arithmetic_4003(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_Followedby_4004(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_LogicalConnector_4005(modelElement, crossReferences));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getAggregation_3025IncomingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.Aggregation modelElement = (dsml.Aggregation) view.getElement();
+	java.util.Map<org.eclipse.emf.ecore.EObject, java.util.Collection<org.eclipse.emf.ecore.EStructuralFeature.Setting>> crossReferences = org.eclipse.emf.ecore.util.EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4006(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_Comparison_4002(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_Arithmetic_4003(modelElement, crossReferences));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getOrder_3026IncomingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.Order modelElement = (dsml.Order) view.getElement();
+	java.util.Map<org.eclipse.emf.ecore.EObject, java.util.Collection<org.eclipse.emf.ecore.EStructuralFeature.Setting>> crossReferences = org.eclipse.emf.ecore.util.EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4006(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_Comparison_4002(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_Arithmetic_4003(modelElement, crossReferences));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getOperator_3027IncomingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.Operator modelElement = (dsml.Operator) view.getElement();
+	java.util.Map<org.eclipse.emf.ecore.EObject, java.util.Collection<org.eclipse.emf.ecore.EStructuralFeature.Setting>> crossReferences = org.eclipse.emf.ecore.util.EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4006(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_Comparison_4002(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_Arithmetic_4003(modelElement, crossReferences));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getValueOperator_3028IncomingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.ValueOperator modelElement = (dsml.ValueOperator) view.getElement();
+	java.util.Map<org.eclipse.emf.ecore.EObject, java.util.Collection<org.eclipse.emf.ecore.EStructuralFeature.Setting>> crossReferences = org.eclipse.emf.ecore.util.EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4006(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_Comparison_4002(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_Arithmetic_4003(modelElement, crossReferences));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getUnaryOperatorPattern_3029IncomingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.UnaryOperatorPattern modelElement = (dsml.UnaryOperatorPattern) view.getElement();
+	java.util.Map<org.eclipse.emf.ecore.EObject, java.util.Collection<org.eclipse.emf.ecore.EStructuralFeature.Setting>> crossReferences = org.eclipse.emf.ecore.util.EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4006(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_Comparison_4002(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_Arithmetic_4003(modelElement, crossReferences));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getBinaryOperatorPattern_3030IncomingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.BinaryOperatorPattern modelElement = (dsml.BinaryOperatorPattern) view.getElement();
+	java.util.Map<org.eclipse.emf.ecore.EObject, java.util.Collection<org.eclipse.emf.ecore.EStructuralFeature.Setting>> crossReferences = org.eclipse.emf.ecore.util.EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4006(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_Comparison_4002(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_Arithmetic_4003(modelElement, crossReferences));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getPatternTimer_3031IncomingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.PatternTimer modelElement = (dsml.PatternTimer) view.getElement();
+	java.util.Map<org.eclipse.emf.ecore.EObject, java.util.Collection<org.eclipse.emf.ecore.EStructuralFeature.Setting>> crossReferences = org.eclipse.emf.ecore.util.EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4006(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_Comparison_4002(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_Arithmetic_4003(modelElement, crossReferences));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getAttribute_3050IncomingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.Attribute modelElement = (dsml.Attribute) view.getElement();
+	java.util.Map<org.eclipse.emf.ecore.EObject, java.util.Collection<org.eclipse.emf.ecore.EStructuralFeature.Setting>> crossReferences = org.eclipse.emf.ecore.util.EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4006(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_Comparison_4002(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_Arithmetic_4003(modelElement, crossReferences));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getNot_3033IncomingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.Not modelElement = (dsml.Not) view.getElement();
+	java.util.Map<org.eclipse.emf.ecore.EObject, java.util.Collection<org.eclipse.emf.ecore.EStructuralFeature.Setting>> crossReferences = org.eclipse.emf.ecore.util.EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_LinkComponent_4006(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_Comparison_4002(modelElement, crossReferences));	
+	result.addAll(getIncomingTypeModelFacetLinks_Arithmetic_4003(modelElement, crossReferences));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getLinkComponent_4006IncomingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getLinkTarget_4007IncomingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getComparison_4002IncomingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getArithmetic_4003IncomingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getFollowedby_4004IncomingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getLogicalConnector_4005IncomingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+		
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getEvent_2028OutgoingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.Event modelElement = (dsml.Event) view.getElement();
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4006(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4007(modelElement));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getRule_2029OutgoingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.Rule modelElement = (dsml.Rule) view.getElement();
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4006(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4007(modelElement));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getEventPattern_2030OutgoingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.EventPattern modelElement = (dsml.EventPattern) view.getElement();
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4006(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4007(modelElement));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getWindow_2031OutgoingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.Window modelElement = (dsml.Window) view.getElement();
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4006(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4007(modelElement));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getAttribute_3034OutgoingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.Attribute modelElement = (dsml.Attribute) view.getElement();
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4006(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4007(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_Comparison_4002(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_Arithmetic_4003(modelElement));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getConditionGroup_3023OutgoingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.ConditionGroup modelElement = (dsml.ConditionGroup) view.getElement();
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4006(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4007(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_Comparison_4002(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_Arithmetic_4003(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_LogicalConnector_4005(modelElement));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getOperator_3005OutgoingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.Operator modelElement = (dsml.Operator) view.getElement();
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4006(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4007(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_Comparison_4002(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_Arithmetic_4003(modelElement));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getValueOperator_3006OutgoingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.ValueOperator modelElement = (dsml.ValueOperator) view.getElement();
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4006(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4007(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_Comparison_4002(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_Arithmetic_4003(modelElement));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getTarget_3045OutgoingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.Target modelElement = (dsml.Target) view.getElement();
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4006(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4007(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_Comparison_4002(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_Arithmetic_4003(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_Followedby_4004(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_LogicalConnector_4005(modelElement));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getOperator_3047OutgoingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.Operator modelElement = (dsml.Operator) view.getElement();
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4006(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4007(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_Comparison_4002(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_Arithmetic_4003(modelElement));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getValueOperator_3048OutgoingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.ValueOperator modelElement = (dsml.ValueOperator) view.getElement();
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4006(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4007(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_Comparison_4002(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_Arithmetic_4003(modelElement));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getAggregation_3016OutgoingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.Aggregation modelElement = (dsml.Aggregation) view.getElement();
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4006(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4007(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_Comparison_4002(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_Arithmetic_4003(modelElement));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getOrder_3017OutgoingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.Order modelElement = (dsml.Order) view.getElement();
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4006(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4007(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_Comparison_4002(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_Arithmetic_4003(modelElement));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getLimit_3004OutgoingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getOperator_3018OutgoingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.Operator modelElement = (dsml.Operator) view.getElement();
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4006(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4007(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_Comparison_4002(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_Arithmetic_4003(modelElement));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getValueOperator_3019OutgoingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.ValueOperator modelElement = (dsml.ValueOperator) view.getElement();
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4006(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4007(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_Comparison_4002(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_Arithmetic_4003(modelElement));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getUnaryOperatorPattern_3020OutgoingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.UnaryOperatorPattern modelElement = (dsml.UnaryOperatorPattern) view.getElement();
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4006(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4007(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_Comparison_4002(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_Arithmetic_4003(modelElement));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getBinaryOperatorPattern_3021OutgoingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.BinaryOperatorPattern modelElement = (dsml.BinaryOperatorPattern) view.getElement();
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4006(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4007(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_Comparison_4002(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_Arithmetic_4003(modelElement));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getPatternTimer_3022OutgoingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.PatternTimer modelElement = (dsml.PatternTimer) view.getElement();
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4006(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4007(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_Comparison_4002(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_Arithmetic_4003(modelElement));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getAttribute_3049OutgoingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.Attribute modelElement = (dsml.Attribute) view.getElement();
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4006(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4007(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_Comparison_4002(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_Arithmetic_4003(modelElement));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getNot_3024OutgoingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.Not modelElement = (dsml.Not) view.getElement();
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4006(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4007(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_Comparison_4002(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_Arithmetic_4003(modelElement));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getConditionGroup_3032OutgoingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.ConditionGroup modelElement = (dsml.ConditionGroup) view.getElement();
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4006(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4007(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_Comparison_4002(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_Arithmetic_4003(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_LogicalConnector_4005(modelElement));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getTarget_3046OutgoingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.Target modelElement = (dsml.Target) view.getElement();
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4006(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4007(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_Comparison_4002(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_Arithmetic_4003(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_Followedby_4004(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_LogicalConnector_4005(modelElement));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getAggregation_3025OutgoingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.Aggregation modelElement = (dsml.Aggregation) view.getElement();
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4006(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4007(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_Comparison_4002(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_Arithmetic_4003(modelElement));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getOrder_3026OutgoingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.Order modelElement = (dsml.Order) view.getElement();
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4006(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4007(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_Comparison_4002(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_Arithmetic_4003(modelElement));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getOperator_3027OutgoingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.Operator modelElement = (dsml.Operator) view.getElement();
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4006(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4007(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_Comparison_4002(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_Arithmetic_4003(modelElement));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getValueOperator_3028OutgoingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.ValueOperator modelElement = (dsml.ValueOperator) view.getElement();
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4006(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4007(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_Comparison_4002(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_Arithmetic_4003(modelElement));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getUnaryOperatorPattern_3029OutgoingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.UnaryOperatorPattern modelElement = (dsml.UnaryOperatorPattern) view.getElement();
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4006(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4007(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_Comparison_4002(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_Arithmetic_4003(modelElement));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getBinaryOperatorPattern_3030OutgoingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.BinaryOperatorPattern modelElement = (dsml.BinaryOperatorPattern) view.getElement();
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4006(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4007(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_Comparison_4002(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_Arithmetic_4003(modelElement));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getPatternTimer_3031OutgoingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.PatternTimer modelElement = (dsml.PatternTimer) view.getElement();
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4006(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4007(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_Comparison_4002(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_Arithmetic_4003(modelElement));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getAttribute_3050OutgoingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.Attribute modelElement = (dsml.Attribute) view.getElement();
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4006(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4007(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_Comparison_4002(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_Arithmetic_4003(modelElement));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getNot_3033OutgoingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	dsml.Not modelElement = (dsml.Not) view.getElement();
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_LinkComponent_4006(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_LinkTarget_4007(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_Comparison_4002(modelElement));	
+	result.addAll(getOutgoingTypeModelFacetLinks_Arithmetic_4003(modelElement));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getLinkComponent_4006OutgoingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getLinkTarget_4007OutgoingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getComparison_4002OutgoingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getArithmetic_4003OutgoingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getFollowedby_4004OutgoingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getLogicalConnector_4005OutgoingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+	/**
+ * @generated
+ */
+private static java.util.Collection<dsml.diagram.part.DsmlLinkDescriptor> getContainedTypeModelFacetLinks_LinkComponent_4006(dsml.AreaDesenho container) {
+	java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+	for (java.util.Iterator<?> links = container.getLinks().iterator(); links.hasNext();) {
+	org.eclipse.emf.ecore.EObject linkObject = (org.eclipse.emf.ecore.EObject ) links.next();
+	if (false == linkObject instanceof dsml.LinkComponent) {
+		continue;
+	}
+	dsml.LinkComponent link = (dsml.LinkComponent) linkObject;
+		if (dsml.diagram.edit.parts.LinkComponentEditPart.VISUAL_ID != dsml.diagram.part.DsmlVisualIDRegistry.getLinkWithClassVisualID(link)) {
+	continue;
+}
+			dsml.Component dst = link.getDestino();
+							dsml.Component src = link.getOrigem();
+							result.add(new dsml.diagram.part.DsmlLinkDescriptor(src, dst, link, dsml.diagram.providers.DsmlElementTypes.LinkComponent_4006, dsml.diagram.edit.parts.LinkComponentEditPart.VISUAL_ID));
+		}
+	return result;	
+}
+
+	/**
+ * @generated
+ */
+private static java.util.Collection<dsml.diagram.part.DsmlLinkDescriptor> getContainedTypeModelFacetLinks_LinkTarget_4007(dsml.AreaDesenho container) {
+	java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+	for (java.util.Iterator<?> links = container.getLinks().iterator(); links.hasNext();) {
+	org.eclipse.emf.ecore.EObject linkObject = (org.eclipse.emf.ecore.EObject ) links.next();
+	if (false == linkObject instanceof dsml.LinkTarget) {
+		continue;
+	}
+	dsml.LinkTarget link = (dsml.LinkTarget) linkObject;
+		if (dsml.diagram.edit.parts.LinkTargetEditPart.VISUAL_ID != dsml.diagram.part.DsmlVisualIDRegistry.getLinkWithClassVisualID(link)) {
+	continue;
+}
+			java.util.List targets = link.getDestino();
+Object theTarget = targets.size() == 1 ? targets.get(0) : null;
+if (false == theTarget instanceof dsml.Target) {
+	continue;
+}
+dsml.Target dst = (dsml.Target) theTarget;
+							dsml.Component src = link.getOrigem();
+							result.add(new dsml.diagram.part.DsmlLinkDescriptor(src, dst, link, dsml.diagram.providers.DsmlElementTypes.LinkTarget_4007, dsml.diagram.edit.parts.LinkTargetEditPart.VISUAL_ID));
+		}
+	return result;	
+}
+
+	/**
+ * @generated
+ */
+private static java.util.Collection<dsml.diagram.part.DsmlLinkDescriptor> getContainedTypeModelFacetLinks_Comparison_4002(dsml.AreaDesenho container) {
+	java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+	for (java.util.Iterator<?> links = container.getLinks().iterator(); links.hasNext();) {
+	org.eclipse.emf.ecore.EObject linkObject = (org.eclipse.emf.ecore.EObject ) links.next();
+	if (false == linkObject instanceof dsml.Comparison) {
+		continue;
+	}
+	dsml.Comparison link = (dsml.Comparison) linkObject;
+		if (dsml.diagram.edit.parts.ComparisonEditPart.VISUAL_ID != dsml.diagram.part.DsmlVisualIDRegistry.getLinkWithClassVisualID(link)) {
+	continue;
+}
+			dsml.Node dst = link.getDestino();
+							dsml.Node src = link.getOrigem();
+							result.add(new dsml.diagram.part.DsmlLinkDescriptor(src, dst, link, dsml.diagram.providers.DsmlElementTypes.Comparison_4002, dsml.diagram.edit.parts.ComparisonEditPart.VISUAL_ID));
+		}
+	return result;	
+}
+
+	/**
+ * @generated
+ */
+private static java.util.Collection<dsml.diagram.part.DsmlLinkDescriptor> getContainedTypeModelFacetLinks_Arithmetic_4003(dsml.AreaDesenho container) {
+	java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+	for (java.util.Iterator<?> links = container.getLinks().iterator(); links.hasNext();) {
+	org.eclipse.emf.ecore.EObject linkObject = (org.eclipse.emf.ecore.EObject ) links.next();
+	if (false == linkObject instanceof dsml.Arithmetic) {
+		continue;
+	}
+	dsml.Arithmetic link = (dsml.Arithmetic) linkObject;
+		if (dsml.diagram.edit.parts.ArithmeticEditPart.VISUAL_ID != dsml.diagram.part.DsmlVisualIDRegistry.getLinkWithClassVisualID(link)) {
+	continue;
+}
+			dsml.Node dst = link.getDestino();
+							dsml.Node src = link.getOrigem();
+							result.add(new dsml.diagram.part.DsmlLinkDescriptor(src, dst, link, dsml.diagram.providers.DsmlElementTypes.Arithmetic_4003, dsml.diagram.edit.parts.ArithmeticEditPart.VISUAL_ID));
+		}
+	return result;	
+}
+
+	/**
+ * @generated
+ */
+private static java.util.Collection<dsml.diagram.part.DsmlLinkDescriptor> getContainedTypeModelFacetLinks_Followedby_4004(dsml.AreaDesenho container) {
+	java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+	for (java.util.Iterator<?> links = container.getLinks().iterator(); links.hasNext();) {
+	org.eclipse.emf.ecore.EObject linkObject = (org.eclipse.emf.ecore.EObject ) links.next();
+	if (false == linkObject instanceof dsml.Followedby) {
+		continue;
+	}
+	dsml.Followedby link = (dsml.Followedby) linkObject;
+		if (dsml.diagram.edit.parts.FollowedbyEditPart.VISUAL_ID != dsml.diagram.part.DsmlVisualIDRegistry.getLinkWithClassVisualID(link)) {
+	continue;
+}
+			dsml.Target dst = link.getDestino();
+							dsml.Target src = link.getOrigem();
+							result.add(new dsml.diagram.part.DsmlLinkDescriptor(src, dst, link, dsml.diagram.providers.DsmlElementTypes.Followedby_4004, dsml.diagram.edit.parts.FollowedbyEditPart.VISUAL_ID));
+		}
+	return result;	
+}
+
+	/**
+ * @generated
+ */
+private static java.util.Collection<dsml.diagram.part.DsmlLinkDescriptor> getContainedTypeModelFacetLinks_LogicalConnector_4005(dsml.AreaDesenho container) {
+	java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+	for (java.util.Iterator<?> links = container.getLinks().iterator(); links.hasNext();) {
+	org.eclipse.emf.ecore.EObject linkObject = (org.eclipse.emf.ecore.EObject ) links.next();
+	if (false == linkObject instanceof dsml.LogicalConnector) {
+		continue;
+	}
+	dsml.LogicalConnector link = (dsml.LogicalConnector) linkObject;
+		if (dsml.diagram.edit.parts.LogicalConnectorEditPart.VISUAL_ID != dsml.diagram.part.DsmlVisualIDRegistry.getLinkWithClassVisualID(link)) {
+	continue;
+}
+			dsml.GroupRelacional dst = link.getDestino();
+							dsml.GroupRelacional src = link.getOrigem();
+							result.add(new dsml.diagram.part.DsmlLinkDescriptor(src, dst, link, dsml.diagram.providers.DsmlElementTypes.LogicalConnector_4005, dsml.diagram.edit.parts.LogicalConnectorEditPart.VISUAL_ID));
+		}
+	return result;	
+}
+	
+/**
+ * @generated
+ */
+private static java.util.Collection<dsml.diagram.part.DsmlLinkDescriptor> getIncomingTypeModelFacetLinks_LinkComponent_4006(dsml.Component target, java.util.Map<org.eclipse.emf.ecore.EObject, java.util.Collection<org.eclipse.emf.ecore.EStructuralFeature.Setting>> crossReferences) {
+	java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+	java.util.Collection<org.eclipse.emf.ecore.EStructuralFeature.Setting> settings = crossReferences.get(target);
+	for (org.eclipse.emf.ecore.EStructuralFeature.Setting setting : settings) {
+		if (setting.getEStructuralFeature() != dsml.DsmlPackage.eINSTANCE.getLinkComponent_Destino() || false == setting.getEObject() instanceof dsml.LinkComponent) {
+	continue;
+}
+dsml.LinkComponent link = (dsml.LinkComponent) setting.getEObject();
+	if (dsml.diagram.edit.parts.LinkComponentEditPart.VISUAL_ID != dsml.diagram.part.DsmlVisualIDRegistry.getLinkWithClassVisualID(link)) {
+	continue;
+}
+				dsml.Component src = link.getOrigem();
+			result.add(new dsml.diagram.part.DsmlLinkDescriptor(src, target, link, dsml.diagram.providers.DsmlElementTypes.LinkComponent_4006, dsml.diagram.edit.parts.LinkComponentEditPart.VISUAL_ID));
+		}
+	return result;	
+}
+
+/**
+ * @generated
+ */
+private static java.util.Collection<dsml.diagram.part.DsmlLinkDescriptor> getIncomingTypeModelFacetLinks_LinkTarget_4007(dsml.Target target, java.util.Map<org.eclipse.emf.ecore.EObject, java.util.Collection<org.eclipse.emf.ecore.EStructuralFeature.Setting>> crossReferences) {
+	java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+	java.util.Collection<org.eclipse.emf.ecore.EStructuralFeature.Setting> settings = crossReferences.get(target);
+	for (org.eclipse.emf.ecore.EStructuralFeature.Setting setting : settings) {
+		if (setting.getEStructuralFeature() != dsml.DsmlPackage.eINSTANCE.getLinkTarget_Destino() || false == setting.getEObject() instanceof dsml.LinkTarget) {
+	continue;
+}
+dsml.LinkTarget link = (dsml.LinkTarget) setting.getEObject();
+	if (dsml.diagram.edit.parts.LinkTargetEditPart.VISUAL_ID != dsml.diagram.part.DsmlVisualIDRegistry.getLinkWithClassVisualID(link)) {
+	continue;
+}
+				dsml.Component src = link.getOrigem();
+			result.add(new dsml.diagram.part.DsmlLinkDescriptor(src, target, link, dsml.diagram.providers.DsmlElementTypes.LinkTarget_4007, dsml.diagram.edit.parts.LinkTargetEditPart.VISUAL_ID));
+		}
+	return result;	
+}
+
+/**
+ * @generated
+ */
+private static java.util.Collection<dsml.diagram.part.DsmlLinkDescriptor> getIncomingTypeModelFacetLinks_Comparison_4002(dsml.Node target, java.util.Map<org.eclipse.emf.ecore.EObject, java.util.Collection<org.eclipse.emf.ecore.EStructuralFeature.Setting>> crossReferences) {
+	java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+	java.util.Collection<org.eclipse.emf.ecore.EStructuralFeature.Setting> settings = crossReferences.get(target);
+	for (org.eclipse.emf.ecore.EStructuralFeature.Setting setting : settings) {
+		if (setting.getEStructuralFeature() != dsml.DsmlPackage.eINSTANCE.getComparison_Destino() || false == setting.getEObject() instanceof dsml.Comparison) {
+	continue;
+}
+dsml.Comparison link = (dsml.Comparison) setting.getEObject();
+	if (dsml.diagram.edit.parts.ComparisonEditPart.VISUAL_ID != dsml.diagram.part.DsmlVisualIDRegistry.getLinkWithClassVisualID(link)) {
+	continue;
+}
+				dsml.Node src = link.getOrigem();
+			result.add(new dsml.diagram.part.DsmlLinkDescriptor(src, target, link, dsml.diagram.providers.DsmlElementTypes.Comparison_4002, dsml.diagram.edit.parts.ComparisonEditPart.VISUAL_ID));
+		}
+	return result;	
+}
+
+/**
+ * @generated
+ */
+private static java.util.Collection<dsml.diagram.part.DsmlLinkDescriptor> getIncomingTypeModelFacetLinks_Arithmetic_4003(dsml.Node target, java.util.Map<org.eclipse.emf.ecore.EObject, java.util.Collection<org.eclipse.emf.ecore.EStructuralFeature.Setting>> crossReferences) {
+	java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+	java.util.Collection<org.eclipse.emf.ecore.EStructuralFeature.Setting> settings = crossReferences.get(target);
+	for (org.eclipse.emf.ecore.EStructuralFeature.Setting setting : settings) {
+		if (setting.getEStructuralFeature() != dsml.DsmlPackage.eINSTANCE.getArithmetic_Destino() || false == setting.getEObject() instanceof dsml.Arithmetic) {
+	continue;
+}
+dsml.Arithmetic link = (dsml.Arithmetic) setting.getEObject();
+	if (dsml.diagram.edit.parts.ArithmeticEditPart.VISUAL_ID != dsml.diagram.part.DsmlVisualIDRegistry.getLinkWithClassVisualID(link)) {
+	continue;
+}
+				dsml.Node src = link.getOrigem();
+			result.add(new dsml.diagram.part.DsmlLinkDescriptor(src, target, link, dsml.diagram.providers.DsmlElementTypes.Arithmetic_4003, dsml.diagram.edit.parts.ArithmeticEditPart.VISUAL_ID));
+		}
+	return result;	
+}
+
+/**
+ * @generated
+ */
+private static java.util.Collection<dsml.diagram.part.DsmlLinkDescriptor> getIncomingTypeModelFacetLinks_Followedby_4004(dsml.Target target, java.util.Map<org.eclipse.emf.ecore.EObject, java.util.Collection<org.eclipse.emf.ecore.EStructuralFeature.Setting>> crossReferences) {
+	java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+	java.util.Collection<org.eclipse.emf.ecore.EStructuralFeature.Setting> settings = crossReferences.get(target);
+	for (org.eclipse.emf.ecore.EStructuralFeature.Setting setting : settings) {
+		if (setting.getEStructuralFeature() != dsml.DsmlPackage.eINSTANCE.getFollowedby_Destino() || false == setting.getEObject() instanceof dsml.Followedby) {
+	continue;
+}
+dsml.Followedby link = (dsml.Followedby) setting.getEObject();
+	if (dsml.diagram.edit.parts.FollowedbyEditPart.VISUAL_ID != dsml.diagram.part.DsmlVisualIDRegistry.getLinkWithClassVisualID(link)) {
+	continue;
+}
+				dsml.Target src = link.getOrigem();
+			result.add(new dsml.diagram.part.DsmlLinkDescriptor(src, target, link, dsml.diagram.providers.DsmlElementTypes.Followedby_4004, dsml.diagram.edit.parts.FollowedbyEditPart.VISUAL_ID));
+		}
+	return result;	
+}
+
+/**
+ * @generated
+ */
+private static java.util.Collection<dsml.diagram.part.DsmlLinkDescriptor> getIncomingTypeModelFacetLinks_LogicalConnector_4005(dsml.GroupRelacional target, java.util.Map<org.eclipse.emf.ecore.EObject, java.util.Collection<org.eclipse.emf.ecore.EStructuralFeature.Setting>> crossReferences) {
+	java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+	java.util.Collection<org.eclipse.emf.ecore.EStructuralFeature.Setting> settings = crossReferences.get(target);
+	for (org.eclipse.emf.ecore.EStructuralFeature.Setting setting : settings) {
+		if (setting.getEStructuralFeature() != dsml.DsmlPackage.eINSTANCE.getLogicalConnector_Destino() || false == setting.getEObject() instanceof dsml.LogicalConnector) {
+	continue;
+}
+dsml.LogicalConnector link = (dsml.LogicalConnector) setting.getEObject();
+	if (dsml.diagram.edit.parts.LogicalConnectorEditPart.VISUAL_ID != dsml.diagram.part.DsmlVisualIDRegistry.getLinkWithClassVisualID(link)) {
+	continue;
+}
+				dsml.GroupRelacional src = link.getOrigem();
+			result.add(new dsml.diagram.part.DsmlLinkDescriptor(src, target, link, dsml.diagram.providers.DsmlElementTypes.LogicalConnector_4005, dsml.diagram.edit.parts.LogicalConnectorEditPart.VISUAL_ID));
+		}
+	return result;	
+}
+				
+		/**
+ * @generated
+ */
+private static java.util.Collection<dsml.diagram.part.DsmlLinkDescriptor> getOutgoingTypeModelFacetLinks_LinkComponent_4006(dsml.Component source) {
+	dsml.AreaDesenho container = null;
+	// Find container element for the link.
+	// Climb up by containment hierarchy starting from the source
+	// and return the first element that is instance of the container class.
+	for (org.eclipse.emf.ecore.EObject element = source; element != null && container == null; element = element.eContainer()) {
+		if (element instanceof dsml.AreaDesenho) {
+			container = (dsml.AreaDesenho) element;
+		}
+	}
+	if (container == null) {
+		return java.util.Collections.emptyList();
+	}
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+	for (java.util.Iterator<?> links = container.getLinks().iterator(); links.hasNext();) {
+	org.eclipse.emf.ecore.EObject linkObject = (org.eclipse.emf.ecore.EObject ) links.next();
+	if (false == linkObject instanceof dsml.LinkComponent) {
+		continue;
+	}
+	dsml.LinkComponent link = (dsml.LinkComponent) linkObject;
+		if (dsml.diagram.edit.parts.LinkComponentEditPart.VISUAL_ID != dsml.diagram.part.DsmlVisualIDRegistry.getLinkWithClassVisualID(link)) {
+	continue;
+}
+			dsml.Component dst = link.getDestino();
+							dsml.Component src = link.getOrigem();
+								if (src != source) {
+	continue;
+}
+						result.add(new dsml.diagram.part.DsmlLinkDescriptor(src, dst, link, dsml.diagram.providers.DsmlElementTypes.LinkComponent_4006, dsml.diagram.edit.parts.LinkComponentEditPart.VISUAL_ID));
+		}
+	return result;	
+}		
+				
+		/**
+ * @generated
+ */
+private static java.util.Collection<dsml.diagram.part.DsmlLinkDescriptor> getOutgoingTypeModelFacetLinks_LinkTarget_4007(dsml.Component source) {
+	dsml.AreaDesenho container = null;
+	// Find container element for the link.
+	// Climb up by containment hierarchy starting from the source
+	// and return the first element that is instance of the container class.
+	for (org.eclipse.emf.ecore.EObject element = source; element != null && container == null; element = element.eContainer()) {
+		if (element instanceof dsml.AreaDesenho) {
+			container = (dsml.AreaDesenho) element;
+		}
+	}
+	if (container == null) {
+		return java.util.Collections.emptyList();
+	}
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+	for (java.util.Iterator<?> links = container.getLinks().iterator(); links.hasNext();) {
+	org.eclipse.emf.ecore.EObject linkObject = (org.eclipse.emf.ecore.EObject ) links.next();
+	if (false == linkObject instanceof dsml.LinkTarget) {
+		continue;
+	}
+	dsml.LinkTarget link = (dsml.LinkTarget) linkObject;
+		if (dsml.diagram.edit.parts.LinkTargetEditPart.VISUAL_ID != dsml.diagram.part.DsmlVisualIDRegistry.getLinkWithClassVisualID(link)) {
+	continue;
+}
+			java.util.List targets = link.getDestino();
+Object theTarget = targets.size() == 1 ? targets.get(0) : null;
+if (false == theTarget instanceof dsml.Target) {
+	continue;
+}
+dsml.Target dst = (dsml.Target) theTarget;
+							dsml.Component src = link.getOrigem();
+								if (src != source) {
+	continue;
+}
+						result.add(new dsml.diagram.part.DsmlLinkDescriptor(src, dst, link, dsml.diagram.providers.DsmlElementTypes.LinkTarget_4007, dsml.diagram.edit.parts.LinkTargetEditPart.VISUAL_ID));
+		}
+	return result;	
+}		
+				
+		/**
+ * @generated
+ */
+private static java.util.Collection<dsml.diagram.part.DsmlLinkDescriptor> getOutgoingTypeModelFacetLinks_Comparison_4002(dsml.Node source) {
+	dsml.AreaDesenho container = null;
+	// Find container element for the link.
+	// Climb up by containment hierarchy starting from the source
+	// and return the first element that is instance of the container class.
+	for (org.eclipse.emf.ecore.EObject element = source; element != null && container == null; element = element.eContainer()) {
+		if (element instanceof dsml.AreaDesenho) {
+			container = (dsml.AreaDesenho) element;
+		}
+	}
+	if (container == null) {
+		return java.util.Collections.emptyList();
+	}
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+	for (java.util.Iterator<?> links = container.getLinks().iterator(); links.hasNext();) {
+	org.eclipse.emf.ecore.EObject linkObject = (org.eclipse.emf.ecore.EObject ) links.next();
+	if (false == linkObject instanceof dsml.Comparison) {
+		continue;
+	}
+	dsml.Comparison link = (dsml.Comparison) linkObject;
+		if (dsml.diagram.edit.parts.ComparisonEditPart.VISUAL_ID != dsml.diagram.part.DsmlVisualIDRegistry.getLinkWithClassVisualID(link)) {
+	continue;
+}
+			dsml.Node dst = link.getDestino();
+							dsml.Node src = link.getOrigem();
+								if (src != source) {
+	continue;
+}
+						result.add(new dsml.diagram.part.DsmlLinkDescriptor(src, dst, link, dsml.diagram.providers.DsmlElementTypes.Comparison_4002, dsml.diagram.edit.parts.ComparisonEditPart.VISUAL_ID));
+		}
+	return result;	
+}		
+				
+		/**
+ * @generated
+ */
+private static java.util.Collection<dsml.diagram.part.DsmlLinkDescriptor> getOutgoingTypeModelFacetLinks_Arithmetic_4003(dsml.Node source) {
+	dsml.AreaDesenho container = null;
+	// Find container element for the link.
+	// Climb up by containment hierarchy starting from the source
+	// and return the first element that is instance of the container class.
+	for (org.eclipse.emf.ecore.EObject element = source; element != null && container == null; element = element.eContainer()) {
+		if (element instanceof dsml.AreaDesenho) {
+			container = (dsml.AreaDesenho) element;
+		}
+	}
+	if (container == null) {
+		return java.util.Collections.emptyList();
+	}
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+	for (java.util.Iterator<?> links = container.getLinks().iterator(); links.hasNext();) {
+	org.eclipse.emf.ecore.EObject linkObject = (org.eclipse.emf.ecore.EObject ) links.next();
+	if (false == linkObject instanceof dsml.Arithmetic) {
+		continue;
+	}
+	dsml.Arithmetic link = (dsml.Arithmetic) linkObject;
+		if (dsml.diagram.edit.parts.ArithmeticEditPart.VISUAL_ID != dsml.diagram.part.DsmlVisualIDRegistry.getLinkWithClassVisualID(link)) {
+	continue;
+}
+			dsml.Node dst = link.getDestino();
+							dsml.Node src = link.getOrigem();
+								if (src != source) {
+	continue;
+}
+						result.add(new dsml.diagram.part.DsmlLinkDescriptor(src, dst, link, dsml.diagram.providers.DsmlElementTypes.Arithmetic_4003, dsml.diagram.edit.parts.ArithmeticEditPart.VISUAL_ID));
+		}
+	return result;	
+}		
+				
+		/**
+ * @generated
+ */
+private static java.util.Collection<dsml.diagram.part.DsmlLinkDescriptor> getOutgoingTypeModelFacetLinks_Followedby_4004(dsml.Target source) {
+	dsml.AreaDesenho container = null;
+	// Find container element for the link.
+	// Climb up by containment hierarchy starting from the source
+	// and return the first element that is instance of the container class.
+	for (org.eclipse.emf.ecore.EObject element = source; element != null && container == null; element = element.eContainer()) {
+		if (element instanceof dsml.AreaDesenho) {
+			container = (dsml.AreaDesenho) element;
+		}
+	}
+	if (container == null) {
+		return java.util.Collections.emptyList();
+	}
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+	for (java.util.Iterator<?> links = container.getLinks().iterator(); links.hasNext();) {
+	org.eclipse.emf.ecore.EObject linkObject = (org.eclipse.emf.ecore.EObject ) links.next();
+	if (false == linkObject instanceof dsml.Followedby) {
+		continue;
+	}
+	dsml.Followedby link = (dsml.Followedby) linkObject;
+		if (dsml.diagram.edit.parts.FollowedbyEditPart.VISUAL_ID != dsml.diagram.part.DsmlVisualIDRegistry.getLinkWithClassVisualID(link)) {
+	continue;
+}
+			dsml.Target dst = link.getDestino();
+							dsml.Target src = link.getOrigem();
+								if (src != source) {
+	continue;
+}
+						result.add(new dsml.diagram.part.DsmlLinkDescriptor(src, dst, link, dsml.diagram.providers.DsmlElementTypes.Followedby_4004, dsml.diagram.edit.parts.FollowedbyEditPart.VISUAL_ID));
+		}
+	return result;	
+}		
+				
+		/**
+ * @generated
+ */
+private static java.util.Collection<dsml.diagram.part.DsmlLinkDescriptor> getOutgoingTypeModelFacetLinks_LogicalConnector_4005(dsml.GroupRelacional source) {
+	dsml.AreaDesenho container = null;
+	// Find container element for the link.
+	// Climb up by containment hierarchy starting from the source
+	// and return the first element that is instance of the container class.
+	for (org.eclipse.emf.ecore.EObject element = source; element != null && container == null; element = element.eContainer()) {
+		if (element instanceof dsml.AreaDesenho) {
+			container = (dsml.AreaDesenho) element;
+		}
+	}
+	if (container == null) {
+		return java.util.Collections.emptyList();
+	}
+		java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor> result = new java.util.LinkedList<dsml.diagram.part.DsmlLinkDescriptor>();
+	for (java.util.Iterator<?> links = container.getLinks().iterator(); links.hasNext();) {
+	org.eclipse.emf.ecore.EObject linkObject = (org.eclipse.emf.ecore.EObject ) links.next();
+	if (false == linkObject instanceof dsml.LogicalConnector) {
+		continue;
+	}
+	dsml.LogicalConnector link = (dsml.LogicalConnector) linkObject;
+		if (dsml.diagram.edit.parts.LogicalConnectorEditPart.VISUAL_ID != dsml.diagram.part.DsmlVisualIDRegistry.getLinkWithClassVisualID(link)) {
+	continue;
+}
+			dsml.GroupRelacional dst = link.getDestino();
+							dsml.GroupRelacional src = link.getOrigem();
+								if (src != source) {
+	continue;
+}
+						result.add(new dsml.diagram.part.DsmlLinkDescriptor(src, dst, link, dsml.diagram.providers.DsmlElementTypes.LogicalConnector_4005, dsml.diagram.edit.parts.LogicalConnectorEditPart.VISUAL_ID));
+		}
+	return result;	
+}		
+		
+					/**
+ * @generated
+ */
+	public static final org.eclipse.gmf.tooling.runtime.update.DiagramUpdater TYPED_INSTANCE = new org.eclipse.gmf.tooling.runtime.update.DiagramUpdater() {
+				/**
+ * @generated
+ */
+		@Override
+
+		public java.util.List<dsml.diagram.part.DsmlNodeDescriptor> getSemanticChildren(org.eclipse.gmf.runtime.notation.View view) {
+			return DsmlDiagramUpdater.getSemanticChildren(view);
+		}
+
+		/**
+ * @generated
+ */
+		@Override
+
+		public java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
+			return DsmlDiagramUpdater.getContainedLinks(view);
+		}
+
+		/**
+ * @generated
+ */
+		@Override
+
+		public java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getIncomingLinks(org.eclipse.gmf.runtime.notation.View view) {
+			return DsmlDiagramUpdater.getIncomingLinks(view);
+		}
+
+		/**
+ * @generated
+ */
+		@Override
+
+		public java.util.List<dsml.diagram.part.DsmlLinkDescriptor> getOutgoingLinks(org.eclipse.gmf.runtime.notation.View view) {
+			return DsmlDiagramUpdater.getOutgoingLinks(view);
+		}
+	}; 
+			
+	}

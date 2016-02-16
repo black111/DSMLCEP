@@ -1,0 +1,199 @@
+/**
+ */
+package dsml.impl;
+
+import dsml.BinaryOperatorPattern;
+import dsml.DsmlPackage;
+import dsml.TypeBinaryOperatorPattern;
+
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Binary Operator Pattern</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * <ul>
+ *   <li>{@link dsml.impl.BinaryOperatorPatternImpl#getName <em>Name</em>}</li>
+ *   <li>{@link dsml.impl.BinaryOperatorPatternImpl#getTypeBinaryOperatorPattern <em>Type Binary Operator Pattern</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @generated
+ */
+public class BinaryOperatorPatternImpl extends PatternImpl implements BinaryOperatorPattern {
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = "BinaryOperatorPattern";
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getTypeBinaryOperatorPattern() <em>Type Binary Operator Pattern</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTypeBinaryOperatorPattern()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final TypeBinaryOperatorPattern TYPE_BINARY_OPERATOR_PATTERN_EDEFAULT = TypeBinaryOperatorPattern.UNTIL;
+
+	/**
+	 * The cached value of the '{@link #getTypeBinaryOperatorPattern() <em>Type Binary Operator Pattern</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTypeBinaryOperatorPattern()
+	 * @generated
+	 * @ordered
+	 */
+	protected TypeBinaryOperatorPattern typeBinaryOperatorPattern = TYPE_BINARY_OPERATOR_PATTERN_EDEFAULT;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected BinaryOperatorPatternImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return DsmlPackage.Literals.BINARY_OPERATOR_PATTERN;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TypeBinaryOperatorPattern getTypeBinaryOperatorPattern() {
+		return typeBinaryOperatorPattern;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTypeBinaryOperatorPattern(TypeBinaryOperatorPattern newTypeBinaryOperatorPattern) {
+		TypeBinaryOperatorPattern oldTypeBinaryOperatorPattern = typeBinaryOperatorPattern;
+		typeBinaryOperatorPattern = newTypeBinaryOperatorPattern == null ? TYPE_BINARY_OPERATOR_PATTERN_EDEFAULT : newTypeBinaryOperatorPattern;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DsmlPackage.BINARY_OPERATOR_PATTERN__TYPE_BINARY_OPERATOR_PATTERN, oldTypeBinaryOperatorPattern, typeBinaryOperatorPattern));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case DsmlPackage.BINARY_OPERATOR_PATTERN__NAME:
+				return getName();
+			case DsmlPackage.BINARY_OPERATOR_PATTERN__TYPE_BINARY_OPERATOR_PATTERN:
+				return getTypeBinaryOperatorPattern();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case DsmlPackage.BINARY_OPERATOR_PATTERN__TYPE_BINARY_OPERATOR_PATTERN:
+				setTypeBinaryOperatorPattern((TypeBinaryOperatorPattern)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case DsmlPackage.BINARY_OPERATOR_PATTERN__TYPE_BINARY_OPERATOR_PATTERN:
+				setTypeBinaryOperatorPattern(TYPE_BINARY_OPERATOR_PATTERN_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case DsmlPackage.BINARY_OPERATOR_PATTERN__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case DsmlPackage.BINARY_OPERATOR_PATTERN__TYPE_BINARY_OPERATOR_PATTERN:
+				return typeBinaryOperatorPattern != TYPE_BINARY_OPERATOR_PATTERN_EDEFAULT;
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(", typeBinaryOperatorPattern: ");
+		result.append(typeBinaryOperatorPattern);
+		result.append(')');
+		return result.toString();
+	}
+
+} //BinaryOperatorPatternImpl

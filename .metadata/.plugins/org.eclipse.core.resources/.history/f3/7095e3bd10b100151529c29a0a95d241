@@ -1,0 +1,64 @@
+
+/*
+ * 
+ */
+package prediqt.diagram.part;
+
+/**
+ * @generated
+ */
+public class PrediqtPaletteFactory {
+
+	/**
+ * @generated
+ */
+	public void fillPalette(org.eclipse.gef.palette.PaletteRoot paletteRoot) {
+		paletteRoot.add(createObjects1Group());
+paletteRoot.add(createConnections2Group());
+	}
+
+	/**
+ * Creates "Objects" palette tool group
+ * @generated
+ */
+	private org.eclipse.gef.palette.PaletteContainer createObjects1Group() {
+				org.eclipse.gef.palette.PaletteDrawer paletteContainer = new org.eclipse.gef.palette.PaletteDrawer(prediqt.diagram.part.Messages.Objects1Group_title);
+				 paletteContainer.setId("createObjects1Group"); //$NON-NLS-1$
+								paletteContainer.add(createPNode1CreationTool());
+		return paletteContainer;
+	}
+	/**
+ * Creates "Connections" palette tool group
+ * @generated
+ */
+	private org.eclipse.gef.palette.PaletteContainer createConnections2Group() {
+				org.eclipse.gef.palette.PaletteDrawer paletteContainer = new org.eclipse.gef.palette.PaletteDrawer(prediqt.diagram.part.Messages.Connections2Group_title);
+				 paletteContainer.setId("createConnections2Group"); //$NON-NLS-1$
+								paletteContainer.add(createPArc1CreationTool());
+		return paletteContainer;
+	}
+
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createPNode1CreationTool() {
+		org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry(prediqt.diagram.part.Messages.PNode1CreationTool_title, prediqt.diagram.part.Messages.PNode1CreationTool_desc, java.util.Collections.singletonList(prediqt.diagram.providers.PrediqtElementTypes.PNode_2001));
+				 entry.setId("createPNode1CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(prediqt.diagram.providers.PrediqtElementTypes.getImageDescriptor(prediqt.diagram.providers.PrediqtElementTypes.PNode_2001));
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+	/**
+ * @generated
+ */
+	private org.eclipse.gef.palette.ToolEntry createPArc1CreationTool() {
+		org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry entry = new org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry(prediqt.diagram.part.Messages.PArc1CreationTool_title, prediqt.diagram.part.Messages.PArc1CreationTool_desc, java.util.Collections.singletonList(prediqt.diagram.providers.PrediqtElementTypes.PArc_4001));
+				 entry.setId("createPArc1CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(prediqt.diagram.providers.PrediqtElementTypes.getImageDescriptor(prediqt.diagram.providers.PrediqtElementTypes.PArc_4001));
+		entry.setLargeIcon(entry.getSmallIcon());
+						return entry;
+	}
+
+
+		
+}

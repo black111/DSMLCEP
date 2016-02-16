@@ -1,0 +1,29 @@
+	/*
+ * 
+ */
+package dsml.diagram.edit.policies;
+
+	/**
+ * @generated
+ */
+public class OrderOrderLimitCompartmentItemSemanticEditPolicy extends dsml.diagram.edit.policies.DsmlBaseItemSemanticEditPolicy {
+
+		/**
+ * @generated
+ */
+	public OrderOrderLimitCompartmentItemSemanticEditPolicy() {
+				super(dsml.diagram.providers.DsmlElementTypes.Order_3009);
+	}
+
+	
+	/**
+ * @generated
+ */
+	protected org.eclipse.gef.commands.Command getCreateCommand(org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest req) {
+		if (dsml.diagram.providers.DsmlElementTypes.Limit_3010 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.LimitCreateCommand(req));
+}
+		return super.getCreateCommand(req);
+	}
+	
+	}

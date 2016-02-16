@@ -1,0 +1,58 @@
+/**
+ */
+package dsml;
+
+import org.eclipse.emf.common.util.EList;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Bring Group</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * <ul>
+ *   <li>{@link dsml.BringGroup#getBringGroup <em>Bring Group</em>}</li>
+ *   <li>{@link dsml.BringGroup#getOperationTypes <em>Operation Types</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @see dsml.DsmlPackage#getBringGroup()
+ * @model annotation="gmf.node label='bringGroup' figure='rectangle'"
+ * @generated
+ */
+public interface BringGroup extends GroupRelacional {
+	/**
+	 * Returns the value of the '<em><b>Bring Group</b></em>' attribute.
+	 * The default value is <code>"BringGroup"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Bring Group</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Bring Group</em>' attribute.
+	 * @see dsml.DsmlPackage#getBringGroup_BringGroup()
+	 * @model default="BringGroup" changeable="false"
+	 * @generated
+	 */
+	String getBringGroup();
+
+	/**
+	 * Returns the value of the '<em><b>Operation Types</b></em>' containment reference list.
+	 * The list contents are of type {@link dsml.OperationType}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Operation Types</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Operation Types</em>' containment reference list.
+	 * @see dsml.DsmlPackage#getBringGroup_OperationTypes()
+	 * @model containment="true"
+	 *        annotation="gmf.compartment layout='free' collapsible='true'"
+	 * @generated
+	 */
+	EList<OperationType> getOperationTypes();
+
+} // BringGroup

@@ -1,0 +1,628 @@
+/**
+ */
+package dsml.impl;
+
+import dsml.*;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
+
+import org.eclipse.emf.ecore.impl.EFactoryImpl;
+
+import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model <b>Factory</b>.
+ * <!-- end-user-doc -->
+ * @generated
+ */
+public class DsmlFactoryImpl extends EFactoryImpl implements DsmlFactory {
+	/**
+	 * Creates the default factory implementation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static DsmlFactory init() {
+		try {
+			DsmlFactory theDsmlFactory = (DsmlFactory)EPackage.Registry.INSTANCE.getEFactory(DsmlPackage.eNS_URI);
+			if (theDsmlFactory != null) {
+				return theDsmlFactory;
+			}
+		}
+		catch (Exception exception) {
+			EcorePlugin.INSTANCE.log(exception);
+		}
+		return new DsmlFactoryImpl();
+	}
+
+	/**
+	 * Creates an instance of the factory.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DsmlFactoryImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EObject create(EClass eClass) {
+		switch (eClass.getClassifierID()) {
+			case DsmlPackage.AREA_DESENHO: return createAreaDesenho();
+			case DsmlPackage.ATTRIBUTE: return createAttribute();
+			case DsmlPackage.RULE: return createRule();
+			case DsmlPackage.EVENT_PATTERN: return createEventPattern();
+			case DsmlPackage.WINDOW: return createWindow();
+			case DsmlPackage.EVENT: return createEvent();
+			case DsmlPackage.CONDITION_GROUP: return createConditionGroup();
+			case DsmlPackage.TARGET: return createTarget();
+			case DsmlPackage.NOT: return createNot();
+			case DsmlPackage.AGGREGATION: return createAggregation();
+			case DsmlPackage.ORDER: return createOrder();
+			case DsmlPackage.LIMIT: return createLimit();
+			case DsmlPackage.OPERATOR: return createOperator();
+			case DsmlPackage.VALUE_OPERATOR: return createValueOperator();
+			case DsmlPackage.UNARY_OPERATOR_PATTERN: return createUnaryOperatorPattern();
+			case DsmlPackage.BINARY_OPERATOR_PATTERN: return createBinaryOperatorPattern();
+			case DsmlPackage.PATTERN_TIMER: return createPatternTimer();
+			case DsmlPackage.LINK: return createLink();
+			case DsmlPackage.LINK_TARGET: return createLinkTarget();
+			case DsmlPackage.COMPARISON: return createComparison();
+			case DsmlPackage.ARITHMETIC: return createArithmetic();
+			case DsmlPackage.FOLLOWEDBY: return createFollowedby();
+			case DsmlPackage.LOGICAL_CONNECTOR: return createLogicalConnector();
+			default:
+				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object createFromString(EDataType eDataType, String initialValue) {
+		switch (eDataType.getClassifierID()) {
+			case DsmlPackage.TYPE_RULE:
+				return createTypeRuleFromString(eDataType, initialValue);
+			case DsmlPackage.TYPE_WINDOW:
+				return createTypeWindowFromString(eDataType, initialValue);
+			case DsmlPackage.TYPE_ORDER:
+				return createTypeOrderFromString(eDataType, initialValue);
+			case DsmlPackage.TYPE_UNARY_OPERATOR_PATTERN:
+				return createTypeUnaryOperatorPatternFromString(eDataType, initialValue);
+			case DsmlPackage.TYPE_BINARY_OPERATOR_PATTERN:
+				return createTypeBinaryOperatorPatternFromString(eDataType, initialValue);
+			case DsmlPackage.TYPE_LOGICAL:
+				return createTypeLogicalFromString(eDataType, initialValue);
+			case DsmlPackage.TYPE_COMPARISON:
+				return createTypeComparisonFromString(eDataType, initialValue);
+			case DsmlPackage.TYPE_ARITHMETIC:
+				return createTypeArithmeticFromString(eDataType, initialValue);
+			case DsmlPackage.TYPE_AGGREGATION:
+				return createTypeAggregationFromString(eDataType, initialValue);
+			case DsmlPackage.TYPE_PATTERN_TIMER:
+				return createTypePatternTimerFromString(eDataType, initialValue);
+			case DsmlPackage.TYPE_BRING_ALL:
+				return createTypeBringAllFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String convertToString(EDataType eDataType, Object instanceValue) {
+		switch (eDataType.getClassifierID()) {
+			case DsmlPackage.TYPE_RULE:
+				return convertTypeRuleToString(eDataType, instanceValue);
+			case DsmlPackage.TYPE_WINDOW:
+				return convertTypeWindowToString(eDataType, instanceValue);
+			case DsmlPackage.TYPE_ORDER:
+				return convertTypeOrderToString(eDataType, instanceValue);
+			case DsmlPackage.TYPE_UNARY_OPERATOR_PATTERN:
+				return convertTypeUnaryOperatorPatternToString(eDataType, instanceValue);
+			case DsmlPackage.TYPE_BINARY_OPERATOR_PATTERN:
+				return convertTypeBinaryOperatorPatternToString(eDataType, instanceValue);
+			case DsmlPackage.TYPE_LOGICAL:
+				return convertTypeLogicalToString(eDataType, instanceValue);
+			case DsmlPackage.TYPE_COMPARISON:
+				return convertTypeComparisonToString(eDataType, instanceValue);
+			case DsmlPackage.TYPE_ARITHMETIC:
+				return convertTypeArithmeticToString(eDataType, instanceValue);
+			case DsmlPackage.TYPE_AGGREGATION:
+				return convertTypeAggregationToString(eDataType, instanceValue);
+			case DsmlPackage.TYPE_PATTERN_TIMER:
+				return convertTypePatternTimerToString(eDataType, instanceValue);
+			case DsmlPackage.TYPE_BRING_ALL:
+				return convertTypeBringAllToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AreaDesenho createAreaDesenho() {
+		AreaDesenhoImpl areaDesenho = new AreaDesenhoImpl();
+		return areaDesenho;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Attribute createAttribute() {
+		AttributeImpl attribute = new AttributeImpl();
+		return attribute;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Rule createRule() {
+		RuleImpl rule = new RuleImpl();
+		return rule;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EventPattern createEventPattern() {
+		EventPatternImpl eventPattern = new EventPatternImpl();
+		return eventPattern;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Event createEvent() {
+		EventImpl event = new EventImpl();
+		return event;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ConditionGroup createConditionGroup() {
+		ConditionGroupImpl conditionGroup = new ConditionGroupImpl();
+		return conditionGroup;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Target createTarget() {
+		TargetImpl target = new TargetImpl();
+		return target;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Not createNot() {
+		NotImpl not = new NotImpl();
+		return not;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Window createWindow() {
+		WindowImpl window = new WindowImpl();
+		return window;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Aggregation createAggregation() {
+		AggregationImpl aggregation = new AggregationImpl();
+		return aggregation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Order createOrder() {
+		OrderImpl order = new OrderImpl();
+		return order;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Limit createLimit() {
+		LimitImpl limit = new LimitImpl();
+		return limit;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Operator createOperator() {
+		OperatorImpl operator = new OperatorImpl();
+		return operator;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ValueOperator createValueOperator() {
+		ValueOperatorImpl valueOperator = new ValueOperatorImpl();
+		return valueOperator;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UnaryOperatorPattern createUnaryOperatorPattern() {
+		UnaryOperatorPatternImpl unaryOperatorPattern = new UnaryOperatorPatternImpl();
+		return unaryOperatorPattern;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BinaryOperatorPattern createBinaryOperatorPattern() {
+		BinaryOperatorPatternImpl binaryOperatorPattern = new BinaryOperatorPatternImpl();
+		return binaryOperatorPattern;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PatternTimer createPatternTimer() {
+		PatternTimerImpl patternTimer = new PatternTimerImpl();
+		return patternTimer;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Link createLink() {
+		LinkImpl link = new LinkImpl();
+		return link;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public LinkTarget createLinkTarget() {
+		LinkTargetImpl linkTarget = new LinkTargetImpl();
+		return linkTarget;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Comparison createComparison() {
+		ComparisonImpl comparison = new ComparisonImpl();
+		return comparison;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Arithmetic createArithmetic() {
+		ArithmeticImpl arithmetic = new ArithmeticImpl();
+		return arithmetic;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Followedby createFollowedby() {
+		FollowedbyImpl followedby = new FollowedbyImpl();
+		return followedby;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public LogicalConnector createLogicalConnector() {
+		LogicalConnectorImpl logicalConnector = new LogicalConnectorImpl();
+		return logicalConnector;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TypeRule createTypeRuleFromString(EDataType eDataType, String initialValue) {
+		TypeRule result = TypeRule.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertTypeRuleToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TypeWindow createTypeWindowFromString(EDataType eDataType, String initialValue) {
+		TypeWindow result = TypeWindow.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertTypeWindowToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TypeOrder createTypeOrderFromString(EDataType eDataType, String initialValue) {
+		TypeOrder result = TypeOrder.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertTypeOrderToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TypeUnaryOperatorPattern createTypeUnaryOperatorPatternFromString(EDataType eDataType, String initialValue) {
+		TypeUnaryOperatorPattern result = TypeUnaryOperatorPattern.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertTypeUnaryOperatorPatternToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TypeBinaryOperatorPattern createTypeBinaryOperatorPatternFromString(EDataType eDataType, String initialValue) {
+		TypeBinaryOperatorPattern result = TypeBinaryOperatorPattern.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertTypeBinaryOperatorPatternToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TypeLogical createTypeLogicalFromString(EDataType eDataType, String initialValue) {
+		TypeLogical result = TypeLogical.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertTypeLogicalToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TypeComparison createTypeComparisonFromString(EDataType eDataType, String initialValue) {
+		TypeComparison result = TypeComparison.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertTypeComparisonToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TypeArithmetic createTypeArithmeticFromString(EDataType eDataType, String initialValue) {
+		TypeArithmetic result = TypeArithmetic.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertTypeArithmeticToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TypeAggregation createTypeAggregationFromString(EDataType eDataType, String initialValue) {
+		TypeAggregation result = TypeAggregation.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertTypeAggregationToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TypePatternTimer createTypePatternTimerFromString(EDataType eDataType, String initialValue) {
+		TypePatternTimer result = TypePatternTimer.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertTypePatternTimerToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TypeBringAll createTypeBringAllFromString(EDataType eDataType, String initialValue) {
+		TypeBringAll result = TypeBringAll.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertTypeBringAllToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DsmlPackage getDsmlPackage() {
+		return (DsmlPackage)getEPackage();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @deprecated
+	 * @generated
+	 */
+	@Deprecated
+	public static DsmlPackage getPackage() {
+		return DsmlPackage.eINSTANCE;
+	}
+
+} //DsmlFactoryImpl

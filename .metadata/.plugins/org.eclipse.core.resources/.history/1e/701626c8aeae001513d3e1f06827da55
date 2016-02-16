@@ -1,0 +1,35 @@
+	/*
+ * 
+ */
+package dsml.diagram.navigator;
+
+	/**
+ * @generated
+ */
+public class DsmlNavigatorSorter  extends org.eclipse.jface.viewers.ViewerSorter {
+
+		/**
+ * @generated
+ */
+private static final int GROUP_CATEGORY = 7020;
+	
+	/**
+ * @generated
+ */
+private static final int SHORTCUTS_CATEGORY = 7019;
+		
+		/**
+ * @generated
+ */
+public int category(Object element) {
+	if (element instanceof dsml.diagram.navigator.DsmlNavigatorItem) {
+		dsml.diagram.navigator.DsmlNavigatorItem item = (dsml.diagram.navigator.DsmlNavigatorItem) element;
+			if (item.getView().getEAnnotation("Shortcut") != null) {  //$NON-NLS-1$
+			return SHORTCUTS_CATEGORY;
+		}
+			return dsml.diagram.part.DsmlVisualIDRegistry.getVisualID(item.getView());
+	}
+	return GROUP_CATEGORY;
+}
+
+    }

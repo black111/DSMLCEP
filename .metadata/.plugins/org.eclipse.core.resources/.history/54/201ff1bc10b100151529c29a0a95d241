@@ -1,0 +1,129 @@
+/*
+ * 
+ */
+package prediqt.diagram.providers.assistants;
+
+/**
+ * @generated
+ */
+public class PrediqtModelingAssistantProviderOfPNodeEditPart extends prediqt.diagram.providers.PrediqtModelingAssistantProvider {
+
+					
+			/**
+ * @generated
+ */
+	@Override
+
+	public java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> getRelTypesOnSource(org.eclipse.core.runtime.IAdaptable source) {
+		org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart sourceEditPart =
+				(org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart) source.getAdapter(
+						org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart.class);
+		return doGetRelTypesOnSource((prediqt.diagram.edit.parts.PNodeEditPart) sourceEditPart);
+	}
+	
+		/**
+ * @generated
+ */
+	public java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> doGetRelTypesOnSource(prediqt.diagram.edit.parts.PNodeEditPart source) {
+		java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> types = new java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType>(1);
+				types.add(prediqt.diagram.providers.PrediqtElementTypes.PArc_4001);
+				return types;
+	}
+	
+		/**
+ * @generated
+ */
+	@Override
+
+	public java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> getRelTypesOnSourceAndTarget(
+			org.eclipse.core.runtime.IAdaptable source, org.eclipse.core.runtime.IAdaptable target) {
+		org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart sourceEditPart =
+				(org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart) source.getAdapter(
+						org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart.class);
+		org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart targetEditPart =
+				(org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart) target.getAdapter(
+						org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart.class);
+		return doGetRelTypesOnSourceAndTarget((prediqt.diagram.edit.parts.PNodeEditPart) sourceEditPart, targetEditPart);
+	}
+
+		/**
+ * @generated
+ */
+	public java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> doGetRelTypesOnSourceAndTarget(prediqt.diagram.edit.parts.PNodeEditPart source, org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart targetEditPart) {
+		java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> types = new java.util.LinkedList<org.eclipse.gmf.runtime.emf.type.core.IElementType>();
+							if (targetEditPart instanceof prediqt.diagram.edit.parts.PNodeEditPart) {
+			types.add(prediqt.diagram.providers.PrediqtElementTypes.PArc_4001);
+		}
+							return types;
+	}
+
+			/**
+ * @generated
+ */
+	@Override
+
+	public java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> getTypesForTarget(org.eclipse.core.runtime.IAdaptable source,
+			org.eclipse.gmf.runtime.emf.type.core.IElementType relationshipType) {
+		org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart sourceEditPart =
+				(org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart) source.getAdapter(
+						org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart.class);
+		return doGetTypesForTarget((prediqt.diagram.edit.parts.PNodeEditPart) sourceEditPart, relationshipType);
+	}
+	
+		/**
+ * @generated
+ */
+	public java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> doGetTypesForTarget(prediqt.diagram.edit.parts.PNodeEditPart source, org.eclipse.gmf.runtime.emf.type.core.IElementType relationshipType) {
+		java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> types = new java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType>();
+				if (relationshipType == prediqt.diagram.providers.PrediqtElementTypes.PArc_4001) {
+						types.add(prediqt.diagram.providers.PrediqtElementTypes.PNode_2001);
+					}
+				return types;
+	}
+
+		/**
+ * @generated
+ */
+	@Override
+
+	public java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> getRelTypesOnTarget(org.eclipse.core.runtime.IAdaptable target) {
+		org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart targetEditPart =
+				(org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart) target.getAdapter(
+						org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart.class);
+		return doGetRelTypesOnTarget((prediqt.diagram.edit.parts.PNodeEditPart) targetEditPart);
+	}
+
+		/**
+ * @generated
+ */
+	public java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> doGetRelTypesOnTarget(prediqt.diagram.edit.parts.PNodeEditPart target) {
+		java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> types = new java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType>(1);
+				types.add(prediqt.diagram.providers.PrediqtElementTypes.PArc_4001);
+				return types;
+	}
+
+		/**
+ * @generated
+ */
+	@Override
+
+	public java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> getTypesForSource(org.eclipse.core.runtime.IAdaptable target,
+			org.eclipse.gmf.runtime.emf.type.core.IElementType relationshipType) {
+		org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart targetEditPart =
+				(org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart) target.getAdapter(
+						org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart.class);
+		return doGetTypesForSource((prediqt.diagram.edit.parts.PNodeEditPart) targetEditPart, relationshipType);
+	}
+
+		/**
+ * @generated
+ */
+	public java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> doGetTypesForSource(prediqt.diagram.edit.parts.PNodeEditPart target, org.eclipse.gmf.runtime.emf.type.core.IElementType relationshipType) {
+		java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> types = new java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType>();
+				if (relationshipType == prediqt.diagram.providers.PrediqtElementTypes.PArc_4001) {
+						types.add(prediqt.diagram.providers.PrediqtElementTypes.PNode_2001);
+					}
+				return types;
+	}
+
+	}

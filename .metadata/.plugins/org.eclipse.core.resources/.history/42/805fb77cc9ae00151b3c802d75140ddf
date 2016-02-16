@@ -1,0 +1,50 @@
+	/*
+ * 
+ */
+package dsml.diagram.edit.policies;
+
+	/**
+ * @generated
+ */
+public class TargetTargetOperationTypesCompartmentItemSemanticEditPolicy extends dsml.diagram.edit.policies.DsmlBaseItemSemanticEditPolicy {
+
+		/**
+ * @generated
+ */
+	public TargetTargetOperationTypesCompartmentItemSemanticEditPolicy() {
+				super(dsml.diagram.providers.DsmlElementTypes.Target_3002);
+	}
+
+	
+	/**
+ * @generated
+ */
+	protected org.eclipse.gef.commands.Command getCreateCommand(org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest req) {
+		if (dsml.diagram.providers.DsmlElementTypes.Target_3003 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.Target2CreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.ConditionGroup_3004 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.ConditionGroupCreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.BringGroup_3006 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.BringGroupCreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.Not_3008 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.NotCreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.Operator_3009 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.OperatorCreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.ValueOperator_3010 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.ValueOperatorCreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.Aggregation_3011 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.AggregationCreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.Order_3012 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.OrderCreateCommand(req));
+}
+		return super.getCreateCommand(req);
+	}
+	
+	}

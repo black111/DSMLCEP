@@ -1,0 +1,92 @@
+/**
+ */
+package dsml;
+
+import java.math.BigDecimal;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EObject;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>PNode</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * <ul>
+ *   <li>{@link dsml.PNode#getName <em>Name</em>}</li>
+ *   <li>{@link dsml.PNode#getIncoming <em>Incoming</em>}</li>
+ *   <li>{@link dsml.PNode#getOutgoing <em>Outgoing</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @see dsml.DsmlPackage#getPNode()
+ * @model annotation="gmf.node label='name' label.icon='false'"
+ * @generated
+ */
+public interface PNode extends GroupRelacional {
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see dsml.DsmlPackage#getPNode_Name()
+	 * @model
+	 * @generated
+	 */
+	String getName();
+
+	/**
+	 * Sets the value of the '{@link dsml.PNode#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
+	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Incoming</b></em>' reference list.
+	 * The list contents are of type {@link dsml.PArc}.
+	 * It is bidirectional and its opposite is '{@link dsml.PArc#getTarget <em>Target</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Incoming</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Incoming</em>' reference list.
+	 * @see dsml.DsmlPackage#getPNode_Incoming()
+	 * @see dsml.PArc#getTarget
+	 * @model opposite="target"
+	 * @generated
+	 */
+	EList<PArc> getIncoming();
+
+	/**
+	 * Returns the value of the '<em><b>Outgoing</b></em>' reference list.
+	 * The list contents are of type {@link dsml.PArc}.
+	 * It is bidirectional and its opposite is '{@link dsml.PArc#getSource <em>Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Outgoing</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Outgoing</em>' reference list.
+	 * @see dsml.DsmlPackage#getPNode_Outgoing()
+	 * @see dsml.PArc#getSource
+	 * @model opposite="source"
+	 * @generated
+	 */
+	EList<PArc> getOutgoing();
+
+} // PNode

@@ -1,0 +1,33 @@
+/*
+ * 
+ */
+package dsml.diagram.part;
+
+/**
+ * Wizard page that allows to select element from model.
+ * @generated
+ */
+public class ModelElementSelectionPage extends org.eclipse.gmf.tooling.runtime.part.DefaultModelElementSelectionPage {
+	
+	/**
+ * @generated
+ */
+public ModelElementSelectionPage(String pageName) {
+	super(dsml.diagram.part.DsmlDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory(), pageName);
+}
+
+	
+	
+	
+	
+/**
+ * Override to provide custom model element description.
+ * @generated
+ */
+protected String getSelectionTitle() {
+	return dsml.diagram.part.Messages.ModelElementSelectionPageMessage;
+}
+
+	
+	
+	}

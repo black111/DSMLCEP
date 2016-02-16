@@ -1,0 +1,1421 @@
+/*
+ * 
+ */
+package dsml.diagram.navigator;
+
+import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
+import org.eclipse.gmf.runtime.common.ui.services.parser.ParserOptions;
+import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
+import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.jface.resource.ImageDescriptor;
+import org.eclipse.jface.resource.ImageRegistry;
+import org.eclipse.jface.viewers.ITreePathLabelProvider;
+import org.eclipse.jface.viewers.LabelProvider;
+import org.eclipse.jface.viewers.TreePath;
+import org.eclipse.jface.viewers.ViewerLabel;
+import org.eclipse.swt.graphics.Image;
+import org.eclipse.ui.IMemento;
+import org.eclipse.ui.navigator.ICommonContentExtensionSite;
+import org.eclipse.ui.navigator.ICommonLabelProvider;
+
+import dsml.diagram.edit.parts.Aggregation2EditPart;
+import dsml.diagram.edit.parts.Aggregation3EditPart;
+import dsml.diagram.edit.parts.AggregationEditPart;
+import dsml.diagram.edit.parts.AggregationTypeAggregation2EditPart;
+import dsml.diagram.edit.parts.AggregationTypeAggregation3EditPart;
+import dsml.diagram.edit.parts.AggregationTypeAggregationEditPart;
+import dsml.diagram.edit.parts.AreaDesenhoEditPart;
+import dsml.diagram.edit.parts.ArithmeticArithmeticEditPart;
+import dsml.diagram.edit.parts.ArithmeticEditPart;
+import dsml.diagram.edit.parts.AttributeEditPart;
+import dsml.diagram.edit.parts.AttributeNameTypeEditPart;
+import dsml.diagram.edit.parts.BinaryOperatorPattern2EditPart;
+import dsml.diagram.edit.parts.BinaryOperatorPattern3EditPart;
+import dsml.diagram.edit.parts.BinaryOperatorPatternEditPart;
+import dsml.diagram.edit.parts.BinaryOperatorPatternName2EditPart;
+import dsml.diagram.edit.parts.BinaryOperatorPatternName3EditPart;
+import dsml.diagram.edit.parts.BinaryOperatorPatternNameEditPart;
+import dsml.diagram.edit.parts.ComparisonComparisonEditPart;
+import dsml.diagram.edit.parts.ComparisonEditPart;
+import dsml.diagram.edit.parts.ConditionGroup2EditPart;
+import dsml.diagram.edit.parts.ConditionGroup3EditPart;
+import dsml.diagram.edit.parts.ConditionGroupConditionGroup2EditPart;
+import dsml.diagram.edit.parts.ConditionGroupConditionGroup3EditPart;
+import dsml.diagram.edit.parts.ConditionGroupConditionGroupEditPart;
+import dsml.diagram.edit.parts.ConditionGroupEditPart;
+import dsml.diagram.edit.parts.EventEditPart;
+import dsml.diagram.edit.parts.EventEventNameEditPart;
+import dsml.diagram.edit.parts.EventPatternEditPart;
+import dsml.diagram.edit.parts.EventPatternEventPatternEditPart;
+import dsml.diagram.edit.parts.FollowedbyEditPart;
+import dsml.diagram.edit.parts.LimitEditPart;
+import dsml.diagram.edit.parts.LimitValueLimitEditPart;
+import dsml.diagram.edit.parts.LinkComponentEditPart;
+import dsml.diagram.edit.parts.LinkTargetEditPart;
+import dsml.diagram.edit.parts.LogicalConnectorEditPart;
+import dsml.diagram.edit.parts.LogicalConnectorTypeLogicalEditPart;
+import dsml.diagram.edit.parts.Not2EditPart;
+import dsml.diagram.edit.parts.Not3EditPart;
+import dsml.diagram.edit.parts.NotDescription2EditPart;
+import dsml.diagram.edit.parts.NotDescription3EditPart;
+import dsml.diagram.edit.parts.NotDescriptionEditPart;
+import dsml.diagram.edit.parts.NotEditPart;
+import dsml.diagram.edit.parts.Operator2EditPart;
+import dsml.diagram.edit.parts.Operator3EditPart;
+import dsml.diagram.edit.parts.Operator4EditPart;
+import dsml.diagram.edit.parts.Operator5EditPart;
+import dsml.diagram.edit.parts.OperatorEditPart;
+import dsml.diagram.edit.parts.OperatorOperator2EditPart;
+import dsml.diagram.edit.parts.OperatorOperator3EditPart;
+import dsml.diagram.edit.parts.OperatorOperator4EditPart;
+import dsml.diagram.edit.parts.OperatorOperator5EditPart;
+import dsml.diagram.edit.parts.OperatorOperatorEditPart;
+import dsml.diagram.edit.parts.Order2EditPart;
+import dsml.diagram.edit.parts.Order3EditPart;
+import dsml.diagram.edit.parts.OrderEditPart;
+import dsml.diagram.edit.parts.OrderTypeOrder2EditPart;
+import dsml.diagram.edit.parts.OrderTypeOrder3EditPart;
+import dsml.diagram.edit.parts.OrderTypeOrderEditPart;
+import dsml.diagram.edit.parts.PatternTimer2EditPart;
+import dsml.diagram.edit.parts.PatternTimer3EditPart;
+import dsml.diagram.edit.parts.PatternTimerEditPart;
+import dsml.diagram.edit.parts.PatternTimerPatternTimer2EditPart;
+import dsml.diagram.edit.parts.PatternTimerPatternTimer3EditPart;
+import dsml.diagram.edit.parts.PatternTimerPatternTimerEditPart;
+import dsml.diagram.edit.parts.RuleEditPart;
+import dsml.diagram.edit.parts.RuleRuleNameEditPart;
+import dsml.diagram.edit.parts.Target2EditPart;
+import dsml.diagram.edit.parts.Target3EditPart;
+import dsml.diagram.edit.parts.TargetAlias2EditPart;
+import dsml.diagram.edit.parts.TargetAlias3EditPart;
+import dsml.diagram.edit.parts.TargetAliasEditPart;
+import dsml.diagram.edit.parts.TargetEditPart;
+import dsml.diagram.edit.parts.UnaryOperatorPattern2EditPart;
+import dsml.diagram.edit.parts.UnaryOperatorPattern3EditPart;
+import dsml.diagram.edit.parts.UnaryOperatorPatternEditPart;
+import dsml.diagram.edit.parts.UnaryOperatorPatternName2EditPart;
+import dsml.diagram.edit.parts.UnaryOperatorPatternName3EditPart;
+import dsml.diagram.edit.parts.UnaryOperatorPatternNameEditPart;
+import dsml.diagram.edit.parts.ValueOperator2EditPart;
+import dsml.diagram.edit.parts.ValueOperator3EditPart;
+import dsml.diagram.edit.parts.ValueOperator4EditPart;
+import dsml.diagram.edit.parts.ValueOperator5EditPart;
+import dsml.diagram.edit.parts.ValueOperatorEditPart;
+import dsml.diagram.edit.parts.ValueOperatorValueOperator2EditPart;
+import dsml.diagram.edit.parts.ValueOperatorValueOperator3EditPart;
+import dsml.diagram.edit.parts.ValueOperatorValueOperator4EditPart;
+import dsml.diagram.edit.parts.ValueOperatorValueOperator5EditPart;
+import dsml.diagram.edit.parts.ValueOperatorValueOperatorEditPart;
+import dsml.diagram.edit.parts.WindowEditPart;
+import dsml.diagram.edit.parts.WindowWindowEditPart;
+import dsml.diagram.part.DsmlDiagramEditorPlugin;
+import dsml.diagram.part.DsmlVisualIDRegistry;
+import dsml.diagram.providers.DsmlElementTypes;
+import dsml.diagram.providers.DsmlParserProvider;
+
+/**
+ * @generated
+ */
+public class DsmlNavigatorLabelProvider extends LabelProvider implements
+		ICommonLabelProvider, ITreePathLabelProvider {
+
+	/**
+	 * @generated
+	 */
+	static {
+		DsmlDiagramEditorPlugin
+				.getInstance()
+				.getImageRegistry()
+				.put("Navigator?UnknownElement", ImageDescriptor.getMissingImageDescriptor()); //$NON-NLS-1$
+		DsmlDiagramEditorPlugin
+				.getInstance()
+				.getImageRegistry()
+				.put("Navigator?ImageNotFound", ImageDescriptor.getMissingImageDescriptor()); //$NON-NLS-1$
+	}
+
+	/**
+	 * @generated
+	 */
+	public void updateLabel(ViewerLabel label, TreePath elementPath) {
+		Object element = elementPath.getLastSegment();
+		if (element instanceof DsmlNavigatorItem
+				&& !isOwnView(((DsmlNavigatorItem) element).getView())) {
+			return;
+		}
+		label.setText(getText(element));
+		label.setImage(getImage(element));
+	}
+
+	/**
+	 * @generated
+	 */
+	public Image getImage(Object element) {
+		if (element instanceof DsmlNavigatorGroup) {
+			DsmlNavigatorGroup group = (DsmlNavigatorGroup) element;
+			return DsmlDiagramEditorPlugin.getInstance().getBundledImage(
+					group.getIcon());
+		}
+
+		if (element instanceof DsmlNavigatorItem) {
+			DsmlNavigatorItem navigatorItem = (DsmlNavigatorItem) element;
+			if (!isOwnView(navigatorItem.getView())) {
+				return super.getImage(element);
+			}
+			return getImage(navigatorItem.getView());
+		}
+
+		// Due to plugin.xml content will be called only for "own" views
+		if (element instanceof IAdaptable) {
+			View view = (View) ((IAdaptable) element).getAdapter(View.class);
+			if (view != null && isOwnView(view)) {
+				return getImage(view);
+			}
+		}
+
+		return super.getImage(element);
+	}
+
+	/**
+	 * @generated
+	 */
+	public Image getImage(View view) {
+		switch (DsmlVisualIDRegistry.getVisualID(view)) {
+		case AreaDesenhoEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Diagram?dsml?AreaDesenho", DsmlElementTypes.AreaDesenho_1000); //$NON-NLS-1$
+		case RuleEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?dsml?Rule", DsmlElementTypes.Rule_2013); //$NON-NLS-1$
+		case EventPatternEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?dsml?EventPattern", DsmlElementTypes.EventPattern_2014); //$NON-NLS-1$
+		case WindowEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?dsml?Window", DsmlElementTypes.Window_2015); //$NON-NLS-1$
+		case EventEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?dsml?Event", DsmlElementTypes.Event_2016); //$NON-NLS-1$
+		case AggregationEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?dsml?Aggregation", DsmlElementTypes.Aggregation_2017); //$NON-NLS-1$
+		case OrderEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?dsml?Order", DsmlElementTypes.Order_2018); //$NON-NLS-1$
+		case OperatorEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?dsml?Operator", DsmlElementTypes.Operator_2019); //$NON-NLS-1$
+		case ValueOperatorEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?dsml?ValueOperator", DsmlElementTypes.ValueOperator_2020); //$NON-NLS-1$
+		case UnaryOperatorPatternEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?dsml?UnaryOperatorPattern", DsmlElementTypes.UnaryOperatorPattern_2021); //$NON-NLS-1$
+		case BinaryOperatorPatternEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?dsml?BinaryOperatorPattern", DsmlElementTypes.BinaryOperatorPattern_2022); //$NON-NLS-1$
+		case PatternTimerEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?dsml?PatternTimer", DsmlElementTypes.PatternTimer_2023); //$NON-NLS-1$
+		case ConditionGroupEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?dsml?ConditionGroup", DsmlElementTypes.ConditionGroup_2024); //$NON-NLS-1$
+		case NotEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?dsml?Not", DsmlElementTypes.Not_2025); //$NON-NLS-1$
+		case TargetEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?dsml?Target", DsmlElementTypes.Target_2026); //$NON-NLS-1$
+		case LimitEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?dsml?Limit", DsmlElementTypes.Limit_3004); //$NON-NLS-1$
+		case Operator2EditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?dsml?Operator", DsmlElementTypes.Operator_3005); //$NON-NLS-1$
+		case ValueOperator2EditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?dsml?ValueOperator", DsmlElementTypes.ValueOperator_3006); //$NON-NLS-1$
+		case Aggregation2EditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?dsml?Aggregation", DsmlElementTypes.Aggregation_3016); //$NON-NLS-1$
+		case Order2EditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?dsml?Order", DsmlElementTypes.Order_3017); //$NON-NLS-1$
+		case Operator4EditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?dsml?Operator", DsmlElementTypes.Operator_3018); //$NON-NLS-1$
+		case ValueOperator4EditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?dsml?ValueOperator", DsmlElementTypes.ValueOperator_3019); //$NON-NLS-1$
+		case UnaryOperatorPattern2EditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?dsml?UnaryOperatorPattern", DsmlElementTypes.UnaryOperatorPattern_3020); //$NON-NLS-1$
+		case BinaryOperatorPattern2EditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?dsml?BinaryOperatorPattern", DsmlElementTypes.BinaryOperatorPattern_3021); //$NON-NLS-1$
+		case PatternTimer2EditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?dsml?PatternTimer", DsmlElementTypes.PatternTimer_3022); //$NON-NLS-1$
+		case ConditionGroup2EditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?dsml?ConditionGroup", DsmlElementTypes.ConditionGroup_3023); //$NON-NLS-1$
+		case Not2EditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?dsml?Not", DsmlElementTypes.Not_3024); //$NON-NLS-1$
+		case Aggregation3EditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?dsml?Aggregation", DsmlElementTypes.Aggregation_3025); //$NON-NLS-1$
+		case Order3EditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?dsml?Order", DsmlElementTypes.Order_3026); //$NON-NLS-1$
+		case Operator5EditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?dsml?Operator", DsmlElementTypes.Operator_3027); //$NON-NLS-1$
+		case ValueOperator5EditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?dsml?ValueOperator", DsmlElementTypes.ValueOperator_3028); //$NON-NLS-1$
+		case UnaryOperatorPattern3EditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?dsml?UnaryOperatorPattern", DsmlElementTypes.UnaryOperatorPattern_3029); //$NON-NLS-1$
+		case BinaryOperatorPattern3EditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?dsml?BinaryOperatorPattern", DsmlElementTypes.BinaryOperatorPattern_3030); //$NON-NLS-1$
+		case PatternTimer3EditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?dsml?PatternTimer", DsmlElementTypes.PatternTimer_3031); //$NON-NLS-1$
+		case ConditionGroup3EditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?dsml?ConditionGroup", DsmlElementTypes.ConditionGroup_3032); //$NON-NLS-1$
+		case Not3EditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?dsml?Not", DsmlElementTypes.Not_3033); //$NON-NLS-1$
+		case AttributeEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?dsml?Attribute", DsmlElementTypes.Attribute_3034); //$NON-NLS-1$
+		case Target2EditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?dsml?Target", DsmlElementTypes.Target_3045); //$NON-NLS-1$
+		case Target3EditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?dsml?Target", DsmlElementTypes.Target_3046); //$NON-NLS-1$
+		case Operator3EditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?dsml?Operator", DsmlElementTypes.Operator_3047); //$NON-NLS-1$
+		case ValueOperator3EditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?dsml?ValueOperator", DsmlElementTypes.ValueOperator_3048); //$NON-NLS-1$
+		case ComparisonEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?dsml?Comparison", DsmlElementTypes.Comparison_4002); //$NON-NLS-1$
+		case ArithmeticEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?dsml?Arithmetic", DsmlElementTypes.Arithmetic_4003); //$NON-NLS-1$
+		case FollowedbyEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?dsml?Followedby", DsmlElementTypes.Followedby_4004); //$NON-NLS-1$
+		case LogicalConnectorEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?dsml?LogicalConnector", DsmlElementTypes.LogicalConnector_4005); //$NON-NLS-1$
+		case LinkComponentEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?dsml?LinkComponent", DsmlElementTypes.LinkComponent_4006); //$NON-NLS-1$
+		case LinkTargetEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?dsml?LinkTarget", DsmlElementTypes.LinkTarget_4007); //$NON-NLS-1$
+		}
+		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
+	}
+
+	/**
+	 * @generated
+	 */
+	private Image getImage(String key, IElementType elementType) {
+		ImageRegistry imageRegistry = DsmlDiagramEditorPlugin.getInstance()
+				.getImageRegistry();
+		Image image = imageRegistry.get(key);
+		if (image == null && elementType != null
+				&& DsmlElementTypes.isKnownElementType(elementType)) {
+			image = DsmlElementTypes.getImage(elementType);
+			imageRegistry.put(key, image);
+		}
+
+		if (image == null) {
+			image = imageRegistry.get("Navigator?ImageNotFound"); //$NON-NLS-1$
+			imageRegistry.put(key, image);
+		}
+		return image;
+	}
+
+	/**
+	 * @generated
+	 */
+	public String getText(Object element) {
+		if (element instanceof DsmlNavigatorGroup) {
+			DsmlNavigatorGroup group = (DsmlNavigatorGroup) element;
+			return group.getGroupName();
+		}
+
+		if (element instanceof DsmlNavigatorItem) {
+			DsmlNavigatorItem navigatorItem = (DsmlNavigatorItem) element;
+			if (!isOwnView(navigatorItem.getView())) {
+				return null;
+			}
+			return getText(navigatorItem.getView());
+		}
+
+		// Due to plugin.xml content will be called only for "own" views
+		if (element instanceof IAdaptable) {
+			View view = (View) ((IAdaptable) element).getAdapter(View.class);
+			if (view != null && isOwnView(view)) {
+				return getText(view);
+			}
+		}
+
+		return super.getText(element);
+	}
+
+	/**
+	 * @generated
+	 */
+	public String getText(View view) {
+		if (view.getElement() != null && view.getElement().eIsProxy()) {
+			return getUnresolvedDomainElementProxyText(view);
+		}
+		switch (DsmlVisualIDRegistry.getVisualID(view)) {
+		case AreaDesenhoEditPart.VISUAL_ID:
+			return getAreaDesenho_1000Text(view);
+		case RuleEditPart.VISUAL_ID:
+			return getRule_2013Text(view);
+		case EventPatternEditPart.VISUAL_ID:
+			return getEventPattern_2014Text(view);
+		case WindowEditPart.VISUAL_ID:
+			return getWindow_2015Text(view);
+		case EventEditPart.VISUAL_ID:
+			return getEvent_2016Text(view);
+		case AggregationEditPart.VISUAL_ID:
+			return getAggregation_2017Text(view);
+		case OrderEditPart.VISUAL_ID:
+			return getOrder_2018Text(view);
+		case OperatorEditPart.VISUAL_ID:
+			return getOperator_2019Text(view);
+		case ValueOperatorEditPart.VISUAL_ID:
+			return getValueOperator_2020Text(view);
+		case UnaryOperatorPatternEditPart.VISUAL_ID:
+			return getUnaryOperatorPattern_2021Text(view);
+		case BinaryOperatorPatternEditPart.VISUAL_ID:
+			return getBinaryOperatorPattern_2022Text(view);
+		case PatternTimerEditPart.VISUAL_ID:
+			return getPatternTimer_2023Text(view);
+		case ConditionGroupEditPart.VISUAL_ID:
+			return getConditionGroup_2024Text(view);
+		case NotEditPart.VISUAL_ID:
+			return getNot_2025Text(view);
+		case TargetEditPart.VISUAL_ID:
+			return getTarget_2026Text(view);
+		case LimitEditPart.VISUAL_ID:
+			return getLimit_3004Text(view);
+		case Operator2EditPart.VISUAL_ID:
+			return getOperator_3005Text(view);
+		case ValueOperator2EditPart.VISUAL_ID:
+			return getValueOperator_3006Text(view);
+		case Aggregation2EditPart.VISUAL_ID:
+			return getAggregation_3016Text(view);
+		case Order2EditPart.VISUAL_ID:
+			return getOrder_3017Text(view);
+		case Operator4EditPart.VISUAL_ID:
+			return getOperator_3018Text(view);
+		case ValueOperator4EditPart.VISUAL_ID:
+			return getValueOperator_3019Text(view);
+		case UnaryOperatorPattern2EditPart.VISUAL_ID:
+			return getUnaryOperatorPattern_3020Text(view);
+		case BinaryOperatorPattern2EditPart.VISUAL_ID:
+			return getBinaryOperatorPattern_3021Text(view);
+		case PatternTimer2EditPart.VISUAL_ID:
+			return getPatternTimer_3022Text(view);
+		case ConditionGroup2EditPart.VISUAL_ID:
+			return getConditionGroup_3023Text(view);
+		case Not2EditPart.VISUAL_ID:
+			return getNot_3024Text(view);
+		case Aggregation3EditPart.VISUAL_ID:
+			return getAggregation_3025Text(view);
+		case Order3EditPart.VISUAL_ID:
+			return getOrder_3026Text(view);
+		case Operator5EditPart.VISUAL_ID:
+			return getOperator_3027Text(view);
+		case ValueOperator5EditPart.VISUAL_ID:
+			return getValueOperator_3028Text(view);
+		case UnaryOperatorPattern3EditPart.VISUAL_ID:
+			return getUnaryOperatorPattern_3029Text(view);
+		case BinaryOperatorPattern3EditPart.VISUAL_ID:
+			return getBinaryOperatorPattern_3030Text(view);
+		case PatternTimer3EditPart.VISUAL_ID:
+			return getPatternTimer_3031Text(view);
+		case ConditionGroup3EditPart.VISUAL_ID:
+			return getConditionGroup_3032Text(view);
+		case Not3EditPart.VISUAL_ID:
+			return getNot_3033Text(view);
+		case AttributeEditPart.VISUAL_ID:
+			return getAttribute_3034Text(view);
+		case Target2EditPart.VISUAL_ID:
+			return getTarget_3045Text(view);
+		case Target3EditPart.VISUAL_ID:
+			return getTarget_3046Text(view);
+		case Operator3EditPart.VISUAL_ID:
+			return getOperator_3047Text(view);
+		case ValueOperator3EditPart.VISUAL_ID:
+			return getValueOperator_3048Text(view);
+		case ComparisonEditPart.VISUAL_ID:
+			return getComparison_4002Text(view);
+		case ArithmeticEditPart.VISUAL_ID:
+			return getArithmetic_4003Text(view);
+		case FollowedbyEditPart.VISUAL_ID:
+			return getFollowedby_4004Text(view);
+		case LogicalConnectorEditPart.VISUAL_ID:
+			return getLogicalConnector_4005Text(view);
+		case LinkComponentEditPart.VISUAL_ID:
+			return getLinkComponent_4006Text(view);
+		case LinkTargetEditPart.VISUAL_ID:
+			return getLinkTarget_4007Text(view);
+		}
+		return getUnknownElementText(view);
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getAreaDesenho_1000Text(View view) {
+		return ""; //$NON-NLS-1$
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getRule_2013Text(View view) {
+		IParser parser = DsmlParserProvider.getParser(
+				DsmlElementTypes.Rule_2013,
+				view.getElement() != null ? view.getElement() : view,
+				DsmlVisualIDRegistry.getType(RuleRuleNameEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			DsmlDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 5037); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getEventPattern_2014Text(View view) {
+		IParser parser = DsmlParserProvider.getParser(
+				DsmlElementTypes.EventPattern_2014,
+				view.getElement() != null ? view.getElement() : view,
+				DsmlVisualIDRegistry
+						.getType(EventPatternEventPatternEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			DsmlDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 5047); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getWindow_2015Text(View view) {
+		IParser parser = DsmlParserProvider.getParser(
+				DsmlElementTypes.Window_2015,
+				view.getElement() != null ? view.getElement() : view,
+				DsmlVisualIDRegistry.getType(WindowWindowEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			DsmlDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 5048); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getEvent_2016Text(View view) {
+		IParser parser = DsmlParserProvider.getParser(
+				DsmlElementTypes.Event_2016,
+				view.getElement() != null ? view.getElement() : view,
+				DsmlVisualIDRegistry.getType(EventEventNameEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			DsmlDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 5050); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getAggregation_2017Text(View view) {
+		IParser parser = DsmlParserProvider.getParser(
+				DsmlElementTypes.Aggregation_2017,
+				view.getElement() != null ? view.getElement() : view,
+				DsmlVisualIDRegistry
+						.getType(AggregationTypeAggregationEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			DsmlDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 5051); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getOrder_2018Text(View view) {
+		IParser parser = DsmlParserProvider.getParser(
+				DsmlElementTypes.Order_2018,
+				view.getElement() != null ? view.getElement() : view,
+				DsmlVisualIDRegistry.getType(OrderTypeOrderEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			DsmlDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 5052); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getOperator_2019Text(View view) {
+		IParser parser = DsmlParserProvider.getParser(
+				DsmlElementTypes.Operator_2019,
+				view.getElement() != null ? view.getElement() : view,
+				DsmlVisualIDRegistry
+						.getType(OperatorOperatorEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			DsmlDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 5053); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getValueOperator_2020Text(View view) {
+		IParser parser = DsmlParserProvider.getParser(
+				DsmlElementTypes.ValueOperator_2020,
+				view.getElement() != null ? view.getElement() : view,
+				DsmlVisualIDRegistry
+						.getType(ValueOperatorValueOperatorEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			DsmlDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 5054); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getUnaryOperatorPattern_2021Text(View view) {
+		IParser parser = DsmlParserProvider.getParser(
+				DsmlElementTypes.UnaryOperatorPattern_2021,
+				view.getElement() != null ? view.getElement() : view,
+				DsmlVisualIDRegistry
+						.getType(UnaryOperatorPatternNameEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			DsmlDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 5055); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getBinaryOperatorPattern_2022Text(View view) {
+		IParser parser = DsmlParserProvider.getParser(
+				DsmlElementTypes.BinaryOperatorPattern_2022,
+				view.getElement() != null ? view.getElement() : view,
+				DsmlVisualIDRegistry
+						.getType(BinaryOperatorPatternNameEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			DsmlDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 5056); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getPatternTimer_2023Text(View view) {
+		IParser parser = DsmlParserProvider.getParser(
+				DsmlElementTypes.PatternTimer_2023,
+				view.getElement() != null ? view.getElement() : view,
+				DsmlVisualIDRegistry
+						.getType(PatternTimerPatternTimerEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			DsmlDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 5057); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getConditionGroup_2024Text(View view) {
+		IParser parser = DsmlParserProvider
+				.getParser(
+						DsmlElementTypes.ConditionGroup_2024,
+						view.getElement() != null ? view.getElement() : view,
+						DsmlVisualIDRegistry
+								.getType(ConditionGroupConditionGroupEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			DsmlDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 5058); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getNot_2025Text(View view) {
+		IParser parser = DsmlParserProvider.getParser(
+				DsmlElementTypes.Not_2025,
+				view.getElement() != null ? view.getElement() : view,
+				DsmlVisualIDRegistry.getType(NotDescriptionEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			DsmlDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 5059); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getTarget_2026Text(View view) {
+		IParser parser = DsmlParserProvider.getParser(
+				DsmlElementTypes.Target_2026,
+				view.getElement() != null ? view.getElement() : view,
+				DsmlVisualIDRegistry.getType(TargetAliasEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			DsmlDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 5070); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getLimit_3004Text(View view) {
+		IParser parser = DsmlParserProvider
+				.getParser(DsmlElementTypes.Limit_3004,
+						view.getElement() != null ? view.getElement() : view,
+						DsmlVisualIDRegistry
+								.getType(LimitValueLimitEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			DsmlDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 5008); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getOperator_3005Text(View view) {
+		IParser parser = DsmlParserProvider.getParser(
+				DsmlElementTypes.Operator_3005,
+				view.getElement() != null ? view.getElement() : view,
+				DsmlVisualIDRegistry
+						.getType(OperatorOperator2EditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			DsmlDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 5015); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getValueOperator_3006Text(View view) {
+		IParser parser = DsmlParserProvider
+				.getParser(
+						DsmlElementTypes.ValueOperator_3006,
+						view.getElement() != null ? view.getElement() : view,
+						DsmlVisualIDRegistry
+								.getType(ValueOperatorValueOperator2EditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			DsmlDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 5016); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getAggregation_3016Text(View view) {
+		IParser parser = DsmlParserProvider
+				.getParser(
+						DsmlElementTypes.Aggregation_3016,
+						view.getElement() != null ? view.getElement() : view,
+						DsmlVisualIDRegistry
+								.getType(AggregationTypeAggregation2EditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			DsmlDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 5028); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getOrder_3017Text(View view) {
+		IParser parser = DsmlParserProvider
+				.getParser(DsmlElementTypes.Order_3017,
+						view.getElement() != null ? view.getElement() : view,
+						DsmlVisualIDRegistry
+								.getType(OrderTypeOrder2EditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			DsmlDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 5029); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getOperator_3018Text(View view) {
+		IParser parser = DsmlParserProvider.getParser(
+				DsmlElementTypes.Operator_3018,
+				view.getElement() != null ? view.getElement() : view,
+				DsmlVisualIDRegistry
+						.getType(OperatorOperator4EditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			DsmlDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 5030); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getValueOperator_3019Text(View view) {
+		IParser parser = DsmlParserProvider
+				.getParser(
+						DsmlElementTypes.ValueOperator_3019,
+						view.getElement() != null ? view.getElement() : view,
+						DsmlVisualIDRegistry
+								.getType(ValueOperatorValueOperator4EditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			DsmlDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 5031); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getUnaryOperatorPattern_3020Text(View view) {
+		IParser parser = DsmlParserProvider.getParser(
+				DsmlElementTypes.UnaryOperatorPattern_3020,
+				view.getElement() != null ? view.getElement() : view,
+				DsmlVisualIDRegistry
+						.getType(UnaryOperatorPatternName2EditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			DsmlDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 5032); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getBinaryOperatorPattern_3021Text(View view) {
+		IParser parser = DsmlParserProvider.getParser(
+				DsmlElementTypes.BinaryOperatorPattern_3021,
+				view.getElement() != null ? view.getElement() : view,
+				DsmlVisualIDRegistry
+						.getType(BinaryOperatorPatternName2EditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			DsmlDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 5033); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getPatternTimer_3022Text(View view) {
+		IParser parser = DsmlParserProvider.getParser(
+				DsmlElementTypes.PatternTimer_3022,
+				view.getElement() != null ? view.getElement() : view,
+				DsmlVisualIDRegistry
+						.getType(PatternTimerPatternTimer2EditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			DsmlDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 5034); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getConditionGroup_3023Text(View view) {
+		IParser parser = DsmlParserProvider
+				.getParser(
+						DsmlElementTypes.ConditionGroup_3023,
+						view.getElement() != null ? view.getElement() : view,
+						DsmlVisualIDRegistry
+								.getType(ConditionGroupConditionGroup2EditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			DsmlDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 5035); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getNot_3024Text(View view) {
+		IParser parser = DsmlParserProvider
+				.getParser(DsmlElementTypes.Not_3024,
+						view.getElement() != null ? view.getElement() : view,
+						DsmlVisualIDRegistry
+								.getType(NotDescription2EditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			DsmlDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 5036); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getAggregation_3025Text(View view) {
+		IParser parser = DsmlParserProvider
+				.getParser(
+						DsmlElementTypes.Aggregation_3025,
+						view.getElement() != null ? view.getElement() : view,
+						DsmlVisualIDRegistry
+								.getType(AggregationTypeAggregation3EditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			DsmlDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 5038); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getOrder_3026Text(View view) {
+		IParser parser = DsmlParserProvider
+				.getParser(DsmlElementTypes.Order_3026,
+						view.getElement() != null ? view.getElement() : view,
+						DsmlVisualIDRegistry
+								.getType(OrderTypeOrder3EditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			DsmlDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 5039); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getOperator_3027Text(View view) {
+		IParser parser = DsmlParserProvider.getParser(
+				DsmlElementTypes.Operator_3027,
+				view.getElement() != null ? view.getElement() : view,
+				DsmlVisualIDRegistry
+						.getType(OperatorOperator5EditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			DsmlDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 5040); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getValueOperator_3028Text(View view) {
+		IParser parser = DsmlParserProvider
+				.getParser(
+						DsmlElementTypes.ValueOperator_3028,
+						view.getElement() != null ? view.getElement() : view,
+						DsmlVisualIDRegistry
+								.getType(ValueOperatorValueOperator5EditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			DsmlDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 5041); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getUnaryOperatorPattern_3029Text(View view) {
+		IParser parser = DsmlParserProvider.getParser(
+				DsmlElementTypes.UnaryOperatorPattern_3029,
+				view.getElement() != null ? view.getElement() : view,
+				DsmlVisualIDRegistry
+						.getType(UnaryOperatorPatternName3EditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			DsmlDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 5042); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getBinaryOperatorPattern_3030Text(View view) {
+		IParser parser = DsmlParserProvider.getParser(
+				DsmlElementTypes.BinaryOperatorPattern_3030,
+				view.getElement() != null ? view.getElement() : view,
+				DsmlVisualIDRegistry
+						.getType(BinaryOperatorPatternName3EditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			DsmlDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 5043); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getPatternTimer_3031Text(View view) {
+		IParser parser = DsmlParserProvider.getParser(
+				DsmlElementTypes.PatternTimer_3031,
+				view.getElement() != null ? view.getElement() : view,
+				DsmlVisualIDRegistry
+						.getType(PatternTimerPatternTimer3EditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			DsmlDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 5044); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getConditionGroup_3032Text(View view) {
+		IParser parser = DsmlParserProvider
+				.getParser(
+						DsmlElementTypes.ConditionGroup_3032,
+						view.getElement() != null ? view.getElement() : view,
+						DsmlVisualIDRegistry
+								.getType(ConditionGroupConditionGroup3EditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			DsmlDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 5045); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getNot_3033Text(View view) {
+		IParser parser = DsmlParserProvider
+				.getParser(DsmlElementTypes.Not_3033,
+						view.getElement() != null ? view.getElement() : view,
+						DsmlVisualIDRegistry
+								.getType(NotDescription3EditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			DsmlDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 5046); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getAttribute_3034Text(View view) {
+		IParser parser = DsmlParserProvider.getParser(
+				DsmlElementTypes.Attribute_3034,
+				view.getElement() != null ? view.getElement() : view,
+				DsmlVisualIDRegistry
+						.getType(AttributeNameTypeEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			DsmlDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 5049); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getTarget_3045Text(View view) {
+		IParser parser = DsmlParserProvider.getParser(
+				DsmlElementTypes.Target_3045,
+				view.getElement() != null ? view.getElement() : view,
+				DsmlVisualIDRegistry.getType(TargetAlias2EditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			DsmlDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 5071); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getTarget_3046Text(View view) {
+		IParser parser = DsmlParserProvider.getParser(
+				DsmlElementTypes.Target_3046,
+				view.getElement() != null ? view.getElement() : view,
+				DsmlVisualIDRegistry.getType(TargetAlias3EditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			DsmlDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 5072); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getOperator_3047Text(View view) {
+		IParser parser = DsmlParserProvider.getParser(
+				DsmlElementTypes.Operator_3047,
+				view.getElement() != null ? view.getElement() : view,
+				DsmlVisualIDRegistry
+						.getType(OperatorOperator3EditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			DsmlDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 5073); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getValueOperator_3048Text(View view) {
+		IParser parser = DsmlParserProvider
+				.getParser(
+						DsmlElementTypes.ValueOperator_3048,
+						view.getElement() != null ? view.getElement() : view,
+						DsmlVisualIDRegistry
+								.getType(ValueOperatorValueOperator3EditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			DsmlDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 5074); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getComparison_4002Text(View view) {
+		IParser parser = DsmlParserProvider.getParser(
+				DsmlElementTypes.Comparison_4002,
+				view.getElement() != null ? view.getElement() : view,
+				DsmlVisualIDRegistry
+						.getType(ComparisonComparisonEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			DsmlDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 6001); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getArithmetic_4003Text(View view) {
+		IParser parser = DsmlParserProvider.getParser(
+				DsmlElementTypes.Arithmetic_4003,
+				view.getElement() != null ? view.getElement() : view,
+				DsmlVisualIDRegistry
+						.getType(ArithmeticArithmeticEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			DsmlDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 6002); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getFollowedby_4004Text(View view) {
+		return ""; //$NON-NLS-1$
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getLogicalConnector_4005Text(View view) {
+		IParser parser = DsmlParserProvider
+				.getParser(
+						DsmlElementTypes.LogicalConnector_4005,
+						view.getElement() != null ? view.getElement() : view,
+						DsmlVisualIDRegistry
+								.getType(LogicalConnectorTypeLogicalEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			DsmlDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 6003); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getLinkComponent_4006Text(View view) {
+		return ""; //$NON-NLS-1$
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getLinkTarget_4007Text(View view) {
+		return ""; //$NON-NLS-1$
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getUnknownElementText(View view) {
+		return "<UnknownElement Visual_ID = " + view.getType() + ">"; //$NON-NLS-1$  //$NON-NLS-2$
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getUnresolvedDomainElementProxyText(View view) {
+		return "<Unresolved domain element Visual_ID = " + view.getType() + ">"; //$NON-NLS-1$  //$NON-NLS-2$
+	}
+
+	/**
+	 * @generated
+	 */
+	public void init(ICommonContentExtensionSite aConfig) {
+	}
+
+	/**
+	 * @generated
+	 */
+	public void restoreState(IMemento aMemento) {
+	}
+
+	/**
+	 * @generated
+	 */
+	public void saveState(IMemento aMemento) {
+	}
+
+	/**
+	 * @generated
+	 */
+	public String getDescription(Object anElement) {
+		return null;
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isOwnView(View view) {
+		return AreaDesenhoEditPart.MODEL_ID.equals(DsmlVisualIDRegistry
+				.getModelID(view));
+	}
+
+}

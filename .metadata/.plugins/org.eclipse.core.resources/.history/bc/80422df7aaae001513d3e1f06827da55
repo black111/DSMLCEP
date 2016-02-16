@@ -1,0 +1,572 @@
+/*
+ * 
+ */
+package dsml.diagram.providers.assistants;
+
+/**
+ * @generated
+ */
+public class DsmlModelingAssistantProviderOfValueOperatorEditPart extends dsml.diagram.providers.DsmlModelingAssistantProvider {
+
+					
+			/**
+ * @generated
+ */
+	@Override
+
+	public java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> getRelTypesOnSource(org.eclipse.core.runtime.IAdaptable source) {
+		org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart sourceEditPart =
+				(org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart) source.getAdapter(
+						org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart.class);
+		return doGetRelTypesOnSource((dsml.diagram.edit.parts.ValueOperatorEditPart) sourceEditPart);
+	}
+	
+		/**
+ * @generated
+ */
+	public java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> doGetRelTypesOnSource(dsml.diagram.edit.parts.ValueOperatorEditPart source) {
+		java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> types = new java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType>(4);
+				types.add(dsml.diagram.providers.DsmlElementTypes.LinkComponent_4001);
+				types.add(dsml.diagram.providers.DsmlElementTypes.LinkTarget_4002);
+				types.add(dsml.diagram.providers.DsmlElementTypes.Comparison_4003);
+				types.add(dsml.diagram.providers.DsmlElementTypes.Arithmetic_4004);
+				return types;
+	}
+	
+		/**
+ * @generated
+ */
+	@Override
+
+	public java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> getRelTypesOnSourceAndTarget(
+			org.eclipse.core.runtime.IAdaptable source, org.eclipse.core.runtime.IAdaptable target) {
+		org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart sourceEditPart =
+				(org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart) source.getAdapter(
+						org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart.class);
+		org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart targetEditPart =
+				(org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart) target.getAdapter(
+						org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart.class);
+		return doGetRelTypesOnSourceAndTarget((dsml.diagram.edit.parts.ValueOperatorEditPart) sourceEditPart, targetEditPart);
+	}
+
+		/**
+ * @generated
+ */
+	public java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> doGetRelTypesOnSourceAndTarget(dsml.diagram.edit.parts.ValueOperatorEditPart source, org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart targetEditPart) {
+		java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> types = new java.util.LinkedList<org.eclipse.gmf.runtime.emf.type.core.IElementType>();
+							if (targetEditPart instanceof dsml.diagram.edit.parts.EventEditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.LinkComponent_4001);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.RuleEditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.LinkComponent_4001);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.EventPatternEditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.LinkComponent_4001);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.WindowEditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.LinkComponent_4001);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.AttributeEditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.LinkComponent_4001);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.ConditionGroupEditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.LinkComponent_4001);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.OperatorEditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.LinkComponent_4001);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.ValueOperatorEditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.LinkComponent_4001);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.TargetEditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.LinkComponent_4001);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.Operator2EditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.LinkComponent_4001);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.ValueOperator2EditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.LinkComponent_4001);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.AggregationEditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.LinkComponent_4001);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.OrderEditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.LinkComponent_4001);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.Operator3EditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.LinkComponent_4001);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.ValueOperator3EditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.LinkComponent_4001);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.UnaryOperatorPatternEditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.LinkComponent_4001);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.BinaryOperatorPatternEditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.LinkComponent_4001);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.PatternTimerEditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.LinkComponent_4001);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.Attribute2EditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.LinkComponent_4001);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.NotEditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.LinkComponent_4001);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.ConditionGroup2EditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.LinkComponent_4001);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.Target2EditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.LinkComponent_4001);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.Aggregation2EditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.LinkComponent_4001);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.Order2EditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.LinkComponent_4001);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.Operator4EditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.LinkComponent_4001);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.ValueOperator4EditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.LinkComponent_4001);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.UnaryOperatorPattern2EditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.LinkComponent_4001);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.BinaryOperatorPattern2EditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.LinkComponent_4001);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.PatternTimer2EditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.LinkComponent_4001);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.Attribute3EditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.LinkComponent_4001);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.Not2EditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.LinkComponent_4001);
+		}
+										if (targetEditPart instanceof dsml.diagram.edit.parts.TargetEditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.LinkTarget_4002);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.Target2EditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.LinkTarget_4002);
+		}
+										if (targetEditPart instanceof dsml.diagram.edit.parts.AttributeEditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Comparison_4003);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.ConditionGroupEditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Comparison_4003);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.OperatorEditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Comparison_4003);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.ValueOperatorEditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Comparison_4003);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.TargetEditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Comparison_4003);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.Operator2EditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Comparison_4003);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.ValueOperator2EditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Comparison_4003);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.AggregationEditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Comparison_4003);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.OrderEditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Comparison_4003);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.Operator3EditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Comparison_4003);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.ValueOperator3EditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Comparison_4003);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.UnaryOperatorPatternEditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Comparison_4003);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.BinaryOperatorPatternEditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Comparison_4003);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.PatternTimerEditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Comparison_4003);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.Attribute2EditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Comparison_4003);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.NotEditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Comparison_4003);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.ConditionGroup2EditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Comparison_4003);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.Target2EditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Comparison_4003);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.Aggregation2EditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Comparison_4003);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.Order2EditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Comparison_4003);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.Operator4EditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Comparison_4003);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.ValueOperator4EditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Comparison_4003);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.UnaryOperatorPattern2EditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Comparison_4003);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.BinaryOperatorPattern2EditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Comparison_4003);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.PatternTimer2EditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Comparison_4003);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.Attribute3EditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Comparison_4003);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.Not2EditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Comparison_4003);
+		}
+										if (targetEditPart instanceof dsml.diagram.edit.parts.AttributeEditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Arithmetic_4004);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.ConditionGroupEditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Arithmetic_4004);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.OperatorEditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Arithmetic_4004);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.ValueOperatorEditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Arithmetic_4004);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.TargetEditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Arithmetic_4004);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.Operator2EditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Arithmetic_4004);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.ValueOperator2EditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Arithmetic_4004);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.AggregationEditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Arithmetic_4004);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.OrderEditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Arithmetic_4004);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.Operator3EditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Arithmetic_4004);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.ValueOperator3EditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Arithmetic_4004);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.UnaryOperatorPatternEditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Arithmetic_4004);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.BinaryOperatorPatternEditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Arithmetic_4004);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.PatternTimerEditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Arithmetic_4004);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.Attribute2EditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Arithmetic_4004);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.NotEditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Arithmetic_4004);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.ConditionGroup2EditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Arithmetic_4004);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.Target2EditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Arithmetic_4004);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.Aggregation2EditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Arithmetic_4004);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.Order2EditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Arithmetic_4004);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.Operator4EditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Arithmetic_4004);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.ValueOperator4EditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Arithmetic_4004);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.UnaryOperatorPattern2EditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Arithmetic_4004);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.BinaryOperatorPattern2EditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Arithmetic_4004);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.PatternTimer2EditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Arithmetic_4004);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.Attribute3EditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Arithmetic_4004);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.Not2EditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Arithmetic_4004);
+		}
+							return types;
+	}
+
+			/**
+ * @generated
+ */
+	@Override
+
+	public java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> getTypesForTarget(org.eclipse.core.runtime.IAdaptable source,
+			org.eclipse.gmf.runtime.emf.type.core.IElementType relationshipType) {
+		org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart sourceEditPart =
+				(org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart) source.getAdapter(
+						org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart.class);
+		return doGetTypesForTarget((dsml.diagram.edit.parts.ValueOperatorEditPart) sourceEditPart, relationshipType);
+	}
+	
+		/**
+ * @generated
+ */
+	public java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> doGetTypesForTarget(dsml.diagram.edit.parts.ValueOperatorEditPart source, org.eclipse.gmf.runtime.emf.type.core.IElementType relationshipType) {
+		java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> types = new java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType>();
+				if (relationshipType == dsml.diagram.providers.DsmlElementTypes.LinkComponent_4001) {
+						types.add(dsml.diagram.providers.DsmlElementTypes.Event_2001);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Rule_2002);
+						types.add(dsml.diagram.providers.DsmlElementTypes.EventPattern_2003);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Window_2004);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Attribute_3001);
+						types.add(dsml.diagram.providers.DsmlElementTypes.ConditionGroup_3026);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Operator_3007);
+						types.add(dsml.diagram.providers.DsmlElementTypes.ValueOperator_3008);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Target_3027);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Operator_3003);
+						types.add(dsml.diagram.providers.DsmlElementTypes.ValueOperator_3004);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Aggregation_3028);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Order_3029);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Operator_3030);
+						types.add(dsml.diagram.providers.DsmlElementTypes.ValueOperator_3031);
+						types.add(dsml.diagram.providers.DsmlElementTypes.UnaryOperatorPattern_3032);
+						types.add(dsml.diagram.providers.DsmlElementTypes.BinaryOperatorPattern_3033);
+						types.add(dsml.diagram.providers.DsmlElementTypes.PatternTimer_3034);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Attribute_3035);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Not_3036);
+						types.add(dsml.diagram.providers.DsmlElementTypes.ConditionGroup_3037);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Target_3038);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Aggregation_3039);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Order_3040);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Operator_3041);
+						types.add(dsml.diagram.providers.DsmlElementTypes.ValueOperator_3042);
+						types.add(dsml.diagram.providers.DsmlElementTypes.UnaryOperatorPattern_3043);
+						types.add(dsml.diagram.providers.DsmlElementTypes.BinaryOperatorPattern_3044);
+						types.add(dsml.diagram.providers.DsmlElementTypes.PatternTimer_3045);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Attribute_3046);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Not_3047);
+					}
+		 else 		if (relationshipType == dsml.diagram.providers.DsmlElementTypes.LinkTarget_4002) {
+						types.add(dsml.diagram.providers.DsmlElementTypes.Target_3027);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Target_3038);
+					}
+		 else 		if (relationshipType == dsml.diagram.providers.DsmlElementTypes.Comparison_4003) {
+						types.add(dsml.diagram.providers.DsmlElementTypes.Attribute_3001);
+						types.add(dsml.diagram.providers.DsmlElementTypes.ConditionGroup_3026);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Operator_3007);
+						types.add(dsml.diagram.providers.DsmlElementTypes.ValueOperator_3008);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Target_3027);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Operator_3003);
+						types.add(dsml.diagram.providers.DsmlElementTypes.ValueOperator_3004);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Aggregation_3028);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Order_3029);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Operator_3030);
+						types.add(dsml.diagram.providers.DsmlElementTypes.ValueOperator_3031);
+						types.add(dsml.diagram.providers.DsmlElementTypes.UnaryOperatorPattern_3032);
+						types.add(dsml.diagram.providers.DsmlElementTypes.BinaryOperatorPattern_3033);
+						types.add(dsml.diagram.providers.DsmlElementTypes.PatternTimer_3034);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Attribute_3035);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Not_3036);
+						types.add(dsml.diagram.providers.DsmlElementTypes.ConditionGroup_3037);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Target_3038);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Aggregation_3039);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Order_3040);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Operator_3041);
+						types.add(dsml.diagram.providers.DsmlElementTypes.ValueOperator_3042);
+						types.add(dsml.diagram.providers.DsmlElementTypes.UnaryOperatorPattern_3043);
+						types.add(dsml.diagram.providers.DsmlElementTypes.BinaryOperatorPattern_3044);
+						types.add(dsml.diagram.providers.DsmlElementTypes.PatternTimer_3045);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Attribute_3046);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Not_3047);
+					}
+		 else 		if (relationshipType == dsml.diagram.providers.DsmlElementTypes.Arithmetic_4004) {
+						types.add(dsml.diagram.providers.DsmlElementTypes.Attribute_3001);
+						types.add(dsml.diagram.providers.DsmlElementTypes.ConditionGroup_3026);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Operator_3007);
+						types.add(dsml.diagram.providers.DsmlElementTypes.ValueOperator_3008);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Target_3027);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Operator_3003);
+						types.add(dsml.diagram.providers.DsmlElementTypes.ValueOperator_3004);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Aggregation_3028);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Order_3029);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Operator_3030);
+						types.add(dsml.diagram.providers.DsmlElementTypes.ValueOperator_3031);
+						types.add(dsml.diagram.providers.DsmlElementTypes.UnaryOperatorPattern_3032);
+						types.add(dsml.diagram.providers.DsmlElementTypes.BinaryOperatorPattern_3033);
+						types.add(dsml.diagram.providers.DsmlElementTypes.PatternTimer_3034);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Attribute_3035);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Not_3036);
+						types.add(dsml.diagram.providers.DsmlElementTypes.ConditionGroup_3037);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Target_3038);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Aggregation_3039);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Order_3040);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Operator_3041);
+						types.add(dsml.diagram.providers.DsmlElementTypes.ValueOperator_3042);
+						types.add(dsml.diagram.providers.DsmlElementTypes.UnaryOperatorPattern_3043);
+						types.add(dsml.diagram.providers.DsmlElementTypes.BinaryOperatorPattern_3044);
+						types.add(dsml.diagram.providers.DsmlElementTypes.PatternTimer_3045);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Attribute_3046);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Not_3047);
+					}
+				return types;
+	}
+
+		/**
+ * @generated
+ */
+	@Override
+
+	public java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> getRelTypesOnTarget(org.eclipse.core.runtime.IAdaptable target) {
+		org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart targetEditPart =
+				(org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart) target.getAdapter(
+						org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart.class);
+		return doGetRelTypesOnTarget((dsml.diagram.edit.parts.ValueOperatorEditPart) targetEditPart);
+	}
+
+		/**
+ * @generated
+ */
+	public java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> doGetRelTypesOnTarget(dsml.diagram.edit.parts.ValueOperatorEditPart target) {
+		java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> types = new java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType>(3);
+				types.add(dsml.diagram.providers.DsmlElementTypes.LinkComponent_4001);
+				types.add(dsml.diagram.providers.DsmlElementTypes.Comparison_4003);
+				types.add(dsml.diagram.providers.DsmlElementTypes.Arithmetic_4004);
+				return types;
+	}
+
+		/**
+ * @generated
+ */
+	@Override
+
+	public java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> getTypesForSource(org.eclipse.core.runtime.IAdaptable target,
+			org.eclipse.gmf.runtime.emf.type.core.IElementType relationshipType) {
+		org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart targetEditPart =
+				(org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart) target.getAdapter(
+						org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart.class);
+		return doGetTypesForSource((dsml.diagram.edit.parts.ValueOperatorEditPart) targetEditPart, relationshipType);
+	}
+
+		/**
+ * @generated
+ */
+	public java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> doGetTypesForSource(dsml.diagram.edit.parts.ValueOperatorEditPart target, org.eclipse.gmf.runtime.emf.type.core.IElementType relationshipType) {
+		java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> types = new java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType>();
+				if (relationshipType == dsml.diagram.providers.DsmlElementTypes.LinkComponent_4001) {
+						types.add(dsml.diagram.providers.DsmlElementTypes.Event_2001);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Rule_2002);
+						types.add(dsml.diagram.providers.DsmlElementTypes.EventPattern_2003);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Window_2004);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Attribute_3001);
+						types.add(dsml.diagram.providers.DsmlElementTypes.ConditionGroup_3026);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Operator_3007);
+						types.add(dsml.diagram.providers.DsmlElementTypes.ValueOperator_3008);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Target_3027);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Operator_3003);
+						types.add(dsml.diagram.providers.DsmlElementTypes.ValueOperator_3004);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Aggregation_3028);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Order_3029);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Operator_3030);
+						types.add(dsml.diagram.providers.DsmlElementTypes.ValueOperator_3031);
+						types.add(dsml.diagram.providers.DsmlElementTypes.UnaryOperatorPattern_3032);
+						types.add(dsml.diagram.providers.DsmlElementTypes.BinaryOperatorPattern_3033);
+						types.add(dsml.diagram.providers.DsmlElementTypes.PatternTimer_3034);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Attribute_3035);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Not_3036);
+						types.add(dsml.diagram.providers.DsmlElementTypes.ConditionGroup_3037);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Target_3038);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Aggregation_3039);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Order_3040);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Operator_3041);
+						types.add(dsml.diagram.providers.DsmlElementTypes.ValueOperator_3042);
+						types.add(dsml.diagram.providers.DsmlElementTypes.UnaryOperatorPattern_3043);
+						types.add(dsml.diagram.providers.DsmlElementTypes.BinaryOperatorPattern_3044);
+						types.add(dsml.diagram.providers.DsmlElementTypes.PatternTimer_3045);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Attribute_3046);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Not_3047);
+					}
+		 else 		if (relationshipType == dsml.diagram.providers.DsmlElementTypes.Comparison_4003) {
+						types.add(dsml.diagram.providers.DsmlElementTypes.Attribute_3001);
+						types.add(dsml.diagram.providers.DsmlElementTypes.ConditionGroup_3026);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Operator_3007);
+						types.add(dsml.diagram.providers.DsmlElementTypes.ValueOperator_3008);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Target_3027);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Operator_3003);
+						types.add(dsml.diagram.providers.DsmlElementTypes.ValueOperator_3004);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Aggregation_3028);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Order_3029);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Operator_3030);
+						types.add(dsml.diagram.providers.DsmlElementTypes.ValueOperator_3031);
+						types.add(dsml.diagram.providers.DsmlElementTypes.UnaryOperatorPattern_3032);
+						types.add(dsml.diagram.providers.DsmlElementTypes.BinaryOperatorPattern_3033);
+						types.add(dsml.diagram.providers.DsmlElementTypes.PatternTimer_3034);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Attribute_3035);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Not_3036);
+						types.add(dsml.diagram.providers.DsmlElementTypes.ConditionGroup_3037);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Target_3038);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Aggregation_3039);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Order_3040);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Operator_3041);
+						types.add(dsml.diagram.providers.DsmlElementTypes.ValueOperator_3042);
+						types.add(dsml.diagram.providers.DsmlElementTypes.UnaryOperatorPattern_3043);
+						types.add(dsml.diagram.providers.DsmlElementTypes.BinaryOperatorPattern_3044);
+						types.add(dsml.diagram.providers.DsmlElementTypes.PatternTimer_3045);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Attribute_3046);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Not_3047);
+					}
+		 else 		if (relationshipType == dsml.diagram.providers.DsmlElementTypes.Arithmetic_4004) {
+						types.add(dsml.diagram.providers.DsmlElementTypes.Attribute_3001);
+						types.add(dsml.diagram.providers.DsmlElementTypes.ConditionGroup_3026);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Operator_3007);
+						types.add(dsml.diagram.providers.DsmlElementTypes.ValueOperator_3008);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Target_3027);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Operator_3003);
+						types.add(dsml.diagram.providers.DsmlElementTypes.ValueOperator_3004);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Aggregation_3028);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Order_3029);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Operator_3030);
+						types.add(dsml.diagram.providers.DsmlElementTypes.ValueOperator_3031);
+						types.add(dsml.diagram.providers.DsmlElementTypes.UnaryOperatorPattern_3032);
+						types.add(dsml.diagram.providers.DsmlElementTypes.BinaryOperatorPattern_3033);
+						types.add(dsml.diagram.providers.DsmlElementTypes.PatternTimer_3034);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Attribute_3035);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Not_3036);
+						types.add(dsml.diagram.providers.DsmlElementTypes.ConditionGroup_3037);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Target_3038);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Aggregation_3039);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Order_3040);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Operator_3041);
+						types.add(dsml.diagram.providers.DsmlElementTypes.ValueOperator_3042);
+						types.add(dsml.diagram.providers.DsmlElementTypes.UnaryOperatorPattern_3043);
+						types.add(dsml.diagram.providers.DsmlElementTypes.BinaryOperatorPattern_3044);
+						types.add(dsml.diagram.providers.DsmlElementTypes.PatternTimer_3045);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Attribute_3046);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Not_3047);
+					}
+				return types;
+	}
+
+	}

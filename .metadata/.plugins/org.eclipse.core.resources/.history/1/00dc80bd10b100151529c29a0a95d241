@@ -1,0 +1,55 @@
+/*
+ * 
+ */
+package prediqt.diagram.edit.parts;
+
+/**
+ * @generated
+ */
+public class PrediqtEditPartFactory implements org.eclipse.gef.EditPartFactory {
+
+		/**
+ * @generated
+ */
+	public org.eclipse.gef.EditPart createEditPart(org.eclipse.gef.EditPart context, Object model) {
+		if (model instanceof org.eclipse.gmf.runtime.notation.View) {
+			org.eclipse.gmf.runtime.notation.View view = (org.eclipse.gmf.runtime.notation.View) model;
+			switch (prediqt.diagram.part.PrediqtVisualIDRegistry.getVisualID(view)) {
+				
+	case prediqt.diagram.edit.parts.ProjectEditPart.VISUAL_ID:
+		return new prediqt.diagram.edit.parts.ProjectEditPart(view);
+									
+	case prediqt.diagram.edit.parts.PNodeEditPart.VISUAL_ID:
+		return new prediqt.diagram.edit.parts.PNodeEditPart(view);
+					
+	case prediqt.diagram.edit.parts.PNodeNameQcfEditPart.VISUAL_ID:
+		return new prediqt.diagram.edit.parts.PNodeNameQcfEditPart(view);
+																	
+	case prediqt.diagram.edit.parts.PArcEditPart.VISUAL_ID:
+		return new prediqt.diagram.edit.parts.PArcEditPart(view);
+					
+	case prediqt.diagram.edit.parts.PArcImpactEditPart.VISUAL_ID:
+		return new prediqt.diagram.edit.parts.PArcImpactEditPart(view);
+
+							}
+		}
+		return createUnrecognizedEditPart(context, model);
+	}
+	
+		/**
+ * @generated
+ */
+	 private org.eclipse.gef.EditPart createUnrecognizedEditPart(org.eclipse.gef.EditPart context, Object model) {
+	 	// Handle creation of unrecognized child node EditParts here
+	 	return null;
+	 }
+	
+		/**
+ * @generated
+ */
+	public static org.eclipse.gef.tools.CellEditorLocator getTextCellEditorLocator(
+			org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart source) {
+		return org.eclipse.gmf.tooling.runtime.directedit.locator.CellEditorLocatorAccess.INSTANCE.getTextCellEditorLocator(source);
+	}
+	
+	}

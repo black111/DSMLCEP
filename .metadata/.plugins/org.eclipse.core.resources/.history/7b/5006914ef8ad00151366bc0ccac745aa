@@ -1,0 +1,105 @@
+/**
+ */
+package dsml;
+
+import org.eclipse.emf.common.util.EList;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Rule</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * <ul>
+ *   <li>{@link dsml.Rule#getRuleName <em>Rule Name</em>}</li>
+ *   <li>{@link dsml.Rule#getBringAll <em>Bring All</em>}</li>
+ *   <li>{@link dsml.Rule#getAttributes <em>Attributes</em>}</li>
+ *   <li>{@link dsml.Rule#getNode <em>Node</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @see dsml.DsmlPackage#getRule()
+ * @model annotation="gmf.node label='ruleName' figure='rounded' border.color='0,0,0'"
+ * @generated
+ */
+public interface Rule extends Component {
+	/**
+	 * Returns the value of the '<em><b>Rule Name</b></em>' attribute.
+	 * The default value is <code>"Rule"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Rule Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Rule Name</em>' attribute.
+	 * @see dsml.DsmlPackage#getRule_RuleName()
+	 * @model default="Rule" changeable="false"
+	 * @generated
+	 */
+	String getRuleName();
+
+	/**
+	 * Returns the value of the '<em><b>Node</b></em>' containment reference list.
+	 * The list contents are of type {@link dsml.Node}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Node</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Node</em>' containment reference list.
+	 * @see dsml.DsmlPackage#getRule_Node()
+	 * @model containment="true"
+	 *        annotation="gmf.compartment collapsible='true' layout='free'"
+	 * @generated
+	 */
+	EList<Node> getNode();
+
+	/**
+	 * Returns the value of the '<em><b>Attributes</b></em>' reference list.
+	 * The list contents are of type {@link dsml.Node}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Attributes</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Attributes</em>' reference list.
+	 * @see dsml.DsmlPackage#getRule_Attributes()
+	 * @model
+	 * @generated
+	 */
+	EList<Node> getAttributes();
+
+	/**
+	 * Returns the value of the '<em><b>Bring All</b></em>' attribute.
+	 * The literals are from the enumeration {@link dsml.TypeBringAll}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Bring All</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Bring All</em>' attribute.
+	 * @see dsml.TypeBringAll
+	 * @see #setBringAll(TypeBringAll)
+	 * @see dsml.DsmlPackage#getRule_BringAll()
+	 * @model
+	 * @generated
+	 */
+	TypeBringAll getBringAll();
+
+	/**
+	 * Sets the value of the '{@link dsml.Rule#getBringAll <em>Bring All</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Bring All</em>' attribute.
+	 * @see dsml.TypeBringAll
+	 * @see #getBringAll()
+	 * @generated
+	 */
+	void setBringAll(TypeBringAll value);
+
+} // Rule

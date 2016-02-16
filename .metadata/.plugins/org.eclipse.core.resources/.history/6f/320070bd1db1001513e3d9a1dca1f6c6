@@ -1,0 +1,67 @@
+/*
+ * 
+ */
+package dsml.diagram.edit.policies;
+
+import org.eclipse.gef.commands.Command;
+import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
+
+import dsml.diagram.edit.commands.Aggregation3CreateCommand;
+import dsml.diagram.edit.commands.BringGroup2CreateCommand;
+import dsml.diagram.edit.commands.ConditionGroup3CreateCommand;
+import dsml.diagram.edit.commands.Not3CreateCommand;
+import dsml.diagram.edit.commands.Operator3CreateCommand;
+import dsml.diagram.edit.commands.Order3CreateCommand;
+import dsml.diagram.edit.commands.PNode3CreateCommand;
+import dsml.diagram.edit.commands.Target3CreateCommand;
+import dsml.diagram.edit.commands.ValueOperator3CreateCommand;
+import dsml.diagram.providers.DsmlElementTypes;
+
+/**
+ * @generated
+ */
+public class ConditionGroupConditionGroupOperationTypesCompartmentItemSemanticEditPolicy
+		extends DsmlBaseItemSemanticEditPolicy {
+
+	/**
+	 * @generated
+	 */
+	public ConditionGroupConditionGroupOperationTypesCompartmentItemSemanticEditPolicy() {
+		super(DsmlElementTypes.ConditionGroup_3004);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Command getCreateCommand(CreateElementRequest req) {
+		if (DsmlElementTypes.Target_3005 == req.getElementType()) {
+			return getGEFWrapper(new Target3CreateCommand(req));
+		}
+		if (DsmlElementTypes.PNode_3042 == req.getElementType()) {
+			return getGEFWrapper(new PNode3CreateCommand(req));
+		}
+		if (DsmlElementTypes.ConditionGroup_3015 == req.getElementType()) {
+			return getGEFWrapper(new ConditionGroup3CreateCommand(req));
+		}
+		if (DsmlElementTypes.BringGroup_3016 == req.getElementType()) {
+			return getGEFWrapper(new BringGroup2CreateCommand(req));
+		}
+		if (DsmlElementTypes.Not_3023 == req.getElementType()) {
+			return getGEFWrapper(new Not3CreateCommand(req));
+		}
+		if (DsmlElementTypes.Operator_3024 == req.getElementType()) {
+			return getGEFWrapper(new Operator3CreateCommand(req));
+		}
+		if (DsmlElementTypes.ValueOperator_3025 == req.getElementType()) {
+			return getGEFWrapper(new ValueOperator3CreateCommand(req));
+		}
+		if (DsmlElementTypes.Aggregation_3026 == req.getElementType()) {
+			return getGEFWrapper(new Aggregation3CreateCommand(req));
+		}
+		if (DsmlElementTypes.Order_3027 == req.getElementType()) {
+			return getGEFWrapper(new Order3CreateCommand(req));
+		}
+		return super.getCreateCommand(req);
+	}
+
+}

@@ -1,0 +1,241 @@
+/**
+ */
+package dsml.impl;
+
+import dsml.Attribute;
+import dsml.DsmlPackage;
+import dsml.Node;
+import dsml.Pattern;
+import dsml.Query;
+import dsml.Rule;
+
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Rule</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * <ul>
+ *   <li>{@link dsml.impl.RuleImpl#getRuleName <em>Rule Name</em>}</li>
+ *   <li>{@link dsml.impl.RuleImpl#getNode <em>Node</em>}</li>
+ *   <li>{@link dsml.impl.RuleImpl#getAttributes <em>Attributes</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @generated
+ */
+public class RuleImpl extends ComponentImpl implements Rule {
+	/**
+	 * The default value of the '{@link #getRuleName() <em>Rule Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRuleName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String RULE_NAME_EDEFAULT = "Rule";
+
+	/**
+	 * The cached value of the '{@link #getRuleName() <em>Rule Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRuleName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String ruleName = RULE_NAME_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getNode() <em>Node</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNode()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Node> node;
+
+	/**
+	 * The cached value of the '{@link #getAttributes() <em>Attributes</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAttributes()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Node> attributes;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RuleImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return DsmlPackage.Literals.RULE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getRuleName() {
+		return ruleName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Node> getNode() {
+		if (node == null) {
+			node = new EObjectContainmentEList<Node>(Node.class, this, DsmlPackage.RULE__NODE);
+		}
+		return node;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Node> getAttributes() {
+		if (attributes == null) {
+			attributes = new EObjectResolvingEList<Node>(Node.class, this, DsmlPackage.RULE__ATTRIBUTES);
+		}
+		return attributes;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case DsmlPackage.RULE__NODE:
+				return ((InternalEList<?>)getNode()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case DsmlPackage.RULE__RULE_NAME:
+				return getRuleName();
+			case DsmlPackage.RULE__NODE:
+				return getNode();
+			case DsmlPackage.RULE__ATTRIBUTES:
+				return getAttributes();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case DsmlPackage.RULE__NODE:
+				getNode().clear();
+				getNode().addAll((Collection<? extends Node>)newValue);
+				return;
+			case DsmlPackage.RULE__ATTRIBUTES:
+				getAttributes().clear();
+				getAttributes().addAll((Collection<? extends Node>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case DsmlPackage.RULE__NODE:
+				getNode().clear();
+				return;
+			case DsmlPackage.RULE__ATTRIBUTES:
+				getAttributes().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case DsmlPackage.RULE__RULE_NAME:
+				return RULE_NAME_EDEFAULT == null ? ruleName != null : !RULE_NAME_EDEFAULT.equals(ruleName);
+			case DsmlPackage.RULE__NODE:
+				return node != null && !node.isEmpty();
+			case DsmlPackage.RULE__ATTRIBUTES:
+				return attributes != null && !attributes.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (ruleName: ");
+		result.append(ruleName);
+		result.append(')');
+		return result.toString();
+	}
+
+} //RuleImpl

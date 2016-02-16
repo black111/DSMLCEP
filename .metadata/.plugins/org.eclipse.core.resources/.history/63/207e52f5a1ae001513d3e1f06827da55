@@ -1,0 +1,18 @@
+/**
+ */
+package dsml;
+
+import org.eclipse.emf.ecore.EObject;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Group Relacional</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ *
+ * @see dsml.DsmlPackage#getGroupRelacional()
+ * @model abstract="true"
+ * @generated
+ */
+public interface GroupRelacional extends EObject {
+} // GroupRelacional

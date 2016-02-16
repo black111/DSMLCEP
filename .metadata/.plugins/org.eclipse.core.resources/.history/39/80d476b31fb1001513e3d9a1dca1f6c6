@@ -1,0 +1,150 @@
+/*
+ * 
+ */
+package dsml.diagram.edit.commands;
+
+/**
+ * @generated
+ */
+public class LinkComponentReorientCommand extends org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand {
+
+	/**
+ * @generated
+ */
+	private final int reorientDirection;
+
+	/**
+ * @generated
+ */
+	private final org.eclipse.emf.ecore.EObject oldEnd;
+
+	/**
+ * @generated
+ */
+	private final org.eclipse.emf.ecore.EObject newEnd;
+
+	/**
+ * @generated
+ */
+	public LinkComponentReorientCommand(org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest request) {
+		super(request.getLabel(), request.getRelationship(), request);
+		reorientDirection = request.getDirection();
+		oldEnd = request.getOldRelationshipEnd();
+		newEnd = request.getNewRelationshipEnd();
+	}
+	
+	/**
+ * @generated
+ */
+	public boolean canExecute() {
+			if (false == getElementToEdit() instanceof dsml.LinkComponent) {
+		return false;
+	}
+		if (reorientDirection == org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest.REORIENT_SOURCE) {
+			return canReorientSource();
+		}
+		if (reorientDirection == org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest.REORIENT_TARGET) {
+			return canReorientTarget();
+		}
+		return false;
+	}
+
+	/**
+ * @generated
+ */
+	protected boolean canReorientSource() {
+			if (!(oldEnd instanceof dsml.Component && newEnd instanceof dsml.Component)) {
+		return false;
+	}
+				dsml.Component target = getLink().getInboundLink();
+			if (!(getLink().eContainer() instanceof dsml.AreaDesenho)) {
+		return false;
+	}
+	dsml.AreaDesenho container = (dsml.AreaDesenho) getLink().eContainer();
+	return dsml.diagram.edit.policies.DsmlBaseItemSemanticEditPolicy.getLinkConstraints().canExistLinkComponent_4002(container, getLink(), getNewSource(), target);
+	}
+
+	/**
+ * @generated
+ */
+	protected boolean canReorientTarget() {
+			if (!(oldEnd instanceof dsml.Component && newEnd instanceof dsml.Component)) {
+		return false;
+	}
+						dsml.Component source = getLink().getOutboundLink();
+				if (!(getLink().eContainer() instanceof dsml.AreaDesenho)) {
+		return false;
+	}
+	dsml.AreaDesenho container = (dsml.AreaDesenho) getLink().eContainer();
+	return dsml.diagram.edit.policies.DsmlBaseItemSemanticEditPolicy.getLinkConstraints().canExistLinkComponent_4002(container, getLink(), source, getNewTarget());
+	}
+	
+	/**
+ * @generated
+ */
+	protected org.eclipse.gmf.runtime.common.core.command.CommandResult doExecuteWithResult(
+			org.eclipse.core.runtime.IProgressMonitor monitor, org.eclipse.core.runtime.IAdaptable info)
+			throws org.eclipse.core.commands.ExecutionException {
+		if (!canExecute()) {
+			throw new org.eclipse.core.commands.ExecutionException("Invalid arguments in reorient link command");  //$NON-NLS-1$
+		}
+		if (reorientDirection == org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest.REORIENT_SOURCE) {
+			return reorientSource();
+		}
+		if (reorientDirection == org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest.REORIENT_TARGET) {
+			return reorientTarget();
+		}
+		throw new IllegalStateException();
+	}
+
+	/**
+ * @generated
+ */
+	protected org.eclipse.gmf.runtime.common.core.command.CommandResult reorientSource() throws org.eclipse.core.commands.ExecutionException {
+				getLink().setOutboundLink(getNewSource());
+	return org.eclipse.gmf.runtime.common.core.command.CommandResult.newOKCommandResult(getLink());
+	}
+
+	/**
+ * @generated
+ */
+	protected org.eclipse.gmf.runtime.common.core.command.CommandResult reorientTarget() throws org.eclipse.core.commands.ExecutionException {
+				getLink().setInboundLink(getNewTarget());
+	return org.eclipse.gmf.runtime.common.core.command.CommandResult.newOKCommandResult(getLink());
+	}
+		
+	/**
+ * @generated
+ */
+	protected dsml.LinkComponent getLink() {
+		return (dsml.LinkComponent) getElementToEdit();
+	}
+	
+	/**
+ * @generated
+ */
+	protected dsml.Component getOldSource() {
+		return (dsml.Component) oldEnd;
+	}
+	
+	/**
+ * @generated
+ */
+	protected dsml.Component getNewSource() {
+		return (dsml.Component) newEnd;
+	}
+	
+	/**
+ * @generated
+ */
+	protected dsml.Component getOldTarget() {
+		return (dsml.Component) oldEnd;
+	}
+	
+	/**
+ * @generated
+ */
+	protected dsml.Component getNewTarget() {
+		return (dsml.Component) newEnd;
+	}
+}

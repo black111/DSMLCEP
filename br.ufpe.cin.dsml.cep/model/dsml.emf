@@ -1,0 +1,266 @@
+@namespace(uri="dsml", prefix="dsml")
+package dsml;
+
+@gmf.diagram(foo="bar", rcp="false", onefile="true", diagram.extension="dsml")
+class DrawingArea {
+  val Rule[1] rule;
+  val Event[*] events;
+  val EventPattern[1] patterns;
+  val EventOutput[1] output;
+  val Window[*] windows;
+  val TargetGroupby[*] targetGroupby;
+  val Link[*] links;
+  val LinkPatternTarget[*] linkPatternTarget;
+  val LinkTarget[*] linkTaget;
+  
+}
+
+abstract class Component {
+}
+
+@gmf.node(label="ruleName", figure="rounded", border.color="0,0,0")
+class Rule extends Component {
+  attr String ruleName = "Rule";
+
+  @gmf.compartment(collapsible="true", layout="free")
+  val Query[*] queries;
+}
+
+@gmf.node(label="outputName", figure="rounded", border.color="0,0,0")
+class EventOutput extends Component {
+  readonly attr String outputName = "OutputEvent";
+  @gmf.compartment(collapsible="true", layout="free")
+  val Query[*] queries;
+}
+
+@gmf.node(label="eventPattern", figure="rounded", border.color="0,0,0")
+class EventPattern extends Component {
+  readonly attr String eventPattern = "EventPattern";
+  @gmf.compartment(collapsible="true", layout="free")
+  val Pattern[*] node;
+}
+
+@gmf.node(label="window", figure="rectangle")
+class Window extends Component {
+  readonly attr String window = "Window";
+  attr TypeWindow typeWindow;
+  attr String value;
+}
+
+@gmf.node(label="targetGroupby", figure="rounded", border.color="0,0,0")
+class TargetGroupby extends Component {
+  readonly attr String targetGroupby = "TargetGroupby";
+  ref Attribute[*] attributes;
+}
+
+@gmf.node(label="eventName", figure="rounded", border.color="0,0,0")
+class Event extends Component {
+  attr String eventName;
+  @gmf.compartment(layout="list", collapsible="false")
+  val Attribute[*] attributes;
+}
+
+@gmf.node(label="name,type", figure="rectangle", label.icon="false", label.pattern="{0}:{1}")
+class Attribute {
+  attr String name;
+  attr String type;
+}
+
+abstract class Query {
+  ref Link#target incoming;
+  ref Link#source outgoing;
+}
+
+@gmf.node(label="typeAggregation", figure="rectangle")
+class Aggregation extends Query {
+  ref Attribute attribute;
+  attr TypeAggregation typeAggregation;
+}
+
+@gmf.node(label="conditionGroup", figure="rectangle", border.color="255,204,0")
+class ConditionGroup extends Query {
+  readonly attr String conditionGroup = "ConditionGroup";
+
+  @gmf.compartment(layout="free", collapsible="true")
+  val Query[*] operationTypes;
+}
+
+@gmf.node(label="groupbyCondition", figure="rectangle", border.color="76,217,100")
+class GroupbyCondition extends Query {
+  readonly attr String groupbyCondition = "groupbyCondition";
+  ref Attribute[*] attributes;
+
+  @gmf.compartment(layout="free", collapsible="true")
+  val Query[*] operationTypes;
+}
+
+@gmf.node(label="bringGroup", figure="rectangle", border.color="0,153,255")
+class BringGroup extends Query {
+  readonly attr String bringGroup = "BringGroup";
+  attr boolean bringAll = false;
+  ref Attribute[*] attributes;
+
+  @gmf.compartment(layout="free", collapsible="true")
+  val Query[*] operationTypes;
+}
+
+@gmf.node(label="targetAlias", figure="rectangle", border.color="255,0,0")
+class Target extends Pattern, Query {
+  attr String targetAlias;
+
+  @gmf.compartment(layout="free", collapsible="true")
+  val Query[*] operationTypes;
+  ref LinkPatternTarget#target incomingTarget;
+  ref LinkPatternTarget#source outgoingTarget;
+}
+
+@gmf.node(label="description", figure="rectangle")
+class Not extends Query, Pattern {
+  readonly attr String description = "NOT";
+}
+
+
+@gmf.node(label="operator", figure="rectangle")
+class Operator extends Query {
+  attr String operator = "Operator";
+  ref Attribute attribute;
+  attr String operatorAlias;
+}
+
+@gmf.node(label="valueOperator", figure="ellipse", border.color="0,0,0")
+class ValueOperator extends Query {
+  attr String valueOperator;
+}
+
+abstract class Pattern extends Query {
+}
+
+@gmf.node(label="name", figure="rectangle")
+class UnaryPattern extends Pattern {
+  readonly attr String name = "UnaryPattern";
+  attr TypeUnaryPattern typeUnaryPattern;
+}
+
+@gmf.node(label="patternTimer", figure="rectangle")
+class PatternTimer extends Pattern {
+  readonly attr String patternTimer = "PatternTimer";
+  attr TypePatternTimer typePatternTimer;
+  attr String value;
+}
+
+@gmf.node(label="repeatPattern", figure="rectangle")
+class RepeatPattern extends Pattern {
+  readonly attr String repeatPattern = "RepeatPattern";
+  attr TypeRepeatPattern typePatternTimer;
+  attr String value;
+}
+
+abstract class Link {
+  ref Query#outgoing source;
+  ref Query#incoming target;
+}
+
+@gmf.link(source="source", target="target", target.decoration="arrow", incoming="true", color="0,0,0", width="1")
+class LinkTarget {
+  ref Component[1] source;
+  ref Target[*] target;
+}
+
+@gmf.link(label="comparisonTarget", source="source", target="target", target.decoration="arrow", incoming="true", color="0,0,0", width="1", tool.description="Operations: [FOLLOWEDBY, OR, AND, OR, UNTIL, WHILE]")
+class LinkPatternTarget {
+  ref Target[1]#outgoingTarget source;
+  ref Target[1]#incomingTarget target;
+  attr TypeTargetComparison comparisonTarget;
+}
+
+@gmf.link(label="comparison", source="source", target="target", target.decoration="arrow", incoming="true", color="0,0,0", width="1", tool.description="Operations: [=, >=, >, <=, <, <>]")
+class Comparison extends Link {
+  attr TypeComparison comparison;
+}
+
+@gmf.link(label="arithmetic", source="source", target="target", target.decoration="arrow", incoming="true", color="0,0,0", width="1", tool.description="Operations: [+, /, %, *, -]")
+class Arithmetic extends Link {
+  attr TypeArithmetic arithmetic;
+}
+
+@gmf.link(label="typeLogical", source="source", target="target", target.decoration="arrow", incoming="true", color="0,153,255", width="2", tool.description="Operations: [and, or]")
+class LogicalConnector extends Link {
+  attr TypeLogical typeLogical;
+}
+
+enum TypeRule {
+  QUERY = 0;
+  PATTERN = 1;
+}
+
+enum TypeWindow {
+  LENGTH = 0;
+  LENGTH_BATCH = 1;
+  TIME = 2;
+  EXT_TIMED = 3;
+  TIME_BATCH = 4;
+  EXT_TIMED_BATCH = 5;
+  TIME_LENGTH_BATCH = 6;
+  TIME_SEC = 7;
+  TIME_ACCUM = 8;
+  KEEPALL = 9;
+  FIRSTLENGTH = 10;
+  FIRSTTIME = 11;
+  EXPR = 12;
+  EXPR_BATCH = 13;
+}
+
+enum TypeUnaryPattern {
+  EVERY = 0;
+  EVERY_DISTINCT = 1;
+}
+
+enum TypeRepeatPattern {
+  RANGE = 0;
+  REPEAT = 1;
+}
+
+enum TypeTargetComparison {
+  FOLLOWEDBY = 0;
+  AND = 1;
+  OR = 2;
+  UNTIL = 3;
+  WHILE = 4;
+}
+
+enum TypeLogical {
+  AND = 0;
+  OR = 1;
+}
+
+enum TypeComparison {
+  EQUAL = 0;
+  GREATER_EQUAL = 1;
+  GREATER_THAN = 2;
+  LESS_EQUAL = 3;
+  LESS_THAN = 4;
+  NOT_EQUAL = 5;
+}
+
+enum TypeArithmetic {
+  ADDITION = 0;
+  DIVISION = 1;
+  MODULUS = 2;
+  MULTIPLICATION = 3;
+  SUBTRACTION = 4;
+}
+
+enum TypeAggregation {
+  AVG = 0;
+  COUNT = 1;
+  MAX = 2;
+  MIN = 3;
+  SUM = 4;
+}
+
+enum TypePatternTimer {
+  WITHIN_TIMER = 0;
+  WITHIN_MAX_TIMER = 1;
+  INTERVAL = 2;
+  AT = 3;
+}

@@ -1,0 +1,17 @@
+/**
+ */
+package dsml;
+
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Bring Group</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ *
+ * @see dsml.DsmlPackage#getBringGroup()
+ * @model abstract="true"
+ * @generated
+ */
+public interface BringGroup extends Query, Attribute {
+} // BringGroup

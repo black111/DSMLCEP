@@ -1,0 +1,61 @@
+SELECT 
+   [%for (component in AreaDesenho) {%]
+       [%for (r in component.rule) {%]
+          [%for (q in r.queries) {%]
+          
+          
+             [%if(q.isKindOf(BringGroup)) {%]
+                   
+                    [%if(q.bringAll=true) {%]
+                      *  
+                      [%if(q.attributes >0 or q.operationTypes.size()>0) {%]
+                            ,
+                      [%}%] 
+                    [%}%]   
+ 
+                    [% var first : Boolean = true;%] 
+                    [% for (attr in q.attributes){%]
+                       [%if(q.attributes >0) {%]
+                         [%if(first=false) {%]
+                            ,
+                         [%}%]  
+                         [%=attr.name %] 
+                         [%first=false;%] 
+                       [%}%] 
+                    [%}%] 
+                    
+                    [% first = true;%] 
+                    [% for (qbg in q.operationTypes){%]
+                       
+                       [%if(qbg.isKindOf(Operator)) {%]
+                          [%if(first=false) {%]
+                             ,
+                          [%}%]  
+                          [%if(qbg.operatorAlias<>null) {%]
+                            [%=qbg.operatorAlias %].[%=qbg.attribute.name %] 
+                          [%}else{%]  
+                            [%=qbg.attribute.name %] 
+                          [%}%] 
+                          [%first=false;%]     
+                       [%}%]   
+                       
+                      
+                    [%}%]
+                    
+             [%}%]
+             
+   
+             
+             [%if(q.isKindOf(Target)) {%]
+                        
+             [%}%]
+             
+             [%if(q.isKindOf(ConditionGroup)) {%]
+                  
+             [%}%]
+             
+             
+                
+          [%}%]
+       [%}%]
+   [%}%]

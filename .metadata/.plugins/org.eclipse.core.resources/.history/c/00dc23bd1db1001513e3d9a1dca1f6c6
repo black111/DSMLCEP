@@ -1,0 +1,676 @@
+/*
+ * 
+ */
+package dsml.diagram.providers.assistants;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
+import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
+import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+
+import dsml.diagram.edit.parts.Aggregation2EditPart;
+import dsml.diagram.edit.parts.Aggregation3EditPart;
+import dsml.diagram.edit.parts.Aggregation4EditPart;
+import dsml.diagram.edit.parts.AggregationEditPart;
+import dsml.diagram.edit.parts.BringGroup2EditPart;
+import dsml.diagram.edit.parts.BringGroup3EditPart;
+import dsml.diagram.edit.parts.BringGroup4EditPart;
+import dsml.diagram.edit.parts.BringGroupEditPart;
+import dsml.diagram.edit.parts.ConditionGroup2EditPart;
+import dsml.diagram.edit.parts.ConditionGroup3EditPart;
+import dsml.diagram.edit.parts.ConditionGroup4EditPart;
+import dsml.diagram.edit.parts.ConditionGroupEditPart;
+import dsml.diagram.edit.parts.Not2EditPart;
+import dsml.diagram.edit.parts.Not3EditPart;
+import dsml.diagram.edit.parts.Not4EditPart;
+import dsml.diagram.edit.parts.Not5EditPart;
+import dsml.diagram.edit.parts.NotEditPart;
+import dsml.diagram.edit.parts.Operator2EditPart;
+import dsml.diagram.edit.parts.Operator3EditPart;
+import dsml.diagram.edit.parts.Operator4EditPart;
+import dsml.diagram.edit.parts.OperatorEditPart;
+import dsml.diagram.edit.parts.Order2EditPart;
+import dsml.diagram.edit.parts.Order3EditPart;
+import dsml.diagram.edit.parts.Order4EditPart;
+import dsml.diagram.edit.parts.OrderEditPart;
+import dsml.diagram.edit.parts.PNode2EditPart;
+import dsml.diagram.edit.parts.PNode3EditPart;
+import dsml.diagram.edit.parts.PNode4EditPart;
+import dsml.diagram.edit.parts.PNodeEditPart;
+import dsml.diagram.edit.parts.Target2EditPart;
+import dsml.diagram.edit.parts.Target3EditPart;
+import dsml.diagram.edit.parts.Target4EditPart;
+import dsml.diagram.edit.parts.Target5EditPart;
+import dsml.diagram.edit.parts.TargetEditPart;
+import dsml.diagram.edit.parts.ValueOperator2EditPart;
+import dsml.diagram.edit.parts.ValueOperator3EditPart;
+import dsml.diagram.edit.parts.ValueOperator4EditPart;
+import dsml.diagram.edit.parts.ValueOperatorEditPart;
+import dsml.diagram.providers.DsmlElementTypes;
+import dsml.diagram.providers.DsmlModelingAssistantProvider;
+
+/**
+ * @generated
+ */
+public class DsmlModelingAssistantProviderOfTarget5EditPart extends
+		DsmlModelingAssistantProvider {
+
+	/**
+	 * @generated
+	 */
+	@Override
+	public List<IElementType> getRelTypesOnSource(IAdaptable source) {
+		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source
+				.getAdapter(IGraphicalEditPart.class);
+		return doGetRelTypesOnSource((Target5EditPart) sourceEditPart);
+	}
+
+	/**
+	 * @generated
+	 */
+	public List<IElementType> doGetRelTypesOnSource(Target5EditPart source) {
+		List<IElementType> types = new ArrayList<IElementType>(4);
+		types.add(DsmlElementTypes.Comparison_4003);
+		types.add(DsmlElementTypes.Arithmetic_4004);
+		types.add(DsmlElementTypes.Followedby_4005);
+		types.add(DsmlElementTypes.LogicalConnector_4006);
+		return types;
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	public List<IElementType> getRelTypesOnSourceAndTarget(IAdaptable source,
+			IAdaptable target) {
+		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source
+				.getAdapter(IGraphicalEditPart.class);
+		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target
+				.getAdapter(IGraphicalEditPart.class);
+		return doGetRelTypesOnSourceAndTarget((Target5EditPart) sourceEditPart,
+				targetEditPart);
+	}
+
+	/**
+	 * @generated
+	 */
+	public List<IElementType> doGetRelTypesOnSourceAndTarget(
+			Target5EditPart source, IGraphicalEditPart targetEditPart) {
+		List<IElementType> types = new LinkedList<IElementType>();
+		if (targetEditPart instanceof TargetEditPart) {
+			types.add(DsmlElementTypes.Comparison_4003);
+		}
+		if (targetEditPart instanceof Target2EditPart) {
+			types.add(DsmlElementTypes.Comparison_4003);
+		}
+		if (targetEditPart instanceof PNodeEditPart) {
+			types.add(DsmlElementTypes.Comparison_4003);
+		}
+		if (targetEditPart instanceof ConditionGroupEditPart) {
+			types.add(DsmlElementTypes.Comparison_4003);
+		}
+		if (targetEditPart instanceof Target3EditPart) {
+			types.add(DsmlElementTypes.Comparison_4003);
+		}
+		if (targetEditPart instanceof BringGroupEditPart) {
+			types.add(DsmlElementTypes.Comparison_4003);
+		}
+		if (targetEditPart instanceof Target4EditPart) {
+			types.add(DsmlElementTypes.Comparison_4003);
+		}
+		if (targetEditPart instanceof NotEditPart) {
+			types.add(DsmlElementTypes.Comparison_4003);
+		}
+		if (targetEditPart instanceof OperatorEditPart) {
+			types.add(DsmlElementTypes.Comparison_4003);
+		}
+		if (targetEditPart instanceof ValueOperatorEditPart) {
+			types.add(DsmlElementTypes.Comparison_4003);
+		}
+		if (targetEditPart instanceof AggregationEditPart) {
+			types.add(DsmlElementTypes.Comparison_4003);
+		}
+		if (targetEditPart instanceof OrderEditPart) {
+			types.add(DsmlElementTypes.Comparison_4003);
+		}
+		if (targetEditPart instanceof PNode2EditPart) {
+			types.add(DsmlElementTypes.Comparison_4003);
+		}
+		if (targetEditPart instanceof ConditionGroup2EditPart) {
+			types.add(DsmlElementTypes.Comparison_4003);
+		}
+		if (targetEditPart instanceof PNode3EditPart) {
+			types.add(DsmlElementTypes.Comparison_4003);
+		}
+		if (targetEditPart instanceof ConditionGroup3EditPart) {
+			types.add(DsmlElementTypes.Comparison_4003);
+		}
+		if (targetEditPart instanceof BringGroup2EditPart) {
+			types.add(DsmlElementTypes.Comparison_4003);
+		}
+		if (targetEditPart instanceof BringGroup3EditPart) {
+			types.add(DsmlElementTypes.Comparison_4003);
+		}
+		if (targetEditPart instanceof Not2EditPart) {
+			types.add(DsmlElementTypes.Comparison_4003);
+		}
+		if (targetEditPart instanceof Operator2EditPart) {
+			types.add(DsmlElementTypes.Comparison_4003);
+		}
+		if (targetEditPart instanceof ValueOperator2EditPart) {
+			types.add(DsmlElementTypes.Comparison_4003);
+		}
+		if (targetEditPart instanceof Aggregation2EditPart) {
+			types.add(DsmlElementTypes.Comparison_4003);
+		}
+		if (targetEditPart instanceof Order2EditPart) {
+			types.add(DsmlElementTypes.Comparison_4003);
+		}
+		if (targetEditPart instanceof Not3EditPart) {
+			types.add(DsmlElementTypes.Comparison_4003);
+		}
+		if (targetEditPart instanceof Operator3EditPart) {
+			types.add(DsmlElementTypes.Comparison_4003);
+		}
+		if (targetEditPart instanceof ValueOperator3EditPart) {
+			types.add(DsmlElementTypes.Comparison_4003);
+		}
+		if (targetEditPart instanceof Aggregation3EditPart) {
+			types.add(DsmlElementTypes.Comparison_4003);
+		}
+		if (targetEditPart instanceof Order3EditPart) {
+			types.add(DsmlElementTypes.Comparison_4003);
+		}
+		if (targetEditPart instanceof PNode4EditPart) {
+			types.add(DsmlElementTypes.Comparison_4003);
+		}
+		if (targetEditPart instanceof ConditionGroup4EditPart) {
+			types.add(DsmlElementTypes.Comparison_4003);
+		}
+		if (targetEditPart instanceof BringGroup4EditPart) {
+			types.add(DsmlElementTypes.Comparison_4003);
+		}
+		if (targetEditPart instanceof Not4EditPart) {
+			types.add(DsmlElementTypes.Comparison_4003);
+		}
+		if (targetEditPart instanceof Operator4EditPart) {
+			types.add(DsmlElementTypes.Comparison_4003);
+		}
+		if (targetEditPart instanceof ValueOperator4EditPart) {
+			types.add(DsmlElementTypes.Comparison_4003);
+		}
+		if (targetEditPart instanceof Aggregation4EditPart) {
+			types.add(DsmlElementTypes.Comparison_4003);
+		}
+		if (targetEditPart instanceof Order4EditPart) {
+			types.add(DsmlElementTypes.Comparison_4003);
+		}
+		if (targetEditPart instanceof Target5EditPart) {
+			types.add(DsmlElementTypes.Comparison_4003);
+		}
+		if (targetEditPart instanceof Not5EditPart) {
+			types.add(DsmlElementTypes.Comparison_4003);
+		}
+		if (targetEditPart instanceof TargetEditPart) {
+			types.add(DsmlElementTypes.Arithmetic_4004);
+		}
+		if (targetEditPart instanceof Target2EditPart) {
+			types.add(DsmlElementTypes.Arithmetic_4004);
+		}
+		if (targetEditPart instanceof PNodeEditPart) {
+			types.add(DsmlElementTypes.Arithmetic_4004);
+		}
+		if (targetEditPart instanceof ConditionGroupEditPart) {
+			types.add(DsmlElementTypes.Arithmetic_4004);
+		}
+		if (targetEditPart instanceof Target3EditPart) {
+			types.add(DsmlElementTypes.Arithmetic_4004);
+		}
+		if (targetEditPart instanceof BringGroupEditPart) {
+			types.add(DsmlElementTypes.Arithmetic_4004);
+		}
+		if (targetEditPart instanceof Target4EditPart) {
+			types.add(DsmlElementTypes.Arithmetic_4004);
+		}
+		if (targetEditPart instanceof NotEditPart) {
+			types.add(DsmlElementTypes.Arithmetic_4004);
+		}
+		if (targetEditPart instanceof OperatorEditPart) {
+			types.add(DsmlElementTypes.Arithmetic_4004);
+		}
+		if (targetEditPart instanceof ValueOperatorEditPart) {
+			types.add(DsmlElementTypes.Arithmetic_4004);
+		}
+		if (targetEditPart instanceof AggregationEditPart) {
+			types.add(DsmlElementTypes.Arithmetic_4004);
+		}
+		if (targetEditPart instanceof OrderEditPart) {
+			types.add(DsmlElementTypes.Arithmetic_4004);
+		}
+		if (targetEditPart instanceof PNode2EditPart) {
+			types.add(DsmlElementTypes.Arithmetic_4004);
+		}
+		if (targetEditPart instanceof ConditionGroup2EditPart) {
+			types.add(DsmlElementTypes.Arithmetic_4004);
+		}
+		if (targetEditPart instanceof PNode3EditPart) {
+			types.add(DsmlElementTypes.Arithmetic_4004);
+		}
+		if (targetEditPart instanceof ConditionGroup3EditPart) {
+			types.add(DsmlElementTypes.Arithmetic_4004);
+		}
+		if (targetEditPart instanceof BringGroup2EditPart) {
+			types.add(DsmlElementTypes.Arithmetic_4004);
+		}
+		if (targetEditPart instanceof BringGroup3EditPart) {
+			types.add(DsmlElementTypes.Arithmetic_4004);
+		}
+		if (targetEditPart instanceof Not2EditPart) {
+			types.add(DsmlElementTypes.Arithmetic_4004);
+		}
+		if (targetEditPart instanceof Operator2EditPart) {
+			types.add(DsmlElementTypes.Arithmetic_4004);
+		}
+		if (targetEditPart instanceof ValueOperator2EditPart) {
+			types.add(DsmlElementTypes.Arithmetic_4004);
+		}
+		if (targetEditPart instanceof Aggregation2EditPart) {
+			types.add(DsmlElementTypes.Arithmetic_4004);
+		}
+		if (targetEditPart instanceof Order2EditPart) {
+			types.add(DsmlElementTypes.Arithmetic_4004);
+		}
+		if (targetEditPart instanceof Not3EditPart) {
+			types.add(DsmlElementTypes.Arithmetic_4004);
+		}
+		if (targetEditPart instanceof Operator3EditPart) {
+			types.add(DsmlElementTypes.Arithmetic_4004);
+		}
+		if (targetEditPart instanceof ValueOperator3EditPart) {
+			types.add(DsmlElementTypes.Arithmetic_4004);
+		}
+		if (targetEditPart instanceof Aggregation3EditPart) {
+			types.add(DsmlElementTypes.Arithmetic_4004);
+		}
+		if (targetEditPart instanceof Order3EditPart) {
+			types.add(DsmlElementTypes.Arithmetic_4004);
+		}
+		if (targetEditPart instanceof PNode4EditPart) {
+			types.add(DsmlElementTypes.Arithmetic_4004);
+		}
+		if (targetEditPart instanceof ConditionGroup4EditPart) {
+			types.add(DsmlElementTypes.Arithmetic_4004);
+		}
+		if (targetEditPart instanceof BringGroup4EditPart) {
+			types.add(DsmlElementTypes.Arithmetic_4004);
+		}
+		if (targetEditPart instanceof Not4EditPart) {
+			types.add(DsmlElementTypes.Arithmetic_4004);
+		}
+		if (targetEditPart instanceof Operator4EditPart) {
+			types.add(DsmlElementTypes.Arithmetic_4004);
+		}
+		if (targetEditPart instanceof ValueOperator4EditPart) {
+			types.add(DsmlElementTypes.Arithmetic_4004);
+		}
+		if (targetEditPart instanceof Aggregation4EditPart) {
+			types.add(DsmlElementTypes.Arithmetic_4004);
+		}
+		if (targetEditPart instanceof Order4EditPart) {
+			types.add(DsmlElementTypes.Arithmetic_4004);
+		}
+		if (targetEditPart instanceof Target5EditPart) {
+			types.add(DsmlElementTypes.Arithmetic_4004);
+		}
+		if (targetEditPart instanceof Not5EditPart) {
+			types.add(DsmlElementTypes.Arithmetic_4004);
+		}
+		if (targetEditPart instanceof TargetEditPart) {
+			types.add(DsmlElementTypes.Followedby_4005);
+		}
+		if (targetEditPart instanceof Target2EditPart) {
+			types.add(DsmlElementTypes.Followedby_4005);
+		}
+		if (targetEditPart instanceof Target3EditPart) {
+			types.add(DsmlElementTypes.Followedby_4005);
+		}
+		if (targetEditPart instanceof Target4EditPart) {
+			types.add(DsmlElementTypes.Followedby_4005);
+		}
+		if (targetEditPart instanceof Target5EditPart) {
+			types.add(DsmlElementTypes.Followedby_4005);
+		}
+		if (targetEditPart instanceof TargetEditPart) {
+			types.add(DsmlElementTypes.LogicalConnector_4006);
+		}
+		if (targetEditPart instanceof Target2EditPart) {
+			types.add(DsmlElementTypes.LogicalConnector_4006);
+		}
+		if (targetEditPart instanceof PNodeEditPart) {
+			types.add(DsmlElementTypes.LogicalConnector_4006);
+		}
+		if (targetEditPart instanceof ConditionGroupEditPart) {
+			types.add(DsmlElementTypes.LogicalConnector_4006);
+		}
+		if (targetEditPart instanceof Target3EditPart) {
+			types.add(DsmlElementTypes.LogicalConnector_4006);
+		}
+		if (targetEditPart instanceof BringGroupEditPart) {
+			types.add(DsmlElementTypes.LogicalConnector_4006);
+		}
+		if (targetEditPart instanceof Target4EditPart) {
+			types.add(DsmlElementTypes.LogicalConnector_4006);
+		}
+		if (targetEditPart instanceof PNode2EditPart) {
+			types.add(DsmlElementTypes.LogicalConnector_4006);
+		}
+		if (targetEditPart instanceof ConditionGroup2EditPart) {
+			types.add(DsmlElementTypes.LogicalConnector_4006);
+		}
+		if (targetEditPart instanceof PNode3EditPart) {
+			types.add(DsmlElementTypes.LogicalConnector_4006);
+		}
+		if (targetEditPart instanceof ConditionGroup3EditPart) {
+			types.add(DsmlElementTypes.LogicalConnector_4006);
+		}
+		if (targetEditPart instanceof BringGroup2EditPart) {
+			types.add(DsmlElementTypes.LogicalConnector_4006);
+		}
+		if (targetEditPart instanceof BringGroup3EditPart) {
+			types.add(DsmlElementTypes.LogicalConnector_4006);
+		}
+		if (targetEditPart instanceof PNode4EditPart) {
+			types.add(DsmlElementTypes.LogicalConnector_4006);
+		}
+		if (targetEditPart instanceof ConditionGroup4EditPart) {
+			types.add(DsmlElementTypes.LogicalConnector_4006);
+		}
+		if (targetEditPart instanceof BringGroup4EditPart) {
+			types.add(DsmlElementTypes.LogicalConnector_4006);
+		}
+		if (targetEditPart instanceof Target5EditPart) {
+			types.add(DsmlElementTypes.LogicalConnector_4006);
+		}
+		return types;
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	public List<IElementType> getTypesForTarget(IAdaptable source,
+			IElementType relationshipType) {
+		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source
+				.getAdapter(IGraphicalEditPart.class);
+		return doGetTypesForTarget((Target5EditPart) sourceEditPart,
+				relationshipType);
+	}
+
+	/**
+	 * @generated
+	 */
+	public List<IElementType> doGetTypesForTarget(Target5EditPart source,
+			IElementType relationshipType) {
+		List<IElementType> types = new ArrayList<IElementType>();
+		if (relationshipType == DsmlElementTypes.Comparison_4003) {
+			types.add(DsmlElementTypes.Target_3002);
+			types.add(DsmlElementTypes.Target_3003);
+			types.add(DsmlElementTypes.PNode_3040);
+			types.add(DsmlElementTypes.ConditionGroup_3004);
+			types.add(DsmlElementTypes.Target_3005);
+			types.add(DsmlElementTypes.BringGroup_3006);
+			types.add(DsmlElementTypes.Target_3007);
+			types.add(DsmlElementTypes.Not_3008);
+			types.add(DsmlElementTypes.Operator_3009);
+			types.add(DsmlElementTypes.ValueOperator_3010);
+			types.add(DsmlElementTypes.Aggregation_3011);
+			types.add(DsmlElementTypes.Order_3012);
+			types.add(DsmlElementTypes.PNode_3041);
+			types.add(DsmlElementTypes.ConditionGroup_3014);
+			types.add(DsmlElementTypes.PNode_3042);
+			types.add(DsmlElementTypes.ConditionGroup_3015);
+			types.add(DsmlElementTypes.BringGroup_3016);
+			types.add(DsmlElementTypes.BringGroup_3017);
+			types.add(DsmlElementTypes.Not_3018);
+			types.add(DsmlElementTypes.Operator_3019);
+			types.add(DsmlElementTypes.ValueOperator_3020);
+			types.add(DsmlElementTypes.Aggregation_3021);
+			types.add(DsmlElementTypes.Order_3022);
+			types.add(DsmlElementTypes.Not_3023);
+			types.add(DsmlElementTypes.Operator_3024);
+			types.add(DsmlElementTypes.ValueOperator_3025);
+			types.add(DsmlElementTypes.Aggregation_3026);
+			types.add(DsmlElementTypes.Order_3027);
+			types.add(DsmlElementTypes.PNode_3043);
+			types.add(DsmlElementTypes.ConditionGroup_3028);
+			types.add(DsmlElementTypes.BringGroup_3029);
+			types.add(DsmlElementTypes.Not_3030);
+			types.add(DsmlElementTypes.Operator_3031);
+			types.add(DsmlElementTypes.ValueOperator_3032);
+			types.add(DsmlElementTypes.Aggregation_3033);
+			types.add(DsmlElementTypes.Order_3034);
+			types.add(DsmlElementTypes.Target_3035);
+			types.add(DsmlElementTypes.Not_3036);
+		} else if (relationshipType == DsmlElementTypes.Arithmetic_4004) {
+			types.add(DsmlElementTypes.Target_3002);
+			types.add(DsmlElementTypes.Target_3003);
+			types.add(DsmlElementTypes.PNode_3040);
+			types.add(DsmlElementTypes.ConditionGroup_3004);
+			types.add(DsmlElementTypes.Target_3005);
+			types.add(DsmlElementTypes.BringGroup_3006);
+			types.add(DsmlElementTypes.Target_3007);
+			types.add(DsmlElementTypes.Not_3008);
+			types.add(DsmlElementTypes.Operator_3009);
+			types.add(DsmlElementTypes.ValueOperator_3010);
+			types.add(DsmlElementTypes.Aggregation_3011);
+			types.add(DsmlElementTypes.Order_3012);
+			types.add(DsmlElementTypes.PNode_3041);
+			types.add(DsmlElementTypes.ConditionGroup_3014);
+			types.add(DsmlElementTypes.PNode_3042);
+			types.add(DsmlElementTypes.ConditionGroup_3015);
+			types.add(DsmlElementTypes.BringGroup_3016);
+			types.add(DsmlElementTypes.BringGroup_3017);
+			types.add(DsmlElementTypes.Not_3018);
+			types.add(DsmlElementTypes.Operator_3019);
+			types.add(DsmlElementTypes.ValueOperator_3020);
+			types.add(DsmlElementTypes.Aggregation_3021);
+			types.add(DsmlElementTypes.Order_3022);
+			types.add(DsmlElementTypes.Not_3023);
+			types.add(DsmlElementTypes.Operator_3024);
+			types.add(DsmlElementTypes.ValueOperator_3025);
+			types.add(DsmlElementTypes.Aggregation_3026);
+			types.add(DsmlElementTypes.Order_3027);
+			types.add(DsmlElementTypes.PNode_3043);
+			types.add(DsmlElementTypes.ConditionGroup_3028);
+			types.add(DsmlElementTypes.BringGroup_3029);
+			types.add(DsmlElementTypes.Not_3030);
+			types.add(DsmlElementTypes.Operator_3031);
+			types.add(DsmlElementTypes.ValueOperator_3032);
+			types.add(DsmlElementTypes.Aggregation_3033);
+			types.add(DsmlElementTypes.Order_3034);
+			types.add(DsmlElementTypes.Target_3035);
+			types.add(DsmlElementTypes.Not_3036);
+		} else if (relationshipType == DsmlElementTypes.Followedby_4005) {
+			types.add(DsmlElementTypes.Target_3002);
+			types.add(DsmlElementTypes.Target_3003);
+			types.add(DsmlElementTypes.Target_3005);
+			types.add(DsmlElementTypes.Target_3007);
+			types.add(DsmlElementTypes.Target_3035);
+		} else if (relationshipType == DsmlElementTypes.LogicalConnector_4006) {
+			types.add(DsmlElementTypes.Target_3002);
+			types.add(DsmlElementTypes.Target_3003);
+			types.add(DsmlElementTypes.PNode_3040);
+			types.add(DsmlElementTypes.ConditionGroup_3004);
+			types.add(DsmlElementTypes.Target_3005);
+			types.add(DsmlElementTypes.BringGroup_3006);
+			types.add(DsmlElementTypes.Target_3007);
+			types.add(DsmlElementTypes.PNode_3041);
+			types.add(DsmlElementTypes.ConditionGroup_3014);
+			types.add(DsmlElementTypes.PNode_3042);
+			types.add(DsmlElementTypes.ConditionGroup_3015);
+			types.add(DsmlElementTypes.BringGroup_3016);
+			types.add(DsmlElementTypes.BringGroup_3017);
+			types.add(DsmlElementTypes.PNode_3043);
+			types.add(DsmlElementTypes.ConditionGroup_3028);
+			types.add(DsmlElementTypes.BringGroup_3029);
+			types.add(DsmlElementTypes.Target_3035);
+		}
+		return types;
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	public List<IElementType> getRelTypesOnTarget(IAdaptable target) {
+		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target
+				.getAdapter(IGraphicalEditPart.class);
+		return doGetRelTypesOnTarget((Target5EditPart) targetEditPart);
+	}
+
+	/**
+	 * @generated
+	 */
+	public List<IElementType> doGetRelTypesOnTarget(Target5EditPart target) {
+		List<IElementType> types = new ArrayList<IElementType>(5);
+		types.add(DsmlElementTypes.LinkTarget_4002);
+		types.add(DsmlElementTypes.Comparison_4003);
+		types.add(DsmlElementTypes.Arithmetic_4004);
+		types.add(DsmlElementTypes.Followedby_4005);
+		types.add(DsmlElementTypes.LogicalConnector_4006);
+		return types;
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	public List<IElementType> getTypesForSource(IAdaptable target,
+			IElementType relationshipType) {
+		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target
+				.getAdapter(IGraphicalEditPart.class);
+		return doGetTypesForSource((Target5EditPart) targetEditPart,
+				relationshipType);
+	}
+
+	/**
+	 * @generated
+	 */
+	public List<IElementType> doGetTypesForSource(Target5EditPart target,
+			IElementType relationshipType) {
+		List<IElementType> types = new ArrayList<IElementType>();
+		if (relationshipType == DsmlElementTypes.LinkTarget_4002) {
+			types.add(DsmlElementTypes.Event_2001);
+			types.add(DsmlElementTypes.Rule_2002);
+			types.add(DsmlElementTypes.EventPattern_2003);
+			types.add(DsmlElementTypes.Window_2004);
+		} else if (relationshipType == DsmlElementTypes.Comparison_4003) {
+			types.add(DsmlElementTypes.Target_3002);
+			types.add(DsmlElementTypes.Target_3003);
+			types.add(DsmlElementTypes.PNode_3040);
+			types.add(DsmlElementTypes.ConditionGroup_3004);
+			types.add(DsmlElementTypes.Target_3005);
+			types.add(DsmlElementTypes.BringGroup_3006);
+			types.add(DsmlElementTypes.Target_3007);
+			types.add(DsmlElementTypes.Not_3008);
+			types.add(DsmlElementTypes.Operator_3009);
+			types.add(DsmlElementTypes.ValueOperator_3010);
+			types.add(DsmlElementTypes.Aggregation_3011);
+			types.add(DsmlElementTypes.Order_3012);
+			types.add(DsmlElementTypes.PNode_3041);
+			types.add(DsmlElementTypes.ConditionGroup_3014);
+			types.add(DsmlElementTypes.PNode_3042);
+			types.add(DsmlElementTypes.ConditionGroup_3015);
+			types.add(DsmlElementTypes.BringGroup_3016);
+			types.add(DsmlElementTypes.BringGroup_3017);
+			types.add(DsmlElementTypes.Not_3018);
+			types.add(DsmlElementTypes.Operator_3019);
+			types.add(DsmlElementTypes.ValueOperator_3020);
+			types.add(DsmlElementTypes.Aggregation_3021);
+			types.add(DsmlElementTypes.Order_3022);
+			types.add(DsmlElementTypes.Not_3023);
+			types.add(DsmlElementTypes.Operator_3024);
+			types.add(DsmlElementTypes.ValueOperator_3025);
+			types.add(DsmlElementTypes.Aggregation_3026);
+			types.add(DsmlElementTypes.Order_3027);
+			types.add(DsmlElementTypes.PNode_3043);
+			types.add(DsmlElementTypes.ConditionGroup_3028);
+			types.add(DsmlElementTypes.BringGroup_3029);
+			types.add(DsmlElementTypes.Not_3030);
+			types.add(DsmlElementTypes.Operator_3031);
+			types.add(DsmlElementTypes.ValueOperator_3032);
+			types.add(DsmlElementTypes.Aggregation_3033);
+			types.add(DsmlElementTypes.Order_3034);
+			types.add(DsmlElementTypes.Target_3035);
+			types.add(DsmlElementTypes.Not_3036);
+		} else if (relationshipType == DsmlElementTypes.Arithmetic_4004) {
+			types.add(DsmlElementTypes.Target_3002);
+			types.add(DsmlElementTypes.Target_3003);
+			types.add(DsmlElementTypes.PNode_3040);
+			types.add(DsmlElementTypes.ConditionGroup_3004);
+			types.add(DsmlElementTypes.Target_3005);
+			types.add(DsmlElementTypes.BringGroup_3006);
+			types.add(DsmlElementTypes.Target_3007);
+			types.add(DsmlElementTypes.Not_3008);
+			types.add(DsmlElementTypes.Operator_3009);
+			types.add(DsmlElementTypes.ValueOperator_3010);
+			types.add(DsmlElementTypes.Aggregation_3011);
+			types.add(DsmlElementTypes.Order_3012);
+			types.add(DsmlElementTypes.PNode_3041);
+			types.add(DsmlElementTypes.ConditionGroup_3014);
+			types.add(DsmlElementTypes.PNode_3042);
+			types.add(DsmlElementTypes.ConditionGroup_3015);
+			types.add(DsmlElementTypes.BringGroup_3016);
+			types.add(DsmlElementTypes.BringGroup_3017);
+			types.add(DsmlElementTypes.Not_3018);
+			types.add(DsmlElementTypes.Operator_3019);
+			types.add(DsmlElementTypes.ValueOperator_3020);
+			types.add(DsmlElementTypes.Aggregation_3021);
+			types.add(DsmlElementTypes.Order_3022);
+			types.add(DsmlElementTypes.Not_3023);
+			types.add(DsmlElementTypes.Operator_3024);
+			types.add(DsmlElementTypes.ValueOperator_3025);
+			types.add(DsmlElementTypes.Aggregation_3026);
+			types.add(DsmlElementTypes.Order_3027);
+			types.add(DsmlElementTypes.PNode_3043);
+			types.add(DsmlElementTypes.ConditionGroup_3028);
+			types.add(DsmlElementTypes.BringGroup_3029);
+			types.add(DsmlElementTypes.Not_3030);
+			types.add(DsmlElementTypes.Operator_3031);
+			types.add(DsmlElementTypes.ValueOperator_3032);
+			types.add(DsmlElementTypes.Aggregation_3033);
+			types.add(DsmlElementTypes.Order_3034);
+			types.add(DsmlElementTypes.Target_3035);
+			types.add(DsmlElementTypes.Not_3036);
+		} else if (relationshipType == DsmlElementTypes.Followedby_4005) {
+			types.add(DsmlElementTypes.Target_3002);
+			types.add(DsmlElementTypes.Target_3003);
+			types.add(DsmlElementTypes.Target_3005);
+			types.add(DsmlElementTypes.Target_3007);
+			types.add(DsmlElementTypes.Target_3035);
+		} else if (relationshipType == DsmlElementTypes.LogicalConnector_4006) {
+			types.add(DsmlElementTypes.Target_3002);
+			types.add(DsmlElementTypes.Target_3003);
+			types.add(DsmlElementTypes.PNode_3040);
+			types.add(DsmlElementTypes.ConditionGroup_3004);
+			types.add(DsmlElementTypes.Target_3005);
+			types.add(DsmlElementTypes.BringGroup_3006);
+			types.add(DsmlElementTypes.Target_3007);
+			types.add(DsmlElementTypes.PNode_3041);
+			types.add(DsmlElementTypes.ConditionGroup_3014);
+			types.add(DsmlElementTypes.PNode_3042);
+			types.add(DsmlElementTypes.ConditionGroup_3015);
+			types.add(DsmlElementTypes.BringGroup_3016);
+			types.add(DsmlElementTypes.BringGroup_3017);
+			types.add(DsmlElementTypes.PNode_3043);
+			types.add(DsmlElementTypes.ConditionGroup_3028);
+			types.add(DsmlElementTypes.BringGroup_3029);
+			types.add(DsmlElementTypes.Target_3035);
+		}
+		return types;
+	}
+
+}

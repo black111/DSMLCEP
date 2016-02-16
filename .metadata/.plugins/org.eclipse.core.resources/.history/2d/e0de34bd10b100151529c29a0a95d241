@@ -1,0 +1,25 @@
+	/*
+ * 
+ */
+package prediqt.diagram.edit.policies;
+
+/**
+ * @generated
+ */
+public class PArcItemSemanticEditPolicy extends prediqt.diagram.edit.policies.PrediqtBaseItemSemanticEditPolicy {
+
+		/**
+ * @generated
+ */
+	public PArcItemSemanticEditPolicy() {
+				super(prediqt.diagram.providers.PrediqtElementTypes.PArc_4001);
+	}
+
+			/**
+ * @generated
+ */
+	protected org.eclipse.gef.commands.Command getDestroyElementCommand(org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest req) {
+		return getGEFWrapper(new org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand(req));
+	}
+					
+	}

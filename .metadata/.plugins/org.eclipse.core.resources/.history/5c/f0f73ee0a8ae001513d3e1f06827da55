@@ -1,0 +1,1690 @@
+	/*
+ * 
+ */
+package dsml.diagram.navigator;
+
+/**
+ * @generated
+ */
+public class DsmlNavigatorContentProvider implements org.eclipse.ui.navigator.ICommonContentProvider {
+
+		/**
+ * @generated
+ */
+private static final Object[] EMPTY_ARRAY = new Object[0];
+
+	/**
+ * @generated
+ */
+private org.eclipse.jface.viewers.Viewer myViewer;
+
+	/**
+ * @generated
+ */
+private org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain myEditingDomain;
+
+	/**
+ * @generated
+ */
+private org.eclipse.emf.workspace.util.WorkspaceSynchronizer myWorkspaceSynchronizer;
+
+	/**
+ * @generated
+ */
+private Runnable myViewerRefreshRunnable;
+	
+	/**
+ * @generated
+ */
+@SuppressWarnings({ "unchecked", "serial", "rawtypes" })
+public DsmlNavigatorContentProvider() {
+	org.eclipse.emf.transaction.TransactionalEditingDomain editingDomain = org.eclipse.gmf.runtime.emf.core.GMFEditingDomainFactory.INSTANCE.createEditingDomain();
+myEditingDomain = (org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain) editingDomain;
+myEditingDomain.setResourceToReadOnlyMap(new java.util.HashMap() {
+	public Object get(Object key) {
+		if (!containsKey(key)) {
+			put(key, Boolean.TRUE);
+		}
+		return super.get(key);
+	}
+});
+myViewerRefreshRunnable = new Runnable() {
+	public void run() {
+		if (myViewer != null) {
+			myViewer.refresh();
+		}
+	}
+};
+myWorkspaceSynchronizer = new org.eclipse.emf.workspace.util.WorkspaceSynchronizer(editingDomain, new org.eclipse.emf.workspace.util.WorkspaceSynchronizer.Delegate() {
+	public void dispose() {
+	}
+
+	public boolean handleResourceChanged(final org.eclipse.emf.ecore.resource.Resource resource) {
+		unloadAllResources();
+asyncRefresh();
+return true;
+	}
+	
+	public boolean handleResourceDeleted(org.eclipse.emf.ecore.resource.Resource resource) {
+		unloadAllResources();
+asyncRefresh();
+return true;
+	}
+	
+	public boolean handleResourceMoved(org.eclipse.emf.ecore.resource.Resource resource, final org.eclipse.emf.common.util.URI newURI) {
+		unloadAllResources();
+asyncRefresh();
+return true;
+	}
+});
+}
+
+		/**
+ * @generated
+ */
+public void dispose() {
+	myWorkspaceSynchronizer.dispose();
+	myWorkspaceSynchronizer = null;
+	myViewerRefreshRunnable = null;
+	myViewer = null;
+	unloadAllResources();
+	((org.eclipse.emf.transaction.TransactionalEditingDomain) myEditingDomain).dispose();
+	myEditingDomain = null;
+}
+	
+		/**
+ * @generated
+ */
+public void inputChanged(org.eclipse.jface.viewers.Viewer viewer, Object oldInput, Object newInput) {
+	myViewer = viewer;
+}
+	
+	
+	/**
+ * @generated
+ */
+	void unloadAllResources() {
+		for (org.eclipse.emf.ecore.resource.Resource nextResource : myEditingDomain.getResourceSet().getResources()) {
+			nextResource.unload();
+		}
+	}
+	
+	/**
+ * @generated
+ */
+	void asyncRefresh() {
+		if (myViewer != null && !myViewer.getControl().isDisposed()) {
+			myViewer.getControl().getDisplay().asyncExec(myViewerRefreshRunnable);
+		}
+	}
+	
+	/**
+ * @generated
+ */
+public Object[] getElements(Object inputElement) {
+	return getChildren(inputElement);
+}
+	
+	/**
+ * @generated
+ */
+public void restoreState(org.eclipse.ui.IMemento aMemento) {
+}
+
+/**
+ * @generated
+ */
+public void saveState(org.eclipse.ui.IMemento aMemento) {
+}
+    
+    /**
+ * @generated
+ */
+public void init(org.eclipse.ui.navigator.ICommonContentExtensionSite aConfig) {
+}
+    
+    	/**
+ * @generated
+ */
+public Object[] getChildren(Object parentElement) {
+	if (parentElement instanceof org.eclipse.core.resources.IFile) {
+		org.eclipse.core.resources.IFile file = (org.eclipse.core.resources.IFile) parentElement;
+org.eclipse.emf.common.util.URI fileURI = org.eclipse.emf.common.util.URI.createPlatformResourceURI(file.getFullPath().toString(), true);
+org.eclipse.emf.ecore.resource.Resource resource = myEditingDomain.getResourceSet().getResource(fileURI, true);
+	java.util.ArrayList<dsml.diagram.navigator.DsmlNavigatorItem> result = new java.util.ArrayList<dsml.diagram.navigator.DsmlNavigatorItem>();
+					java.util.ArrayList<org.eclipse.gmf.runtime.notation.View> topViews = new java.util.ArrayList<org.eclipse.gmf.runtime.notation.View>(resource.getContents().size());
+		for (org.eclipse.emf.ecore.EObject o : resource.getContents()) {
+			if (o instanceof org.eclipse.gmf.runtime.notation.View) {
+				topViews.add((org.eclipse.gmf.runtime.notation.View) o);
+			}
+		}
+					result.addAll(createNavigatorItems(selectViewsByType(topViews, dsml.diagram.edit.parts.AreaDesenhoEditPart.MODEL_ID), file, false));
+						return result.toArray();
+   	} 
+    	
+   	if (parentElement instanceof dsml.diagram.navigator.DsmlNavigatorGroup) {
+	dsml.diagram.navigator.DsmlNavigatorGroup group = (dsml.diagram.navigator.DsmlNavigatorGroup) parentElement;
+return group.getChildren();
+	} 
+		
+	if (parentElement instanceof dsml.diagram.navigator.DsmlNavigatorItem) {
+	dsml.diagram.navigator.DsmlNavigatorItem navigatorItem = (dsml.diagram.navigator.DsmlNavigatorItem) parentElement;
+if (navigatorItem.isLeaf() || !isOwnView(navigatorItem.getView())) {
+	return EMPTY_ARRAY;
+}
+return getViewChildren(navigatorItem.getView(), parentElement);
+	}
+		
+			/*
+ * Due to plugin.xml restrictions this code will be called only for views representing
+ * shortcuts to this diagram elements created on other diagrams. 
+*/ 
+if (parentElement instanceof org.eclipse.core.runtime.IAdaptable) {
+	org.eclipse.gmf.runtime.notation.View view = (org.eclipse.gmf.runtime.notation.View) ((org.eclipse.core.runtime.IAdaptable) parentElement).getAdapter(org.eclipse.gmf.runtime.notation.View.class);
+	if (view != null) {
+		return getViewChildren(view, parentElement);
+	}
+}
+
+		return EMPTY_ARRAY;
+}
+    
+	/**
+ * @generated
+ */
+private Object[] getViewChildren(org.eclipse.gmf.runtime.notation.View view, Object parentElement) {
+   	switch (dsml.diagram.part.DsmlVisualIDRegistry.getVisualID(view)) {
+	
+case dsml.diagram.edit.parts.AreaDesenhoEditPart.VISUAL_ID: {
+	java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem> result = new java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem>();
+	result.addAll(getForeignShortcuts((org.eclipse.gmf.runtime.notation.Diagram) view, parentElement));
+	org.eclipse.gmf.runtime.notation.Diagram sv = (org.eclipse.gmf.runtime.notation.Diagram) view;
+				dsml.diagram.navigator.DsmlNavigatorGroup links = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_AreaDesenho_1000_links,
+	"icons/linksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+				java.util.Collection<org.eclipse.gmf.runtime.notation.View> connectedViews;
+														connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.EventEditPart.VISUAL_ID));
+								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.RuleEditPart.VISUAL_ID));
+								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.EventPatternEditPart.VISUAL_ID));
+								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.WindowEditPart.VISUAL_ID));
+								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+																	connectedViews = 						getDiagramLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkComponentEditPart.VISUAL_ID));
+								links.addChildren(createNavigatorItems(connectedViews, links, false));
+																	connectedViews = 						getDiagramLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkTargetEditPart.VISUAL_ID));
+								links.addChildren(createNavigatorItems(connectedViews, links, false));
+																	connectedViews = 						getDiagramLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ComparisonEditPart.VISUAL_ID));
+								links.addChildren(createNavigatorItems(connectedViews, links, false));
+																	connectedViews = 						getDiagramLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ArithmeticEditPart.VISUAL_ID));
+								links.addChildren(createNavigatorItems(connectedViews, links, false));
+																	connectedViews = 						getDiagramLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.FollowedbyEditPart.VISUAL_ID));
+								links.addChildren(createNavigatorItems(connectedViews, links, false));
+																	connectedViews = 						getDiagramLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LogicalConnectorEditPart.VISUAL_ID));
+								links.addChildren(createNavigatorItems(connectedViews, links, false));
+															if (!links.isEmpty()) {		result.add(links);
+					}			return result.toArray();
+}
+
+case dsml.diagram.edit.parts.EventEditPart.VISUAL_ID: {
+	java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem> result = new java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem>();
+		org.eclipse.gmf.runtime.notation.Node sv = (org.eclipse.gmf.runtime.notation.Node) view;
+				dsml.diagram.navigator.DsmlNavigatorGroup incominglinks = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_Event_2001_incominglinks,
+	"icons/incomingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+	dsml.diagram.navigator.DsmlNavigatorGroup outgoinglinks = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_Event_2001_outgoinglinks,
+	"icons/outgoingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+				java.util.Collection<org.eclipse.gmf.runtime.notation.View> connectedViews;
+														connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.EventEventAttributesCompartmentEditPart.VISUAL_ID));
+									connectedViews = 						getChildrenByType						(connectedViews					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.AttributeEditPart.VISUAL_ID));
+								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkComponentEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkComponentEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkTargetEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+															if (!incominglinks.isEmpty()) {		result.add(incominglinks);
+					}							if (!outgoinglinks.isEmpty()) {		result.add(outgoinglinks);
+					}			return result.toArray();
+}
+
+case dsml.diagram.edit.parts.RuleEditPart.VISUAL_ID: {
+	java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem> result = new java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem>();
+		org.eclipse.gmf.runtime.notation.Node sv = (org.eclipse.gmf.runtime.notation.Node) view;
+				dsml.diagram.navigator.DsmlNavigatorGroup incominglinks = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_Rule_2002_incominglinks,
+	"icons/incomingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+	dsml.diagram.navigator.DsmlNavigatorGroup outgoinglinks = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_Rule_2002_outgoinglinks,
+	"icons/outgoingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+				java.util.Collection<org.eclipse.gmf.runtime.notation.View> connectedViews;
+														connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.RuleRuleQueriesCompartmentEditPart.VISUAL_ID));
+									connectedViews = 						getChildrenByType						(connectedViews					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.TargetEditPart.VISUAL_ID));
+								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.RuleRuleQueriesCompartmentEditPart.VISUAL_ID));
+									connectedViews = 						getChildrenByType						(connectedViews					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.NotEditPart.VISUAL_ID));
+								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.RuleRuleQueriesCompartmentEditPart.VISUAL_ID));
+									connectedViews = 						getChildrenByType						(connectedViews					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ConditionGroupEditPart.VISUAL_ID));
+								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.RuleRuleQueriesCompartmentEditPart.VISUAL_ID));
+									connectedViews = 						getChildrenByType						(connectedViews					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.BringGroupEditPart.VISUAL_ID));
+								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.RuleRuleQueriesCompartmentEditPart.VISUAL_ID));
+									connectedViews = 						getChildrenByType						(connectedViews					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.AggregationEditPart.VISUAL_ID));
+								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.RuleRuleQueriesCompartmentEditPart.VISUAL_ID));
+									connectedViews = 						getChildrenByType						(connectedViews					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.OrderEditPart.VISUAL_ID));
+								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkComponentEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkComponentEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkTargetEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+															if (!incominglinks.isEmpty()) {		result.add(incominglinks);
+					}							if (!outgoinglinks.isEmpty()) {		result.add(outgoinglinks);
+					}			return result.toArray();
+}
+
+case dsml.diagram.edit.parts.EventPatternEditPart.VISUAL_ID: {
+	java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem> result = new java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem>();
+		org.eclipse.gmf.runtime.notation.Node sv = (org.eclipse.gmf.runtime.notation.Node) view;
+				dsml.diagram.navigator.DsmlNavigatorGroup incominglinks = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_EventPattern_2003_incominglinks,
+	"icons/incomingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+	dsml.diagram.navigator.DsmlNavigatorGroup outgoinglinks = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_EventPattern_2003_outgoinglinks,
+	"icons/outgoingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+				java.util.Collection<org.eclipse.gmf.runtime.notation.View> connectedViews;
+														connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.EventPatternEventPatternPatternsCompartmentEditPart.VISUAL_ID));
+									connectedViews = 						getChildrenByType						(connectedViews					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Target3EditPart.VISUAL_ID));
+								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.EventPatternEventPatternPatternsCompartmentEditPart.VISUAL_ID));
+									connectedViews = 						getChildrenByType						(connectedViews					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Not3EditPart.VISUAL_ID));
+								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.EventPatternEventPatternPatternsCompartmentEditPart.VISUAL_ID));
+									connectedViews = 						getChildrenByType						(connectedViews					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.UnaryOperatorPattern2EditPart.VISUAL_ID));
+								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.EventPatternEventPatternPatternsCompartmentEditPart.VISUAL_ID));
+									connectedViews = 						getChildrenByType						(connectedViews					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.BinaryOperatorPattern2EditPart.VISUAL_ID));
+								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.EventPatternEventPatternPatternsCompartmentEditPart.VISUAL_ID));
+									connectedViews = 						getChildrenByType						(connectedViews					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.PatternTimer2EditPart.VISUAL_ID));
+								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkComponentEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkComponentEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkTargetEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+															if (!incominglinks.isEmpty()) {		result.add(incominglinks);
+					}							if (!outgoinglinks.isEmpty()) {		result.add(outgoinglinks);
+					}			return result.toArray();
+}
+
+case dsml.diagram.edit.parts.WindowEditPart.VISUAL_ID: {
+	java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem> result = new java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem>();
+		org.eclipse.gmf.runtime.notation.Node sv = (org.eclipse.gmf.runtime.notation.Node) view;
+				dsml.diagram.navigator.DsmlNavigatorGroup incominglinks = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_Window_2004_incominglinks,
+	"icons/incomingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+	dsml.diagram.navigator.DsmlNavigatorGroup outgoinglinks = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_Window_2004_outgoinglinks,
+	"icons/outgoingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+				java.util.Collection<org.eclipse.gmf.runtime.notation.View> connectedViews;
+														connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkComponentEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkComponentEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkTargetEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+															if (!incominglinks.isEmpty()) {		result.add(incominglinks);
+					}							if (!outgoinglinks.isEmpty()) {		result.add(outgoinglinks);
+					}			return result.toArray();
+}
+
+case dsml.diagram.edit.parts.AttributeEditPart.VISUAL_ID: {
+	java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem> result = new java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem>();
+		org.eclipse.gmf.runtime.notation.Node sv = (org.eclipse.gmf.runtime.notation.Node) view;
+				dsml.diagram.navigator.DsmlNavigatorGroup incominglinks = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_Attribute_3001_incominglinks,
+	"icons/incomingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+	dsml.diagram.navigator.DsmlNavigatorGroup outgoinglinks = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_Attribute_3001_outgoinglinks,
+	"icons/outgoingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+				java.util.Collection<org.eclipse.gmf.runtime.notation.View> connectedViews;
+														connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkComponentEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkComponentEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkTargetEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ComparisonEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ComparisonEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ArithmeticEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ArithmeticEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+															if (!incominglinks.isEmpty()) {		result.add(incominglinks);
+					}							if (!outgoinglinks.isEmpty()) {		result.add(outgoinglinks);
+					}			return result.toArray();
+}
+
+case dsml.diagram.edit.parts.TargetEditPart.VISUAL_ID: {
+	java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem> result = new java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem>();
+		org.eclipse.gmf.runtime.notation.Node sv = (org.eclipse.gmf.runtime.notation.Node) view;
+				dsml.diagram.navigator.DsmlNavigatorGroup incominglinks = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_Target_3002_incominglinks,
+	"icons/incomingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+	dsml.diagram.navigator.DsmlNavigatorGroup outgoinglinks = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_Target_3002_outgoinglinks,
+	"icons/outgoingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+				java.util.Collection<org.eclipse.gmf.runtime.notation.View> connectedViews;
+														connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.TargetTargetOperationTypesCompartmentEditPart.VISUAL_ID));
+									connectedViews = 						getChildrenByType						(connectedViews					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.OperatorEditPart.VISUAL_ID));
+								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.TargetTargetOperationTypesCompartmentEditPart.VISUAL_ID));
+									connectedViews = 						getChildrenByType						(connectedViews					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ValueOperatorEditPart.VISUAL_ID));
+								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkComponentEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkComponentEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkTargetEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkTargetEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ComparisonEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ComparisonEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ArithmeticEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ArithmeticEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.FollowedbyEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.FollowedbyEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LogicalConnectorEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LogicalConnectorEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+															if (!incominglinks.isEmpty()) {		result.add(incominglinks);
+					}							if (!outgoinglinks.isEmpty()) {		result.add(outgoinglinks);
+					}			return result.toArray();
+}
+
+case dsml.diagram.edit.parts.OperatorEditPart.VISUAL_ID: {
+	java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem> result = new java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem>();
+		org.eclipse.gmf.runtime.notation.Node sv = (org.eclipse.gmf.runtime.notation.Node) view;
+				dsml.diagram.navigator.DsmlNavigatorGroup incominglinks = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_Operator_3003_incominglinks,
+	"icons/incomingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+	dsml.diagram.navigator.DsmlNavigatorGroup outgoinglinks = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_Operator_3003_outgoinglinks,
+	"icons/outgoingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+				java.util.Collection<org.eclipse.gmf.runtime.notation.View> connectedViews;
+														connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkComponentEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkComponentEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkTargetEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ComparisonEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ComparisonEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ArithmeticEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ArithmeticEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+															if (!incominglinks.isEmpty()) {		result.add(incominglinks);
+					}							if (!outgoinglinks.isEmpty()) {		result.add(outgoinglinks);
+					}			return result.toArray();
+}
+
+case dsml.diagram.edit.parts.ValueOperatorEditPart.VISUAL_ID: {
+	java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem> result = new java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem>();
+		org.eclipse.gmf.runtime.notation.Node sv = (org.eclipse.gmf.runtime.notation.Node) view;
+				dsml.diagram.navigator.DsmlNavigatorGroup incominglinks = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_ValueOperator_3004_incominglinks,
+	"icons/incomingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+	dsml.diagram.navigator.DsmlNavigatorGroup outgoinglinks = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_ValueOperator_3004_outgoinglinks,
+	"icons/outgoingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+				java.util.Collection<org.eclipse.gmf.runtime.notation.View> connectedViews;
+														connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkComponentEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkComponentEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkTargetEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ComparisonEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ComparisonEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ArithmeticEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ArithmeticEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+															if (!incominglinks.isEmpty()) {		result.add(incominglinks);
+					}							if (!outgoinglinks.isEmpty()) {		result.add(outgoinglinks);
+					}			return result.toArray();
+}
+
+case dsml.diagram.edit.parts.NotEditPart.VISUAL_ID: {
+	java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem> result = new java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem>();
+		org.eclipse.gmf.runtime.notation.Node sv = (org.eclipse.gmf.runtime.notation.Node) view;
+				dsml.diagram.navigator.DsmlNavigatorGroup incominglinks = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_Not_3005_incominglinks,
+	"icons/incomingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+	dsml.diagram.navigator.DsmlNavigatorGroup outgoinglinks = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_Not_3005_outgoinglinks,
+	"icons/outgoingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+				java.util.Collection<org.eclipse.gmf.runtime.notation.View> connectedViews;
+														connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkComponentEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkComponentEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkTargetEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ComparisonEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ComparisonEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ArithmeticEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ArithmeticEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LogicalConnectorEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LogicalConnectorEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+															if (!incominglinks.isEmpty()) {		result.add(incominglinks);
+					}							if (!outgoinglinks.isEmpty()) {		result.add(outgoinglinks);
+					}			return result.toArray();
+}
+
+case dsml.diagram.edit.parts.ConditionGroupEditPart.VISUAL_ID: {
+	java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem> result = new java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem>();
+		org.eclipse.gmf.runtime.notation.Node sv = (org.eclipse.gmf.runtime.notation.Node) view;
+				dsml.diagram.navigator.DsmlNavigatorGroup incominglinks = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_ConditionGroup_3006_incominglinks,
+	"icons/incomingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+	dsml.diagram.navigator.DsmlNavigatorGroup outgoinglinks = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_ConditionGroup_3006_outgoinglinks,
+	"icons/outgoingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+				java.util.Collection<org.eclipse.gmf.runtime.notation.View> connectedViews;
+														connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ConditionGroupConditionGroupOperationTypesCompartmentEditPart.VISUAL_ID));
+									connectedViews = 						getChildrenByType						(connectedViews					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Operator2EditPart.VISUAL_ID));
+								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ConditionGroupConditionGroupOperationTypesCompartmentEditPart.VISUAL_ID));
+									connectedViews = 						getChildrenByType						(connectedViews					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ValueOperator2EditPart.VISUAL_ID));
+								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LogicalConnectorEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LogicalConnectorEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+															if (!incominglinks.isEmpty()) {		result.add(incominglinks);
+					}							if (!outgoinglinks.isEmpty()) {		result.add(outgoinglinks);
+					}			return result.toArray();
+}
+
+case dsml.diagram.edit.parts.Operator2EditPart.VISUAL_ID: {
+	java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem> result = new java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem>();
+		org.eclipse.gmf.runtime.notation.Node sv = (org.eclipse.gmf.runtime.notation.Node) view;
+				dsml.diagram.navigator.DsmlNavigatorGroup incominglinks = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_Operator_3007_incominglinks,
+	"icons/incomingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+	dsml.diagram.navigator.DsmlNavigatorGroup outgoinglinks = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_Operator_3007_outgoinglinks,
+	"icons/outgoingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+				java.util.Collection<org.eclipse.gmf.runtime.notation.View> connectedViews;
+														connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkComponentEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkComponentEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkTargetEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ComparisonEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ComparisonEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ArithmeticEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ArithmeticEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+															if (!incominglinks.isEmpty()) {		result.add(incominglinks);
+					}							if (!outgoinglinks.isEmpty()) {		result.add(outgoinglinks);
+					}			return result.toArray();
+}
+
+case dsml.diagram.edit.parts.ValueOperator2EditPart.VISUAL_ID: {
+	java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem> result = new java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem>();
+		org.eclipse.gmf.runtime.notation.Node sv = (org.eclipse.gmf.runtime.notation.Node) view;
+				dsml.diagram.navigator.DsmlNavigatorGroup incominglinks = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_ValueOperator_3008_incominglinks,
+	"icons/incomingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+	dsml.diagram.navigator.DsmlNavigatorGroup outgoinglinks = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_ValueOperator_3008_outgoinglinks,
+	"icons/outgoingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+				java.util.Collection<org.eclipse.gmf.runtime.notation.View> connectedViews;
+														connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkComponentEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkComponentEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkTargetEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ComparisonEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ComparisonEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ArithmeticEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ArithmeticEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+															if (!incominglinks.isEmpty()) {		result.add(incominglinks);
+					}							if (!outgoinglinks.isEmpty()) {		result.add(outgoinglinks);
+					}			return result.toArray();
+}
+
+case dsml.diagram.edit.parts.BringGroupEditPart.VISUAL_ID: {
+	java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem> result = new java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem>();
+		org.eclipse.gmf.runtime.notation.Node sv = (org.eclipse.gmf.runtime.notation.Node) view;
+				dsml.diagram.navigator.DsmlNavigatorGroup incominglinks = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_BringGroup_3009_incominglinks,
+	"icons/incomingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+	dsml.diagram.navigator.DsmlNavigatorGroup outgoinglinks = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_BringGroup_3009_outgoinglinks,
+	"icons/outgoingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+				java.util.Collection<org.eclipse.gmf.runtime.notation.View> connectedViews;
+														connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.BringGroupBringGroupOperationTypesCompartmentEditPart.VISUAL_ID));
+									connectedViews = 						getChildrenByType						(connectedViews					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Target2EditPart.VISUAL_ID));
+								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.BringGroupBringGroupOperationTypesCompartmentEditPart.VISUAL_ID));
+									connectedViews = 						getChildrenByType						(connectedViews					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Not2EditPart.VISUAL_ID));
+								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.BringGroupBringGroupOperationTypesCompartmentEditPart.VISUAL_ID));
+									connectedViews = 						getChildrenByType						(connectedViews					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Operator3EditPart.VISUAL_ID));
+								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.BringGroupBringGroupOperationTypesCompartmentEditPart.VISUAL_ID));
+									connectedViews = 						getChildrenByType						(connectedViews					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ValueOperator3EditPart.VISUAL_ID));
+								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.BringGroupBringGroupOperationTypesCompartmentEditPart.VISUAL_ID));
+									connectedViews = 						getChildrenByType						(connectedViews					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.UnaryOperatorPatternEditPart.VISUAL_ID));
+								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.BringGroupBringGroupOperationTypesCompartmentEditPart.VISUAL_ID));
+									connectedViews = 						getChildrenByType						(connectedViews					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.BinaryOperatorPatternEditPart.VISUAL_ID));
+								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.BringGroupBringGroupOperationTypesCompartmentEditPart.VISUAL_ID));
+									connectedViews = 						getChildrenByType						(connectedViews					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.PatternTimerEditPart.VISUAL_ID));
+								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.BringGroupBringGroupOperationTypesCompartmentEditPart.VISUAL_ID));
+									connectedViews = 						getChildrenByType						(connectedViews					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Attribute2EditPart.VISUAL_ID));
+								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LogicalConnectorEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LogicalConnectorEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+															if (!incominglinks.isEmpty()) {		result.add(incominglinks);
+					}							if (!outgoinglinks.isEmpty()) {		result.add(outgoinglinks);
+					}			return result.toArray();
+}
+
+case dsml.diagram.edit.parts.Target2EditPart.VISUAL_ID: {
+	java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem> result = new java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem>();
+		org.eclipse.gmf.runtime.notation.Node sv = (org.eclipse.gmf.runtime.notation.Node) view;
+				dsml.diagram.navigator.DsmlNavigatorGroup incominglinks = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_Target_3010_incominglinks,
+	"icons/incomingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+	dsml.diagram.navigator.DsmlNavigatorGroup outgoinglinks = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_Target_3010_outgoinglinks,
+	"icons/outgoingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+				java.util.Collection<org.eclipse.gmf.runtime.notation.View> connectedViews;
+														connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.TargetTargetOperationTypesCompartment2EditPart.VISUAL_ID));
+									connectedViews = 						getChildrenByType						(connectedViews					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.OperatorEditPart.VISUAL_ID));
+								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.TargetTargetOperationTypesCompartment2EditPart.VISUAL_ID));
+									connectedViews = 						getChildrenByType						(connectedViews					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ValueOperatorEditPart.VISUAL_ID));
+								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkComponentEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkComponentEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkTargetEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkTargetEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ComparisonEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ComparisonEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ArithmeticEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ArithmeticEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.FollowedbyEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.FollowedbyEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LogicalConnectorEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LogicalConnectorEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+															if (!incominglinks.isEmpty()) {		result.add(incominglinks);
+					}							if (!outgoinglinks.isEmpty()) {		result.add(outgoinglinks);
+					}			return result.toArray();
+}
+
+case dsml.diagram.edit.parts.Not2EditPart.VISUAL_ID: {
+	java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem> result = new java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem>();
+		org.eclipse.gmf.runtime.notation.Node sv = (org.eclipse.gmf.runtime.notation.Node) view;
+				dsml.diagram.navigator.DsmlNavigatorGroup incominglinks = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_Not_3011_incominglinks,
+	"icons/incomingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+	dsml.diagram.navigator.DsmlNavigatorGroup outgoinglinks = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_Not_3011_outgoinglinks,
+	"icons/outgoingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+				java.util.Collection<org.eclipse.gmf.runtime.notation.View> connectedViews;
+														connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkComponentEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkComponentEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkTargetEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ComparisonEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ComparisonEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ArithmeticEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ArithmeticEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LogicalConnectorEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LogicalConnectorEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+															if (!incominglinks.isEmpty()) {		result.add(incominglinks);
+					}							if (!outgoinglinks.isEmpty()) {		result.add(outgoinglinks);
+					}			return result.toArray();
+}
+
+case dsml.diagram.edit.parts.Operator3EditPart.VISUAL_ID: {
+	java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem> result = new java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem>();
+		org.eclipse.gmf.runtime.notation.Node sv = (org.eclipse.gmf.runtime.notation.Node) view;
+				dsml.diagram.navigator.DsmlNavigatorGroup incominglinks = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_Operator_3012_incominglinks,
+	"icons/incomingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+	dsml.diagram.navigator.DsmlNavigatorGroup outgoinglinks = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_Operator_3012_outgoinglinks,
+	"icons/outgoingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+				java.util.Collection<org.eclipse.gmf.runtime.notation.View> connectedViews;
+														connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkComponentEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkComponentEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkTargetEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ComparisonEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ComparisonEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ArithmeticEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ArithmeticEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+															if (!incominglinks.isEmpty()) {		result.add(incominglinks);
+					}							if (!outgoinglinks.isEmpty()) {		result.add(outgoinglinks);
+					}			return result.toArray();
+}
+
+case dsml.diagram.edit.parts.ValueOperator3EditPart.VISUAL_ID: {
+	java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem> result = new java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem>();
+		org.eclipse.gmf.runtime.notation.Node sv = (org.eclipse.gmf.runtime.notation.Node) view;
+				dsml.diagram.navigator.DsmlNavigatorGroup incominglinks = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_ValueOperator_3013_incominglinks,
+	"icons/incomingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+	dsml.diagram.navigator.DsmlNavigatorGroup outgoinglinks = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_ValueOperator_3013_outgoinglinks,
+	"icons/outgoingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+				java.util.Collection<org.eclipse.gmf.runtime.notation.View> connectedViews;
+														connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkComponentEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkComponentEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkTargetEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ComparisonEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ComparisonEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ArithmeticEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ArithmeticEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+															if (!incominglinks.isEmpty()) {		result.add(incominglinks);
+					}							if (!outgoinglinks.isEmpty()) {		result.add(outgoinglinks);
+					}			return result.toArray();
+}
+
+case dsml.diagram.edit.parts.UnaryOperatorPatternEditPart.VISUAL_ID: {
+	java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem> result = new java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem>();
+		org.eclipse.gmf.runtime.notation.Node sv = (org.eclipse.gmf.runtime.notation.Node) view;
+				dsml.diagram.navigator.DsmlNavigatorGroup incominglinks = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_UnaryOperatorPattern_3014_incominglinks,
+	"icons/incomingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+	dsml.diagram.navigator.DsmlNavigatorGroup outgoinglinks = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_UnaryOperatorPattern_3014_outgoinglinks,
+	"icons/outgoingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+				java.util.Collection<org.eclipse.gmf.runtime.notation.View> connectedViews;
+														connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkComponentEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkComponentEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkTargetEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ComparisonEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ComparisonEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ArithmeticEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ArithmeticEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+															if (!incominglinks.isEmpty()) {		result.add(incominglinks);
+					}							if (!outgoinglinks.isEmpty()) {		result.add(outgoinglinks);
+					}			return result.toArray();
+}
+
+case dsml.diagram.edit.parts.BinaryOperatorPatternEditPart.VISUAL_ID: {
+	java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem> result = new java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem>();
+		org.eclipse.gmf.runtime.notation.Node sv = (org.eclipse.gmf.runtime.notation.Node) view;
+				dsml.diagram.navigator.DsmlNavigatorGroup incominglinks = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_BinaryOperatorPattern_3015_incominglinks,
+	"icons/incomingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+	dsml.diagram.navigator.DsmlNavigatorGroup outgoinglinks = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_BinaryOperatorPattern_3015_outgoinglinks,
+	"icons/outgoingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+				java.util.Collection<org.eclipse.gmf.runtime.notation.View> connectedViews;
+														connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkComponentEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkComponentEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkTargetEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ComparisonEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ComparisonEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ArithmeticEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ArithmeticEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+															if (!incominglinks.isEmpty()) {		result.add(incominglinks);
+					}							if (!outgoinglinks.isEmpty()) {		result.add(outgoinglinks);
+					}			return result.toArray();
+}
+
+case dsml.diagram.edit.parts.PatternTimerEditPart.VISUAL_ID: {
+	java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem> result = new java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem>();
+		org.eclipse.gmf.runtime.notation.Node sv = (org.eclipse.gmf.runtime.notation.Node) view;
+				dsml.diagram.navigator.DsmlNavigatorGroup incominglinks = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_PatternTimer_3016_incominglinks,
+	"icons/incomingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+	dsml.diagram.navigator.DsmlNavigatorGroup outgoinglinks = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_PatternTimer_3016_outgoinglinks,
+	"icons/outgoingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+				java.util.Collection<org.eclipse.gmf.runtime.notation.View> connectedViews;
+														connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkComponentEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkComponentEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkTargetEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ComparisonEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ComparisonEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ArithmeticEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ArithmeticEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+															if (!incominglinks.isEmpty()) {		result.add(incominglinks);
+					}							if (!outgoinglinks.isEmpty()) {		result.add(outgoinglinks);
+					}			return result.toArray();
+}
+
+case dsml.diagram.edit.parts.Attribute2EditPart.VISUAL_ID: {
+	java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem> result = new java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem>();
+		org.eclipse.gmf.runtime.notation.Node sv = (org.eclipse.gmf.runtime.notation.Node) view;
+				dsml.diagram.navigator.DsmlNavigatorGroup incominglinks = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_Attribute_3017_incominglinks,
+	"icons/incomingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+	dsml.diagram.navigator.DsmlNavigatorGroup outgoinglinks = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_Attribute_3017_outgoinglinks,
+	"icons/outgoingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+				java.util.Collection<org.eclipse.gmf.runtime.notation.View> connectedViews;
+														connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkComponentEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkComponentEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkTargetEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ComparisonEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ComparisonEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ArithmeticEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ArithmeticEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+															if (!incominglinks.isEmpty()) {		result.add(incominglinks);
+					}							if (!outgoinglinks.isEmpty()) {		result.add(outgoinglinks);
+					}			return result.toArray();
+}
+
+case dsml.diagram.edit.parts.AggregationEditPart.VISUAL_ID: {
+	java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem> result = new java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem>();
+		org.eclipse.gmf.runtime.notation.Node sv = (org.eclipse.gmf.runtime.notation.Node) view;
+				dsml.diagram.navigator.DsmlNavigatorGroup incominglinks = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_Aggregation_3018_incominglinks,
+	"icons/incomingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+	dsml.diagram.navigator.DsmlNavigatorGroup outgoinglinks = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_Aggregation_3018_outgoinglinks,
+	"icons/outgoingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+				java.util.Collection<org.eclipse.gmf.runtime.notation.View> connectedViews;
+														connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LogicalConnectorEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LogicalConnectorEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+															if (!incominglinks.isEmpty()) {		result.add(incominglinks);
+					}							if (!outgoinglinks.isEmpty()) {		result.add(outgoinglinks);
+					}			return result.toArray();
+}
+
+case dsml.diagram.edit.parts.OrderEditPart.VISUAL_ID: {
+	java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem> result = new java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem>();
+		org.eclipse.gmf.runtime.notation.Node sv = (org.eclipse.gmf.runtime.notation.Node) view;
+				dsml.diagram.navigator.DsmlNavigatorGroup incominglinks = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_Order_3019_incominglinks,
+	"icons/incomingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+	dsml.diagram.navigator.DsmlNavigatorGroup outgoinglinks = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_Order_3019_outgoinglinks,
+	"icons/outgoingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+				java.util.Collection<org.eclipse.gmf.runtime.notation.View> connectedViews;
+														connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.OrderOrderLimitCompartmentEditPart.VISUAL_ID));
+									connectedViews = 						getChildrenByType						(connectedViews					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LimitEditPart.VISUAL_ID));
+								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LogicalConnectorEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LogicalConnectorEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+															if (!incominglinks.isEmpty()) {		result.add(incominglinks);
+					}							if (!outgoinglinks.isEmpty()) {		result.add(outgoinglinks);
+					}			return result.toArray();
+}
+
+case dsml.diagram.edit.parts.Target3EditPart.VISUAL_ID: {
+	java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem> result = new java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem>();
+		org.eclipse.gmf.runtime.notation.Node sv = (org.eclipse.gmf.runtime.notation.Node) view;
+				dsml.diagram.navigator.DsmlNavigatorGroup incominglinks = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_Target_3021_incominglinks,
+	"icons/incomingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+	dsml.diagram.navigator.DsmlNavigatorGroup outgoinglinks = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_Target_3021_outgoinglinks,
+	"icons/outgoingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+				java.util.Collection<org.eclipse.gmf.runtime.notation.View> connectedViews;
+														connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.TargetTargetOperationTypesCompartment3EditPart.VISUAL_ID));
+									connectedViews = 						getChildrenByType						(connectedViews					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.OperatorEditPart.VISUAL_ID));
+								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+																	connectedViews = 						getChildrenByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.TargetTargetOperationTypesCompartment3EditPart.VISUAL_ID));
+									connectedViews = 						getChildrenByType						(connectedViews					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ValueOperatorEditPart.VISUAL_ID));
+								result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkComponentEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkComponentEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkTargetEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkTargetEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ComparisonEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ComparisonEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ArithmeticEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ArithmeticEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.FollowedbyEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.FollowedbyEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LogicalConnectorEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LogicalConnectorEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+															if (!incominglinks.isEmpty()) {		result.add(incominglinks);
+					}							if (!outgoinglinks.isEmpty()) {		result.add(outgoinglinks);
+					}			return result.toArray();
+}
+
+case dsml.diagram.edit.parts.Not3EditPart.VISUAL_ID: {
+	java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem> result = new java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem>();
+		org.eclipse.gmf.runtime.notation.Node sv = (org.eclipse.gmf.runtime.notation.Node) view;
+				dsml.diagram.navigator.DsmlNavigatorGroup incominglinks = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_Not_3022_incominglinks,
+	"icons/incomingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+	dsml.diagram.navigator.DsmlNavigatorGroup outgoinglinks = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_Not_3022_outgoinglinks,
+	"icons/outgoingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+				java.util.Collection<org.eclipse.gmf.runtime.notation.View> connectedViews;
+														connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkComponentEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkComponentEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkTargetEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ComparisonEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ComparisonEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ArithmeticEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ArithmeticEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LogicalConnectorEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LogicalConnectorEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+															if (!incominglinks.isEmpty()) {		result.add(incominglinks);
+					}							if (!outgoinglinks.isEmpty()) {		result.add(outgoinglinks);
+					}			return result.toArray();
+}
+
+case dsml.diagram.edit.parts.UnaryOperatorPattern2EditPart.VISUAL_ID: {
+	java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem> result = new java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem>();
+		org.eclipse.gmf.runtime.notation.Node sv = (org.eclipse.gmf.runtime.notation.Node) view;
+				dsml.diagram.navigator.DsmlNavigatorGroup incominglinks = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_UnaryOperatorPattern_3023_incominglinks,
+	"icons/incomingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+	dsml.diagram.navigator.DsmlNavigatorGroup outgoinglinks = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_UnaryOperatorPattern_3023_outgoinglinks,
+	"icons/outgoingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+				java.util.Collection<org.eclipse.gmf.runtime.notation.View> connectedViews;
+														connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkComponentEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkComponentEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkTargetEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ComparisonEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ComparisonEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ArithmeticEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ArithmeticEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+															if (!incominglinks.isEmpty()) {		result.add(incominglinks);
+					}							if (!outgoinglinks.isEmpty()) {		result.add(outgoinglinks);
+					}			return result.toArray();
+}
+
+case dsml.diagram.edit.parts.BinaryOperatorPattern2EditPart.VISUAL_ID: {
+	java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem> result = new java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem>();
+		org.eclipse.gmf.runtime.notation.Node sv = (org.eclipse.gmf.runtime.notation.Node) view;
+				dsml.diagram.navigator.DsmlNavigatorGroup incominglinks = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_BinaryOperatorPattern_3024_incominglinks,
+	"icons/incomingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+	dsml.diagram.navigator.DsmlNavigatorGroup outgoinglinks = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_BinaryOperatorPattern_3024_outgoinglinks,
+	"icons/outgoingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+				java.util.Collection<org.eclipse.gmf.runtime.notation.View> connectedViews;
+														connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkComponentEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkComponentEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkTargetEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ComparisonEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ComparisonEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ArithmeticEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ArithmeticEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+															if (!incominglinks.isEmpty()) {		result.add(incominglinks);
+					}							if (!outgoinglinks.isEmpty()) {		result.add(outgoinglinks);
+					}			return result.toArray();
+}
+
+case dsml.diagram.edit.parts.PatternTimer2EditPart.VISUAL_ID: {
+	java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem> result = new java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem>();
+		org.eclipse.gmf.runtime.notation.Node sv = (org.eclipse.gmf.runtime.notation.Node) view;
+				dsml.diagram.navigator.DsmlNavigatorGroup incominglinks = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_PatternTimer_3025_incominglinks,
+	"icons/incomingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+	dsml.diagram.navigator.DsmlNavigatorGroup outgoinglinks = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_PatternTimer_3025_outgoinglinks,
+	"icons/outgoingLinksNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+				java.util.Collection<org.eclipse.gmf.runtime.notation.View> connectedViews;
+														connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkComponentEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkComponentEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.LinkTargetEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ComparisonEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ComparisonEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+																	connectedViews = 			getIncomingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ArithmeticEditPart.VISUAL_ID));
+								incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+																	connectedViews = 			getOutgoingLinksByType						(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ArithmeticEditPart.VISUAL_ID));
+								outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+															if (!incominglinks.isEmpty()) {		result.add(incominglinks);
+					}							if (!outgoinglinks.isEmpty()) {		result.add(outgoinglinks);
+					}			return result.toArray();
+}
+
+case dsml.diagram.edit.parts.LinkComponentEditPart.VISUAL_ID: {
+	java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem> result = new java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem>();
+		org.eclipse.gmf.runtime.notation.Edge sv = (org.eclipse.gmf.runtime.notation.Edge) view;
+				dsml.diagram.navigator.DsmlNavigatorGroup target = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_LinkComponent_4001_target,
+	"icons/linkTargetNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+	dsml.diagram.navigator.DsmlNavigatorGroup source = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_LinkComponent_4001_source,
+	"icons/linkSourceNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+				java.util.Collection<org.eclipse.gmf.runtime.notation.View> connectedViews;
+														connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.EventEditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.RuleEditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.EventPatternEditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.WindowEditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.AttributeEditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.TargetEditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.OperatorEditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ValueOperatorEditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.NotEditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Operator2EditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ValueOperator2EditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Target2EditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Not2EditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Operator3EditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ValueOperator3EditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.UnaryOperatorPatternEditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.BinaryOperatorPatternEditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.PatternTimerEditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Attribute2EditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Target3EditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Not3EditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.UnaryOperatorPattern2EditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.BinaryOperatorPattern2EditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.PatternTimer2EditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.EventEditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.RuleEditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.EventPatternEditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.WindowEditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.AttributeEditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.TargetEditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.OperatorEditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ValueOperatorEditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.NotEditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Operator2EditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ValueOperator2EditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Target2EditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Not2EditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Operator3EditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ValueOperator3EditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.UnaryOperatorPatternEditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.BinaryOperatorPatternEditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.PatternTimerEditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Attribute2EditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Target3EditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Not3EditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.UnaryOperatorPattern2EditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.BinaryOperatorPattern2EditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.PatternTimer2EditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+															if (!target.isEmpty()) {		result.add(target);
+					}							if (!source.isEmpty()) {		result.add(source);
+					}			return result.toArray();
+}
+
+case dsml.diagram.edit.parts.LinkTargetEditPart.VISUAL_ID: {
+	java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem> result = new java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem>();
+		org.eclipse.gmf.runtime.notation.Edge sv = (org.eclipse.gmf.runtime.notation.Edge) view;
+				dsml.diagram.navigator.DsmlNavigatorGroup target = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_LinkTarget_4002_target,
+	"icons/linkTargetNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+	dsml.diagram.navigator.DsmlNavigatorGroup source = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_LinkTarget_4002_source,
+	"icons/linkSourceNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+				java.util.Collection<org.eclipse.gmf.runtime.notation.View> connectedViews;
+														connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.TargetEditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Target2EditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Target3EditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.EventEditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.RuleEditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.EventPatternEditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.WindowEditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.AttributeEditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.TargetEditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.OperatorEditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ValueOperatorEditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.NotEditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Operator2EditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ValueOperator2EditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Target2EditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Not2EditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Operator3EditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ValueOperator3EditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.UnaryOperatorPatternEditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.BinaryOperatorPatternEditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.PatternTimerEditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Attribute2EditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Target3EditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Not3EditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.UnaryOperatorPattern2EditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.BinaryOperatorPattern2EditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.PatternTimer2EditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+															if (!target.isEmpty()) {		result.add(target);
+					}							if (!source.isEmpty()) {		result.add(source);
+					}			return result.toArray();
+}
+
+case dsml.diagram.edit.parts.ComparisonEditPart.VISUAL_ID: {
+	java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem> result = new java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem>();
+		org.eclipse.gmf.runtime.notation.Edge sv = (org.eclipse.gmf.runtime.notation.Edge) view;
+				dsml.diagram.navigator.DsmlNavigatorGroup target = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_Comparison_4003_target,
+	"icons/linkTargetNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+	dsml.diagram.navigator.DsmlNavigatorGroup source = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_Comparison_4003_source,
+	"icons/linkSourceNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+				java.util.Collection<org.eclipse.gmf.runtime.notation.View> connectedViews;
+														connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.AttributeEditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.TargetEditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.OperatorEditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ValueOperatorEditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.NotEditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Operator2EditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ValueOperator2EditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Target2EditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Not2EditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Operator3EditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ValueOperator3EditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.UnaryOperatorPatternEditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.BinaryOperatorPatternEditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.PatternTimerEditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Attribute2EditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Target3EditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Not3EditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.UnaryOperatorPattern2EditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.BinaryOperatorPattern2EditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.PatternTimer2EditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.AttributeEditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.TargetEditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.OperatorEditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ValueOperatorEditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.NotEditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Operator2EditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ValueOperator2EditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Target2EditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Not2EditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Operator3EditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ValueOperator3EditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.UnaryOperatorPatternEditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.BinaryOperatorPatternEditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.PatternTimerEditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Attribute2EditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Target3EditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Not3EditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.UnaryOperatorPattern2EditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.BinaryOperatorPattern2EditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.PatternTimer2EditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+															if (!target.isEmpty()) {		result.add(target);
+					}							if (!source.isEmpty()) {		result.add(source);
+					}			return result.toArray();
+}
+
+case dsml.diagram.edit.parts.ArithmeticEditPart.VISUAL_ID: {
+	java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem> result = new java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem>();
+		org.eclipse.gmf.runtime.notation.Edge sv = (org.eclipse.gmf.runtime.notation.Edge) view;
+				dsml.diagram.navigator.DsmlNavigatorGroup target = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_Arithmetic_4004_target,
+	"icons/linkTargetNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+	dsml.diagram.navigator.DsmlNavigatorGroup source = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_Arithmetic_4004_source,
+	"icons/linkSourceNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+				java.util.Collection<org.eclipse.gmf.runtime.notation.View> connectedViews;
+														connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.AttributeEditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.TargetEditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.OperatorEditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ValueOperatorEditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.NotEditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Operator2EditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ValueOperator2EditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Target2EditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Not2EditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Operator3EditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ValueOperator3EditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.UnaryOperatorPatternEditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.BinaryOperatorPatternEditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.PatternTimerEditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Attribute2EditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Target3EditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Not3EditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.UnaryOperatorPattern2EditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.BinaryOperatorPattern2EditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.PatternTimer2EditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.AttributeEditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.TargetEditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.OperatorEditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ValueOperatorEditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.NotEditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Operator2EditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ValueOperator2EditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Target2EditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Not2EditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Operator3EditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ValueOperator3EditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.UnaryOperatorPatternEditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.BinaryOperatorPatternEditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.PatternTimerEditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Attribute2EditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Target3EditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Not3EditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.UnaryOperatorPattern2EditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.BinaryOperatorPattern2EditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.PatternTimer2EditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+															if (!target.isEmpty()) {		result.add(target);
+					}							if (!source.isEmpty()) {		result.add(source);
+					}			return result.toArray();
+}
+
+case dsml.diagram.edit.parts.FollowedbyEditPart.VISUAL_ID: {
+	java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem> result = new java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem>();
+		org.eclipse.gmf.runtime.notation.Edge sv = (org.eclipse.gmf.runtime.notation.Edge) view;
+				dsml.diagram.navigator.DsmlNavigatorGroup target = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_Followedby_4005_target,
+	"icons/linkTargetNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+	dsml.diagram.navigator.DsmlNavigatorGroup source = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_Followedby_4005_source,
+	"icons/linkSourceNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+				java.util.Collection<org.eclipse.gmf.runtime.notation.View> connectedViews;
+														connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.TargetEditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Target2EditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Target3EditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.TargetEditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Target2EditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Target3EditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+															if (!target.isEmpty()) {		result.add(target);
+					}							if (!source.isEmpty()) {		result.add(source);
+					}			return result.toArray();
+}
+
+case dsml.diagram.edit.parts.LogicalConnectorEditPart.VISUAL_ID: {
+	java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem> result = new java.util.LinkedList<dsml.diagram.navigator.DsmlAbstractNavigatorItem>();
+		org.eclipse.gmf.runtime.notation.Edge sv = (org.eclipse.gmf.runtime.notation.Edge) view;
+				dsml.diagram.navigator.DsmlNavigatorGroup target = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_LogicalConnector_4006_target,
+	"icons/linkTargetNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+	dsml.diagram.navigator.DsmlNavigatorGroup source = new dsml.diagram.navigator.DsmlNavigatorGroup(
+	dsml.diagram.part.Messages.NavigatorGroupName_LogicalConnector_4006_source,
+	"icons/linkSourceNavigatorGroup.gif", parentElement);  //$NON-NLS-1$
+				java.util.Collection<org.eclipse.gmf.runtime.notation.View> connectedViews;
+														connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.TargetEditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.NotEditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ConditionGroupEditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.BringGroupEditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Target2EditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Not2EditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.AggregationEditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.OrderEditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Target3EditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksTargetByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Not3EditPart.VISUAL_ID));
+								target.addChildren(createNavigatorItems(connectedViews, target, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.TargetEditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.NotEditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.ConditionGroupEditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.BringGroupEditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Target2EditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Not2EditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.AggregationEditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.OrderEditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Target3EditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+																	connectedViews = 	getLinksSourceByType					(java.util.Collections.singleton(sv)					, dsml.diagram.part.DsmlVisualIDRegistry.getType(dsml.diagram.edit.parts.Not3EditPart.VISUAL_ID));
+								source.addChildren(createNavigatorItems(connectedViews, source, true));
+															if (!target.isEmpty()) {		result.add(target);
+					}							if (!source.isEmpty()) {		result.add(source);
+					}			return result.toArray();
+}
+	}
+	return EMPTY_ARRAY;
+}
+    
+    /**
+ * @generated
+ */
+private java.util.Collection<org.eclipse.gmf.runtime.notation.View> getLinksSourceByType(java.util.Collection<org.eclipse.gmf.runtime.notation.Edge> edges, String type) {
+	java.util.LinkedList<org.eclipse.gmf.runtime.notation.View> result = new java.util.LinkedList<org.eclipse.gmf.runtime.notation.View>();
+ 	for (org.eclipse.gmf.runtime.notation.Edge nextEdge : edges) {
+ 		org.eclipse.gmf.runtime.notation.View nextEdgeSource = nextEdge.getSource();
+ 		if (type.equals(nextEdgeSource.getType()) && isOwnView(nextEdgeSource)) {
+ 			result.add(nextEdgeSource);
+ 		}
+ 	}
+ 	return result;
+}
+	
+/**
+ * @generated
+ */
+ private java.util.Collection<org.eclipse.gmf.runtime.notation.View> getLinksTargetByType(java.util.Collection<org.eclipse.gmf.runtime.notation.Edge> edges, String type) {
+	java.util.LinkedList<org.eclipse.gmf.runtime.notation.View> result = new java.util.LinkedList<org.eclipse.gmf.runtime.notation.View>();
+ 	for (org.eclipse.gmf.runtime.notation.Edge nextEdge : edges) {
+ 		org.eclipse.gmf.runtime.notation.View nextEdgeTarget = nextEdge.getTarget();
+ 		if (type.equals(nextEdgeTarget.getType()) && isOwnView(nextEdgeTarget)) {
+ 			result.add(nextEdgeTarget);
+ 		}
+ 	}
+ 	return result;
+}
+
+/**
+ * @generated
+ */
+ private java.util.Collection<org.eclipse.gmf.runtime.notation.View> getOutgoingLinksByType(java.util.Collection<? extends org.eclipse.gmf.runtime.notation.View> nodes, String type) {
+	java.util.LinkedList<org.eclipse.gmf.runtime.notation.View> result = new java.util.LinkedList<org.eclipse.gmf.runtime.notation.View>();
+ 	for (org.eclipse.gmf.runtime.notation.View nextNode : nodes) {
+		result.addAll(selectViewsByType(nextNode.getSourceEdges(), type));
+ 	}
+ 	return result;
+}
+	
+/**
+ * @generated
+ */
+private java.util.Collection<org.eclipse.gmf.runtime.notation.View> getIncomingLinksByType(java.util.Collection<? extends org.eclipse.gmf.runtime.notation.View> nodes, String type) {
+	java.util.LinkedList<org.eclipse.gmf.runtime.notation.View> result = new java.util.LinkedList<org.eclipse.gmf.runtime.notation.View>();
+ 	for (org.eclipse.gmf.runtime.notation.View nextNode : nodes) {
+		result.addAll(selectViewsByType(nextNode.getTargetEdges(), type));
+ 	}
+ 	return result;
+}
+	
+/**
+ * @generated
+ */
+private java.util.Collection<org.eclipse.gmf.runtime.notation.View> getChildrenByType(java.util.Collection<? extends org.eclipse.gmf.runtime.notation.View> nodes, String type) {
+	java.util.LinkedList<org.eclipse.gmf.runtime.notation.View> result = new java.util.LinkedList<org.eclipse.gmf.runtime.notation.View>();
+	for (org.eclipse.gmf.runtime.notation.View nextNode : nodes) {
+		result.addAll(selectViewsByType(nextNode.getChildren(), type));
+	}
+	return result;
+}
+	
+/**
+ * @generated
+ */
+private java.util.Collection<org.eclipse.gmf.runtime.notation.View> getDiagramLinksByType(java.util.Collection<org.eclipse.gmf.runtime.notation.Diagram> diagrams, String type) {
+	java.util.ArrayList<org.eclipse.gmf.runtime.notation.View> result = new java.util.ArrayList<org.eclipse.gmf.runtime.notation.View>();
+	for (org.eclipse.gmf.runtime.notation.Diagram nextDiagram : diagrams) {
+		result.addAll(selectViewsByType(nextDiagram.getEdges(), type));
+	}
+	return result;
+}
+
+// TODO refactor as static method
+/**
+ * @generated
+ */
+private java.util.Collection<org.eclipse.gmf.runtime.notation.View> selectViewsByType(java.util.Collection<org.eclipse.gmf.runtime.notation.View> views, String type) {
+	java.util.ArrayList<org.eclipse.gmf.runtime.notation.View> result = new java.util.ArrayList<org.eclipse.gmf.runtime.notation.View>();
+	for (org.eclipse.gmf.runtime.notation.View nextView : views) {
+		if (type.equals(nextView.getType()) && isOwnView(nextView)) {
+			result.add(nextView);
+		}
+	}
+	return result;
+}
+	
+/**
+ * @generated
+ */
+private boolean isOwnView(org.eclipse.gmf.runtime.notation.View view) {
+	return dsml.diagram.edit.parts.AreaDesenhoEditPart.MODEL_ID.equals(dsml.diagram.part.DsmlVisualIDRegistry.getModelID(view));
+}
+	
+/**
+ * @generated
+ */
+private java.util.Collection<dsml.diagram.navigator.DsmlNavigatorItem> createNavigatorItems(java.util.Collection<org.eclipse.gmf.runtime.notation.View> views, Object parent, boolean isLeafs) {
+	java.util.ArrayList<dsml.diagram.navigator.DsmlNavigatorItem> result = new java.util.ArrayList<dsml.diagram.navigator.DsmlNavigatorItem>(views.size());
+	for (org.eclipse.gmf.runtime.notation.View nextView : views) {
+		result.add(new dsml.diagram.navigator.DsmlNavigatorItem(nextView, parent, isLeafs));
+	}
+	return result;
+}
+		
+/**
+ * @generated
+ */
+private java.util.Collection<dsml.diagram.navigator.DsmlNavigatorItem> getForeignShortcuts(org.eclipse.gmf.runtime.notation.Diagram diagram, Object parent) {
+	java.util.LinkedList<org.eclipse.gmf.runtime.notation.View> result = new java.util.LinkedList<org.eclipse.gmf.runtime.notation.View>();
+	for (java.util.Iterator<org.eclipse.gmf.runtime.notation.View> it = diagram.getChildren().iterator(); it.hasNext();) {
+	org.eclipse.gmf.runtime.notation.View nextView = it.next();
+		if (!isOwnView(nextView) && nextView.getEAnnotation("Shortcut") != null) { //$NON-NLS-1$
+			result.add(nextView);
+		}
+	}
+	return createNavigatorItems(result, parent, false);
+}
+		
+	/**
+ * @generated
+ */
+public Object getParent(Object element) {
+	if (element instanceof dsml.diagram.navigator.DsmlAbstractNavigatorItem) {
+    	dsml.diagram.navigator.DsmlAbstractNavigatorItem abstractNavigatorItem = (dsml.diagram.navigator.DsmlAbstractNavigatorItem) element;
+		return abstractNavigatorItem.getParent();
+	}
+	return null;
+}
+	
+	/**
+ * @generated
+ */
+public boolean hasChildren(Object element) {
+	return element instanceof org.eclipse.core.resources.IFile || getChildren(element).length > 0;
+}
+    
+    }

@@ -1,0 +1,329 @@
+/*
+ * 
+ */
+package prediqt.diagram.part;
+
+/**
+ * @generated
+ */
+public class Messages extends org.eclipse.osgi.util.NLS {
+
+	/**
+ * @generated
+ */
+	static {
+		org.eclipse.osgi.util.NLS.initializeMessages("messages", Messages.class);  //$NON-NLS-1$
+	}
+
+	/**
+ * @generated
+ */
+	private Messages() {
+	}
+
+	
+			
+	/**
+ * @generated
+ */
+    public static String PrediqtCreationWizardTitle;
+	
+	/**
+ * @generated
+ */
+    public static String PrediqtCreationWizard_DiagramModelFilePageTitle;
+	
+	/**
+ * @generated
+ */
+    public static String PrediqtCreationWizard_DiagramModelFilePageDescription;
+		
+	/**
+ * @generated
+ */
+    public static String PrediqtCreationWizard_DomainModelFilePageTitle;
+	
+	/**
+ * @generated
+ */
+    public static String PrediqtCreationWizard_DomainModelFilePageDescription;
+		
+	/**
+ * @generated
+ */
+    public static String PrediqtCreationWizardOpenEditorError;
+	
+	/**
+ * @generated
+ */
+    public static String PrediqtCreationWizardCreationError;
+		
+	/**
+ * @generated
+ */
+    public static String PrediqtCreationWizardPageExtensionError;
+    
+	/**
+ * @generated
+ */
+    public static String PrediqtDiagramEditorUtil_OpenModelResourceErrorDialogTitle;
+
+	/**
+ * @generated
+ */
+    public static String PrediqtDiagramEditorUtil_OpenModelResourceErrorDialogMessage;
+
+	/**
+ * @generated
+ */
+    public static String PrediqtDiagramEditorUtil_CreateDiagramProgressTask;
+
+	/**
+ * @generated
+ */
+    public static String PrediqtDiagramEditorUtil_CreateDiagramCommandLabel;
+		
+	/**
+ * @generated
+ */
+    public static String PrediqtDocumentProvider_isModifiable;
+	
+	/**
+ * @generated
+ */
+    public static String PrediqtDocumentProvider_handleElementContentChanged;
+	
+	/**
+ * @generated
+ */
+    public static String PrediqtDocumentProvider_IncorrectInputError;
+	
+	/**
+ * @generated
+ */
+    public static String PrediqtDocumentProvider_NoDiagramInResourceError;
+	
+	/**
+ * @generated
+ */
+    public static String PrediqtDocumentProvider_DiagramLoadingError;
+	
+	/**
+ * @generated
+ */
+    public static String PrediqtDocumentProvider_UnsynchronizedFileSaveError;
+	
+	/**
+ * @generated
+ */
+    public static String PrediqtDocumentProvider_SaveDiagramTask;
+	
+	/**
+ * @generated
+ */
+    public static String PrediqtDocumentProvider_SaveNextResourceTask;
+	
+	/**
+ * @generated
+ */
+    public static String PrediqtDocumentProvider_SaveAsOperation;
+	
+	/**
+ * @generated
+ */
+    public static String InitDiagramFile_ResourceErrorDialogTitle;
+
+	/**
+ * @generated
+ */
+    public static String InitDiagramFile_ResourceErrorDialogMessage;
+
+	/**
+ * @generated
+ */
+    public static String InitDiagramFile_WizardTitle;
+
+	/**
+ * @generated
+ */
+    public static String InitDiagramFile_OpenModelFileDialogTitle;
+	
+	/**
+ * @generated
+ */
+    public static String PrediqtNewDiagramFileWizard_CreationPageName;
+
+	/**
+ * @generated
+ */
+    public static String PrediqtNewDiagramFileWizard_CreationPageTitle;
+
+	/**
+ * @generated
+ */
+    public static String PrediqtNewDiagramFileWizard_CreationPageDescription;
+
+	/**
+ * @generated
+ */
+    public static String PrediqtNewDiagramFileWizard_RootSelectionPageName;
+
+	/**
+ * @generated
+ */
+    public static String PrediqtNewDiagramFileWizard_RootSelectionPageTitle;
+
+	/**
+ * @generated
+ */
+    public static String PrediqtNewDiagramFileWizard_RootSelectionPageDescription;
+
+	/**
+ * @generated
+ */
+    public static String PrediqtNewDiagramFileWizard_RootSelectionPageSelectionTitle;
+
+	/**
+ * @generated
+ */
+    public static String PrediqtNewDiagramFileWizard_RootSelectionPageNoSelectionMessage;
+
+	/**
+ * @generated
+ */
+    public static String PrediqtNewDiagramFileWizard_RootSelectionPageInvalidSelectionMessage;
+
+	/**
+ * @generated
+ */
+    public static String PrediqtNewDiagramFileWizard_InitDiagramCommand;
+
+	/**
+ * @generated
+ */
+    public static String PrediqtNewDiagramFileWizard_IncorrectRootError;
+		
+	/**
+ * @generated
+ */
+    public static String PrediqtDiagramEditor_SavingDeletedFile;
+	
+	/**
+ * @generated
+ */
+    public static String PrediqtDiagramEditor_SaveAsErrorTitle;
+	
+	/**
+ * @generated
+ */
+    public static String PrediqtDiagramEditor_SaveAsErrorMessage;
+	
+	/**
+ * @generated
+ */
+    public static String PrediqtDiagramEditor_SaveErrorTitle;
+	
+	/**
+ * @generated
+ */
+    public static String PrediqtDiagramEditor_SaveErrorMessage;
+		
+	/**
+ * @generated
+ */
+    public static String PrediqtElementChooserDialog_SelectModelElementTitle;
+			
+	/**
+ * @generated
+ */
+    public static String ModelElementSelectionPageMessage;
+		
+	/**
+ * @generated
+ */
+    public static String ValidateActionMessage;
+	
+	/**
+ * @generated
+ */
+    public static String Objects1Group_title;
+
+	/**
+ * @generated
+ */
+    public static String Connections2Group_title;
+
+	/**
+ * @generated
+ */
+    public static String PNode1CreationTool_title;
+
+	/**
+ * @generated
+ */
+    public static String PNode1CreationTool_desc;
+
+	/**
+ * @generated
+ */
+    public static String PArc1CreationTool_title;
+
+	/**
+ * @generated
+ */
+    public static String PArc1CreationTool_desc;
+	            
+    
+	/**
+ * @generated
+ */
+    public static String CommandName_OpenDiagram;
+    	        		                    
+	/**
+ * @generated
+ */
+    public static String NavigatorGroupName_Project_1000_links;
+        	                    
+	/**
+ * @generated
+ */
+    public static String NavigatorGroupName_PNode_2001_incominglinks;
+
+	/**
+ * @generated
+ */
+    public static String NavigatorGroupName_PNode_2001_outgoinglinks;
+        	                    
+	/**
+ * @generated
+ */
+    public static String NavigatorGroupName_PArc_4001_target;
+
+	/**
+ * @generated
+ */
+    public static String NavigatorGroupName_PArc_4001_source;
+        	    
+	/**
+ * @generated
+ */
+    public static String NavigatorActionProvider_OpenDiagramActionName;
+	
+	
+	/**
+ * @generated
+ */
+    public static String MessageFormatParser_InvalidInputError;
+		
+	/**
+ * @generated
+ */
+    public static String PrediqtModelingAssistantProviderTitle;
+	
+	/**
+ * @generated
+ */
+    public static String PrediqtModelingAssistantProviderMessage;
+
+    //TODO: put accessor fields manually	
+}

@@ -1,0 +1,10 @@
+/*
+ * 
+ */
+package dsml.diagram.edit.helpers;
+
+/**
+ * @generated
+ */
+public class BringGroupEditHelper extends dsml.diagram.edit.helpers.DsmlBaseEditHelper {
+	}

@@ -1,0 +1,359 @@
+/*
+ * 
+ */
+package dsml.diagram.edit.parts;
+
+import org.eclipse.gef.EditPart;
+import org.eclipse.gef.EditPartFactory;
+import org.eclipse.gef.tools.CellEditorLocator;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
+import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.gmf.tooling.runtime.directedit.locator.CellEditorLocatorAccess;
+
+import dsml.diagram.part.DsmlVisualIDRegistry;
+
+/**
+ * @generated
+ */
+public class DsmlEditPartFactory implements EditPartFactory {
+
+	/**
+	 * @generated
+	 */
+	public EditPart createEditPart(EditPart context, Object model) {
+		if (model instanceof View) {
+			View view = (View) model;
+			switch (DsmlVisualIDRegistry.getVisualID(view)) {
+
+			case AreaDesenhoEditPart.VISUAL_ID:
+				return new AreaDesenhoEditPart(view);
+
+			case AggregationEditPart.VISUAL_ID:
+				return new AggregationEditPart(view);
+
+			case AggregationTypeAggregationEditPart.VISUAL_ID:
+				return new AggregationTypeAggregationEditPart(view);
+
+			case OrderEditPart.VISUAL_ID:
+				return new OrderEditPart(view);
+
+			case OrderTypeOrderEditPart.VISUAL_ID:
+				return new OrderTypeOrderEditPart(view);
+
+			case OperatorEditPart.VISUAL_ID:
+				return new OperatorEditPart(view);
+
+			case OperatorOperatorEditPart.VISUAL_ID:
+				return new OperatorOperatorEditPart(view);
+
+			case ValueOperatorEditPart.VISUAL_ID:
+				return new ValueOperatorEditPart(view);
+
+			case ValueOperatorValueOperatorEditPart.VISUAL_ID:
+				return new ValueOperatorValueOperatorEditPart(view);
+
+			case UnaryOperatorPatternEditPart.VISUAL_ID:
+				return new UnaryOperatorPatternEditPart(view);
+
+			case UnaryOperatorPatternNameEditPart.VISUAL_ID:
+				return new UnaryOperatorPatternNameEditPart(view);
+
+			case BinaryOperatorPatternEditPart.VISUAL_ID:
+				return new BinaryOperatorPatternEditPart(view);
+
+			case BinaryOperatorPatternNameEditPart.VISUAL_ID:
+				return new BinaryOperatorPatternNameEditPart(view);
+
+			case PatternTimerEditPart.VISUAL_ID:
+				return new PatternTimerEditPart(view);
+
+			case PatternTimerPatternTimerEditPart.VISUAL_ID:
+				return new PatternTimerPatternTimerEditPart(view);
+
+			case ConditionGroupEditPart.VISUAL_ID:
+				return new ConditionGroupEditPart(view);
+
+			case ConditionGroupConditionGroupEditPart.VISUAL_ID:
+				return new ConditionGroupConditionGroupEditPart(view);
+
+			case TargetEditPart.VISUAL_ID:
+				return new TargetEditPart(view);
+
+			case TargetAliasEditPart.VISUAL_ID:
+				return new TargetAliasEditPart(view);
+
+			case NotEditPart.VISUAL_ID:
+				return new NotEditPart(view);
+
+			case NotDescriptionEditPart.VISUAL_ID:
+				return new NotDescriptionEditPart(view);
+
+			case RuleEditPart.VISUAL_ID:
+				return new RuleEditPart(view);
+
+			case RuleRuleNameEditPart.VISUAL_ID:
+				return new RuleRuleNameEditPart(view);
+
+			case EventPatternEditPart.VISUAL_ID:
+				return new EventPatternEditPart(view);
+
+			case EventPatternEventPatternEditPart.VISUAL_ID:
+				return new EventPatternEventPatternEditPart(view);
+
+			case WindowEditPart.VISUAL_ID:
+				return new WindowEditPart(view);
+
+			case WindowWindowEditPart.VISUAL_ID:
+				return new WindowWindowEditPart(view);
+
+			case EventEditPart.VISUAL_ID:
+				return new EventEditPart(view);
+
+			case EventEventNameEditPart.VISUAL_ID:
+				return new EventEventNameEditPart(view);
+
+			case LimitEditPart.VISUAL_ID:
+				return new LimitEditPart(view);
+
+			case LimitValueLimitEditPart.VISUAL_ID:
+				return new LimitValueLimitEditPart(view);
+
+			case Operator2EditPart.VISUAL_ID:
+				return new Operator2EditPart(view);
+
+			case OperatorOperator2EditPart.VISUAL_ID:
+				return new OperatorOperator2EditPart(view);
+
+			case ValueOperator2EditPart.VISUAL_ID:
+				return new ValueOperator2EditPart(view);
+
+			case ValueOperatorValueOperator2EditPart.VISUAL_ID:
+				return new ValueOperatorValueOperator2EditPart(view);
+
+			case Operator3EditPart.VISUAL_ID:
+				return new Operator3EditPart(view);
+
+			case OperatorOperator3EditPart.VISUAL_ID:
+				return new OperatorOperator3EditPart(view);
+
+			case ValueOperator3EditPart.VISUAL_ID:
+				return new ValueOperator3EditPart(view);
+
+			case ValueOperatorValueOperator3EditPart.VISUAL_ID:
+				return new ValueOperatorValueOperator3EditPart(view);
+
+			case Aggregation2EditPart.VISUAL_ID:
+				return new Aggregation2EditPart(view);
+
+			case AggregationTypeAggregation2EditPart.VISUAL_ID:
+				return new AggregationTypeAggregation2EditPart(view);
+
+			case Order2EditPart.VISUAL_ID:
+				return new Order2EditPart(view);
+
+			case OrderTypeOrder2EditPart.VISUAL_ID:
+				return new OrderTypeOrder2EditPart(view);
+
+			case Operator4EditPart.VISUAL_ID:
+				return new Operator4EditPart(view);
+
+			case OperatorOperator4EditPart.VISUAL_ID:
+				return new OperatorOperator4EditPart(view);
+
+			case ValueOperator4EditPart.VISUAL_ID:
+				return new ValueOperator4EditPart(view);
+
+			case ValueOperatorValueOperator4EditPart.VISUAL_ID:
+				return new ValueOperatorValueOperator4EditPart(view);
+
+			case UnaryOperatorPattern2EditPart.VISUAL_ID:
+				return new UnaryOperatorPattern2EditPart(view);
+
+			case UnaryOperatorPatternName2EditPart.VISUAL_ID:
+				return new UnaryOperatorPatternName2EditPart(view);
+
+			case BinaryOperatorPattern2EditPart.VISUAL_ID:
+				return new BinaryOperatorPattern2EditPart(view);
+
+			case BinaryOperatorPatternName2EditPart.VISUAL_ID:
+				return new BinaryOperatorPatternName2EditPart(view);
+
+			case PatternTimer2EditPart.VISUAL_ID:
+				return new PatternTimer2EditPart(view);
+
+			case PatternTimerPatternTimer2EditPart.VISUAL_ID:
+				return new PatternTimerPatternTimer2EditPart(view);
+
+			case ConditionGroup2EditPart.VISUAL_ID:
+				return new ConditionGroup2EditPart(view);
+
+			case ConditionGroupConditionGroup2EditPart.VISUAL_ID:
+				return new ConditionGroupConditionGroup2EditPart(view);
+
+			case Target2EditPart.VISUAL_ID:
+				return new Target2EditPart(view);
+
+			case TargetAlias2EditPart.VISUAL_ID:
+				return new TargetAlias2EditPart(view);
+
+			case Not2EditPart.VISUAL_ID:
+				return new Not2EditPart(view);
+
+			case NotDescription2EditPart.VISUAL_ID:
+				return new NotDescription2EditPart(view);
+
+			case Aggregation3EditPart.VISUAL_ID:
+				return new Aggregation3EditPart(view);
+
+			case AggregationTypeAggregation3EditPart.VISUAL_ID:
+				return new AggregationTypeAggregation3EditPart(view);
+
+			case Order3EditPart.VISUAL_ID:
+				return new Order3EditPart(view);
+
+			case OrderTypeOrder3EditPart.VISUAL_ID:
+				return new OrderTypeOrder3EditPart(view);
+
+			case Operator5EditPart.VISUAL_ID:
+				return new Operator5EditPart(view);
+
+			case OperatorOperator5EditPart.VISUAL_ID:
+				return new OperatorOperator5EditPart(view);
+
+			case ValueOperator5EditPart.VISUAL_ID:
+				return new ValueOperator5EditPart(view);
+
+			case ValueOperatorValueOperator5EditPart.VISUAL_ID:
+				return new ValueOperatorValueOperator5EditPart(view);
+
+			case UnaryOperatorPattern3EditPart.VISUAL_ID:
+				return new UnaryOperatorPattern3EditPart(view);
+
+			case UnaryOperatorPatternName3EditPart.VISUAL_ID:
+				return new UnaryOperatorPatternName3EditPart(view);
+
+			case BinaryOperatorPattern3EditPart.VISUAL_ID:
+				return new BinaryOperatorPattern3EditPart(view);
+
+			case BinaryOperatorPatternName3EditPart.VISUAL_ID:
+				return new BinaryOperatorPatternName3EditPart(view);
+
+			case PatternTimer3EditPart.VISUAL_ID:
+				return new PatternTimer3EditPart(view);
+
+			case PatternTimerPatternTimer3EditPart.VISUAL_ID:
+				return new PatternTimerPatternTimer3EditPart(view);
+
+			case ConditionGroup3EditPart.VISUAL_ID:
+				return new ConditionGroup3EditPart(view);
+
+			case ConditionGroupConditionGroup3EditPart.VISUAL_ID:
+				return new ConditionGroupConditionGroup3EditPart(view);
+
+			case Target3EditPart.VISUAL_ID:
+				return new Target3EditPart(view);
+
+			case TargetAlias3EditPart.VISUAL_ID:
+				return new TargetAlias3EditPart(view);
+
+			case Not3EditPart.VISUAL_ID:
+				return new Not3EditPart(view);
+
+			case NotDescription3EditPart.VISUAL_ID:
+				return new NotDescription3EditPart(view);
+
+			case AttributeEditPart.VISUAL_ID:
+				return new AttributeEditPart(view);
+
+			case AttributeNameTypeEditPart.VISUAL_ID:
+				return new AttributeNameTypeEditPart(view);
+
+			case OrderOrderLimitCompartmentEditPart.VISUAL_ID:
+				return new OrderOrderLimitCompartmentEditPart(view);
+
+			case ConditionGroupConditionGroupOperationTypesCompartmentEditPart.VISUAL_ID:
+				return new ConditionGroupConditionGroupOperationTypesCompartmentEditPart(
+						view);
+
+			case TargetTargetOperationTypesCompartmentEditPart.VISUAL_ID:
+				return new TargetTargetOperationTypesCompartmentEditPart(view);
+
+			case RuleRuleNodeCompartmentEditPart.VISUAL_ID:
+				return new RuleRuleNodeCompartmentEditPart(view);
+
+			case OrderOrderLimitCompartment2EditPart.VISUAL_ID:
+				return new OrderOrderLimitCompartment2EditPart(view);
+
+			case ConditionGroupConditionGroupOperationTypesCompartment2EditPart.VISUAL_ID:
+				return new ConditionGroupConditionGroupOperationTypesCompartment2EditPart(
+						view);
+
+			case TargetTargetOperationTypesCompartment2EditPart.VISUAL_ID:
+				return new TargetTargetOperationTypesCompartment2EditPart(view);
+
+			case EventPatternEventPatternNodeCompartmentEditPart.VISUAL_ID:
+				return new EventPatternEventPatternNodeCompartmentEditPart(view);
+
+			case OrderOrderLimitCompartment3EditPart.VISUAL_ID:
+				return new OrderOrderLimitCompartment3EditPart(view);
+
+			case ConditionGroupConditionGroupOperationTypesCompartment3EditPart.VISUAL_ID:
+				return new ConditionGroupConditionGroupOperationTypesCompartment3EditPart(
+						view);
+
+			case TargetTargetOperationTypesCompartment3EditPart.VISUAL_ID:
+				return new TargetTargetOperationTypesCompartment3EditPart(view);
+
+			case EventEventAttributesCompartmentEditPart.VISUAL_ID:
+				return new EventEventAttributesCompartmentEditPart(view);
+
+			case LinkComponentEditPart.VISUAL_ID:
+				return new LinkComponentEditPart(view);
+
+			case LinkTargetEditPart.VISUAL_ID:
+				return new LinkTargetEditPart(view);
+
+			case ComparisonEditPart.VISUAL_ID:
+				return new ComparisonEditPart(view);
+
+			case ComparisonComparisonEditPart.VISUAL_ID:
+				return new ComparisonComparisonEditPart(view);
+
+			case ArithmeticEditPart.VISUAL_ID:
+				return new ArithmeticEditPart(view);
+
+			case ArithmeticArithmeticEditPart.VISUAL_ID:
+				return new ArithmeticArithmeticEditPart(view);
+
+			case FollowedbyEditPart.VISUAL_ID:
+				return new FollowedbyEditPart(view);
+
+			case LogicalConnectorEditPart.VISUAL_ID:
+				return new LogicalConnectorEditPart(view);
+
+			case LogicalConnectorTypeLogicalEditPart.VISUAL_ID:
+				return new LogicalConnectorTypeLogicalEditPart(view);
+
+			}
+		}
+		return createUnrecognizedEditPart(context, model);
+	}
+
+	/**
+	 * @generated
+	 */
+	private EditPart createUnrecognizedEditPart(EditPart context, Object model) {
+		// Handle creation of unrecognized child node EditParts here
+		return null;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static CellEditorLocator getTextCellEditorLocator(
+			ITextAwareEditPart source) {
+		return CellEditorLocatorAccess.INSTANCE
+				.getTextCellEditorLocator(source);
+	}
+
+}

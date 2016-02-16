@@ -1,0 +1,705 @@
+/*
+ * 
+ */
+package dsml.diagram.providers;
+
+import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.gmf.runtime.common.core.service.AbstractProvider;
+import org.eclipse.gmf.runtime.common.core.service.IOperation;
+import org.eclipse.gmf.runtime.common.ui.services.parser.GetParserOperation;
+import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
+import org.eclipse.gmf.runtime.common.ui.services.parser.IParserProvider;
+import org.eclipse.gmf.runtime.common.ui.services.parser.ParserService;
+import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter;
+import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.gmf.tooling.runtime.parsers.EnumParser;
+
+import dsml.DsmlPackage;
+import dsml.diagram.edit.parts.AggregationTypeAggregationEditPart;
+import dsml.diagram.edit.parts.ArithmeticArithmeticEditPart;
+import dsml.diagram.edit.parts.AttributeNameTypeEditPart;
+import dsml.diagram.edit.parts.BinaryOperatorPatternNameEditPart;
+import dsml.diagram.edit.parts.BringGroupBringGroupEditPart;
+import dsml.diagram.edit.parts.ComparisonComparisonEditPart;
+import dsml.diagram.edit.parts.ConditionGroupConditionGroupEditPart;
+import dsml.diagram.edit.parts.EventEventNameEditPart;
+import dsml.diagram.edit.parts.EventPatternEventPatternEditPart;
+import dsml.diagram.edit.parts.LimitValueLimitEditPart;
+import dsml.diagram.edit.parts.LogicalConnectorTypeLogicalEditPart;
+import dsml.diagram.edit.parts.NotDescription2EditPart;
+import dsml.diagram.edit.parts.NotDescriptionEditPart;
+import dsml.diagram.edit.parts.OperatorOperator2EditPart;
+import dsml.diagram.edit.parts.OperatorOperator3EditPart;
+import dsml.diagram.edit.parts.OperatorOperator4EditPart;
+import dsml.diagram.edit.parts.OperatorOperatorEditPart;
+import dsml.diagram.edit.parts.OrderTypeOrderEditPart;
+import dsml.diagram.edit.parts.PatternTimerPatternTimerEditPart;
+import dsml.diagram.edit.parts.RuleRuleNameEditPart;
+import dsml.diagram.edit.parts.TargetAlias2EditPart;
+import dsml.diagram.edit.parts.TargetAliasEditPart;
+import dsml.diagram.edit.parts.UnaryOperatorPatternNameEditPart;
+import dsml.diagram.edit.parts.ValueOperatorValueOperator2EditPart;
+import dsml.diagram.edit.parts.ValueOperatorValueOperator3EditPart;
+import dsml.diagram.edit.parts.ValueOperatorValueOperator4EditPart;
+import dsml.diagram.edit.parts.ValueOperatorValueOperatorEditPart;
+import dsml.diagram.edit.parts.WindowWindowEditPart;
+import dsml.diagram.parsers.MessageFormatParser;
+import dsml.diagram.part.DsmlVisualIDRegistry;
+
+/**
+ * @generated
+ */
+public class DsmlParserProvider extends AbstractProvider implements
+		IParserProvider {
+
+	/**
+	 * @generated
+	 */
+	private IParser eventEventName_5002Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getEventEventName_5002Parser() {
+		if (eventEventName_5002Parser == null) {
+			EAttribute[] features = new EAttribute[] { DsmlPackage.eINSTANCE
+					.getEvent_EventName() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			eventEventName_5002Parser = parser;
+		}
+		return eventEventName_5002Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser ruleRuleName_5022Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getRuleRuleName_5022Parser() {
+		if (ruleRuleName_5022Parser == null) {
+			EAttribute[] features = new EAttribute[] { DsmlPackage.eINSTANCE
+					.getRule_RuleName() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			ruleRuleName_5022Parser = parser;
+		}
+		return ruleRuleName_5022Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser eventPatternEventPattern_5028Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getEventPatternEventPattern_5028Parser() {
+		if (eventPatternEventPattern_5028Parser == null) {
+			EAttribute[] features = new EAttribute[] { DsmlPackage.eINSTANCE
+					.getEventPattern_EventPattern() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			eventPatternEventPattern_5028Parser = parser;
+		}
+		return eventPatternEventPattern_5028Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser windowWindow_5029Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getWindowWindow_5029Parser() {
+		if (windowWindow_5029Parser == null) {
+			EAttribute[] features = new EAttribute[] { DsmlPackage.eINSTANCE
+					.getWindow_Window() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			windowWindow_5029Parser = parser;
+		}
+		return windowWindow_5029Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser attributeNameType_5001Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getAttributeNameType_5001Parser() {
+		if (attributeNameType_5001Parser == null) {
+			EAttribute[] features = new EAttribute[] {
+					DsmlPackage.eINSTANCE.getAttribute_Name(),
+					DsmlPackage.eINSTANCE.getAttribute_Type() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			parser.setViewPattern("{0}:{1}"); //$NON-NLS-1$
+			parser.setEditorPattern("{0}:{1}"); //$NON-NLS-1$
+			parser.setEditPattern("{0}:{1}"); //$NON-NLS-1$
+			attributeNameType_5001Parser = parser;
+		}
+		return attributeNameType_5001Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser targetAlias_5052Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getTargetAlias_5052Parser() {
+		if (targetAlias_5052Parser == null) {
+			EAttribute[] features = new EAttribute[] { DsmlPackage.eINSTANCE
+					.getTarget_Alias() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			targetAlias_5052Parser = parser;
+		}
+		return targetAlias_5052Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser operatorOperator_5003Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getOperatorOperator_5003Parser() {
+		if (operatorOperator_5003Parser == null) {
+			EAttribute[] features = new EAttribute[] { DsmlPackage.eINSTANCE
+					.getOperator_Operator() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			operatorOperator_5003Parser = parser;
+		}
+		return operatorOperator_5003Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser valueOperatorValueOperator_5004Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getValueOperatorValueOperator_5004Parser() {
+		if (valueOperatorValueOperator_5004Parser == null) {
+			EAttribute[] features = new EAttribute[] { DsmlPackage.eINSTANCE
+					.getValueOperator_ValueOperator() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			valueOperatorValueOperator_5004Parser = parser;
+		}
+		return valueOperatorValueOperator_5004Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser conditionGroupConditionGroup_5053Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getConditionGroupConditionGroup_5053Parser() {
+		if (conditionGroupConditionGroup_5053Parser == null) {
+			EAttribute[] features = new EAttribute[] { DsmlPackage.eINSTANCE
+					.getConditionGroup_ConditionGroup() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			conditionGroupConditionGroup_5053Parser = parser;
+		}
+		return conditionGroupConditionGroup_5053Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser operatorOperator_5007Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getOperatorOperator_5007Parser() {
+		if (operatorOperator_5007Parser == null) {
+			EAttribute[] features = new EAttribute[] { DsmlPackage.eINSTANCE
+					.getOperator_Operator() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			operatorOperator_5007Parser = parser;
+		}
+		return operatorOperator_5007Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser valueOperatorValueOperator_5008Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getValueOperatorValueOperator_5008Parser() {
+		if (valueOperatorValueOperator_5008Parser == null) {
+			EAttribute[] features = new EAttribute[] { DsmlPackage.eINSTANCE
+					.getValueOperator_ValueOperator() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			valueOperatorValueOperator_5008Parser = parser;
+		}
+		return valueOperatorValueOperator_5008Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser bringGroupBringGroup_5059Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getBringGroupBringGroup_5059Parser() {
+		if (bringGroupBringGroup_5059Parser == null) {
+			EAttribute[] features = new EAttribute[] { DsmlPackage.eINSTANCE
+					.getBringGroup_BringGroup() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			bringGroupBringGroup_5059Parser = parser;
+		}
+		return bringGroupBringGroup_5059Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser operatorOperator_5057Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getOperatorOperator_5057Parser() {
+		if (operatorOperator_5057Parser == null) {
+			EAttribute[] features = new EAttribute[] { DsmlPackage.eINSTANCE
+					.getOperator_Operator() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			operatorOperator_5057Parser = parser;
+		}
+		return operatorOperator_5057Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser valueOperatorValueOperator_5058Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getValueOperatorValueOperator_5058Parser() {
+		if (valueOperatorValueOperator_5058Parser == null) {
+			EAttribute[] features = new EAttribute[] { DsmlPackage.eINSTANCE
+					.getValueOperator_ValueOperator() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			valueOperatorValueOperator_5058Parser = parser;
+		}
+		return valueOperatorValueOperator_5058Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser notDescription_5054Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getNotDescription_5054Parser() {
+		if (notDescription_5054Parser == null) {
+			EAttribute[] features = new EAttribute[] { DsmlPackage.eINSTANCE
+					.getNot_Description() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			notDescription_5054Parser = parser;
+		}
+		return notDescription_5054Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser operatorOperator_5060Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getOperatorOperator_5060Parser() {
+		if (operatorOperator_5060Parser == null) {
+			EAttribute[] features = new EAttribute[] { DsmlPackage.eINSTANCE
+					.getOperator_Operator() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			operatorOperator_5060Parser = parser;
+		}
+		return operatorOperator_5060Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser valueOperatorValueOperator_5061Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getValueOperatorValueOperator_5061Parser() {
+		if (valueOperatorValueOperator_5061Parser == null) {
+			EAttribute[] features = new EAttribute[] { DsmlPackage.eINSTANCE
+					.getValueOperator_ValueOperator() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			valueOperatorValueOperator_5061Parser = parser;
+		}
+		return valueOperatorValueOperator_5061Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser aggregationTypeAggregation_5055Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getAggregationTypeAggregation_5055Parser() {
+		if (aggregationTypeAggregation_5055Parser == null) {
+			EAttribute editableFeature = DsmlPackage.eINSTANCE
+					.getAggregation_TypeAggregation();
+			EnumParser parser = new EnumParser(editableFeature);
+			aggregationTypeAggregation_5055Parser = parser;
+		}
+		return aggregationTypeAggregation_5055Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser orderTypeOrder_5056Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getOrderTypeOrder_5056Parser() {
+		if (orderTypeOrder_5056Parser == null) {
+			EAttribute editableFeature = DsmlPackage.eINSTANCE
+					.getOrder_TypeOrder();
+			EnumParser parser = new EnumParser(editableFeature);
+			orderTypeOrder_5056Parser = parser;
+		}
+		return orderTypeOrder_5056Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser limitValueLimit_5020Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getLimitValueLimit_5020Parser() {
+		if (limitValueLimit_5020Parser == null) {
+			EAttribute[] features = new EAttribute[] { DsmlPackage.eINSTANCE
+					.getLimit_ValueLimit() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			limitValueLimit_5020Parser = parser;
+		}
+		return limitValueLimit_5020Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser targetAlias_5042Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getTargetAlias_5042Parser() {
+		if (targetAlias_5042Parser == null) {
+			EAttribute[] features = new EAttribute[] { DsmlPackage.eINSTANCE
+					.getTarget_Alias() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			targetAlias_5042Parser = parser;
+		}
+		return targetAlias_5042Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser notDescription_5051Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getNotDescription_5051Parser() {
+		if (notDescription_5051Parser == null) {
+			EAttribute[] features = new EAttribute[] { DsmlPackage.eINSTANCE
+					.getNot_Description() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			notDescription_5051Parser = parser;
+		}
+		return notDescription_5051Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser unaryOperatorPatternName_5047Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getUnaryOperatorPatternName_5047Parser() {
+		if (unaryOperatorPatternName_5047Parser == null) {
+			EAttribute[] features = new EAttribute[] { DsmlPackage.eINSTANCE
+					.getUnaryOperatorPattern_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			unaryOperatorPatternName_5047Parser = parser;
+		}
+		return unaryOperatorPatternName_5047Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser binaryOperatorPatternName_5048Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getBinaryOperatorPatternName_5048Parser() {
+		if (binaryOperatorPatternName_5048Parser == null) {
+			EAttribute[] features = new EAttribute[] { DsmlPackage.eINSTANCE
+					.getBinaryOperatorPattern_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			binaryOperatorPatternName_5048Parser = parser;
+		}
+		return binaryOperatorPatternName_5048Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser patternTimerPatternTimer_5049Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getPatternTimerPatternTimer_5049Parser() {
+		if (patternTimerPatternTimer_5049Parser == null) {
+			EAttribute[] features = new EAttribute[] { DsmlPackage.eINSTANCE
+					.getPatternTimer_PatternTimer() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			patternTimerPatternTimer_5049Parser = parser;
+		}
+		return patternTimerPatternTimer_5049Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser comparisonComparison_6001Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getComparisonComparison_6001Parser() {
+		if (comparisonComparison_6001Parser == null) {
+			EAttribute editableFeature = DsmlPackage.eINSTANCE
+					.getComparison_Comparison();
+			EnumParser parser = new EnumParser(editableFeature);
+			comparisonComparison_6001Parser = parser;
+		}
+		return comparisonComparison_6001Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser arithmeticArithmetic_6002Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getArithmeticArithmetic_6002Parser() {
+		if (arithmeticArithmetic_6002Parser == null) {
+			EAttribute editableFeature = DsmlPackage.eINSTANCE
+					.getArithmetic_Arithmetic();
+			EnumParser parser = new EnumParser(editableFeature);
+			arithmeticArithmetic_6002Parser = parser;
+		}
+		return arithmeticArithmetic_6002Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser logicalConnectorTypeLogical_6003Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getLogicalConnectorTypeLogical_6003Parser() {
+		if (logicalConnectorTypeLogical_6003Parser == null) {
+			EAttribute editableFeature = DsmlPackage.eINSTANCE
+					.getLogicalConnector_TypeLogical();
+			EnumParser parser = new EnumParser(editableFeature);
+			logicalConnectorTypeLogical_6003Parser = parser;
+		}
+		return logicalConnectorTypeLogical_6003Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser getParser(int visualID) {
+		switch (visualID) {
+		case EventEventNameEditPart.VISUAL_ID:
+			return getEventEventName_5002Parser();
+		case RuleRuleNameEditPart.VISUAL_ID:
+			return getRuleRuleName_5022Parser();
+		case EventPatternEventPatternEditPart.VISUAL_ID:
+			return getEventPatternEventPattern_5028Parser();
+		case WindowWindowEditPart.VISUAL_ID:
+			return getWindowWindow_5029Parser();
+		case AttributeNameTypeEditPart.VISUAL_ID:
+			return getAttributeNameType_5001Parser();
+		case TargetAliasEditPart.VISUAL_ID:
+			return getTargetAlias_5052Parser();
+		case OperatorOperatorEditPart.VISUAL_ID:
+			return getOperatorOperator_5003Parser();
+		case ValueOperatorValueOperatorEditPart.VISUAL_ID:
+			return getValueOperatorValueOperator_5004Parser();
+		case ConditionGroupConditionGroupEditPart.VISUAL_ID:
+			return getConditionGroupConditionGroup_5053Parser();
+		case OperatorOperator2EditPart.VISUAL_ID:
+			return getOperatorOperator_5007Parser();
+		case ValueOperatorValueOperator2EditPart.VISUAL_ID:
+			return getValueOperatorValueOperator_5008Parser();
+		case BringGroupBringGroupEditPart.VISUAL_ID:
+			return getBringGroupBringGroup_5059Parser();
+		case OperatorOperator3EditPart.VISUAL_ID:
+			return getOperatorOperator_5057Parser();
+		case ValueOperatorValueOperator3EditPart.VISUAL_ID:
+			return getValueOperatorValueOperator_5058Parser();
+		case NotDescriptionEditPart.VISUAL_ID:
+			return getNotDescription_5054Parser();
+		case OperatorOperator4EditPart.VISUAL_ID:
+			return getOperatorOperator_5060Parser();
+		case ValueOperatorValueOperator4EditPart.VISUAL_ID:
+			return getValueOperatorValueOperator_5061Parser();
+
+		case AggregationTypeAggregationEditPart.VISUAL_ID:
+			return getAggregationTypeAggregation_5055Parser();
+
+		case OrderTypeOrderEditPart.VISUAL_ID:
+			return getOrderTypeOrder_5056Parser();
+		case LimitValueLimitEditPart.VISUAL_ID:
+			return getLimitValueLimit_5020Parser();
+		case TargetAlias2EditPart.VISUAL_ID:
+			return getTargetAlias_5042Parser();
+		case NotDescription2EditPart.VISUAL_ID:
+			return getNotDescription_5051Parser();
+		case UnaryOperatorPatternNameEditPart.VISUAL_ID:
+			return getUnaryOperatorPatternName_5047Parser();
+		case BinaryOperatorPatternNameEditPart.VISUAL_ID:
+			return getBinaryOperatorPatternName_5048Parser();
+		case PatternTimerPatternTimerEditPart.VISUAL_ID:
+			return getPatternTimerPatternTimer_5049Parser();
+
+		case ComparisonComparisonEditPart.VISUAL_ID:
+			return getComparisonComparison_6001Parser();
+
+		case ArithmeticArithmeticEditPart.VISUAL_ID:
+			return getArithmeticArithmetic_6002Parser();
+
+		case LogicalConnectorTypeLogicalEditPart.VISUAL_ID:
+			return getLogicalConnectorTypeLogical_6003Parser();
+		}
+		return null;
+	}
+
+	/**
+	 * Utility method that consults ParserService
+	 * @generated
+	 */
+	public static IParser getParser(IElementType type, EObject object,
+			String parserHint) {
+		return ParserService.getInstance().getParser(
+				new HintAdapter(type, object, parserHint));
+	}
+
+	/**
+	 * @generated
+	 */
+	public IParser getParser(IAdaptable hint) {
+		String vid = (String) hint.getAdapter(String.class);
+		if (vid != null) {
+			return getParser(DsmlVisualIDRegistry.getVisualID(vid));
+		}
+		View view = (View) hint.getAdapter(View.class);
+		if (view != null) {
+			return getParser(DsmlVisualIDRegistry.getVisualID(view));
+		}
+		return null;
+	}
+
+	/**
+	 * @generated
+	 */
+	public boolean provides(IOperation operation) {
+		if (operation instanceof GetParserOperation) {
+			IAdaptable hint = ((GetParserOperation) operation).getHint();
+			if (DsmlElementTypes.getElement(hint) == null) {
+				return false;
+			}
+			return getParser(hint) != null;
+		}
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static class HintAdapter extends ParserHintAdapter {
+
+		/**
+		 * @generated
+		 */
+		private final IElementType elementType;
+
+		/**
+		 * @generated
+		 */
+		public HintAdapter(IElementType type, EObject object, String parserHint) {
+			super(object, parserHint);
+			assert type != null;
+			elementType = type;
+		}
+
+		/**
+		 * @generated
+		 */
+		public Object getAdapter(Class adapter) {
+			if (IElementType.class.equals(adapter)) {
+				return elementType;
+			}
+			return super.getAdapter(adapter);
+		}
+	}
+
+}

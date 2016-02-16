@@ -1,0 +1,722 @@
+/*
+ * 
+ */
+package dsml.diagram.providers;
+
+import java.util.HashSet;
+import java.util.IdentityHashMap;
+import java.util.Map;
+import java.util.Set;
+
+import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.emf.ecore.ENamedElement;
+import org.eclipse.gmf.runtime.emf.type.core.ElementTypeRegistry;
+import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.eclipse.gmf.tooling.runtime.providers.DiagramElementTypeImages;
+import org.eclipse.gmf.tooling.runtime.providers.DiagramElementTypes;
+import org.eclipse.jface.resource.ImageDescriptor;
+import org.eclipse.swt.graphics.Image;
+
+import dsml.DsmlPackage;
+import dsml.diagram.edit.parts.Aggregation2EditPart;
+import dsml.diagram.edit.parts.Aggregation3EditPart;
+import dsml.diagram.edit.parts.Aggregation4EditPart;
+import dsml.diagram.edit.parts.AggregationEditPart;
+import dsml.diagram.edit.parts.AreaDesenhoEditPart;
+import dsml.diagram.edit.parts.ArithmeticEditPart;
+import dsml.diagram.edit.parts.AttributeEditPart;
+import dsml.diagram.edit.parts.BinaryOperatorPattern2EditPart;
+import dsml.diagram.edit.parts.BinaryOperatorPattern3EditPart;
+import dsml.diagram.edit.parts.BinaryOperatorPattern4EditPart;
+import dsml.diagram.edit.parts.BinaryOperatorPatternEditPart;
+import dsml.diagram.edit.parts.ComparisonEditPart;
+import dsml.diagram.edit.parts.ConditionGroup2EditPart;
+import dsml.diagram.edit.parts.ConditionGroup3EditPart;
+import dsml.diagram.edit.parts.ConditionGroup4EditPart;
+import dsml.diagram.edit.parts.ConditionGroupEditPart;
+import dsml.diagram.edit.parts.EventEditPart;
+import dsml.diagram.edit.parts.EventPatternEditPart;
+import dsml.diagram.edit.parts.FollowedbyEditPart;
+import dsml.diagram.edit.parts.LimitEditPart;
+import dsml.diagram.edit.parts.LinkEditPart;
+import dsml.diagram.edit.parts.LogicalConnectorEditPart;
+import dsml.diagram.edit.parts.Not2EditPart;
+import dsml.diagram.edit.parts.Not3EditPart;
+import dsml.diagram.edit.parts.Not4EditPart;
+import dsml.diagram.edit.parts.NotEditPart;
+import dsml.diagram.edit.parts.Operator2EditPart;
+import dsml.diagram.edit.parts.Operator3EditPart;
+import dsml.diagram.edit.parts.Operator4EditPart;
+import dsml.diagram.edit.parts.Operator5EditPart;
+import dsml.diagram.edit.parts.OperatorEditPart;
+import dsml.diagram.edit.parts.Order2EditPart;
+import dsml.diagram.edit.parts.Order3EditPart;
+import dsml.diagram.edit.parts.Order4EditPart;
+import dsml.diagram.edit.parts.OrderEditPart;
+import dsml.diagram.edit.parts.PatternTimer2EditPart;
+import dsml.diagram.edit.parts.PatternTimer3EditPart;
+import dsml.diagram.edit.parts.PatternTimer4EditPart;
+import dsml.diagram.edit.parts.PatternTimerEditPart;
+import dsml.diagram.edit.parts.RuleEditPart;
+import dsml.diagram.edit.parts.Target2EditPart;
+import dsml.diagram.edit.parts.Target3EditPart;
+import dsml.diagram.edit.parts.Target4EditPart;
+import dsml.diagram.edit.parts.TargetEditPart;
+import dsml.diagram.edit.parts.UnaryOperatorPattern2EditPart;
+import dsml.diagram.edit.parts.UnaryOperatorPattern3EditPart;
+import dsml.diagram.edit.parts.UnaryOperatorPattern4EditPart;
+import dsml.diagram.edit.parts.UnaryOperatorPatternEditPart;
+import dsml.diagram.edit.parts.ValueOperator2EditPart;
+import dsml.diagram.edit.parts.ValueOperator3EditPart;
+import dsml.diagram.edit.parts.ValueOperator4EditPart;
+import dsml.diagram.edit.parts.ValueOperator5EditPart;
+import dsml.diagram.edit.parts.ValueOperatorEditPart;
+import dsml.diagram.edit.parts.WindowEditPart;
+import dsml.diagram.part.DsmlDiagramEditorPlugin;
+
+/**
+ * @generated
+ */
+public class DsmlElementTypes {
+
+	/**
+	 * @generated
+	 */
+	private DsmlElementTypes() {
+	}
+
+	/**
+	 * @generated
+	 */
+	private static Map<IElementType, ENamedElement> elements;
+
+	/**
+	 * @generated
+	 */
+	private static DiagramElementTypeImages elementTypeImages = new DiagramElementTypeImages(
+			DsmlDiagramEditorPlugin.getInstance()
+					.getItemProvidersAdapterFactory());
+
+	/**
+	 * @generated
+	 */
+	private static Set<IElementType> KNOWN_ELEMENT_TYPES;
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType AreaDesenho_1000 = getElementType("br.ufpe.cin.dsml.cep.diagram.AreaDesenho_1000"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType Aggregation_2017 = getElementType("br.ufpe.cin.dsml.cep.diagram.Aggregation_2017"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType Order_2018 = getElementType("br.ufpe.cin.dsml.cep.diagram.Order_2018"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType Operator_2019 = getElementType("br.ufpe.cin.dsml.cep.diagram.Operator_2019"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType ValueOperator_2020 = getElementType("br.ufpe.cin.dsml.cep.diagram.ValueOperator_2020"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType UnaryOperatorPattern_2021 = getElementType("br.ufpe.cin.dsml.cep.diagram.UnaryOperatorPattern_2021"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType BinaryOperatorPattern_2022 = getElementType("br.ufpe.cin.dsml.cep.diagram.BinaryOperatorPattern_2022"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType PatternTimer_2023 = getElementType("br.ufpe.cin.dsml.cep.diagram.PatternTimer_2023"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType ConditionGroup_2024 = getElementType("br.ufpe.cin.dsml.cep.diagram.ConditionGroup_2024"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType Target_2026 = getElementType("br.ufpe.cin.dsml.cep.diagram.Target_2026"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType Not_2025 = getElementType("br.ufpe.cin.dsml.cep.diagram.Not_2025"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType Rule_2013 = getElementType("br.ufpe.cin.dsml.cep.diagram.Rule_2013"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType EventPattern_2014 = getElementType("br.ufpe.cin.dsml.cep.diagram.EventPattern_2014"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType Window_2015 = getElementType("br.ufpe.cin.dsml.cep.diagram.Window_2015"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType Event_2016 = getElementType("br.ufpe.cin.dsml.cep.diagram.Event_2016"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType Limit_3004 = getElementType("br.ufpe.cin.dsml.cep.diagram.Limit_3004"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType Operator_3005 = getElementType("br.ufpe.cin.dsml.cep.diagram.Operator_3005"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType ValueOperator_3006 = getElementType("br.ufpe.cin.dsml.cep.diagram.ValueOperator_3006"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType Aggregation_3035 = getElementType("br.ufpe.cin.dsml.cep.diagram.Aggregation_3035"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType Order_3036 = getElementType("br.ufpe.cin.dsml.cep.diagram.Order_3036"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType Operator_3037 = getElementType("br.ufpe.cin.dsml.cep.diagram.Operator_3037"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType ValueOperator_3038 = getElementType("br.ufpe.cin.dsml.cep.diagram.ValueOperator_3038"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType UnaryOperatorPattern_3039 = getElementType("br.ufpe.cin.dsml.cep.diagram.UnaryOperatorPattern_3039"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType BinaryOperatorPattern_3040 = getElementType("br.ufpe.cin.dsml.cep.diagram.BinaryOperatorPattern_3040"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType PatternTimer_3041 = getElementType("br.ufpe.cin.dsml.cep.diagram.PatternTimer_3041"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType ConditionGroup_3042 = getElementType("br.ufpe.cin.dsml.cep.diagram.ConditionGroup_3042"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType Target_3043 = getElementType("br.ufpe.cin.dsml.cep.diagram.Target_3043"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType Not_3044 = getElementType("br.ufpe.cin.dsml.cep.diagram.Not_3044"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType Aggregation_3016 = getElementType("br.ufpe.cin.dsml.cep.diagram.Aggregation_3016"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType Order_3017 = getElementType("br.ufpe.cin.dsml.cep.diagram.Order_3017"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType Operator_3018 = getElementType("br.ufpe.cin.dsml.cep.diagram.Operator_3018"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType ValueOperator_3019 = getElementType("br.ufpe.cin.dsml.cep.diagram.ValueOperator_3019"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType UnaryOperatorPattern_3020 = getElementType("br.ufpe.cin.dsml.cep.diagram.UnaryOperatorPattern_3020"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType BinaryOperatorPattern_3021 = getElementType("br.ufpe.cin.dsml.cep.diagram.BinaryOperatorPattern_3021"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType PatternTimer_3022 = getElementType("br.ufpe.cin.dsml.cep.diagram.PatternTimer_3022"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType ConditionGroup_3023 = getElementType("br.ufpe.cin.dsml.cep.diagram.ConditionGroup_3023"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType Target_3045 = getElementType("br.ufpe.cin.dsml.cep.diagram.Target_3045"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType Not_3024 = getElementType("br.ufpe.cin.dsml.cep.diagram.Not_3024"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType Aggregation_3025 = getElementType("br.ufpe.cin.dsml.cep.diagram.Aggregation_3025"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType Order_3026 = getElementType("br.ufpe.cin.dsml.cep.diagram.Order_3026"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType Operator_3027 = getElementType("br.ufpe.cin.dsml.cep.diagram.Operator_3027"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType ValueOperator_3028 = getElementType("br.ufpe.cin.dsml.cep.diagram.ValueOperator_3028"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType UnaryOperatorPattern_3029 = getElementType("br.ufpe.cin.dsml.cep.diagram.UnaryOperatorPattern_3029"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType BinaryOperatorPattern_3030 = getElementType("br.ufpe.cin.dsml.cep.diagram.BinaryOperatorPattern_3030"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType PatternTimer_3031 = getElementType("br.ufpe.cin.dsml.cep.diagram.PatternTimer_3031"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType ConditionGroup_3032 = getElementType("br.ufpe.cin.dsml.cep.diagram.ConditionGroup_3032"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType Target_3046 = getElementType("br.ufpe.cin.dsml.cep.diagram.Target_3046"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType Not_3033 = getElementType("br.ufpe.cin.dsml.cep.diagram.Not_3033"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType Attribute_3034 = getElementType("br.ufpe.cin.dsml.cep.diagram.Attribute_3034"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType Link_4001 = getElementType("br.ufpe.cin.dsml.cep.diagram.Link_4001"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType Comparison_4002 = getElementType("br.ufpe.cin.dsml.cep.diagram.Comparison_4002"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType Arithmetic_4003 = getElementType("br.ufpe.cin.dsml.cep.diagram.Arithmetic_4003"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType Followedby_4004 = getElementType("br.ufpe.cin.dsml.cep.diagram.Followedby_4004"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType LogicalConnector_4005 = getElementType("br.ufpe.cin.dsml.cep.diagram.LogicalConnector_4005"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static ImageDescriptor getImageDescriptor(ENamedElement element) {
+		return elementTypeImages.getImageDescriptor(element);
+	}
+
+	/**
+	 * @generated
+	 */
+	public static Image getImage(ENamedElement element) {
+		return elementTypeImages.getImage(element);
+	}
+
+	/**
+	 * @generated
+	 */
+	public static ImageDescriptor getImageDescriptor(IAdaptable hint) {
+		return getImageDescriptor(getElement(hint));
+	}
+
+	/**
+	 * @generated
+	 */
+	public static Image getImage(IAdaptable hint) {
+		return getImage(getElement(hint));
+	}
+
+	/**
+	 * Returns 'type' of the ecore object associated with the hint.
+	 * 
+	 * @generated
+	 */
+	public static ENamedElement getElement(IAdaptable hint) {
+		Object type = hint.getAdapter(IElementType.class);
+		if (elements == null) {
+			elements = new IdentityHashMap<IElementType, ENamedElement>();
+
+			elements.put(AreaDesenho_1000,
+					DsmlPackage.eINSTANCE.getAreaDesenho());
+
+			elements.put(Aggregation_2017,
+					DsmlPackage.eINSTANCE.getAggregation());
+
+			elements.put(Order_2018, DsmlPackage.eINSTANCE.getOrder());
+
+			elements.put(Operator_2019, DsmlPackage.eINSTANCE.getOperator());
+
+			elements.put(ValueOperator_2020,
+					DsmlPackage.eINSTANCE.getValueOperator());
+
+			elements.put(UnaryOperatorPattern_2021,
+					DsmlPackage.eINSTANCE.getUnaryOperatorPattern());
+
+			elements.put(BinaryOperatorPattern_2022,
+					DsmlPackage.eINSTANCE.getBinaryOperatorPattern());
+
+			elements.put(PatternTimer_2023,
+					DsmlPackage.eINSTANCE.getPatternTimer());
+
+			elements.put(ConditionGroup_2024,
+					DsmlPackage.eINSTANCE.getConditionGroup());
+
+			elements.put(Target_2026, DsmlPackage.eINSTANCE.getTarget());
+
+			elements.put(Not_2025, DsmlPackage.eINSTANCE.getNot());
+
+			elements.put(Rule_2013, DsmlPackage.eINSTANCE.getRule());
+
+			elements.put(EventPattern_2014,
+					DsmlPackage.eINSTANCE.getEventPattern());
+
+			elements.put(Window_2015, DsmlPackage.eINSTANCE.getWindow());
+
+			elements.put(Event_2016, DsmlPackage.eINSTANCE.getEvent());
+
+			elements.put(Limit_3004, DsmlPackage.eINSTANCE.getLimit());
+
+			elements.put(Operator_3005, DsmlPackage.eINSTANCE.getOperator());
+
+			elements.put(ValueOperator_3006,
+					DsmlPackage.eINSTANCE.getValueOperator());
+
+			elements.put(Aggregation_3035,
+					DsmlPackage.eINSTANCE.getAggregation());
+
+			elements.put(Order_3036, DsmlPackage.eINSTANCE.getOrder());
+
+			elements.put(Operator_3037, DsmlPackage.eINSTANCE.getOperator());
+
+			elements.put(ValueOperator_3038,
+					DsmlPackage.eINSTANCE.getValueOperator());
+
+			elements.put(UnaryOperatorPattern_3039,
+					DsmlPackage.eINSTANCE.getUnaryOperatorPattern());
+
+			elements.put(BinaryOperatorPattern_3040,
+					DsmlPackage.eINSTANCE.getBinaryOperatorPattern());
+
+			elements.put(PatternTimer_3041,
+					DsmlPackage.eINSTANCE.getPatternTimer());
+
+			elements.put(ConditionGroup_3042,
+					DsmlPackage.eINSTANCE.getConditionGroup());
+
+			elements.put(Target_3043, DsmlPackage.eINSTANCE.getTarget());
+
+			elements.put(Not_3044, DsmlPackage.eINSTANCE.getNot());
+
+			elements.put(Aggregation_3016,
+					DsmlPackage.eINSTANCE.getAggregation());
+
+			elements.put(Order_3017, DsmlPackage.eINSTANCE.getOrder());
+
+			elements.put(Operator_3018, DsmlPackage.eINSTANCE.getOperator());
+
+			elements.put(ValueOperator_3019,
+					DsmlPackage.eINSTANCE.getValueOperator());
+
+			elements.put(UnaryOperatorPattern_3020,
+					DsmlPackage.eINSTANCE.getUnaryOperatorPattern());
+
+			elements.put(BinaryOperatorPattern_3021,
+					DsmlPackage.eINSTANCE.getBinaryOperatorPattern());
+
+			elements.put(PatternTimer_3022,
+					DsmlPackage.eINSTANCE.getPatternTimer());
+
+			elements.put(ConditionGroup_3023,
+					DsmlPackage.eINSTANCE.getConditionGroup());
+
+			elements.put(Target_3045, DsmlPackage.eINSTANCE.getTarget());
+
+			elements.put(Not_3024, DsmlPackage.eINSTANCE.getNot());
+
+			elements.put(Aggregation_3025,
+					DsmlPackage.eINSTANCE.getAggregation());
+
+			elements.put(Order_3026, DsmlPackage.eINSTANCE.getOrder());
+
+			elements.put(Operator_3027, DsmlPackage.eINSTANCE.getOperator());
+
+			elements.put(ValueOperator_3028,
+					DsmlPackage.eINSTANCE.getValueOperator());
+
+			elements.put(UnaryOperatorPattern_3029,
+					DsmlPackage.eINSTANCE.getUnaryOperatorPattern());
+
+			elements.put(BinaryOperatorPattern_3030,
+					DsmlPackage.eINSTANCE.getBinaryOperatorPattern());
+
+			elements.put(PatternTimer_3031,
+					DsmlPackage.eINSTANCE.getPatternTimer());
+
+			elements.put(ConditionGroup_3032,
+					DsmlPackage.eINSTANCE.getConditionGroup());
+
+			elements.put(Target_3046, DsmlPackage.eINSTANCE.getTarget());
+
+			elements.put(Not_3033, DsmlPackage.eINSTANCE.getNot());
+
+			elements.put(Attribute_3034, DsmlPackage.eINSTANCE.getAttribute());
+
+			elements.put(Link_4001, DsmlPackage.eINSTANCE.getLink());
+
+			elements.put(Comparison_4002, DsmlPackage.eINSTANCE.getComparison());
+
+			elements.put(Arithmetic_4003, DsmlPackage.eINSTANCE.getArithmetic());
+
+			elements.put(Followedby_4004, DsmlPackage.eINSTANCE.getFollowedby());
+
+			elements.put(LogicalConnector_4005,
+					DsmlPackage.eINSTANCE.getLogicalConnector());
+		}
+		return (ENamedElement) elements.get(type);
+	}
+
+	/**
+	 * @generated
+	 */
+	private static IElementType getElementType(String id) {
+		return ElementTypeRegistry.getInstance().getType(id);
+	}
+
+	/**
+	 * @generated
+	 */
+	public static boolean isKnownElementType(IElementType elementType) {
+		if (KNOWN_ELEMENT_TYPES == null) {
+			KNOWN_ELEMENT_TYPES = new HashSet<IElementType>();
+			KNOWN_ELEMENT_TYPES.add(AreaDesenho_1000);
+			KNOWN_ELEMENT_TYPES.add(Aggregation_2017);
+			KNOWN_ELEMENT_TYPES.add(Order_2018);
+			KNOWN_ELEMENT_TYPES.add(Operator_2019);
+			KNOWN_ELEMENT_TYPES.add(ValueOperator_2020);
+			KNOWN_ELEMENT_TYPES.add(UnaryOperatorPattern_2021);
+			KNOWN_ELEMENT_TYPES.add(BinaryOperatorPattern_2022);
+			KNOWN_ELEMENT_TYPES.add(PatternTimer_2023);
+			KNOWN_ELEMENT_TYPES.add(ConditionGroup_2024);
+			KNOWN_ELEMENT_TYPES.add(Target_2026);
+			KNOWN_ELEMENT_TYPES.add(Not_2025);
+			KNOWN_ELEMENT_TYPES.add(Rule_2013);
+			KNOWN_ELEMENT_TYPES.add(EventPattern_2014);
+			KNOWN_ELEMENT_TYPES.add(Window_2015);
+			KNOWN_ELEMENT_TYPES.add(Event_2016);
+			KNOWN_ELEMENT_TYPES.add(Limit_3004);
+			KNOWN_ELEMENT_TYPES.add(Operator_3005);
+			KNOWN_ELEMENT_TYPES.add(ValueOperator_3006);
+			KNOWN_ELEMENT_TYPES.add(Aggregation_3035);
+			KNOWN_ELEMENT_TYPES.add(Order_3036);
+			KNOWN_ELEMENT_TYPES.add(Operator_3037);
+			KNOWN_ELEMENT_TYPES.add(ValueOperator_3038);
+			KNOWN_ELEMENT_TYPES.add(UnaryOperatorPattern_3039);
+			KNOWN_ELEMENT_TYPES.add(BinaryOperatorPattern_3040);
+			KNOWN_ELEMENT_TYPES.add(PatternTimer_3041);
+			KNOWN_ELEMENT_TYPES.add(ConditionGroup_3042);
+			KNOWN_ELEMENT_TYPES.add(Target_3043);
+			KNOWN_ELEMENT_TYPES.add(Not_3044);
+			KNOWN_ELEMENT_TYPES.add(Aggregation_3016);
+			KNOWN_ELEMENT_TYPES.add(Order_3017);
+			KNOWN_ELEMENT_TYPES.add(Operator_3018);
+			KNOWN_ELEMENT_TYPES.add(ValueOperator_3019);
+			KNOWN_ELEMENT_TYPES.add(UnaryOperatorPattern_3020);
+			KNOWN_ELEMENT_TYPES.add(BinaryOperatorPattern_3021);
+			KNOWN_ELEMENT_TYPES.add(PatternTimer_3022);
+			KNOWN_ELEMENT_TYPES.add(ConditionGroup_3023);
+			KNOWN_ELEMENT_TYPES.add(Target_3045);
+			KNOWN_ELEMENT_TYPES.add(Not_3024);
+			KNOWN_ELEMENT_TYPES.add(Aggregation_3025);
+			KNOWN_ELEMENT_TYPES.add(Order_3026);
+			KNOWN_ELEMENT_TYPES.add(Operator_3027);
+			KNOWN_ELEMENT_TYPES.add(ValueOperator_3028);
+			KNOWN_ELEMENT_TYPES.add(UnaryOperatorPattern_3029);
+			KNOWN_ELEMENT_TYPES.add(BinaryOperatorPattern_3030);
+			KNOWN_ELEMENT_TYPES.add(PatternTimer_3031);
+			KNOWN_ELEMENT_TYPES.add(ConditionGroup_3032);
+			KNOWN_ELEMENT_TYPES.add(Target_3046);
+			KNOWN_ELEMENT_TYPES.add(Not_3033);
+			KNOWN_ELEMENT_TYPES.add(Attribute_3034);
+			KNOWN_ELEMENT_TYPES.add(Link_4001);
+			KNOWN_ELEMENT_TYPES.add(Comparison_4002);
+			KNOWN_ELEMENT_TYPES.add(Arithmetic_4003);
+			KNOWN_ELEMENT_TYPES.add(Followedby_4004);
+			KNOWN_ELEMENT_TYPES.add(LogicalConnector_4005);
+		}
+		return KNOWN_ELEMENT_TYPES.contains(elementType);
+	}
+
+	/**
+	 * @generated
+	 */
+	public static IElementType getElementType(int visualID) {
+		switch (visualID) {
+		case AreaDesenhoEditPart.VISUAL_ID:
+			return AreaDesenho_1000;
+		case AggregationEditPart.VISUAL_ID:
+			return Aggregation_2017;
+		case OrderEditPart.VISUAL_ID:
+			return Order_2018;
+		case OperatorEditPart.VISUAL_ID:
+			return Operator_2019;
+		case ValueOperatorEditPart.VISUAL_ID:
+			return ValueOperator_2020;
+		case UnaryOperatorPatternEditPart.VISUAL_ID:
+			return UnaryOperatorPattern_2021;
+		case BinaryOperatorPatternEditPart.VISUAL_ID:
+			return BinaryOperatorPattern_2022;
+		case PatternTimerEditPart.VISUAL_ID:
+			return PatternTimer_2023;
+		case ConditionGroupEditPart.VISUAL_ID:
+			return ConditionGroup_2024;
+		case TargetEditPart.VISUAL_ID:
+			return Target_2026;
+		case NotEditPart.VISUAL_ID:
+			return Not_2025;
+		case RuleEditPart.VISUAL_ID:
+			return Rule_2013;
+		case EventPatternEditPart.VISUAL_ID:
+			return EventPattern_2014;
+		case WindowEditPart.VISUAL_ID:
+			return Window_2015;
+		case EventEditPart.VISUAL_ID:
+			return Event_2016;
+		case LimitEditPart.VISUAL_ID:
+			return Limit_3004;
+		case Operator2EditPart.VISUAL_ID:
+			return Operator_3005;
+		case ValueOperator2EditPart.VISUAL_ID:
+			return ValueOperator_3006;
+		case Aggregation2EditPart.VISUAL_ID:
+			return Aggregation_3035;
+		case Order2EditPart.VISUAL_ID:
+			return Order_3036;
+		case Operator3EditPart.VISUAL_ID:
+			return Operator_3037;
+		case ValueOperator3EditPart.VISUAL_ID:
+			return ValueOperator_3038;
+		case UnaryOperatorPattern2EditPart.VISUAL_ID:
+			return UnaryOperatorPattern_3039;
+		case BinaryOperatorPattern2EditPart.VISUAL_ID:
+			return BinaryOperatorPattern_3040;
+		case PatternTimer2EditPart.VISUAL_ID:
+			return PatternTimer_3041;
+		case ConditionGroup2EditPart.VISUAL_ID:
+			return ConditionGroup_3042;
+		case Target2EditPart.VISUAL_ID:
+			return Target_3043;
+		case Not2EditPart.VISUAL_ID:
+			return Not_3044;
+		case Aggregation3EditPart.VISUAL_ID:
+			return Aggregation_3016;
+		case Order3EditPart.VISUAL_ID:
+			return Order_3017;
+		case Operator4EditPart.VISUAL_ID:
+			return Operator_3018;
+		case ValueOperator4EditPart.VISUAL_ID:
+			return ValueOperator_3019;
+		case UnaryOperatorPattern3EditPart.VISUAL_ID:
+			return UnaryOperatorPattern_3020;
+		case BinaryOperatorPattern3EditPart.VISUAL_ID:
+			return BinaryOperatorPattern_3021;
+		case PatternTimer3EditPart.VISUAL_ID:
+			return PatternTimer_3022;
+		case ConditionGroup3EditPart.VISUAL_ID:
+			return ConditionGroup_3023;
+		case Target3EditPart.VISUAL_ID:
+			return Target_3045;
+		case Not3EditPart.VISUAL_ID:
+			return Not_3024;
+		case Aggregation4EditPart.VISUAL_ID:
+			return Aggregation_3025;
+		case Order4EditPart.VISUAL_ID:
+			return Order_3026;
+		case Operator5EditPart.VISUAL_ID:
+			return Operator_3027;
+		case ValueOperator5EditPart.VISUAL_ID:
+			return ValueOperator_3028;
+		case UnaryOperatorPattern4EditPart.VISUAL_ID:
+			return UnaryOperatorPattern_3029;
+		case BinaryOperatorPattern4EditPart.VISUAL_ID:
+			return BinaryOperatorPattern_3030;
+		case PatternTimer4EditPart.VISUAL_ID:
+			return PatternTimer_3031;
+		case ConditionGroup4EditPart.VISUAL_ID:
+			return ConditionGroup_3032;
+		case Target4EditPart.VISUAL_ID:
+			return Target_3046;
+		case Not4EditPart.VISUAL_ID:
+			return Not_3033;
+		case AttributeEditPart.VISUAL_ID:
+			return Attribute_3034;
+		case LinkEditPart.VISUAL_ID:
+			return Link_4001;
+		case ComparisonEditPart.VISUAL_ID:
+			return Comparison_4002;
+		case ArithmeticEditPart.VISUAL_ID:
+			return Arithmetic_4003;
+		case FollowedbyEditPart.VISUAL_ID:
+			return Followedby_4004;
+		case LogicalConnectorEditPart.VISUAL_ID:
+			return LogicalConnector_4005;
+		}
+		return null;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static final DiagramElementTypes TYPED_INSTANCE = new DiagramElementTypes(
+			elementTypeImages) {
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public boolean isKnownElementType(IElementType elementType) {
+			return dsml.diagram.providers.DsmlElementTypes
+					.isKnownElementType(elementType);
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public IElementType getElementTypeForVisualId(int visualID) {
+			return dsml.diagram.providers.DsmlElementTypes
+					.getElementType(visualID);
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public ENamedElement getDefiningNamedElement(
+				IAdaptable elementTypeAdapter) {
+			return dsml.diagram.providers.DsmlElementTypes
+					.getElement(elementTypeAdapter);
+		}
+	};
+
+}

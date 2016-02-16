@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.eclipse.gmf.runtime.gef.ui.internal.figures.DiamondFigure"/>
+<fullyQualifiedTypeName name="br.ufpe.dsmlcep.figures.DiamondFigure"/>
+<fullyQualifiedTypeName name="javax.swing.text.View"/>
+<fullyQualifiedTypeName name="org.eclipse.gmf.runtime.notation.View"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="java.io.FileWriter"/>
+<fullyQualifiedTypeName name="java.io.BufferedWriter"/>
+<fullyQualifiedTypeName name="java.io.IOException"/>
+<fullyQualifiedTypeName name="java.awt.Rectangle"/>
+<fullyQualifiedTypeName name="org.eclipse.draw2d.geometry.PointList"/>
+<fullyQualifiedTypeName name="org.eclipse.draw2d.geometry.Rectangle"/>
+</qualifiedTypeNameHistroy>

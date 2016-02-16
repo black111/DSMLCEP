@@ -1,0 +1,172 @@
+/*
+ * 
+ */
+package dsml.diagram.edit.commands;
+
+import org.eclipse.core.commands.ExecutionException;
+import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.gmf.runtime.common.core.command.CommandResult;
+import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
+import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
+
+import dsml.AreaDesenho;
+import dsml.Component;
+import dsml.LinkTarget;
+import dsml.Target;
+import dsml.diagram.edit.policies.DsmlBaseItemSemanticEditPolicy;
+
+/**
+ * @generated
+ */
+public class LinkTargetReorientCommand extends EditElementCommand {
+
+	/**
+	 * @generated
+	 */
+	private final int reorientDirection;
+
+	/**
+	 * @generated
+	 */
+	private final EObject oldEnd;
+
+	/**
+	 * @generated
+	 */
+	private final EObject newEnd;
+
+	/**
+	 * @generated
+	 */
+	public LinkTargetReorientCommand(ReorientRelationshipRequest request) {
+		super(request.getLabel(), request.getRelationship(), request);
+		reorientDirection = request.getDirection();
+		oldEnd = request.getOldRelationshipEnd();
+		newEnd = request.getNewRelationshipEnd();
+	}
+
+	/**
+	 * @generated
+	 */
+	public boolean canExecute() {
+		if (false == getElementToEdit() instanceof LinkTarget) {
+			return false;
+		}
+		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
+			return canReorientSource();
+		}
+		if (reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
+			return canReorientTarget();
+		}
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected boolean canReorientSource() {
+		if (!(oldEnd instanceof Component && newEnd instanceof Component)) {
+			return false;
+		}
+		if (getLink().getDestino().size() != 1) {
+			return false;
+		}
+		Target target = (Target) getLink().getDestino().get(0);
+		if (!(getLink().eContainer() instanceof AreaDesenho)) {
+			return false;
+		}
+		AreaDesenho container = (AreaDesenho) getLink().eContainer();
+		return DsmlBaseItemSemanticEditPolicy.getLinkConstraints()
+				.canExistLinkTarget_4002(container, getLink(), getNewSource(),
+						target);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected boolean canReorientTarget() {
+		if (!(oldEnd instanceof Target && newEnd instanceof Target)) {
+			return false;
+		}
+		Component source = getLink().getOrigem();
+		if (!(getLink().eContainer() instanceof AreaDesenho)) {
+			return false;
+		}
+		AreaDesenho container = (AreaDesenho) getLink().eContainer();
+		return DsmlBaseItemSemanticEditPolicy.getLinkConstraints()
+				.canExistLinkTarget_4002(container, getLink(), source,
+						getNewTarget());
+	}
+
+	/**
+	 * @generated
+	 */
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
+			IAdaptable info) throws ExecutionException {
+		if (!canExecute()) {
+			throw new ExecutionException(
+					"Invalid arguments in reorient link command"); //$NON-NLS-1$
+		}
+		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
+			return reorientSource();
+		}
+		if (reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
+			return reorientTarget();
+		}
+		throw new IllegalStateException();
+	}
+
+	/**
+	 * @generated
+	 */
+	protected CommandResult reorientSource() throws ExecutionException {
+		getLink().setOrigem(getNewSource());
+		return CommandResult.newOKCommandResult(getLink());
+	}
+
+	/**
+	 * @generated
+	 */
+	protected CommandResult reorientTarget() throws ExecutionException {
+		getLink().getDestino().remove(getOldTarget());
+		getLink().getDestino().add(getNewTarget());
+		return CommandResult.newOKCommandResult(getLink());
+	}
+
+	/**
+	 * @generated
+	 */
+	protected LinkTarget getLink() {
+		return (LinkTarget) getElementToEdit();
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Component getOldSource() {
+		return (Component) oldEnd;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Component getNewSource() {
+		return (Component) newEnd;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Target getOldTarget() {
+		return (Target) oldEnd;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Target getNewTarget() {
+		return (Target) newEnd;
+	}
+}

@@ -1,0 +1,293 @@
+/**
+ */
+package dsml.impl;
+
+import dsml.BringGroup;
+import dsml.DsmlPackage;
+import dsml.Query;
+import dsml.Rule;
+
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Rule</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * <ul>
+ *   <li>{@link dsml.impl.RuleImpl#getRuleName <em>Rule Name</em>}</li>
+ *   <li>{@link dsml.impl.RuleImpl#isBringAll <em>Bring All</em>}</li>
+ *   <li>{@link dsml.impl.RuleImpl#getPrperties <em>Prperties</em>}</li>
+ *   <li>{@link dsml.impl.RuleImpl#getQueries <em>Queries</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @generated
+ */
+public class RuleImpl extends ComponentImpl implements Rule {
+	/**
+	 * The default value of the '{@link #getRuleName() <em>Rule Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRuleName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String RULE_NAME_EDEFAULT = "Rule";
+
+	/**
+	 * The cached value of the '{@link #getRuleName() <em>Rule Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRuleName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String ruleName = RULE_NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isBringAll() <em>Bring All</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isBringAll()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean BRING_ALL_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isBringAll() <em>Bring All</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isBringAll()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean bringAll = BRING_ALL_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getPrperties() <em>Prperties</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPrperties()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<BringGroup> prperties;
+
+	/**
+	 * The cached value of the '{@link #getQueries() <em>Queries</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getQueries()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Query> queries;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RuleImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return DsmlPackage.Literals.RULE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getRuleName() {
+		return ruleName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isBringAll() {
+		return bringAll;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setBringAll(boolean newBringAll) {
+		boolean oldBringAll = bringAll;
+		bringAll = newBringAll;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DsmlPackage.RULE__BRING_ALL, oldBringAll, bringAll));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<BringGroup> getPrperties() {
+		if (prperties == null) {
+			prperties = new EObjectResolvingEList<BringGroup>(BringGroup.class, this, DsmlPackage.RULE__PRPERTIES);
+		}
+		return prperties;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Query> getQueries() {
+		if (queries == null) {
+			queries = new EObjectContainmentEList<Query>(Query.class, this, DsmlPackage.RULE__QUERIES);
+		}
+		return queries;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case DsmlPackage.RULE__QUERIES:
+				return ((InternalEList<?>)getQueries()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case DsmlPackage.RULE__RULE_NAME:
+				return getRuleName();
+			case DsmlPackage.RULE__BRING_ALL:
+				return isBringAll();
+			case DsmlPackage.RULE__PRPERTIES:
+				return getPrperties();
+			case DsmlPackage.RULE__QUERIES:
+				return getQueries();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case DsmlPackage.RULE__BRING_ALL:
+				setBringAll((Boolean)newValue);
+				return;
+			case DsmlPackage.RULE__PRPERTIES:
+				getPrperties().clear();
+				getPrperties().addAll((Collection<? extends BringGroup>)newValue);
+				return;
+			case DsmlPackage.RULE__QUERIES:
+				getQueries().clear();
+				getQueries().addAll((Collection<? extends Query>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case DsmlPackage.RULE__BRING_ALL:
+				setBringAll(BRING_ALL_EDEFAULT);
+				return;
+			case DsmlPackage.RULE__PRPERTIES:
+				getPrperties().clear();
+				return;
+			case DsmlPackage.RULE__QUERIES:
+				getQueries().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case DsmlPackage.RULE__RULE_NAME:
+				return RULE_NAME_EDEFAULT == null ? ruleName != null : !RULE_NAME_EDEFAULT.equals(ruleName);
+			case DsmlPackage.RULE__BRING_ALL:
+				return bringAll != BRING_ALL_EDEFAULT;
+			case DsmlPackage.RULE__PRPERTIES:
+				return prperties != null && !prperties.isEmpty();
+			case DsmlPackage.RULE__QUERIES:
+				return queries != null && !queries.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (ruleName: ");
+		result.append(ruleName);
+		result.append(", bringAll: ");
+		result.append(bringAll);
+		result.append(')');
+		return result.toString();
+	}
+
+} //RuleImpl

@@ -1,0 +1,199 @@
+/**
+ */
+package dsml.impl;
+
+import dsml.DsmlPackage;
+import dsml.Event;
+import dsml.LinkTarget;
+import dsml.Target;
+
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.EObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Link Target</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * <ul>
+ *   <li>{@link dsml.impl.LinkTargetImpl#getOrigem <em>Origem</em>}</li>
+ *   <li>{@link dsml.impl.LinkTargetImpl#getDestino <em>Destino</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @generated
+ */
+public class LinkTargetImpl extends LinkImpl implements LinkTarget {
+	/**
+	 * The cached value of the '{@link #getOrigem() <em>Origem</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrigem()
+	 * @generated
+	 * @ordered
+	 */
+	protected Event origem;
+
+	/**
+	 * The cached value of the '{@link #getDestino() <em>Destino</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDestino()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Target> destino;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected LinkTargetImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return DsmlPackage.Literals.LINK_TARGET;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Event getOrigem() {
+		if (origem != null && origem.eIsProxy()) {
+			InternalEObject oldOrigem = (InternalEObject)origem;
+			origem = (Event)eResolveProxy(oldOrigem);
+			if (origem != oldOrigem) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DsmlPackage.LINK_TARGET__ORIGEM, oldOrigem, origem));
+			}
+		}
+		return origem;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Event basicGetOrigem() {
+		return origem;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOrigem(Event newOrigem) {
+		Event oldOrigem = origem;
+		origem = newOrigem;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DsmlPackage.LINK_TARGET__ORIGEM, oldOrigem, origem));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Target> getDestino() {
+		if (destino == null) {
+			destino = new EObjectResolvingEList<Target>(Target.class, this, DsmlPackage.LINK_TARGET__DESTINO);
+		}
+		return destino;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case DsmlPackage.LINK_TARGET__ORIGEM:
+				if (resolve) return getOrigem();
+				return basicGetOrigem();
+			case DsmlPackage.LINK_TARGET__DESTINO:
+				return getDestino();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case DsmlPackage.LINK_TARGET__ORIGEM:
+				setOrigem((Event)newValue);
+				return;
+			case DsmlPackage.LINK_TARGET__DESTINO:
+				getDestino().clear();
+				getDestino().addAll((Collection<? extends Target>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case DsmlPackage.LINK_TARGET__ORIGEM:
+				setOrigem((Event)null);
+				return;
+			case DsmlPackage.LINK_TARGET__DESTINO:
+				getDestino().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case DsmlPackage.LINK_TARGET__ORIGEM:
+				return origem != null;
+			case DsmlPackage.LINK_TARGET__DESTINO:
+				return destino != null && !destino.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
+
+} //LinkTargetImpl

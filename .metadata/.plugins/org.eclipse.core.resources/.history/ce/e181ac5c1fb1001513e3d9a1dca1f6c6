@@ -1,0 +1,216 @@
+/**
+ */
+package dsml.impl;
+
+import dsml.Component;
+import dsml.DsmlPackage;
+import dsml.LinkComponent;
+
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Link Component</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * <ul>
+ *   <li>{@link dsml.impl.LinkComponentImpl#getOutboundLink <em>Outbound Link</em>}</li>
+ *   <li>{@link dsml.impl.LinkComponentImpl#getInboundLink <em>Inbound Link</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @generated
+ */
+public class LinkComponentImpl extends LinkImpl implements LinkComponent {
+	/**
+	 * The cached value of the '{@link #getOutboundLink() <em>Outbound Link</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOutboundLink()
+	 * @generated
+	 * @ordered
+	 */
+	protected Component outboundLink;
+
+	/**
+	 * The cached value of the '{@link #getInboundLink() <em>Inbound Link</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInboundLink()
+	 * @generated
+	 * @ordered
+	 */
+	protected Component inboundLink;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected LinkComponentImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return DsmlPackage.Literals.LINK_COMPONENT;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Component getOutboundLink() {
+		if (outboundLink != null && outboundLink.eIsProxy()) {
+			InternalEObject oldOutboundLink = (InternalEObject)outboundLink;
+			outboundLink = (Component)eResolveProxy(oldOutboundLink);
+			if (outboundLink != oldOutboundLink) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DsmlPackage.LINK_COMPONENT__OUTBOUND_LINK, oldOutboundLink, outboundLink));
+			}
+		}
+		return outboundLink;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Component basicGetOutboundLink() {
+		return outboundLink;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOutboundLink(Component newOutboundLink) {
+		Component oldOutboundLink = outboundLink;
+		outboundLink = newOutboundLink;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DsmlPackage.LINK_COMPONENT__OUTBOUND_LINK, oldOutboundLink, outboundLink));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Component getInboundLink() {
+		if (inboundLink != null && inboundLink.eIsProxy()) {
+			InternalEObject oldInboundLink = (InternalEObject)inboundLink;
+			inboundLink = (Component)eResolveProxy(oldInboundLink);
+			if (inboundLink != oldInboundLink) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DsmlPackage.LINK_COMPONENT__INBOUND_LINK, oldInboundLink, inboundLink));
+			}
+		}
+		return inboundLink;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Component basicGetInboundLink() {
+		return inboundLink;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setInboundLink(Component newInboundLink) {
+		Component oldInboundLink = inboundLink;
+		inboundLink = newInboundLink;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DsmlPackage.LINK_COMPONENT__INBOUND_LINK, oldInboundLink, inboundLink));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case DsmlPackage.LINK_COMPONENT__OUTBOUND_LINK:
+				if (resolve) return getOutboundLink();
+				return basicGetOutboundLink();
+			case DsmlPackage.LINK_COMPONENT__INBOUND_LINK:
+				if (resolve) return getInboundLink();
+				return basicGetInboundLink();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case DsmlPackage.LINK_COMPONENT__OUTBOUND_LINK:
+				setOutboundLink((Component)newValue);
+				return;
+			case DsmlPackage.LINK_COMPONENT__INBOUND_LINK:
+				setInboundLink((Component)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case DsmlPackage.LINK_COMPONENT__OUTBOUND_LINK:
+				setOutboundLink((Component)null);
+				return;
+			case DsmlPackage.LINK_COMPONENT__INBOUND_LINK:
+				setInboundLink((Component)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case DsmlPackage.LINK_COMPONENT__OUTBOUND_LINK:
+				return outboundLink != null;
+			case DsmlPackage.LINK_COMPONENT__INBOUND_LINK:
+				return inboundLink != null;
+		}
+		return super.eIsSet(featureID);
+	}
+
+} //LinkComponentImpl

@@ -1,0 +1,50 @@
+/**
+ */
+package dsml;
+
+import org.eclipse.emf.ecore.EObject;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Limit</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * <ul>
+ *   <li>{@link dsml.Limit#getValueLimit <em>Value Limit</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @see dsml.DsmlPackage#getLimit()
+ * @model annotation="gmf.node label='valueLimit' figure='rectangle'"
+ * @generated
+ */
+public interface Limit extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Value Limit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Value Limit</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Value Limit</em>' attribute.
+	 * @see #setValueLimit(String)
+	 * @see dsml.DsmlPackage#getLimit_ValueLimit()
+	 * @model
+	 * @generated
+	 */
+	String getValueLimit();
+
+	/**
+	 * Sets the value of the '{@link dsml.Limit#getValueLimit <em>Value Limit</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Value Limit</em>' attribute.
+	 * @see #getValueLimit()
+	 * @generated
+	 */
+	void setValueLimit(String value);
+
+} // Limit

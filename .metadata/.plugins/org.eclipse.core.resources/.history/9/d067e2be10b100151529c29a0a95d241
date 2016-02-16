@@ -1,0 +1,267 @@
+	/*
+ * 
+ */
+package prediqt.diagram.part;
+
+	/**
+ * @generated
+ */
+public class PrediqtDiagramUpdater {
+		
+	/**
+ * @generated
+ */
+public static boolean isShortcutOrphaned(org.eclipse.gmf.runtime.notation.View view) {
+	return !view.isSetElement() || view.getElement() == null || view.getElement().eIsProxy();
+}
+	
+		/**
+ * @generated
+ */
+public static java.util.List<prediqt.diagram.part.PrediqtNodeDescriptor> getSemanticChildren(org.eclipse.gmf.runtime.notation.View view) {
+		switch (prediqt.diagram.part.PrediqtVisualIDRegistry.getVisualID(view)) {
+		case prediqt.diagram.edit.parts.ProjectEditPart.VISUAL_ID:
+	return getProject_1000SemanticChildren(view);
+	}
+		return java.util.Collections.emptyList();
+}
+	
+	/**
+ * @generated
+ */
+public static java.util.List<prediqt.diagram.part.PrediqtNodeDescriptor> getProject_1000SemanticChildren(org.eclipse.gmf.runtime.notation.View view) {
+		if (!view.isSetElement()) {
+	return java.util.Collections.emptyList();
+}
+prediqt.Project modelElement = (prediqt.Project) view.getElement();
+	java.util.LinkedList<prediqt.diagram.part.PrediqtNodeDescriptor> result = new java.util.LinkedList<prediqt.diagram.part.PrediqtNodeDescriptor>();
+						for (java.util.Iterator<?> it = modelElement.getNodes().iterator(); it.hasNext();) {
+		prediqt.PNode childElement = (prediqt.PNode) it.next();
+					int visualID = prediqt.diagram.part.PrediqtVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == prediqt.diagram.edit.parts.PNodeEditPart.VISUAL_ID) {
+	result.add(new prediqt.diagram.part.PrediqtNodeDescriptor(childElement, visualID));
+	continue;
+}
+	}
+			return result;
+	}
+	
+		/**
+ * @generated
+ */
+public static java.util.List<prediqt.diagram.part.PrediqtLinkDescriptor> getContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
+		switch (prediqt.diagram.part.PrediqtVisualIDRegistry.getVisualID(view)) {
+		case prediqt.diagram.edit.parts.ProjectEditPart.VISUAL_ID:
+	return getProject_1000ContainedLinks(view);
+case prediqt.diagram.edit.parts.PNodeEditPart.VISUAL_ID:
+	return getPNode_2001ContainedLinks(view);
+case prediqt.diagram.edit.parts.PArcEditPart.VISUAL_ID:
+	return getPArc_4001ContainedLinks(view);
+	}
+		return java.util.Collections.emptyList();
+}
+	
+		/**
+ * @generated
+ */
+public static java.util.List<prediqt.diagram.part.PrediqtLinkDescriptor> getIncomingLinks(org.eclipse.gmf.runtime.notation.View view) {
+		switch (prediqt.diagram.part.PrediqtVisualIDRegistry.getVisualID(view)) {
+		case prediqt.diagram.edit.parts.PNodeEditPart.VISUAL_ID:
+	return getPNode_2001IncomingLinks(view);
+case prediqt.diagram.edit.parts.PArcEditPart.VISUAL_ID:
+	return getPArc_4001IncomingLinks(view);
+	}
+		return java.util.Collections.emptyList();
+}
+	
+		/**
+ * @generated
+ */
+public static java.util.List<prediqt.diagram.part.PrediqtLinkDescriptor> getOutgoingLinks(org.eclipse.gmf.runtime.notation.View view) {
+		switch (prediqt.diagram.part.PrediqtVisualIDRegistry.getVisualID(view)) {
+		case prediqt.diagram.edit.parts.PNodeEditPart.VISUAL_ID:
+	return getPNode_2001OutgoingLinks(view);
+case prediqt.diagram.edit.parts.PArcEditPart.VISUAL_ID:
+	return getPArc_4001OutgoingLinks(view);
+	}
+		return java.util.Collections.emptyList();
+}
+		
+/**
+ * @generated
+ */
+public static java.util.List<prediqt.diagram.part.PrediqtLinkDescriptor> getProject_1000ContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
+	prediqt.Project modelElement = (prediqt.Project) view.getElement();
+		java.util.LinkedList<prediqt.diagram.part.PrediqtLinkDescriptor> result = new java.util.LinkedList<prediqt.diagram.part.PrediqtLinkDescriptor>();
+		result.addAll(getContainedTypeModelFacetLinks_PArc_4001(modelElement));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<prediqt.diagram.part.PrediqtLinkDescriptor> getPNode_2001ContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<prediqt.diagram.part.PrediqtLinkDescriptor> getPArc_4001ContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+		
+/**
+ * @generated
+ */
+public static java.util.List<prediqt.diagram.part.PrediqtLinkDescriptor> getPNode_2001IncomingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	prediqt.PNode modelElement = (prediqt.PNode) view.getElement();
+	java.util.Map<org.eclipse.emf.ecore.EObject, java.util.Collection<org.eclipse.emf.ecore.EStructuralFeature.Setting>> crossReferences = org.eclipse.emf.ecore.util.EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		java.util.LinkedList<prediqt.diagram.part.PrediqtLinkDescriptor> result = new java.util.LinkedList<prediqt.diagram.part.PrediqtLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_PArc_4001(modelElement, crossReferences));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<prediqt.diagram.part.PrediqtLinkDescriptor> getPArc_4001IncomingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+		
+/**
+ * @generated
+ */
+public static java.util.List<prediqt.diagram.part.PrediqtLinkDescriptor> getPNode_2001OutgoingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	prediqt.PNode modelElement = (prediqt.PNode) view.getElement();
+		java.util.LinkedList<prediqt.diagram.part.PrediqtLinkDescriptor> result = new java.util.LinkedList<prediqt.diagram.part.PrediqtLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_PArc_4001(modelElement));	
+	return result;
+}
+	
+/**
+ * @generated
+ */
+public static java.util.List<prediqt.diagram.part.PrediqtLinkDescriptor> getPArc_4001OutgoingLinks(org.eclipse.gmf.runtime.notation.View view) {
+	return java.util.Collections.emptyList();
+}
+	
+	/**
+ * @generated
+ */
+private static java.util.Collection<prediqt.diagram.part.PrediqtLinkDescriptor> getContainedTypeModelFacetLinks_PArc_4001(prediqt.Project container) {
+	java.util.LinkedList<prediqt.diagram.part.PrediqtLinkDescriptor> result = new java.util.LinkedList<prediqt.diagram.part.PrediqtLinkDescriptor>();
+	for (java.util.Iterator<?> links = container.getArcs().iterator(); links.hasNext();) {
+	org.eclipse.emf.ecore.EObject linkObject = (org.eclipse.emf.ecore.EObject ) links.next();
+	if (false == linkObject instanceof prediqt.PArc) {
+		continue;
+	}
+	prediqt.PArc link = (prediqt.PArc) linkObject;
+		if (prediqt.diagram.edit.parts.PArcEditPart.VISUAL_ID != prediqt.diagram.part.PrediqtVisualIDRegistry.getLinkWithClassVisualID(link)) {
+	continue;
+}
+			prediqt.PNode dst = link.getTarget();
+							prediqt.PNode src = link.getSource();
+							result.add(new prediqt.diagram.part.PrediqtLinkDescriptor(src, dst, link, prediqt.diagram.providers.PrediqtElementTypes.PArc_4001, prediqt.diagram.edit.parts.PArcEditPart.VISUAL_ID));
+		}
+	return result;	
+}
+	
+/**
+ * @generated
+ */
+private static java.util.Collection<prediqt.diagram.part.PrediqtLinkDescriptor> getIncomingTypeModelFacetLinks_PArc_4001(prediqt.PNode target, java.util.Map<org.eclipse.emf.ecore.EObject, java.util.Collection<org.eclipse.emf.ecore.EStructuralFeature.Setting>> crossReferences) {
+	java.util.LinkedList<prediqt.diagram.part.PrediqtLinkDescriptor> result = new java.util.LinkedList<prediqt.diagram.part.PrediqtLinkDescriptor>();
+	java.util.Collection<org.eclipse.emf.ecore.EStructuralFeature.Setting> settings = crossReferences.get(target);
+	for (org.eclipse.emf.ecore.EStructuralFeature.Setting setting : settings) {
+		if (setting.getEStructuralFeature() != prediqt.PrediqtPackage.eINSTANCE.getPArc_Target() || false == setting.getEObject() instanceof prediqt.PArc) {
+	continue;
+}
+prediqt.PArc link = (prediqt.PArc) setting.getEObject();
+	if (prediqt.diagram.edit.parts.PArcEditPart.VISUAL_ID != prediqt.diagram.part.PrediqtVisualIDRegistry.getLinkWithClassVisualID(link)) {
+	continue;
+}
+				prediqt.PNode src = link.getSource();
+			result.add(new prediqt.diagram.part.PrediqtLinkDescriptor(src, target, link, prediqt.diagram.providers.PrediqtElementTypes.PArc_4001, prediqt.diagram.edit.parts.PArcEditPart.VISUAL_ID));
+		}
+	return result;	
+}
+				
+		/**
+ * @generated
+ */
+private static java.util.Collection<prediqt.diagram.part.PrediqtLinkDescriptor> getOutgoingTypeModelFacetLinks_PArc_4001(prediqt.PNode source) {
+	prediqt.Project container = null;
+	// Find container element for the link.
+	// Climb up by containment hierarchy starting from the source
+	// and return the first element that is instance of the container class.
+	for (org.eclipse.emf.ecore.EObject element = source; element != null && container == null; element = element.eContainer()) {
+		if (element instanceof prediqt.Project) {
+			container = (prediqt.Project) element;
+		}
+	}
+	if (container == null) {
+		return java.util.Collections.emptyList();
+	}
+		java.util.LinkedList<prediqt.diagram.part.PrediqtLinkDescriptor> result = new java.util.LinkedList<prediqt.diagram.part.PrediqtLinkDescriptor>();
+	for (java.util.Iterator<?> links = container.getArcs().iterator(); links.hasNext();) {
+	org.eclipse.emf.ecore.EObject linkObject = (org.eclipse.emf.ecore.EObject ) links.next();
+	if (false == linkObject instanceof prediqt.PArc) {
+		continue;
+	}
+	prediqt.PArc link = (prediqt.PArc) linkObject;
+		if (prediqt.diagram.edit.parts.PArcEditPart.VISUAL_ID != prediqt.diagram.part.PrediqtVisualIDRegistry.getLinkWithClassVisualID(link)) {
+	continue;
+}
+			prediqt.PNode dst = link.getTarget();
+							prediqt.PNode src = link.getSource();
+								if (src != source) {
+	continue;
+}
+						result.add(new prediqt.diagram.part.PrediqtLinkDescriptor(src, dst, link, prediqt.diagram.providers.PrediqtElementTypes.PArc_4001, prediqt.diagram.edit.parts.PArcEditPart.VISUAL_ID));
+		}
+	return result;	
+}		
+		
+					/**
+ * @generated
+ */
+	public static final org.eclipse.gmf.tooling.runtime.update.DiagramUpdater TYPED_INSTANCE = new org.eclipse.gmf.tooling.runtime.update.DiagramUpdater() {
+				/**
+ * @generated
+ */
+		@Override
+
+		public java.util.List<prediqt.diagram.part.PrediqtNodeDescriptor> getSemanticChildren(org.eclipse.gmf.runtime.notation.View view) {
+			return PrediqtDiagramUpdater.getSemanticChildren(view);
+		}
+
+		/**
+ * @generated
+ */
+		@Override
+
+		public java.util.List<prediqt.diagram.part.PrediqtLinkDescriptor> getContainedLinks(org.eclipse.gmf.runtime.notation.View view) {
+			return PrediqtDiagramUpdater.getContainedLinks(view);
+		}
+
+		/**
+ * @generated
+ */
+		@Override
+
+		public java.util.List<prediqt.diagram.part.PrediqtLinkDescriptor> getIncomingLinks(org.eclipse.gmf.runtime.notation.View view) {
+			return PrediqtDiagramUpdater.getIncomingLinks(view);
+		}
+
+		/**
+ * @generated
+ */
+		@Override
+
+		public java.util.List<prediqt.diagram.part.PrediqtLinkDescriptor> getOutgoingLinks(org.eclipse.gmf.runtime.notation.View view) {
+			return PrediqtDiagramUpdater.getOutgoingLinks(view);
+		}
+	}; 
+			
+	}

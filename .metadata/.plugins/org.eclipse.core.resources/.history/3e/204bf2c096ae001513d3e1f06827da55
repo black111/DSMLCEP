@@ -1,0 +1,26 @@
+/*
+ * 
+ */
+package dsml.diagram.providers.assistants;
+
+/**
+ * @generated
+ */
+public class DsmlModelingAssistantProviderOfAreaDesenhoEditPart extends dsml.diagram.providers.DsmlModelingAssistantProvider {
+
+				/**
+ * @generated
+ */
+	@Override
+
+	public java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> getTypesForPopupBar(org.eclipse.core.runtime.IAdaptable host) {
+		java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> types = new java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType>(4);
+					types.add(dsml.diagram.providers.DsmlElementTypes.Event_2028);
+					types.add(dsml.diagram.providers.DsmlElementTypes.Rule_2029);
+					types.add(dsml.diagram.providers.DsmlElementTypes.EventPattern_2030);
+					types.add(dsml.diagram.providers.DsmlElementTypes.Window_2031);
+					return types;	
+	}
+			
+	
+	}

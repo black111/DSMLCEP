@@ -1,0 +1,219 @@
+/*
+ * 
+ */
+package dsml.diagram.providers.assistants;
+
+/**
+ * @generated
+ */
+public class DsmlModelingAssistantProviderOfTarget2EditPart extends dsml.diagram.providers.DsmlModelingAssistantProvider {
+
+					
+			/**
+ * @generated
+ */
+	@Override
+
+	public java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> getRelTypesOnSource(org.eclipse.core.runtime.IAdaptable source) {
+		org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart sourceEditPart =
+				(org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart) source.getAdapter(
+						org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart.class);
+		return doGetRelTypesOnSource((dsml.diagram.edit.parts.Target2EditPart) sourceEditPart);
+	}
+	
+		/**
+ * @generated
+ */
+	public java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> doGetRelTypesOnSource(dsml.diagram.edit.parts.Target2EditPart source) {
+		java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> types = new java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType>(4);
+				types.add(dsml.diagram.providers.DsmlElementTypes.Comparison_4003);
+				types.add(dsml.diagram.providers.DsmlElementTypes.Arithmetic_4004);
+				types.add(dsml.diagram.providers.DsmlElementTypes.Followedby_4005);
+				types.add(dsml.diagram.providers.DsmlElementTypes.LogicalConnector_4006);
+				return types;
+	}
+	
+		/**
+ * @generated
+ */
+	@Override
+
+	public java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> getRelTypesOnSourceAndTarget(
+			org.eclipse.core.runtime.IAdaptable source, org.eclipse.core.runtime.IAdaptable target) {
+		org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart sourceEditPart =
+				(org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart) source.getAdapter(
+						org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart.class);
+		org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart targetEditPart =
+				(org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart) target.getAdapter(
+						org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart.class);
+		return doGetRelTypesOnSourceAndTarget((dsml.diagram.edit.parts.Target2EditPart) sourceEditPart, targetEditPart);
+	}
+
+		/**
+ * @generated
+ */
+	public java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> doGetRelTypesOnSourceAndTarget(dsml.diagram.edit.parts.Target2EditPart source, org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart targetEditPart) {
+		java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> types = new java.util.LinkedList<org.eclipse.gmf.runtime.emf.type.core.IElementType>();
+							if (targetEditPart instanceof dsml.diagram.edit.parts.TargetEditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Comparison_4003);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.ConditionGroupEditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Comparison_4003);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.BringGroupEditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Comparison_4003);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.Target2EditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Comparison_4003);
+		}
+										if (targetEditPart instanceof dsml.diagram.edit.parts.TargetEditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Arithmetic_4004);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.ConditionGroupEditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Arithmetic_4004);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.BringGroupEditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Arithmetic_4004);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.Target2EditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Arithmetic_4004);
+		}
+										if (targetEditPart instanceof dsml.diagram.edit.parts.TargetEditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Followedby_4005);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.Target2EditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.Followedby_4005);
+		}
+										if (targetEditPart instanceof dsml.diagram.edit.parts.TargetEditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.LogicalConnector_4006);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.ConditionGroupEditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.LogicalConnector_4006);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.BringGroupEditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.LogicalConnector_4006);
+		}
+					if (targetEditPart instanceof dsml.diagram.edit.parts.Target2EditPart) {
+			types.add(dsml.diagram.providers.DsmlElementTypes.LogicalConnector_4006);
+		}
+							return types;
+	}
+
+			/**
+ * @generated
+ */
+	@Override
+
+	public java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> getTypesForTarget(org.eclipse.core.runtime.IAdaptable source,
+			org.eclipse.gmf.runtime.emf.type.core.IElementType relationshipType) {
+		org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart sourceEditPart =
+				(org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart) source.getAdapter(
+						org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart.class);
+		return doGetTypesForTarget((dsml.diagram.edit.parts.Target2EditPart) sourceEditPart, relationshipType);
+	}
+	
+		/**
+ * @generated
+ */
+	public java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> doGetTypesForTarget(dsml.diagram.edit.parts.Target2EditPart source, org.eclipse.gmf.runtime.emf.type.core.IElementType relationshipType) {
+		java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> types = new java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType>();
+				if (relationshipType == dsml.diagram.providers.DsmlElementTypes.Comparison_4003) {
+						types.add(dsml.diagram.providers.DsmlElementTypes.Target_3002);
+						types.add(dsml.diagram.providers.DsmlElementTypes.ConditionGroup_3005);
+						types.add(dsml.diagram.providers.DsmlElementTypes.BringGroup_3008);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Target_3017);
+					}
+		 else 		if (relationshipType == dsml.diagram.providers.DsmlElementTypes.Arithmetic_4004) {
+						types.add(dsml.diagram.providers.DsmlElementTypes.Target_3002);
+						types.add(dsml.diagram.providers.DsmlElementTypes.ConditionGroup_3005);
+						types.add(dsml.diagram.providers.DsmlElementTypes.BringGroup_3008);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Target_3017);
+					}
+		 else 		if (relationshipType == dsml.diagram.providers.DsmlElementTypes.Followedby_4005) {
+						types.add(dsml.diagram.providers.DsmlElementTypes.Target_3002);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Target_3017);
+					}
+		 else 		if (relationshipType == dsml.diagram.providers.DsmlElementTypes.LogicalConnector_4006) {
+						types.add(dsml.diagram.providers.DsmlElementTypes.Target_3002);
+						types.add(dsml.diagram.providers.DsmlElementTypes.ConditionGroup_3005);
+						types.add(dsml.diagram.providers.DsmlElementTypes.BringGroup_3008);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Target_3017);
+					}
+				return types;
+	}
+
+		/**
+ * @generated
+ */
+	@Override
+
+	public java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> getRelTypesOnTarget(org.eclipse.core.runtime.IAdaptable target) {
+		org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart targetEditPart =
+				(org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart) target.getAdapter(
+						org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart.class);
+		return doGetRelTypesOnTarget((dsml.diagram.edit.parts.Target2EditPart) targetEditPart);
+	}
+
+		/**
+ * @generated
+ */
+	public java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> doGetRelTypesOnTarget(dsml.diagram.edit.parts.Target2EditPart target) {
+		java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> types = new java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType>(5);
+				types.add(dsml.diagram.providers.DsmlElementTypes.LinkTarget_4002);
+				types.add(dsml.diagram.providers.DsmlElementTypes.Comparison_4003);
+				types.add(dsml.diagram.providers.DsmlElementTypes.Arithmetic_4004);
+				types.add(dsml.diagram.providers.DsmlElementTypes.Followedby_4005);
+				types.add(dsml.diagram.providers.DsmlElementTypes.LogicalConnector_4006);
+				return types;
+	}
+
+		/**
+ * @generated
+ */
+	@Override
+
+	public java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> getTypesForSource(org.eclipse.core.runtime.IAdaptable target,
+			org.eclipse.gmf.runtime.emf.type.core.IElementType relationshipType) {
+		org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart targetEditPart =
+				(org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart) target.getAdapter(
+						org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart.class);
+		return doGetTypesForSource((dsml.diagram.edit.parts.Target2EditPart) targetEditPart, relationshipType);
+	}
+
+		/**
+ * @generated
+ */
+	public java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> doGetTypesForSource(dsml.diagram.edit.parts.Target2EditPart target, org.eclipse.gmf.runtime.emf.type.core.IElementType relationshipType) {
+		java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> types = new java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType>();
+				if (relationshipType == dsml.diagram.providers.DsmlElementTypes.LinkTarget_4002) {
+						types.add(dsml.diagram.providers.DsmlElementTypes.Event_2001);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Rule_2002);
+						types.add(dsml.diagram.providers.DsmlElementTypes.EventPattern_2003);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Window_2004);
+					}
+		 else 		if (relationshipType == dsml.diagram.providers.DsmlElementTypes.Comparison_4003) {
+						types.add(dsml.diagram.providers.DsmlElementTypes.Target_3002);
+						types.add(dsml.diagram.providers.DsmlElementTypes.ConditionGroup_3005);
+						types.add(dsml.diagram.providers.DsmlElementTypes.BringGroup_3008);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Target_3017);
+					}
+		 else 		if (relationshipType == dsml.diagram.providers.DsmlElementTypes.Arithmetic_4004) {
+						types.add(dsml.diagram.providers.DsmlElementTypes.Target_3002);
+						types.add(dsml.diagram.providers.DsmlElementTypes.ConditionGroup_3005);
+						types.add(dsml.diagram.providers.DsmlElementTypes.BringGroup_3008);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Target_3017);
+					}
+		 else 		if (relationshipType == dsml.diagram.providers.DsmlElementTypes.Followedby_4005) {
+						types.add(dsml.diagram.providers.DsmlElementTypes.Target_3002);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Target_3017);
+					}
+		 else 		if (relationshipType == dsml.diagram.providers.DsmlElementTypes.LogicalConnector_4006) {
+						types.add(dsml.diagram.providers.DsmlElementTypes.Target_3002);
+						types.add(dsml.diagram.providers.DsmlElementTypes.ConditionGroup_3005);
+						types.add(dsml.diagram.providers.DsmlElementTypes.BringGroup_3008);
+						types.add(dsml.diagram.providers.DsmlElementTypes.Target_3017);
+					}
+				return types;
+	}
+
+	}

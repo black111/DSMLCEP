@@ -1,0 +1,17 @@
+/*
+ * 
+ */
+package prediqt.diagram.preferences;
+
+/**
+ * @generated
+ */
+public class DiagramConnectionsPreferencePage extends org.eclipse.gmf.runtime.diagram.ui.preferences.ConnectionsPreferencePage {
+
+	/**
+ * @generated
+ */
+	public DiagramConnectionsPreferencePage() {
+		setPreferenceStore(prediqt.diagram.part.PrediqtDiagramEditorPlugin.getInstance().getPreferenceStore());
+	}
+}

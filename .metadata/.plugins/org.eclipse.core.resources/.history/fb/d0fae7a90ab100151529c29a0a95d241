@@ -1,0 +1,92 @@
+/**
+ */
+package dsml;
+
+import org.eclipse.emf.common.util.EList;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Condition Group</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * <ul>
+ *   <li>{@link dsml.ConditionGroup#getConditionGroup <em>Condition Group</em>}</li>
+ *   <li>{@link dsml.ConditionGroup#getOperationTypes <em>Operation Types</em>}</li>
+ *   <li>{@link dsml.ConditionGroup#getOutLink <em>Out Link</em>}</li>
+ *   <li>{@link dsml.ConditionGroup#getInLink <em>In Link</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @see dsml.DsmlPackage#getConditionGroup()
+ * @model annotation="gmf.node label='conditionGroup' figure='rectangle' depends='outLink'"
+ * @generated
+ */
+public interface ConditionGroup extends GroupRelacional {
+	/**
+	 * Returns the value of the '<em><b>Condition Group</b></em>' attribute.
+	 * The default value is <code>"ConditionGroup"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Condition Group</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Condition Group</em>' attribute.
+	 * @see dsml.DsmlPackage#getConditionGroup_ConditionGroup()
+	 * @model default="ConditionGroup" changeable="false"
+	 * @generated
+	 */
+	String getConditionGroup();
+
+	/**
+	 * Returns the value of the '<em><b>Operation Types</b></em>' containment reference list.
+	 * The list contents are of type {@link dsml.Query}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Operation Types</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Operation Types</em>' containment reference list.
+	 * @see dsml.DsmlPackage#getConditionGroup_OperationTypes()
+	 * @model containment="true"
+	 *        annotation="gmf.compartment layout='free' collapsible='true'"
+	 * @generated
+	 */
+	EList<Query> getOperationTypes();
+
+	/**
+	 * Returns the value of the '<em><b>Out Link</b></em>' reference list.
+	 * The list contents are of type {@link dsml.LogicalConnector}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Out Link</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Out Link</em>' reference list.
+	 * @see dsml.DsmlPackage#getConditionGroup_OutLink()
+	 * @model
+	 * @generated
+	 */
+	EList<LogicalConnector> getOutLink();
+
+	/**
+	 * Returns the value of the '<em><b>In Link</b></em>' reference list.
+	 * The list contents are of type {@link dsml.LogicalConnector}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>In Link</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>In Link</em>' reference list.
+	 * @see dsml.DsmlPackage#getConditionGroup_InLink()
+	 * @model
+	 * @generated
+	 */
+	EList<LogicalConnector> getInLink();
+
+} // ConditionGroup

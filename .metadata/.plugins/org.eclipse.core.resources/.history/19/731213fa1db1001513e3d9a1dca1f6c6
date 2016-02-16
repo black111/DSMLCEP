@@ -1,0 +1,67 @@
+/**
+ */
+package dsml;
+
+import org.eclipse.emf.common.util.EList;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Link Target</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * <ul>
+ *   <li>{@link dsml.LinkTarget#getOutboundLink <em>Outbound Link</em>}</li>
+ *   <li>{@link dsml.LinkTarget#getInboundLink <em>Inbound Link</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @see dsml.DsmlPackage#getLinkTarget()
+ * @model annotation="gmf.link source='outboundLink' target='inboundLink' incoming='true' color='0,0,0' width='1'"
+ * @generated
+ */
+public interface LinkTarget extends Link {
+	/**
+	 * Returns the value of the '<em><b>Outbound Link</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Outbound Link</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Outbound Link</em>' reference.
+	 * @see #setOutboundLink(Component)
+	 * @see dsml.DsmlPackage#getLinkTarget_OutboundLink()
+	 * @model required="true"
+	 * @generated
+	 */
+	Component getOutboundLink();
+
+	/**
+	 * Sets the value of the '{@link dsml.LinkTarget#getOutboundLink <em>Outbound Link</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Outbound Link</em>' reference.
+	 * @see #getOutboundLink()
+	 * @generated
+	 */
+	void setOutboundLink(Component value);
+
+	/**
+	 * Returns the value of the '<em><b>Inbound Link</b></em>' reference list.
+	 * The list contents are of type {@link dsml.Target}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Inbound Link</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Inbound Link</em>' reference list.
+	 * @see dsml.DsmlPackage#getLinkTarget_InboundLink()
+	 * @model required="true"
+	 * @generated
+	 */
+	EList<Target> getInboundLink();
+
+} // LinkTarget

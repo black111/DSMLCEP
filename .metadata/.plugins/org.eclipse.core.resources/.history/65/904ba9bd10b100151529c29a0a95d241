@@ -1,0 +1,18 @@
+/*
+ * 
+ */
+package prediqt.diagram.providers;
+
+/**
+ * @generated
+ */
+public class PrediqtIconProvider extends org.eclipse.gmf.tooling.runtime.providers.DefaultElementTypeIconProvider implements org.eclipse.gmf.runtime.common.ui.services.icon.IIconProvider {
+
+		/**
+ * @generated
+ */
+	public PrediqtIconProvider() {
+		super(prediqt.diagram.providers.PrediqtElementTypes.TYPED_INSTANCE);
+	}
+
+	}

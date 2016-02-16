@@ -1,0 +1,32 @@
+	/*
+ * 
+ */
+package dsml.diagram.edit.policies;
+
+	/**
+ * @generated
+ */
+public class ConditionGroupConditionGroupOperationTypesCompartmentItemSemanticEditPolicy extends dsml.diagram.edit.policies.DsmlBaseItemSemanticEditPolicy {
+
+		/**
+ * @generated
+ */
+	public ConditionGroupConditionGroupOperationTypesCompartmentItemSemanticEditPolicy() {
+				super(dsml.diagram.providers.DsmlElementTypes.ConditionGroup_3006);
+	}
+
+	
+	/**
+ * @generated
+ */
+	protected org.eclipse.gef.commands.Command getCreateCommand(org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest req) {
+		if (dsml.diagram.providers.DsmlElementTypes.Operator_3007 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.Operator2CreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.ValueOperator_3008 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.ValueOperator2CreateCommand(req));
+}
+		return super.getCreateCommand(req);
+	}
+	
+	}

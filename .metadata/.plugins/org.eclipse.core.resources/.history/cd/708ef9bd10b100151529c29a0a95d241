@@ -1,0 +1,156 @@
+/*
+ * 
+ */
+package prediqt.diagram.part;
+
+/**
+ * @generated
+ */
+public class PrediqtCreationWizard
+		extends org.eclipse.jface.wizard.Wizard implements org.eclipse.ui.INewWizard {
+
+	/**
+ * @generated
+ */
+	private org.eclipse.ui.IWorkbench workbench;
+
+	/**
+ * @generated
+ */
+    protected org.eclipse.jface.viewers.IStructuredSelection selection;
+
+	/**
+ * @generated
+ */
+	protected prediqt.diagram.part.PrediqtCreationWizardPage diagramModelFilePage;
+	
+	/**
+ * @generated
+ */
+	protected prediqt.diagram.part.PrediqtCreationWizardPage domainModelFilePage;
+	
+	/**
+ * @generated
+ */
+	protected org.eclipse.emf.ecore.resource.Resource diagram;
+
+	/**
+ * @generated
+ */
+	private boolean openNewlyCreatedDiagramEditor = true;
+
+	/**
+ * @generated
+ */
+    public org.eclipse.ui.IWorkbench getWorkbench() {
+        return workbench;
+    }
+
+	/**
+ * @generated
+ */
+	public org.eclipse.jface.viewers.IStructuredSelection getSelection() {
+        return selection;
+    }
+
+	/**
+ * @generated
+ */
+	public final org.eclipse.emf.ecore.resource.Resource getDiagram() {
+		return diagram;
+	}
+
+	/**
+ * @generated
+ */
+	public final boolean isOpenNewlyCreatedDiagramEditor() {
+		return openNewlyCreatedDiagramEditor;
+	}
+
+	/**
+ * @generated
+ */
+	public void setOpenNewlyCreatedDiagramEditor(boolean openNewlyCreatedDiagramEditor) {
+		this.openNewlyCreatedDiagramEditor = openNewlyCreatedDiagramEditor;
+	}
+
+	/**
+ * @generated
+ */
+	public void init(org.eclipse.ui.IWorkbench workbench, org.eclipse.jface.viewers.IStructuredSelection selection) {
+        this.workbench = workbench;
+        this.selection = selection;
+		setWindowTitle(prediqt.diagram.part.Messages.PrediqtCreationWizardTitle);
+		setDefaultPageImageDescriptor(prediqt.diagram.part.PrediqtDiagramEditorPlugin.getBundledImageDescriptor(
+				"icons/wizban/NewPrediqtWizard.gif")); //$NON-NLS-1$
+		setNeedsProgressMonitor(true);
+	}
+
+	/**
+ * @generated
+ */
+	public void addPages() {
+		diagramModelFilePage = new prediqt.diagram.part.PrediqtCreationWizardPage(
+				"DiagramModelFile", getSelection(), "prediqt_diagram"); //$NON-NLS-1$ //$NON-NLS-2$
+		diagramModelFilePage.setTitle(prediqt.diagram.part.Messages.PrediqtCreationWizard_DiagramModelFilePageTitle);
+		diagramModelFilePage.setDescription(prediqt.diagram.part.Messages.PrediqtCreationWizard_DiagramModelFilePageDescription);
+		addPage(diagramModelFilePage);
+	
+		domainModelFilePage = new prediqt.diagram.part.PrediqtCreationWizardPage(
+				"DomainModelFile", getSelection(), "prediqt") { //$NON-NLS-1$ //$NON-NLS-2$
+
+			public void setVisible(boolean visible) {
+				if (visible) {
+					String fileName = diagramModelFilePage.getFileName();
+					fileName = fileName.substring(0, fileName.length() - ".prediqt_diagram".length()); //$NON-NLS-1$
+					setFileName(prediqt.diagram.part.PrediqtDiagramEditorUtil.getUniqueFileName(
+							getContainerFullPath(), fileName, "prediqt")); //$NON-NLS-1$
+				}
+				super.setVisible(visible);
+			}
+		};
+		domainModelFilePage.setTitle(prediqt.diagram.part.Messages.PrediqtCreationWizard_DomainModelFilePageTitle);
+		domainModelFilePage.setDescription(prediqt.diagram.part.Messages.PrediqtCreationWizard_DomainModelFilePageDescription);
+		addPage(domainModelFilePage);
+		}
+
+	/**
+ * @generated
+ */
+	public boolean performFinish() {
+		org.eclipse.jface.operation.IRunnableWithProgress op =
+					new org.eclipse.ui.actions.WorkspaceModifyOperation(null) {
+
+			protected void execute(org.eclipse.core.runtime.IProgressMonitor monitor)
+					throws org.eclipse.core.runtime.CoreException, InterruptedException {
+					diagram = prediqt.diagram.part.PrediqtDiagramEditorUtil.createDiagram(diagramModelFilePage.getURI(),
+							domainModelFilePage.getURI(),
+							monitor);
+				if (isOpenNewlyCreatedDiagramEditor() && diagram != null) {
+					try {
+						prediqt.diagram.part.PrediqtDiagramEditorUtil.openDiagram(diagram);
+					} catch (org.eclipse.ui.PartInitException e) {
+						org.eclipse.jface.dialogs.ErrorDialog.openError(getContainer().getShell(),
+								prediqt.diagram.part.Messages.PrediqtCreationWizardOpenEditorError, null, e.getStatus());
+					}
+				}
+			}
+		};
+		try {
+			getContainer().run(false, true, op);
+		} catch (InterruptedException e) {
+			return false;
+		} catch (java.lang.reflect.InvocationTargetException e) {
+			if (e.getTargetException() instanceof org.eclipse.core.runtime.CoreException) {
+				org.eclipse.jface.dialogs.ErrorDialog.openError(getContainer().getShell(),
+						prediqt.diagram.part.Messages.PrediqtCreationWizardCreationError, null,
+						((org.eclipse.core.runtime.CoreException) e.getTargetException()).getStatus());
+			} else {
+				prediqt.diagram.part.PrediqtDiagramEditorPlugin.getInstance().logError(
+						"Error creating diagram", e.getTargetException()); //$NON-NLS-1$
+			}
+			return false;
+		}
+		return diagram != null;
+	}
+	}

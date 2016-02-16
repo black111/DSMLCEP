@@ -1,0 +1,93 @@
+/*
+ * 
+ */
+package prediqt.diagram.edit.parts;
+
+/**
+ * @generated
+ */
+public class PArcEditPart extends org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart 	implements org.eclipse.gmf.runtime.diagram.ui.editparts.ITreeBranchEditPart {
+
+			/**
+ * @generated
+ */
+	public static final int VISUAL_ID = 4001;
+	
+		/**
+ * @generated
+ */
+	public PArcEditPart(org.eclipse.gmf.runtime.notation.View view) {
+		super(view);
+	}
+	
+		/**
+ * @generated
+ */
+	protected void createDefaultEditPolicies() {
+			super.createDefaultEditPolicies();
+			installEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.SEMANTIC_ROLE, new prediqt.diagram.edit.policies.PArcItemSemanticEditPolicy());
+						}
+
+	
+
+	
+
+	
+
+	
+	
+		/**
+ * Creates figure for this edit part.
+ * 
+ * Body of this method does not depend on settings in generation model
+ * so you may safely remove <i>generated</i> tag and modify it.
+ * 
+ * @generated
+ */
+	
+	protected org.eclipse.draw2d.Connection createConnectionFigure() {
+		return new PArcFigure();
+	}
+
+	/**
+ * @generated
+ */
+	public PArcFigure getPrimaryShape() {
+		return (PArcFigure) getFigure();
+	}
+
+	
+/**
+ * @generated
+ */
+public class PArcFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {
+
+
+
+
+
+
+	/**
+	 * @generated
+	 */
+	public PArcFigure() {
+		
+		setTargetDecoration(createTargetDecoration());
+	}
+
+	/**
+	 * @generated
+	 */
+	private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {
+		org.eclipse.draw2d.PolylineDecoration df = new org.eclipse.draw2d.PolylineDecoration();
+		return df;
+	}
+
+
+
+
+}
+
+
+	
+	}

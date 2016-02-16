@@ -1,0 +1,13 @@
+   [%
+        out.println("select");
+   %]
+   [%for (component in AreaDesenho) {%]
+       [%for (r in component.rule) {%]
+       
+          [%for (q in r.select(c|c.isKindOf(Query))) {%]
+                queries: [%=q%] 
+           [%}%]
+               
+        
+        [%}%]
+   [%}%]

@@ -1,0 +1,60 @@
+	/*
+ * 
+ */
+package dsml.diagram.edit.policies;
+
+	/**
+ * @generated
+ */
+public class AreaDesenhoItemSemanticEditPolicy extends dsml.diagram.edit.policies.DsmlBaseItemSemanticEditPolicy {
+
+		/**
+ * @generated
+ */
+	public AreaDesenhoItemSemanticEditPolicy() {
+				super(dsml.diagram.providers.DsmlElementTypes.AreaDesenho_1000);
+	}
+
+	
+	/**
+ * @generated
+ */
+	protected org.eclipse.gef.commands.Command getCreateCommand(org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest req) {
+		if (dsml.diagram.providers.DsmlElementTypes.Event_2028 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.EventCreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.Rule_2029 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.RuleCreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.EventPattern_2030 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.EventPatternCreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.Window_2031 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.WindowCreateCommand(req));
+}
+		return super.getCreateCommand(req);
+	}
+	
+		/**
+ * @generated
+ */
+protected org.eclipse.gef.commands.Command getDuplicateCommand(org.eclipse.gmf.runtime.emf.type.core.requests.DuplicateElementsRequest req) {
+	org.eclipse.emf.transaction.TransactionalEditingDomain editingDomain = ((org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart) getHost()).getEditingDomain();
+	return getGEFWrapper(new DuplicateAnythingCommand(editingDomain, req));
+}
+	
+		/**
+ * @generated
+ */
+private static class DuplicateAnythingCommand extends org.eclipse.gmf.runtime.emf.commands.core.commands.DuplicateEObjectsCommand {
+
+		/**
+ * @generated
+ */
+public DuplicateAnythingCommand(org.eclipse.emf.transaction.TransactionalEditingDomain editingDomain, org.eclipse.gmf.runtime.emf.type.core.requests.DuplicateElementsRequest req) {
+	super(editingDomain, req.getLabel(), req.getElementsToBeDuplicated(), req.getAllDuplicatedElementsMap());
+}
+
+	}
+	
+	}

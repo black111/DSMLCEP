@@ -1,0 +1,56 @@
+	/*
+ * 
+ */
+package dsml.diagram.edit.policies;
+
+	/**
+ * @generated
+ */
+public class TargetTargetNodesCompartment2ItemSemanticEditPolicy extends dsml.diagram.edit.policies.DsmlBaseItemSemanticEditPolicy {
+
+		/**
+ * @generated
+ */
+	public TargetTargetNodesCompartment2ItemSemanticEditPolicy() {
+				super(dsml.diagram.providers.DsmlElementTypes.Target_3043);
+	}
+
+	
+	/**
+ * @generated
+ */
+	protected org.eclipse.gef.commands.Command getCreateCommand(org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest req) {
+		if (dsml.diagram.providers.DsmlElementTypes.Aggregation_3035 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.Aggregation2CreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.Order_3036 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.Order2CreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.Operator_3037 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.Operator3CreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.ValueOperator_3038 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.ValueOperator3CreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.UnaryOperatorPattern_3039 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.UnaryOperatorPattern2CreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.BinaryOperatorPattern_3040 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.BinaryOperatorPattern2CreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.PatternTimer_3041 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.PatternTimer2CreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.ConditionGroup_3042 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.ConditionGroup2CreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.Target_3043 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.Target2CreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.Not_3044 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.Not2CreateCommand(req));
+}
+		return super.getCreateCommand(req);
+	}
+	
+	}

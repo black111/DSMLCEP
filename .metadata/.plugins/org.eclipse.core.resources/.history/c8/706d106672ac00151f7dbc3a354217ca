@@ -1,0 +1,10 @@
+/*
+ * 
+ */
+package dsml.diagram.edit.helpers;
+
+/**
+ * @generated
+ */
+public class RuleEditHelper extends dsml.diagram.edit.helpers.DsmlBaseEditHelper {
+	}

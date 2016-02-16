@@ -1,0 +1,53 @@
+	/*
+ * 
+ */
+package dsml.diagram.edit.policies;
+
+	/**
+ * @generated
+ */
+public class RuleRuleQueriesCompartmentItemSemanticEditPolicy extends dsml.diagram.edit.policies.DsmlBaseItemSemanticEditPolicy {
+
+		/**
+ * @generated
+ */
+	public RuleRuleQueriesCompartmentItemSemanticEditPolicy() {
+				super(dsml.diagram.providers.DsmlElementTypes.Rule_2002);
+	}
+
+	
+	/**
+ * @generated
+ */
+	protected org.eclipse.gef.commands.Command getCreateCommand(org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest req) {
+		if (dsml.diagram.providers.DsmlElementTypes.Target_3002 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.TargetCreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.PNode_3031 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.PNode4CreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.ConditionGroup_3032 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.ConditionGroup4CreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.BringGroup_3033 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.BringGroup4CreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.Not_3034 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.Not4CreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.Operator_3035 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.Operator4CreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.ValueOperator_3036 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.ValueOperator4CreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.Aggregation_3037 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.Aggregation4CreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.Order_3038 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.Order4CreateCommand(req));
+}
+		return super.getCreateCommand(req);
+	}
+	
+	}

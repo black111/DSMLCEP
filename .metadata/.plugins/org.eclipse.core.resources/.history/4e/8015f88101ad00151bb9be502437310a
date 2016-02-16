@@ -1,0 +1,77 @@
+/**
+ */
+package dsml;
+
+import org.eclipse.emf.ecore.EObject;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Link</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * <ul>
+ *   <li>{@link dsml.Link#getOrigem <em>Origem</em>}</li>
+ *   <li>{@link dsml.Link#getDestino <em>Destino</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @see dsml.DsmlPackage#getLink()
+ * @model annotation="gmf.link source='origem' target='destino' incoming='true' color='0,0,0' width='1'"
+ * @generated
+ */
+public interface Link extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Origem</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Origem</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Origem</em>' reference.
+	 * @see #setOrigem(Component)
+	 * @see dsml.DsmlPackage#getLink_Origem()
+	 * @model required="true"
+	 * @generated
+	 */
+	Component getOrigem();
+
+	/**
+	 * Sets the value of the '{@link dsml.Link#getOrigem <em>Origem</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Origem</em>' reference.
+	 * @see #getOrigem()
+	 * @generated
+	 */
+	void setOrigem(Component value);
+
+	/**
+	 * Returns the value of the '<em><b>Destino</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Destino</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Destino</em>' reference.
+	 * @see #setDestino(Component)
+	 * @see dsml.DsmlPackage#getLink_Destino()
+	 * @model required="true"
+	 * @generated
+	 */
+	Component getDestino();
+
+	/**
+	 * Sets the value of the '{@link dsml.Link#getDestino <em>Destino</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Destino</em>' reference.
+	 * @see #getDestino()
+	 * @generated
+	 */
+	void setDestino(Component value);
+
+} // Link

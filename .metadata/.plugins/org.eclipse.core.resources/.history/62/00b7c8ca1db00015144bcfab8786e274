@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="ASCII"?>
+<gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="dsml">
+  <figures name="Default">
+    <figures xsi:type="gmfgraph:PolylineDecoration" name="ComparisonFigureTargetDecoration"/>
+    <figures xsi:type="gmfgraph:PolylineDecoration" name="ArithmeticFigureTargetDecoration"/>
+    <figures xsi:type="gmfgraph:PolylineDecoration" name="FollowedbyFigureTargetDecoration"/>
+    <descriptors name="RuleFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="RuleFigure">
+        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="RuleLabelFigure" text="Rule">
+          <maximumSize dx="10000" dy="50"/>
+        </children>
+        <children xsi:type="gmfgraph:Rectangle" name="RuleQueriesCompartmentFigure" outline="false"/>
+      </actualFigure>
+      <accessors accessor="getFigureRuleLabelFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
+      <accessors accessor="getRuleQueriesCompartmentFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
+    </descriptors>
+    <descriptors name="EventPatternFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="EventPatternFigure">
+        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="EventPatternLabelFigure" text="EventPattern">
+          <maximumSize dx="10000" dy="50"/>
+        </children>
+        <children xsi:type="gmfgraph:Rectangle" name="EventPatternNodeCompartmentFigure" outline="false"/>
+      </actualFigure>
+      <accessors accessor="getFigureEventPatternLabelFigure" figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
+      <accessors accessor="getEventPatternNodeCompartmentFigure" figure="//@figures.0/@descriptors.1/@actualFigure/@children.1"/>
+    </descriptors>
+    <descriptors name="WindowFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="WindowFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="WindowLabelFigure" text="Window"/>
+      </actualFigure>
+      <accessors accessor="getFigureWindowLabelFigure" figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="EventFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="EventFigure">
+        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="EventLabelFigure" text="Event">
+          <maximumSize dx="10000" dy="50"/>
+        </children>
+        <children xsi:type="gmfgraph:Rectangle" name="EventAttributesCompartmentFigure" outline="false"/>
+      </actualFigure>
+      <accessors accessor="getFigureEventLabelFigure" figure="//@figures.0/@descriptors.3/@actualFigure/@children.0"/>
+      <accessors accessor="getEventAttributesCompartmentFigure" figure="//@figures.0/@descriptors.3/@actualFigure/@children.1"/>
+    </descriptors>
+    <descriptors name="AttributeFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="AttributeFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="AttributeLabelFigure" text="Attribute"/>
+      </actualFigure>
+      <accessors accessor="getFigureAttributeLabelFigure" figure="//@figures.0/@descriptors.4/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="AggregationFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="AggregationFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="AggregationLabelFigure" text="Aggregation"/>
+      </actualFigure>
+      <accessors accessor="getFigureAggregationLabelFigure" figure="//@figures.0/@descriptors.5/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="OrderFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="OrderFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="OrderLabelFigure" text="Order">
+          <maximumSize dx="10000" dy="50"/>
+        </children>
+        <children xsi:type="gmfgraph:Rectangle" name="OrderLimitCompartmentFigure" outline="false"/>
+      </actualFigure>
+      <accessors accessor="getFigureOrderLabelFigure" figure="//@figures.0/@descriptors.6/@actualFigure/@children.0"/>
+      <accessors accessor="getOrderLimitCompartmentFigure" figure="//@figures.0/@descriptors.6/@actualFigure/@children.1"/>
+    </descriptors>
+    <descriptors name="LimitFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="LimitFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="LimitLabelFigure" text="Limit"/>
+      </actualFigure>
+      <accessors accessor="getFigureLimitLabelFigure" figure="//@figures.0/@descriptors.7/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="ConditionGroupFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="ConditionGroupFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="ConditionGroupLabelFigure" text="ConditionGroup">
+          <maximumSize dx="10000" dy="50"/>
+        </children>
+        <children xsi:type="gmfgraph:Rectangle" name="ConditionGroupOperationTypesCompartmentFigure" outline="false"/>
+      </actualFigure>
+      <accessors accessor="getFigureConditionGroupLabelFigure" figure="//@figures.0/@descriptors.8/@actualFigure/@children.0"/>
+      <accessors accessor="getConditionGroupOperationTypesCompartmentFigure" figure="//@figures.0/@descriptors.8/@actualFigure/@children.1"/>
+    </descriptors>
+    <descriptors name="BringGroupFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="BringGroupFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="BringGroupLabelFigure" text="BringGroup">
+          <maximumSize dx="10000" dy="50"/>
+        </children>
+        <children xsi:type="gmfgraph:Rectangle" name="BringGroupOperationTypesCompartmentFigure" outline="false"/>
+      </actualFigure>
+      <accessors accessor="getFigureBringGroupLabelFigure" figure="//@figures.0/@descriptors.9/@actualFigure/@children.0"/>
+      <accessors accessor="getBringGroupOperationTypesCompartmentFigure" figure="//@figures.0/@descriptors.9/@actualFigure/@children.1"/>
+    </descriptors>
+    <descriptors name="TargetFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="TargetFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="TargetLabelFigure" text="Target">
+          <maximumSize dx="10000" dy="50"/>
+        </children>
+        <children xsi:type="gmfgraph:Rectangle" name="TargetOperationTypesCompartmentFigure" outline="false"/>
+      </actualFigure>
+      <accessors accessor="getFigureTargetLabelFigure" figure="//@figures.0/@descriptors.10/@actualFigure/@children.0"/>
+      <accessors accessor="getTargetOperationTypesCompartmentFigure" figure="//@figures.0/@descriptors.10/@actualFigure/@children.1"/>
+    </descriptors>
+    <descriptors name="NotFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="NotFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="NotLabelFigure" text="Not"/>
+      </actualFigure>
+      <accessors accessor="getFigureNotLabelFigure" figure="//@figures.0/@descriptors.11/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="OperatorFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="OperatorFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="OperatorLabelFigure" text="Operator"/>
+      </actualFigure>
+      <accessors accessor="getFigureOperatorLabelFigure" figure="//@figures.0/@descriptors.12/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="ValueOperatorFigure">
+      <actualFigure xsi:type="gmfgraph:Ellipse" name="ValueOperatorFigure">
+        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="ValueOperatorLabelFigure" text="ValueOperator"/>
+      </actualFigure>
+      <accessors accessor="getFigureValueOperatorLabelFigure" figure="//@figures.0/@descriptors.13/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="UnaryOperatorPatternFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="UnaryOperatorPatternFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="UnaryOperatorPatternLabelFigure" text="UnaryOperatorPattern"/>
+      </actualFigure>
+      <accessors accessor="getFigureUnaryOperatorPatternLabelFigure" figure="//@figures.0/@descriptors.14/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="BinaryOperatorPatternFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="BinaryOperatorPatternFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="BinaryOperatorPatternLabelFigure" text="BinaryOperatorPattern"/>
+      </actualFigure>
+      <accessors accessor="getFigureBinaryOperatorPatternLabelFigure" figure="//@figures.0/@descriptors.15/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="PatternTimerFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="PatternTimerFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="PatternTimerLabelFigure" text="PatternTimer"/>
+      </actualFigure>
+      <accessors accessor="getFigurePatternTimerLabelFigure" figure="//@figures.0/@descriptors.16/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="LinkComponentFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="LinkComponentFigure">
+        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+      </actualFigure>
+    </descriptors>
+    <descriptors name="LinkTargetFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="LinkTargetFigure">
+        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+      </actualFigure>
+    </descriptors>
+    <descriptors name="ComparisonFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ComparisonFigure" lineWidth="2" targetDecoration="//@figures.0/@figures.0">
+        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+      </actualFigure>
+    </descriptors>
+    <descriptors name="ComparisonLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="ComparisonLabelLabel" text="Comparison"/>
+    </descriptors>
+    <descriptors name="ArithmeticFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ArithmeticFigure" lineWidth="2" targetDecoration="//@figures.0/@figures.1">
+        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+      </actualFigure>
+    </descriptors>
+    <descriptors name="ArithmeticLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="ArithmeticLabelLabel" text="Arithmetic"/>
+    </descriptors>
+    <descriptors name="FollowedbyFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="FollowedbyFigure" targetDecoration="//@figures.0/@figures.2">
+        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+      </actualFigure>
+    </descriptors>
+    <descriptors name="LogicalConnectorFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="LogicalConnectorFigure">
+        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+      </actualFigure>
+    </descriptors>
+    <descriptors name="LogicalConnectorLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="LogicalConnectorLabelLabel" text="LogicalConnector"/>
+    </descriptors>
+  </figures>
+  <nodes name="Rule" figure="RuleFigure"/>
+  <nodes name="EventPattern" figure="EventPatternFigure"/>
+  <nodes name="Window" figure="WindowFigure"/>
+  <nodes name="Event" figure="EventFigure"/>
+  <nodes name="Attribute" figure="AttributeFigure"/>
+  <nodes name="Aggregation" figure="AggregationFigure"/>
+  <nodes name="Order" figure="OrderFigure"/>
+  <nodes name="Limit" figure="LimitFigure"/>
+  <nodes name="ConditionGroup" figure="ConditionGroupFigure"/>
+  <nodes name="BringGroup" figure="BringGroupFigure"/>
+  <nodes name="Target" figure="TargetFigure"/>
+  <nodes name="Not" figure="NotFigure"/>
+  <nodes name="Operator" figure="OperatorFigure"/>
+  <nodes name="ValueOperator" figure="ValueOperatorFigure"/>
+  <nodes name="UnaryOperatorPattern" figure="UnaryOperatorPatternFigure"/>
+  <nodes name="BinaryOperatorPattern" figure="BinaryOperatorPatternFigure"/>
+  <nodes name="PatternTimer" figure="PatternTimerFigure"/>
+  <connections name="LinkComponent" figure="LinkComponentFigure"/>
+  <connections name="LinkTarget" figure="LinkTargetFigure"/>
+  <connections name="Comparison" figure="ComparisonFigure"/>
+  <connections name="Arithmetic" figure="ArithmeticFigure"/>
+  <connections name="Followedby" figure="FollowedbyFigure"/>
+  <connections name="LogicalConnector" figure="LogicalConnectorFigure"/>
+  <compartments name="RuleQueriesCompartment" figure="RuleFigure" collapsible="true" accessor="//@figures.0/@descriptors.0/@accessors.1"/>
+  <compartments name="EventPatternNodeCompartment" figure="EventPatternFigure" collapsible="true" accessor="//@figures.0/@descriptors.1/@accessors.1"/>
+  <compartments name="EventAttributesCompartment" figure="EventFigure" accessor="//@figures.0/@descriptors.3/@accessors.1"/>
+  <compartments name="OrderLimitCompartment" figure="OrderFigure" accessor="//@figures.0/@descriptors.6/@accessors.1"/>
+  <compartments name="ConditionGroupOperationTypesCompartment" figure="ConditionGroupFigure" collapsible="true" accessor="//@figures.0/@descriptors.8/@accessors.1"/>
+  <compartments name="BringGroupOperationTypesCompartment" figure="BringGroupFigure" collapsible="true" accessor="//@figures.0/@descriptors.9/@accessors.1"/>
+  <compartments name="TargetOperationTypesCompartment" figure="TargetFigure" collapsible="true" accessor="//@figures.0/@descriptors.10/@accessors.1"/>
+  <labels name="RuleLabel" figure="RuleFigure" accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+  <labels name="EventPatternLabel" figure="EventPatternFigure" accessor="//@figures.0/@descriptors.1/@accessors.0"/>
+  <labels name="WindowLabel" figure="WindowFigure" accessor="//@figures.0/@descriptors.2/@accessors.0"/>
+  <labels name="EventLabel" figure="EventFigure" accessor="//@figures.0/@descriptors.3/@accessors.0"/>
+  <labels name="AttributeLabel" figure="AttributeFigure" elementIcon="false" accessor="//@figures.0/@descriptors.4/@accessors.0"/>
+  <labels name="AggregationLabel" figure="AggregationFigure" accessor="//@figures.0/@descriptors.5/@accessors.0"/>
+  <labels name="OrderLabel" figure="OrderFigure" accessor="//@figures.0/@descriptors.6/@accessors.0"/>
+  <labels name="LimitLabel" figure="LimitFigure" accessor="//@figures.0/@descriptors.7/@accessors.0"/>
+  <labels name="ConditionGroupLabel" figure="ConditionGroupFigure" accessor="//@figures.0/@descriptors.8/@accessors.0"/>
+  <labels name="BringGroupLabel" figure="BringGroupFigure" accessor="//@figures.0/@descriptors.9/@accessors.0"/>
+  <labels name="TargetLabel" figure="TargetFigure" accessor="//@figures.0/@descriptors.10/@accessors.0"/>
+  <labels name="NotLabel" figure="NotFigure" accessor="//@figures.0/@descriptors.11/@accessors.0"/>
+  <labels name="OperatorLabel" figure="OperatorFigure" accessor="//@figures.0/@descriptors.12/@accessors.0"/>
+  <labels name="ValueOperatorLabel" figure="ValueOperatorFigure" accessor="//@figures.0/@descriptors.13/@accessors.0"/>
+  <labels name="UnaryOperatorPatternLabel" figure="UnaryOperatorPatternFigure" accessor="//@figures.0/@descriptors.14/@accessors.0"/>
+  <labels name="BinaryOperatorPatternLabel" figure="BinaryOperatorPatternFigure" accessor="//@figures.0/@descriptors.15/@accessors.0"/>
+  <labels name="PatternTimerLabel" figure="PatternTimerFigure" accessor="//@figures.0/@descriptors.16/@accessors.0"/>
+  <labels name="ComparisonLabel" figure="ComparisonLabelFigure" elementIcon="false"/>
+  <labels name="ArithmeticLabel" figure="ArithmeticLabelFigure" elementIcon="false"/>
+  <labels name="LogicalConnectorLabel" figure="LogicalConnectorLabelFigure" elementIcon="false"/>
+</gmfgraph:Canvas>

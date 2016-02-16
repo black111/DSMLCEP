@@ -1,0 +1,57 @@
+/*
+ * 
+ */
+package dsml.diagram.edit.policies;
+
+/**
+ * @generated
+ */
+public class WindowGraphicalNodeEditPolicy extends org.eclipse.gmf.runtime.diagram.ui.editpolicies.GraphicalNodeEditPolicy {
+
+	/**
+ * @generated
+ */
+	protected org.eclipse.gef.commands.Command getConnectionCompleteCommand(
+			org.eclipse.gef.requests.CreateConnectionRequest request) {
+		org.eclipse.gmf.runtime.emf.type.core.IElementType elementType = getElementType(request);
+				if (dsml.diagram.providers.DsmlElementTypes.LinkTarget_4003 == elementType) {
+						if (request.getSourceEditPart() != getHost()) {
+						return getConnectionWithReorientedViewCompleteCommand(request);
+						}
+					}
+				return super.getConnectionCompleteCommand(request);
+	}
+
+	/**
+ * @generated
+ */
+	protected org.eclipse.gmf.runtime.emf.type.core.IElementType getElementType(
+			org.eclipse.gef.requests.CreateConnectionRequest request) {
+		if (request instanceof org.eclipse.gmf.runtime.diagram.ui.requests.CreateConnectionViewAndElementRequest) {
+			org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter requestAdapter =
+					((org.eclipse.gmf.runtime.diagram.ui.requests.CreateConnectionViewAndElementRequest) request)
+							.getConnectionViewAndElementDescriptor().getCreateElementRequestAdapter();
+			return (org.eclipse.gmf.runtime.emf.type.core.IElementType) requestAdapter.getAdapter(
+					org.eclipse.gmf.runtime.emf.type.core.IElementType.class);
+		}
+		return null;
+	}
+
+	/**
+ * @generated
+ */
+	protected org.eclipse.gef.commands.Command getConnectionWithReorientedViewCompleteCommand(
+			org.eclipse.gef.requests.CreateConnectionRequest request) {
+		org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy c =
+				(org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy) super.getConnectionCompleteCommand(request);
+		org.eclipse.gmf.runtime.common.core.command.CompositeCommand cc =
+				(org.eclipse.gmf.runtime.common.core.command.CompositeCommand) c.getICommand();
+		org.eclipse.emf.transaction.TransactionalEditingDomain editingDomain =
+				((org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart) getHost()).getEditingDomain();
+		dsml.diagram.edit.commands.DsmlReorientConnectionViewCommand rcvCommand =
+				new dsml.diagram.edit.commands.DsmlReorientConnectionViewCommand(editingDomain, null);
+		rcvCommand.setEdgeAdaptor(getViewAdapter());
+		cc.compose(rcvCommand);
+		return c;
+	}
+	}

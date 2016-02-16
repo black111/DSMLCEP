@@ -1,0 +1,108 @@
+/**
+ */
+package dsml;
+
+import org.eclipse.emf.ecore.EObject;
+
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Logical Connector</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * <ul>
+ *   <li>{@link dsml.LogicalConnector#getOutLink <em>Out Link</em>}</li>
+ *   <li>{@link dsml.LogicalConnector#getInLink <em>In Link</em>}</li>
+ *   <li>{@link dsml.LogicalConnector#getTypeLogical <em>Type Logical</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @see dsml.DsmlPackage#getLogicalConnector()
+ * @model annotation="gmf.link label='typeLogical' source='outLink' target='inLink' incoming='true' color='0,0,0' width='1'"
+ * @generated
+ */
+public interface LogicalConnector extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Out Link</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Out Link</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Out Link</em>' reference.
+	 * @see #setOutLink(GroupRelacional)
+	 * @see dsml.DsmlPackage#getLogicalConnector_OutLink()
+	 * @model required="true"
+	 * @generated
+	 */
+	GroupRelacional getOutLink();
+
+	/**
+	 * Sets the value of the '{@link dsml.LogicalConnector#getOutLink <em>Out Link</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Out Link</em>' reference.
+	 * @see #getOutLink()
+	 * @generated
+	 */
+	void setOutLink(GroupRelacional value);
+
+	/**
+	 * Returns the value of the '<em><b>In Link</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>In Link</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>In Link</em>' reference.
+	 * @see #setInLink(GroupRelacional)
+	 * @see dsml.DsmlPackage#getLogicalConnector_InLink()
+	 * @model required="true"
+	 * @generated
+	 */
+	GroupRelacional getInLink();
+
+	/**
+	 * Sets the value of the '{@link dsml.LogicalConnector#getInLink <em>In Link</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>In Link</em>' reference.
+	 * @see #getInLink()
+	 * @generated
+	 */
+	void setInLink(GroupRelacional value);
+
+	/**
+	 * Returns the value of the '<em><b>Type Logical</b></em>' attribute.
+	 * The literals are from the enumeration {@link dsml.TypeLogical}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Type Logical</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Type Logical</em>' attribute.
+	 * @see dsml.TypeLogical
+	 * @see #setTypeLogical(TypeLogical)
+	 * @see dsml.DsmlPackage#getLogicalConnector_TypeLogical()
+	 * @model
+	 * @generated
+	 */
+	TypeLogical getTypeLogical();
+
+	/**
+	 * Sets the value of the '{@link dsml.LogicalConnector#getTypeLogical <em>Type Logical</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Type Logical</em>' attribute.
+	 * @see dsml.TypeLogical
+	 * @see #getTypeLogical()
+	 * @generated
+	 */
+	void setTypeLogical(TypeLogical value);
+
+} // LogicalConnector

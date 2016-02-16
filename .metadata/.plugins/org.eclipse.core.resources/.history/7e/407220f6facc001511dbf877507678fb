@@ -1,0 +1,281 @@
+/**
+ */
+package dsml.impl;
+
+import dsml.Attribute;
+import dsml.DsmlPackage;
+import dsml.Operator;
+
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Operator</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * <ul>
+ *   <li>{@link dsml.impl.OperatorImpl#getOperator <em>Operator</em>}</li>
+ *   <li>{@link dsml.impl.OperatorImpl#getAttribute <em>Attribute</em>}</li>
+ *   <li>{@link dsml.impl.OperatorImpl#getOperatorAlias <em>Operator Alias</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @generated
+ */
+public class OperatorImpl extends QueryImpl implements Operator {
+	/**
+	 * The default value of the '{@link #getOperator() <em>Operator</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOperator()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String OPERATOR_EDEFAULT = "Operator";
+
+	/**
+	 * The cached value of the '{@link #getOperator() <em>Operator</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOperator()
+	 * @generated
+	 * @ordered
+	 */
+	protected String operator = OPERATOR_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getAttribute() <em>Attribute</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAttribute()
+	 * @generated
+	 * @ordered
+	 */
+	protected Attribute attribute;
+
+	/**
+	 * The default value of the '{@link #getOperatorAlias() <em>Operator Alias</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOperatorAlias()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String OPERATOR_ALIAS_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getOperatorAlias() <em>Operator Alias</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOperatorAlias()
+	 * @generated
+	 * @ordered
+	 */
+	protected String operatorAlias = OPERATOR_ALIAS_EDEFAULT;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected OperatorImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return DsmlPackage.Literals.OPERATOR;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getOperator() {
+		return operator;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOperator(String newOperator) {
+		String oldOperator = operator;
+		operator = newOperator;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DsmlPackage.OPERATOR__OPERATOR, oldOperator, operator));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Attribute getAttribute() {
+		if (attribute != null && attribute.eIsProxy()) {
+			InternalEObject oldAttribute = (InternalEObject)attribute;
+			attribute = (Attribute)eResolveProxy(oldAttribute);
+			if (attribute != oldAttribute) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DsmlPackage.OPERATOR__ATTRIBUTE, oldAttribute, attribute));
+			}
+		}
+		return attribute;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Attribute basicGetAttribute() {
+		return attribute;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAttribute(Attribute newAttribute) {
+		Attribute oldAttribute = attribute;
+		attribute = newAttribute;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DsmlPackage.OPERATOR__ATTRIBUTE, oldAttribute, attribute));
+		if(attribute != null){
+		    setOperator(attribute.getName());
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getOperatorAlias() {
+		return operatorAlias;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOperatorAlias(String newOperatorAlias) {
+		String oldOperatorAlias = operatorAlias;
+		operatorAlias = newOperatorAlias;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DsmlPackage.OPERATOR__OPERATOR_ALIAS, oldOperatorAlias, operatorAlias));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case DsmlPackage.OPERATOR__OPERATOR:
+				return getOperator();
+			case DsmlPackage.OPERATOR__ATTRIBUTE:
+				if (resolve) return getAttribute();
+				return basicGetAttribute();
+			case DsmlPackage.OPERATOR__OPERATOR_ALIAS:
+				return getOperatorAlias();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case DsmlPackage.OPERATOR__OPERATOR:
+				setOperator((String)newValue);
+				return;
+			case DsmlPackage.OPERATOR__ATTRIBUTE:
+				setAttribute((Attribute)newValue);
+				return;
+			case DsmlPackage.OPERATOR__OPERATOR_ALIAS:
+				setOperatorAlias((String)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case DsmlPackage.OPERATOR__OPERATOR:
+				setOperator(OPERATOR_EDEFAULT);
+				return;
+			case DsmlPackage.OPERATOR__ATTRIBUTE:
+				setAttribute((Attribute)null);
+				return;
+			case DsmlPackage.OPERATOR__OPERATOR_ALIAS:
+				setOperatorAlias(OPERATOR_ALIAS_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case DsmlPackage.OPERATOR__OPERATOR:
+				return OPERATOR_EDEFAULT == null ? operator != null : !OPERATOR_EDEFAULT.equals(operator);
+			case DsmlPackage.OPERATOR__ATTRIBUTE:
+				return attribute != null;
+			case DsmlPackage.OPERATOR__OPERATOR_ALIAS:
+				return OPERATOR_ALIAS_EDEFAULT == null ? operatorAlias != null : !OPERATOR_ALIAS_EDEFAULT.equals(operatorAlias);
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (operator: ");
+		result.append(operator);
+		result.append(", operatorAlias: ");
+		result.append(operatorAlias);
+		result.append(')');
+		return result.toString();
+	}
+
+} //OperatorImpl

@@ -1,0 +1,113 @@
+/*
+ * 
+ */
+package dsml.diagram.edit.parts;
+
+/**
+ * @generated
+ */
+public class TargetTargetOperationTypesCompartment3EditPart extends org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeCompartmentEditPart  {
+
+			/**
+ * @generated
+ */
+	public static final int VISUAL_ID = 7006;
+	
+		/**
+ * @generated
+ */
+	public TargetTargetOperationTypesCompartment3EditPart(org.eclipse.gmf.runtime.notation.View view) {
+		super(view);
+	}
+	
+			
+		/**
+ * @generated
+ */
+	public String getCompartmentName() {
+		return dsml.diagram.part.Messages.TargetTargetOperationTypesCompartment3EditPart_title;
+	}
+	
+						/**
+ * @generated
+ */
+		public org.eclipse.draw2d.IFigure createFigure() {
+			org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure result = (org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure) super.createFigure();
+			result.setTitleVisibility(false);
+			return result;
+		}
+		
+		/**
+ * @generated
+ */
+	protected void createDefaultEditPolicies() {
+			super.createDefaultEditPolicies();
+			installEditPolicy(org.eclipse.gef.EditPolicy.PRIMARY_DRAG_ROLE, new org.eclipse.gmf.runtime.diagram.ui.editpolicies.ResizableCompartmentEditPolicy());
+			installEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.SEMANTIC_ROLE, new dsml.diagram.edit.policies.TargetTargetOperationTypesCompartment3ItemSemanticEditPolicy());
+				installEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CREATION_ROLE, new org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent(dsml.diagram.part.DsmlVisualIDRegistry.TYPED_INSTANCE));
+		installEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.DRAG_DROP_ROLE, new org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy());
+			installEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CANONICAL_ROLE, new dsml.diagram.edit.policies.TargetTargetOperationTypesCompartment3CanonicalEditPolicy());
+					}
+	
+			
+			
+			
+		/**
+ * @generated
+ */
+	protected void setRatio(Double ratio) {
+				if (getFigure().getParent().getLayoutManager() instanceof org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout) {
+			super.setRatio(ratio);
+		}
+			}
+	
+	
+	/**
+ * @generated
+ */
+	public org.eclipse.gef.EditPart getTargetEditPart(org.eclipse.gef.Request request) {
+					if (request instanceof org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest) {
+				org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter adapter = ((org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest) request).getViewAndElementDescriptor().getCreateElementRequestAdapter();
+				org.eclipse.gmf.runtime.emf.type.core.IElementType type = (org.eclipse.gmf.runtime.emf.type.core.IElementType) adapter.getAdapter(org.eclipse.gmf.runtime.emf.type.core.IElementType.class);
+							if (type == dsml.diagram.providers.DsmlElementTypes.Target_3003) {
+					return this;
+				}
+							if (type == dsml.diagram.providers.DsmlElementTypes.ConditionGroup_3004) {
+					return this;
+				}
+							if (type == dsml.diagram.providers.DsmlElementTypes.BringGroup_3006) {
+					return this;
+				}
+							if (type == dsml.diagram.providers.DsmlElementTypes.Not_3008) {
+					return this;
+				}
+							if (type == dsml.diagram.providers.DsmlElementTypes.Operator_3009) {
+					return this;
+				}
+							if (type == dsml.diagram.providers.DsmlElementTypes.ValueOperator_3010) {
+					return this;
+				}
+							if (type == dsml.diagram.providers.DsmlElementTypes.Aggregation_3011) {
+					return this;
+				}
+							if (type == dsml.diagram.providers.DsmlElementTypes.Order_3012) {
+					return this;
+				}
+							return getParent().getTargetEditPart(request);
+			}
+			if (request instanceof org.eclipse.gmf.runtime.diagram.ui.requests.CreateUnspecifiedTypeConnectionRequest) {
+								if (org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants.REQ_CONNECTION_END.equals(request.getType())) {
+					for (Object type : ((org.eclipse.gmf.runtime.diagram.ui.requests.CreateUnspecifiedTypeConnectionRequest) request).getElementTypes()) {
+						if (type instanceof org.eclipse.gmf.runtime.emf.type.core.IElementType) {
+							org.eclipse.gmf.runtime.emf.type.core.IElementType elementType = (org.eclipse.gmf.runtime.emf.type.core.IElementType) type;
+							if (elementType.equals(dsml.diagram.providers.DsmlElementTypes.LinkTarget_4002) || elementType.equals(dsml.diagram.providers.DsmlElementTypes.Comparison_4003) || elementType.equals(dsml.diagram.providers.DsmlElementTypes.Arithmetic_4004) || elementType.equals(dsml.diagram.providers.DsmlElementTypes.Followedby_4005) || elementType.equals(dsml.diagram.providers.DsmlElementTypes.LogicalConnector_4006))
+								return super.getTargetEditPart(request);
+						}
+					}
+				}
+								return getParent().getTargetEditPart(request);
+			}
+				return super.getTargetEditPart(request);
+	}
+	
+	}

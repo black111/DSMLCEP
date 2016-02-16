@@ -1,0 +1,104 @@
+/**
+ */
+package dsml;
+
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Operator</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * <ul>
+ *   <li>{@link dsml.Operator#getOperator <em>Operator</em>}</li>
+ *   <li>{@link dsml.Operator#getAttribute <em>Attribute</em>}</li>
+ *   <li>{@link dsml.Operator#getOperatorAlias <em>Operator Alias</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @see dsml.DsmlPackage#getOperator()
+ * @model annotation="gmf.node label='operator' figure='rectangle'"
+ * @generated
+ */
+public interface Operator extends Query {
+	/**
+	 * Returns the value of the '<em><b>Operator</b></em>' attribute.
+	 * The default value is <code>"Operator"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Operator</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Operator</em>' attribute.
+	 * @see #setOperator(String)
+	 * @see dsml.DsmlPackage#getOperator_Operator()
+	 * @model default="Operator"
+	 * @generated
+	 */
+	String getOperator();
+
+	/**
+	 * Sets the value of the '{@link dsml.Operator#getOperator <em>Operator</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Operator</em>' attribute.
+	 * @see #getOperator()
+	 * @generated
+	 */
+	void setOperator(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Attribute</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Attribute</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Attribute</em>' reference.
+	 * @see #setAttribute(Attribute)
+	 * @see dsml.DsmlPackage#getOperator_Attribute()
+	 * @model
+	 * @generated
+	 */
+	Attribute getAttribute();
+
+	/**
+	 * Sets the value of the '{@link dsml.Operator#getAttribute <em>Attribute</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Attribute</em>' reference.
+	 * @see #getAttribute()
+	 * @generated
+	 */
+	void setAttribute(Attribute value);
+
+	/**
+	 * Returns the value of the '<em><b>Operator Alias</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Operator Alias</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Operator Alias</em>' attribute.
+	 * @see #setOperatorAlias(String)
+	 * @see dsml.DsmlPackage#getOperator_OperatorAlias()
+	 * @model
+	 * @generated
+	 */
+	String getOperatorAlias();
+
+	/**
+	 * Sets the value of the '{@link dsml.Operator#getOperatorAlias <em>Operator Alias</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Operator Alias</em>' attribute.
+	 * @see #getOperatorAlias()
+	 * @generated
+	 */
+	void setOperatorAlias(String value);
+
+} // Operator

@@ -1,0 +1,189 @@
+/**
+ */
+package dsml.impl;
+
+import dsml.AreaDesenho;
+import dsml.Component;
+import dsml.DsmlPackage;
+import dsml.Link;
+
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.EObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Area Desenho</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * <ul>
+ *   <li>{@link dsml.impl.AreaDesenhoImpl#getComponent <em>Component</em>}</li>
+ *   <li>{@link dsml.impl.AreaDesenhoImpl#getLinks <em>Links</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @generated
+ */
+public class AreaDesenhoImpl extends EObjectImpl implements AreaDesenho {
+	/**
+	 * The cached value of the '{@link #getComponent() <em>Component</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getComponent()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Component> component;
+
+	/**
+	 * The cached value of the '{@link #getLinks() <em>Links</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLinks()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Link> links;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AreaDesenhoImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return DsmlPackage.Literals.AREA_DESENHO;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Component> getComponent() {
+		if (component == null) {
+			component = new EObjectContainmentEList<Component>(Component.class, this, DsmlPackage.AREA_DESENHO__COMPONENT);
+		}
+		return component;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Link> getLinks() {
+		if (links == null) {
+			links = new EObjectContainmentEList<Link>(Link.class, this, DsmlPackage.AREA_DESENHO__LINKS);
+		}
+		return links;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case DsmlPackage.AREA_DESENHO__COMPONENT:
+				return ((InternalEList<?>)getComponent()).basicRemove(otherEnd, msgs);
+			case DsmlPackage.AREA_DESENHO__LINKS:
+				return ((InternalEList<?>)getLinks()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case DsmlPackage.AREA_DESENHO__COMPONENT:
+				return getComponent();
+			case DsmlPackage.AREA_DESENHO__LINKS:
+				return getLinks();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case DsmlPackage.AREA_DESENHO__COMPONENT:
+				getComponent().clear();
+				getComponent().addAll((Collection<? extends Component>)newValue);
+				return;
+			case DsmlPackage.AREA_DESENHO__LINKS:
+				getLinks().clear();
+				getLinks().addAll((Collection<? extends Link>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case DsmlPackage.AREA_DESENHO__COMPONENT:
+				getComponent().clear();
+				return;
+			case DsmlPackage.AREA_DESENHO__LINKS:
+				getLinks().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case DsmlPackage.AREA_DESENHO__COMPONENT:
+				return component != null && !component.isEmpty();
+			case DsmlPackage.AREA_DESENHO__LINKS:
+				return links != null && !links.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
+
+} //AreaDesenhoImpl

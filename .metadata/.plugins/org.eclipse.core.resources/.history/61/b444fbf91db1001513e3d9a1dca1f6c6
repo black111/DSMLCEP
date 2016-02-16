@@ -1,0 +1,76 @@
+/**
+ */
+package dsml;
+
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Followedby</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * <ul>
+ *   <li>{@link dsml.Followedby#getOutboundLink <em>Outbound Link</em>}</li>
+ *   <li>{@link dsml.Followedby#getInboundLink <em>Inbound Link</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @see dsml.DsmlPackage#getFollowedby()
+ * @model annotation="gmf.link source='outboundLink' target='inboundLink' target.decoration='arrow' incoming='true' color='0,0,0' width='1'"
+ * @generated
+ */
+public interface Followedby extends Link {
+	/**
+	 * Returns the value of the '<em><b>Outbound Link</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Outbound Link</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Outbound Link</em>' reference.
+	 * @see #setOutboundLink(Target)
+	 * @see dsml.DsmlPackage#getFollowedby_OutboundLink()
+	 * @model required="true"
+	 * @generated
+	 */
+	Target getOutboundLink();
+
+	/**
+	 * Sets the value of the '{@link dsml.Followedby#getOutboundLink <em>Outbound Link</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Outbound Link</em>' reference.
+	 * @see #getOutboundLink()
+	 * @generated
+	 */
+	void setOutboundLink(Target value);
+
+	/**
+	 * Returns the value of the '<em><b>Inbound Link</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Inbound Link</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Inbound Link</em>' reference.
+	 * @see #setInboundLink(Target)
+	 * @see dsml.DsmlPackage#getFollowedby_InboundLink()
+	 * @model required="true"
+	 * @generated
+	 */
+	Target getInboundLink();
+
+	/**
+	 * Sets the value of the '{@link dsml.Followedby#getInboundLink <em>Inbound Link</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Inbound Link</em>' reference.
+	 * @see #getInboundLink()
+	 * @generated
+	 */
+	void setInboundLink(Target value);
+
+} // Followedby

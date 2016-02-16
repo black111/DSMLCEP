@@ -1,0 +1,63 @@
+/*
+ * 
+ */
+package dsml.diagram.edit.policies;
+
+import org.eclipse.gef.commands.Command;
+import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
+
+import dsml.diagram.edit.commands.Attribute2CreateCommand;
+import dsml.diagram.edit.commands.BinaryOperatorPatternCreateCommand;
+import dsml.diagram.edit.commands.Not2CreateCommand;
+import dsml.diagram.edit.commands.Operator3CreateCommand;
+import dsml.diagram.edit.commands.PatternTimerCreateCommand;
+import dsml.diagram.edit.commands.Target2CreateCommand;
+import dsml.diagram.edit.commands.UnaryOperatorPatternCreateCommand;
+import dsml.diagram.edit.commands.ValueOperator3CreateCommand;
+import dsml.diagram.providers.DsmlElementTypes;
+
+/**
+ * @generated
+ */
+public class BringGroupBringGroupOperationTypesCompartmentItemSemanticEditPolicy
+		extends DsmlBaseItemSemanticEditPolicy {
+
+	/**
+	 * @generated
+	 */
+	public BringGroupBringGroupOperationTypesCompartmentItemSemanticEditPolicy() {
+		super(DsmlElementTypes.BringGroup_3009);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Command getCreateCommand(CreateElementRequest req) {
+		if (DsmlElementTypes.Target_3010 == req.getElementType()) {
+			return getGEFWrapper(new Target2CreateCommand(req));
+		}
+		if (DsmlElementTypes.Not_3011 == req.getElementType()) {
+			return getGEFWrapper(new Not2CreateCommand(req));
+		}
+		if (DsmlElementTypes.Operator_3012 == req.getElementType()) {
+			return getGEFWrapper(new Operator3CreateCommand(req));
+		}
+		if (DsmlElementTypes.ValueOperator_3013 == req.getElementType()) {
+			return getGEFWrapper(new ValueOperator3CreateCommand(req));
+		}
+		if (DsmlElementTypes.UnaryOperatorPattern_3014 == req.getElementType()) {
+			return getGEFWrapper(new UnaryOperatorPatternCreateCommand(req));
+		}
+		if (DsmlElementTypes.BinaryOperatorPattern_3015 == req.getElementType()) {
+			return getGEFWrapper(new BinaryOperatorPatternCreateCommand(req));
+		}
+		if (DsmlElementTypes.PatternTimer_3016 == req.getElementType()) {
+			return getGEFWrapper(new PatternTimerCreateCommand(req));
+		}
+		if (DsmlElementTypes.Attribute_3017 == req.getElementType()) {
+			return getGEFWrapper(new Attribute2CreateCommand(req));
+		}
+		return super.getCreateCommand(req);
+	}
+
+}

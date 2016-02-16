@@ -1,0 +1,22 @@
+/*
+ * 
+ */
+package dsml.diagram.providers;
+
+import org.eclipse.gmf.runtime.common.ui.services.icon.IIconProvider;
+import org.eclipse.gmf.tooling.runtime.providers.DefaultElementTypeIconProvider;
+
+/**
+ * @generated
+ */
+public class DsmlIconProvider extends DefaultElementTypeIconProvider implements
+		IIconProvider {
+
+	/**
+	 * @generated
+	 */
+	public DsmlIconProvider() {
+		super(DsmlElementTypes.TYPED_INSTANCE);
+	}
+
+}

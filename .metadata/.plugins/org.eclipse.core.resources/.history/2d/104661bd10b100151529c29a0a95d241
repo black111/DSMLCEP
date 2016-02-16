@@ -1,0 +1,51 @@
+	/*
+ * 
+ */
+package prediqt.diagram.edit.policies;
+
+	/**
+ * @generated
+ */
+public class ProjectItemSemanticEditPolicy extends prediqt.diagram.edit.policies.PrediqtBaseItemSemanticEditPolicy {
+
+		/**
+ * @generated
+ */
+	public ProjectItemSemanticEditPolicy() {
+				super(prediqt.diagram.providers.PrediqtElementTypes.Project_1000);
+	}
+
+	
+	/**
+ * @generated
+ */
+	protected org.eclipse.gef.commands.Command getCreateCommand(org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest req) {
+		if (prediqt.diagram.providers.PrediqtElementTypes.PNode_2001 == req.getElementType()) {
+	return getGEFWrapper(new prediqt.diagram.edit.commands.PNodeCreateCommand(req));
+}
+		return super.getCreateCommand(req);
+	}
+	
+		/**
+ * @generated
+ */
+protected org.eclipse.gef.commands.Command getDuplicateCommand(org.eclipse.gmf.runtime.emf.type.core.requests.DuplicateElementsRequest req) {
+	org.eclipse.emf.transaction.TransactionalEditingDomain editingDomain = ((org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart) getHost()).getEditingDomain();
+	return getGEFWrapper(new DuplicateAnythingCommand(editingDomain, req));
+}
+	
+		/**
+ * @generated
+ */
+private static class DuplicateAnythingCommand extends org.eclipse.gmf.runtime.emf.commands.core.commands.DuplicateEObjectsCommand {
+
+		/**
+ * @generated
+ */
+public DuplicateAnythingCommand(org.eclipse.emf.transaction.TransactionalEditingDomain editingDomain, org.eclipse.gmf.runtime.emf.type.core.requests.DuplicateElementsRequest req) {
+	super(editingDomain, req.getLabel(), req.getElementsToBeDuplicated(), req.getAllDuplicatedElementsMap());
+}
+
+	}
+	
+	}

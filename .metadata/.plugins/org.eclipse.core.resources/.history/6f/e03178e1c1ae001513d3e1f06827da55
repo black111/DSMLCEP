@@ -1,0 +1,38 @@
+	/*
+ * 
+ */
+package dsml.diagram.edit.policies;
+
+	/**
+ * @generated
+ */
+public class TargetTargetOperationTypesCompartmentItemSemanticEditPolicy extends dsml.diagram.edit.policies.DsmlBaseItemSemanticEditPolicy {
+
+		/**
+ * @generated
+ */
+	public TargetTargetOperationTypesCompartmentItemSemanticEditPolicy() {
+				super(dsml.diagram.providers.DsmlElementTypes.Target_3002);
+	}
+
+	
+	/**
+ * @generated
+ */
+	protected org.eclipse.gef.commands.Command getCreateCommand(org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest req) {
+		if (dsml.diagram.providers.DsmlElementTypes.Aggregation_3003 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.AggregationCreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.Order_3004 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.OrderCreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.Operator_3006 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.OperatorCreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.ValueOperator_3007 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.ValueOperatorCreateCommand(req));
+}
+		return super.getCreateCommand(req);
+	}
+	
+	}

@@ -1,0 +1,111 @@
+/**
+ */
+package dsml;
+
+import java.math.BigDecimal;
+
+import org.eclipse.emf.ecore.EObject;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>PArc</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * <ul>
+ *   <li>{@link dsml.PArc#getImpact <em>Impact</em>}</li>
+ *   <li>{@link dsml.PArc#getSource <em>Source</em>}</li>
+ *   <li>{@link dsml.PArc#getTarget <em>Target</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @see dsml.DsmlPackage#getPArc()
+ * @model annotation="gmf.link label='impact' source='source' target='target' target.decoration='arrow'"
+ * @generated
+ */
+public interface PArc extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Impact</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Impact</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Impact</em>' attribute.
+	 * @see #setImpact(BigDecimal)
+	 * @see dsml.DsmlPackage#getPArc_Impact()
+	 * @model
+	 * @generated
+	 */
+	BigDecimal getImpact();
+
+	/**
+	 * Sets the value of the '{@link dsml.PArc#getImpact <em>Impact</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Impact</em>' attribute.
+	 * @see #getImpact()
+	 * @generated
+	 */
+	void setImpact(BigDecimal value);
+
+	/**
+	 * Returns the value of the '<em><b>Source</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link dsml.PNode#getOutgoing <em>Outgoing</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Source</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Source</em>' reference.
+	 * @see #setSource(PNode)
+	 * @see dsml.DsmlPackage#getPArc_Source()
+	 * @see dsml.PNode#getOutgoing
+	 * @model opposite="outgoing"
+	 * @generated
+	 */
+	PNode getSource();
+
+	/**
+	 * Sets the value of the '{@link dsml.PArc#getSource <em>Source</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Source</em>' reference.
+	 * @see #getSource()
+	 * @generated
+	 */
+	void setSource(PNode value);
+
+	/**
+	 * Returns the value of the '<em><b>Target</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link dsml.PNode#getIncoming <em>Incoming</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Target</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Target</em>' reference.
+	 * @see #setTarget(PNode)
+	 * @see dsml.DsmlPackage#getPArc_Target()
+	 * @see dsml.PNode#getIncoming
+	 * @model opposite="incoming"
+	 *        annotation="adapt.forward k=''"
+	 * @generated
+	 */
+	PNode getTarget();
+
+	/**
+	 * Sets the value of the '{@link dsml.PArc#getTarget <em>Target</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Target</em>' reference.
+	 * @see #getTarget()
+	 * @generated
+	 */
+	void setTarget(PNode value);
+
+} // PArc

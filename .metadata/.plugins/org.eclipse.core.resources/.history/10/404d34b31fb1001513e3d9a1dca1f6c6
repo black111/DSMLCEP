@@ -1,0 +1,53 @@
+	/*
+ * 
+ */
+package dsml.diagram.edit.policies;
+
+	/**
+ * @generated
+ */
+public class BringGroupBringGroupOperationTypesCompartment4ItemSemanticEditPolicy extends dsml.diagram.edit.policies.DsmlBaseItemSemanticEditPolicy {
+
+		/**
+ * @generated
+ */
+	public BringGroupBringGroupOperationTypesCompartment4ItemSemanticEditPolicy() {
+				super(dsml.diagram.providers.DsmlElementTypes.BringGroup_3033);
+	}
+
+	
+	/**
+ * @generated
+ */
+	protected org.eclipse.gef.commands.Command getCreateCommand(org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest req) {
+		if (dsml.diagram.providers.DsmlElementTypes.Target_3008 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.Target4CreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.PNode_3015 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.PNode2CreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.ConditionGroup_3016 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.ConditionGroup2CreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.BringGroup_3020 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.BringGroup3CreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.Not_3021 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.Not2CreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.Operator_3022 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.Operator2CreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.ValueOperator_3023 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.ValueOperator2CreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.Aggregation_3024 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.Aggregation2CreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.Order_3025 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.Order2CreateCommand(req));
+}
+		return super.getCreateCommand(req);
+	}
+	
+	}

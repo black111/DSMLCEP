@@ -1,0 +1,133 @@
+/*
+ * 
+ */
+package dsml.diagram.part;
+
+/**
+ * @generated
+ */
+public class DsmlCreationWizard
+		extends org.eclipse.jface.wizard.Wizard implements org.eclipse.ui.INewWizard {
+
+	/**
+ * @generated
+ */
+	private org.eclipse.ui.IWorkbench workbench;
+
+	/**
+ * @generated
+ */
+    protected org.eclipse.jface.viewers.IStructuredSelection selection;
+
+	/**
+ * @generated
+ */
+	protected dsml.diagram.part.DsmlCreationWizardPage diagramModelFilePage;
+	
+	/**
+ * @generated
+ */
+	protected org.eclipse.emf.ecore.resource.Resource diagram;
+
+	/**
+ * @generated
+ */
+	private boolean openNewlyCreatedDiagramEditor = true;
+
+	/**
+ * @generated
+ */
+    public org.eclipse.ui.IWorkbench getWorkbench() {
+        return workbench;
+    }
+
+	/**
+ * @generated
+ */
+	public org.eclipse.jface.viewers.IStructuredSelection getSelection() {
+        return selection;
+    }
+
+	/**
+ * @generated
+ */
+	public final org.eclipse.emf.ecore.resource.Resource getDiagram() {
+		return diagram;
+	}
+
+	/**
+ * @generated
+ */
+	public final boolean isOpenNewlyCreatedDiagramEditor() {
+		return openNewlyCreatedDiagramEditor;
+	}
+
+	/**
+ * @generated
+ */
+	public void setOpenNewlyCreatedDiagramEditor(boolean openNewlyCreatedDiagramEditor) {
+		this.openNewlyCreatedDiagramEditor = openNewlyCreatedDiagramEditor;
+	}
+
+	/**
+ * @generated
+ */
+	public void init(org.eclipse.ui.IWorkbench workbench, org.eclipse.jface.viewers.IStructuredSelection selection) {
+        this.workbench = workbench;
+        this.selection = selection;
+		setWindowTitle(dsml.diagram.part.Messages.DsmlCreationWizardTitle);
+		setDefaultPageImageDescriptor(dsml.diagram.part.DsmlDiagramEditorPlugin.getBundledImageDescriptor(
+				"icons/wizban/NewDsmlWizard.gif")); //$NON-NLS-1$
+		setNeedsProgressMonitor(true);
+	}
+
+	/**
+ * @generated
+ */
+	public void addPages() {
+		diagramModelFilePage = new dsml.diagram.part.DsmlCreationWizardPage(
+				"DiagramModelFile", getSelection(), "dsml"); //$NON-NLS-1$ //$NON-NLS-2$
+		diagramModelFilePage.setTitle(dsml.diagram.part.Messages.DsmlCreationWizard_DiagramModelFilePageTitle);
+		diagramModelFilePage.setDescription(dsml.diagram.part.Messages.DsmlCreationWizard_DiagramModelFilePageDescription);
+		addPage(diagramModelFilePage);
+		}
+
+	/**
+ * @generated
+ */
+	public boolean performFinish() {
+		org.eclipse.jface.operation.IRunnableWithProgress op =
+					new org.eclipse.ui.actions.WorkspaceModifyOperation(null) {
+
+			protected void execute(org.eclipse.core.runtime.IProgressMonitor monitor)
+					throws org.eclipse.core.runtime.CoreException, InterruptedException {
+					diagram = dsml.diagram.part.DsmlDiagramEditorUtil.createDiagram(diagramModelFilePage.getURI(),
+							monitor);
+				if (isOpenNewlyCreatedDiagramEditor() && diagram != null) {
+					try {
+						dsml.diagram.part.DsmlDiagramEditorUtil.openDiagram(diagram);
+					} catch (org.eclipse.ui.PartInitException e) {
+						org.eclipse.jface.dialogs.ErrorDialog.openError(getContainer().getShell(),
+								dsml.diagram.part.Messages.DsmlCreationWizardOpenEditorError, null, e.getStatus());
+					}
+				}
+			}
+		};
+		try {
+			getContainer().run(false, true, op);
+		} catch (InterruptedException e) {
+			return false;
+		} catch (java.lang.reflect.InvocationTargetException e) {
+			if (e.getTargetException() instanceof org.eclipse.core.runtime.CoreException) {
+				org.eclipse.jface.dialogs.ErrorDialog.openError(getContainer().getShell(),
+						dsml.diagram.part.Messages.DsmlCreationWizardCreationError, null,
+						((org.eclipse.core.runtime.CoreException) e.getTargetException()).getStatus());
+			} else {
+				dsml.diagram.part.DsmlDiagramEditorPlugin.getInstance().logError(
+						"Error creating diagram", e.getTargetException()); //$NON-NLS-1$
+			}
+			return false;
+		}
+		return diagram != null;
+	}
+	}

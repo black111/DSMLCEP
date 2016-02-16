@@ -1,0 +1,36 @@
+/*
+ * 
+ */
+package dsml.diagram.providers.assistants;
+
+/**
+ * @generated
+ */
+public class DsmlModelingAssistantProviderOfAreaDesenhoEditPart extends dsml.diagram.providers.DsmlModelingAssistantProvider {
+
+				/**
+ * @generated
+ */
+	@Override
+
+	public java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> getTypesForPopupBar(org.eclipse.core.runtime.IAdaptable host) {
+		java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> types = new java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType>(14);
+					types.add(dsml.diagram.providers.DsmlElementTypes.Aggregation_2017);
+					types.add(dsml.diagram.providers.DsmlElementTypes.Order_2018);
+					types.add(dsml.diagram.providers.DsmlElementTypes.Operator_2019);
+					types.add(dsml.diagram.providers.DsmlElementTypes.ValueOperator_2020);
+					types.add(dsml.diagram.providers.DsmlElementTypes.UnaryOperatorPattern_2021);
+					types.add(dsml.diagram.providers.DsmlElementTypes.BinaryOperatorPattern_2022);
+					types.add(dsml.diagram.providers.DsmlElementTypes.PatternTimer_2023);
+					types.add(dsml.diagram.providers.DsmlElementTypes.ConditionGroup_2024);
+					types.add(dsml.diagram.providers.DsmlElementTypes.Target_2026);
+					types.add(dsml.diagram.providers.DsmlElementTypes.Not_2025);
+					types.add(dsml.diagram.providers.DsmlElementTypes.Rule_2013);
+					types.add(dsml.diagram.providers.DsmlElementTypes.EventPattern_2014);
+					types.add(dsml.diagram.providers.DsmlElementTypes.Window_2015);
+					types.add(dsml.diagram.providers.DsmlElementTypes.Event_2016);
+					return types;	
+	}
+			
+	
+	}

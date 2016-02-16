@@ -1,0 +1,39 @@
+/*
+ * 
+ */
+package dsml.diagram.edit.policies;
+
+import org.eclipse.gef.commands.Command;
+import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
+
+import dsml.diagram.edit.commands.Operator2CreateCommand;
+import dsml.diagram.edit.commands.ValueOperator2CreateCommand;
+import dsml.diagram.providers.DsmlElementTypes;
+
+/**
+ * @generated
+ */
+public class TargetTargetOperationTypesCompartment2ItemSemanticEditPolicy
+		extends DsmlBaseItemSemanticEditPolicy {
+
+	/**
+	 * @generated
+	 */
+	public TargetTargetOperationTypesCompartment2ItemSemanticEditPolicy() {
+		super(DsmlElementTypes.Target_3038);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Command getCreateCommand(CreateElementRequest req) {
+		if (DsmlElementTypes.Operator_3003 == req.getElementType()) {
+			return getGEFWrapper(new Operator2CreateCommand(req));
+		}
+		if (DsmlElementTypes.ValueOperator_3004 == req.getElementType()) {
+			return getGEFWrapper(new ValueOperator2CreateCommand(req));
+		}
+		return super.getCreateCommand(req);
+	}
+
+}

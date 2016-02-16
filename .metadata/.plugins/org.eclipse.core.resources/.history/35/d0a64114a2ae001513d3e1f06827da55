@@ -1,0 +1,32 @@
+	/*
+ * 
+ */
+package dsml.diagram.edit.policies;
+
+	/**
+ * @generated
+ */
+public class BringGroupBringGroupOperationTypesCompartment2ItemSemanticEditPolicy extends dsml.diagram.edit.policies.DsmlBaseItemSemanticEditPolicy {
+
+		/**
+ * @generated
+ */
+	public BringGroupBringGroupOperationTypesCompartment2ItemSemanticEditPolicy() {
+				super(dsml.diagram.providers.DsmlElementTypes.BringGroup_3022);
+	}
+
+	
+	/**
+ * @generated
+ */
+	protected org.eclipse.gef.commands.Command getCreateCommand(org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest req) {
+		if (dsml.diagram.providers.DsmlElementTypes.Operator_3009 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.Operator3CreateCommand(req));
+}
+		if (dsml.diagram.providers.DsmlElementTypes.ValueOperator_3010 == req.getElementType()) {
+	return getGEFWrapper(new dsml.diagram.edit.commands.ValueOperator3CreateCommand(req));
+}
+		return super.getCreateCommand(req);
+	}
+	
+	}

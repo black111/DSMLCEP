@@ -1,0 +1,326 @@
+/*
+ * 
+ */
+package dsml.diagram.providers.assistants;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
+import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
+import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+
+import dsml.diagram.edit.parts.Aggregation2EditPart;
+import dsml.diagram.edit.parts.AggregationEditPart;
+import dsml.diagram.edit.parts.Attribute2EditPart;
+import dsml.diagram.edit.parts.Attribute3EditPart;
+import dsml.diagram.edit.parts.AttributeEditPart;
+import dsml.diagram.edit.parts.BinaryOperatorPattern2EditPart;
+import dsml.diagram.edit.parts.BinaryOperatorPatternEditPart;
+import dsml.diagram.edit.parts.ConditionGroup2EditPart;
+import dsml.diagram.edit.parts.ConditionGroupEditPart;
+import dsml.diagram.edit.parts.EventEditPart;
+import dsml.diagram.edit.parts.EventPatternEditPart;
+import dsml.diagram.edit.parts.Not2EditPart;
+import dsml.diagram.edit.parts.NotEditPart;
+import dsml.diagram.edit.parts.Operator2EditPart;
+import dsml.diagram.edit.parts.Operator3EditPart;
+import dsml.diagram.edit.parts.Operator4EditPart;
+import dsml.diagram.edit.parts.OperatorEditPart;
+import dsml.diagram.edit.parts.Order2EditPart;
+import dsml.diagram.edit.parts.OrderEditPart;
+import dsml.diagram.edit.parts.PatternTimer2EditPart;
+import dsml.diagram.edit.parts.PatternTimerEditPart;
+import dsml.diagram.edit.parts.RuleEditPart;
+import dsml.diagram.edit.parts.Target2EditPart;
+import dsml.diagram.edit.parts.TargetEditPart;
+import dsml.diagram.edit.parts.UnaryOperatorPattern2EditPart;
+import dsml.diagram.edit.parts.UnaryOperatorPatternEditPart;
+import dsml.diagram.edit.parts.ValueOperator2EditPart;
+import dsml.diagram.edit.parts.ValueOperator3EditPart;
+import dsml.diagram.edit.parts.ValueOperator4EditPart;
+import dsml.diagram.edit.parts.ValueOperatorEditPart;
+import dsml.diagram.edit.parts.WindowEditPart;
+import dsml.diagram.providers.DsmlElementTypes;
+import dsml.diagram.providers.DsmlModelingAssistantProvider;
+
+/**
+ * @generated
+ */
+public class DsmlModelingAssistantProviderOfRuleEditPart extends
+		DsmlModelingAssistantProvider {
+
+	/**
+	 * @generated
+	 */
+	@Override
+	public List<IElementType> getRelTypesOnSource(IAdaptable source) {
+		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source
+				.getAdapter(IGraphicalEditPart.class);
+		return doGetRelTypesOnSource((RuleEditPart) sourceEditPart);
+	}
+
+	/**
+	 * @generated
+	 */
+	public List<IElementType> doGetRelTypesOnSource(RuleEditPart source) {
+		List<IElementType> types = new ArrayList<IElementType>(2);
+		types.add(DsmlElementTypes.LinkComponent_4001);
+		types.add(DsmlElementTypes.LinkTarget_4002);
+		return types;
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	public List<IElementType> getRelTypesOnSourceAndTarget(IAdaptable source,
+			IAdaptable target) {
+		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source
+				.getAdapter(IGraphicalEditPart.class);
+		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target
+				.getAdapter(IGraphicalEditPart.class);
+		return doGetRelTypesOnSourceAndTarget((RuleEditPart) sourceEditPart,
+				targetEditPart);
+	}
+
+	/**
+	 * @generated
+	 */
+	public List<IElementType> doGetRelTypesOnSourceAndTarget(
+			RuleEditPart source, IGraphicalEditPart targetEditPart) {
+		List<IElementType> types = new LinkedList<IElementType>();
+		if (targetEditPart instanceof EventEditPart) {
+			types.add(DsmlElementTypes.LinkComponent_4001);
+		}
+		if (targetEditPart instanceof RuleEditPart) {
+			types.add(DsmlElementTypes.LinkComponent_4001);
+		}
+		if (targetEditPart instanceof EventPatternEditPart) {
+			types.add(DsmlElementTypes.LinkComponent_4001);
+		}
+		if (targetEditPart instanceof WindowEditPart) {
+			types.add(DsmlElementTypes.LinkComponent_4001);
+		}
+		if (targetEditPart instanceof AttributeEditPart) {
+			types.add(DsmlElementTypes.LinkComponent_4001);
+		}
+		if (targetEditPart instanceof ConditionGroupEditPart) {
+			types.add(DsmlElementTypes.LinkComponent_4001);
+		}
+		if (targetEditPart instanceof OperatorEditPart) {
+			types.add(DsmlElementTypes.LinkComponent_4001);
+		}
+		if (targetEditPart instanceof ValueOperatorEditPart) {
+			types.add(DsmlElementTypes.LinkComponent_4001);
+		}
+		if (targetEditPart instanceof TargetEditPart) {
+			types.add(DsmlElementTypes.LinkComponent_4001);
+		}
+		if (targetEditPart instanceof Operator2EditPart) {
+			types.add(DsmlElementTypes.LinkComponent_4001);
+		}
+		if (targetEditPart instanceof ValueOperator2EditPart) {
+			types.add(DsmlElementTypes.LinkComponent_4001);
+		}
+		if (targetEditPart instanceof AggregationEditPart) {
+			types.add(DsmlElementTypes.LinkComponent_4001);
+		}
+		if (targetEditPart instanceof OrderEditPart) {
+			types.add(DsmlElementTypes.LinkComponent_4001);
+		}
+		if (targetEditPart instanceof Operator3EditPart) {
+			types.add(DsmlElementTypes.LinkComponent_4001);
+		}
+		if (targetEditPart instanceof ValueOperator3EditPart) {
+			types.add(DsmlElementTypes.LinkComponent_4001);
+		}
+		if (targetEditPart instanceof UnaryOperatorPatternEditPart) {
+			types.add(DsmlElementTypes.LinkComponent_4001);
+		}
+		if (targetEditPart instanceof BinaryOperatorPatternEditPart) {
+			types.add(DsmlElementTypes.LinkComponent_4001);
+		}
+		if (targetEditPart instanceof PatternTimerEditPart) {
+			types.add(DsmlElementTypes.LinkComponent_4001);
+		}
+		if (targetEditPart instanceof Attribute2EditPart) {
+			types.add(DsmlElementTypes.LinkComponent_4001);
+		}
+		if (targetEditPart instanceof NotEditPart) {
+			types.add(DsmlElementTypes.LinkComponent_4001);
+		}
+		if (targetEditPart instanceof ConditionGroup2EditPart) {
+			types.add(DsmlElementTypes.LinkComponent_4001);
+		}
+		if (targetEditPart instanceof Target2EditPart) {
+			types.add(DsmlElementTypes.LinkComponent_4001);
+		}
+		if (targetEditPart instanceof Aggregation2EditPart) {
+			types.add(DsmlElementTypes.LinkComponent_4001);
+		}
+		if (targetEditPart instanceof Order2EditPart) {
+			types.add(DsmlElementTypes.LinkComponent_4001);
+		}
+		if (targetEditPart instanceof Operator4EditPart) {
+			types.add(DsmlElementTypes.LinkComponent_4001);
+		}
+		if (targetEditPart instanceof ValueOperator4EditPart) {
+			types.add(DsmlElementTypes.LinkComponent_4001);
+		}
+		if (targetEditPart instanceof UnaryOperatorPattern2EditPart) {
+			types.add(DsmlElementTypes.LinkComponent_4001);
+		}
+		if (targetEditPart instanceof BinaryOperatorPattern2EditPart) {
+			types.add(DsmlElementTypes.LinkComponent_4001);
+		}
+		if (targetEditPart instanceof PatternTimer2EditPart) {
+			types.add(DsmlElementTypes.LinkComponent_4001);
+		}
+		if (targetEditPart instanceof Attribute3EditPart) {
+			types.add(DsmlElementTypes.LinkComponent_4001);
+		}
+		if (targetEditPart instanceof Not2EditPart) {
+			types.add(DsmlElementTypes.LinkComponent_4001);
+		}
+		if (targetEditPart instanceof TargetEditPart) {
+			types.add(DsmlElementTypes.LinkTarget_4002);
+		}
+		if (targetEditPart instanceof Target2EditPart) {
+			types.add(DsmlElementTypes.LinkTarget_4002);
+		}
+		return types;
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	public List<IElementType> getTypesForTarget(IAdaptable source,
+			IElementType relationshipType) {
+		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source
+				.getAdapter(IGraphicalEditPart.class);
+		return doGetTypesForTarget((RuleEditPart) sourceEditPart,
+				relationshipType);
+	}
+
+	/**
+	 * @generated
+	 */
+	public List<IElementType> doGetTypesForTarget(RuleEditPart source,
+			IElementType relationshipType) {
+		List<IElementType> types = new ArrayList<IElementType>();
+		if (relationshipType == DsmlElementTypes.LinkComponent_4001) {
+			types.add(DsmlElementTypes.Event_2001);
+			types.add(DsmlElementTypes.Rule_2002);
+			types.add(DsmlElementTypes.EventPattern_2003);
+			types.add(DsmlElementTypes.Window_2004);
+			types.add(DsmlElementTypes.Attribute_3001);
+			types.add(DsmlElementTypes.ConditionGroup_3026);
+			types.add(DsmlElementTypes.Operator_3007);
+			types.add(DsmlElementTypes.ValueOperator_3008);
+			types.add(DsmlElementTypes.Target_3027);
+			types.add(DsmlElementTypes.Operator_3003);
+			types.add(DsmlElementTypes.ValueOperator_3004);
+			types.add(DsmlElementTypes.Aggregation_3028);
+			types.add(DsmlElementTypes.Order_3029);
+			types.add(DsmlElementTypes.Operator_3030);
+			types.add(DsmlElementTypes.ValueOperator_3031);
+			types.add(DsmlElementTypes.UnaryOperatorPattern_3032);
+			types.add(DsmlElementTypes.BinaryOperatorPattern_3033);
+			types.add(DsmlElementTypes.PatternTimer_3034);
+			types.add(DsmlElementTypes.Attribute_3035);
+			types.add(DsmlElementTypes.Not_3036);
+			types.add(DsmlElementTypes.ConditionGroup_3037);
+			types.add(DsmlElementTypes.Target_3038);
+			types.add(DsmlElementTypes.Aggregation_3039);
+			types.add(DsmlElementTypes.Order_3040);
+			types.add(DsmlElementTypes.Operator_3041);
+			types.add(DsmlElementTypes.ValueOperator_3042);
+			types.add(DsmlElementTypes.UnaryOperatorPattern_3043);
+			types.add(DsmlElementTypes.BinaryOperatorPattern_3044);
+			types.add(DsmlElementTypes.PatternTimer_3045);
+			types.add(DsmlElementTypes.Attribute_3046);
+			types.add(DsmlElementTypes.Not_3047);
+		} else if (relationshipType == DsmlElementTypes.LinkTarget_4002) {
+			types.add(DsmlElementTypes.Target_3027);
+			types.add(DsmlElementTypes.Target_3038);
+		}
+		return types;
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	public List<IElementType> getRelTypesOnTarget(IAdaptable target) {
+		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target
+				.getAdapter(IGraphicalEditPart.class);
+		return doGetRelTypesOnTarget((RuleEditPart) targetEditPart);
+	}
+
+	/**
+	 * @generated
+	 */
+	public List<IElementType> doGetRelTypesOnTarget(RuleEditPart target) {
+		List<IElementType> types = new ArrayList<IElementType>(1);
+		types.add(DsmlElementTypes.LinkComponent_4001);
+		return types;
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	public List<IElementType> getTypesForSource(IAdaptable target,
+			IElementType relationshipType) {
+		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target
+				.getAdapter(IGraphicalEditPart.class);
+		return doGetTypesForSource((RuleEditPart) targetEditPart,
+				relationshipType);
+	}
+
+	/**
+	 * @generated
+	 */
+	public List<IElementType> doGetTypesForSource(RuleEditPart target,
+			IElementType relationshipType) {
+		List<IElementType> types = new ArrayList<IElementType>();
+		if (relationshipType == DsmlElementTypes.LinkComponent_4001) {
+			types.add(DsmlElementTypes.Event_2001);
+			types.add(DsmlElementTypes.Rule_2002);
+			types.add(DsmlElementTypes.EventPattern_2003);
+			types.add(DsmlElementTypes.Window_2004);
+			types.add(DsmlElementTypes.Attribute_3001);
+			types.add(DsmlElementTypes.ConditionGroup_3026);
+			types.add(DsmlElementTypes.Operator_3007);
+			types.add(DsmlElementTypes.ValueOperator_3008);
+			types.add(DsmlElementTypes.Target_3027);
+			types.add(DsmlElementTypes.Operator_3003);
+			types.add(DsmlElementTypes.ValueOperator_3004);
+			types.add(DsmlElementTypes.Aggregation_3028);
+			types.add(DsmlElementTypes.Order_3029);
+			types.add(DsmlElementTypes.Operator_3030);
+			types.add(DsmlElementTypes.ValueOperator_3031);
+			types.add(DsmlElementTypes.UnaryOperatorPattern_3032);
+			types.add(DsmlElementTypes.BinaryOperatorPattern_3033);
+			types.add(DsmlElementTypes.PatternTimer_3034);
+			types.add(DsmlElementTypes.Attribute_3035);
+			types.add(DsmlElementTypes.Not_3036);
+			types.add(DsmlElementTypes.ConditionGroup_3037);
+			types.add(DsmlElementTypes.Target_3038);
+			types.add(DsmlElementTypes.Aggregation_3039);
+			types.add(DsmlElementTypes.Order_3040);
+			types.add(DsmlElementTypes.Operator_3041);
+			types.add(DsmlElementTypes.ValueOperator_3042);
+			types.add(DsmlElementTypes.UnaryOperatorPattern_3043);
+			types.add(DsmlElementTypes.BinaryOperatorPattern_3044);
+			types.add(DsmlElementTypes.PatternTimer_3045);
+			types.add(DsmlElementTypes.Attribute_3046);
+			types.add(DsmlElementTypes.Not_3047);
+		}
+		return types;
+	}
+
+}

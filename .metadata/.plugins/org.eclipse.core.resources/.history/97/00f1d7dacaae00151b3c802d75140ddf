@@ -1,0 +1,1365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<!--
+
+-->
+<plugin>
+
+   <extension point="org.eclipse.team.core.fileTypes" id="repo-ftype">
+      <?gmfgen generated="true"?>
+      <fileTypes type="text" extension="dsml"/>
+   </extension>
+   
+    <extension
+         point="org.eclipse.epsilon.evl.emf.validation">
+      <constraintsBinding
+            constraints="model/dsml.evl"
+            namespaceURI="dsml">
+      </constraintsBinding>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.ide.markerResolution">
+      <markerResolutionGenerator
+            class="org.eclipse.epsilon.evl.emf.validation.EvlMarkerResolutionGenerator"
+            markerType="org.eclipse.emf.ecore.diagnostic">
+      </markerResolutionGenerator>
+      <markerResolutionGenerator
+            class="org.eclipse.epsilon.evl.emf.validation.EvlMarkerResolutionGenerator"
+            markerType="br.ufpe.cin.dsml.cep.diagram.diagnostic">
+      </markerResolutionGenerator>
+
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser" id="resource-factory">
+      <?gmfgen generated="true"?>
+      <parser
+         type="dsml"
+         class="org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory">
+      </parser>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors" id="gmf-editor">
+      <?gmfgen generated="true"?>
+      <editor
+         id="dsml.diagram.part.DsmlDiagramEditorID"
+         name="%editorName"
+         icon="icons/obj16/DsmlDiagramFile.gif"
+         extensions="dsml"
+         default="true"
+         class="dsml.diagram.part.DsmlDiagramEditor"
+         matchingStrategy="dsml.diagram.part.DsmlMatchingStrategy"
+         contributorClass="dsml.diagram.part.DsmlDiagramActionBarContributor">
+      </editor>
+   </extension>
+   
+   <extension point="org.eclipse.ui.contexts" id="ui-context">
+      <?gmfgen generated="true"?>
+      <context
+         description="%context.description"
+         id="dsml.diagram.ui.diagramContext"
+         name="%context.name"
+         parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
+      </context>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards" id="creation-wizard">
+      <?gmfgen generated="true"?>
+  	  <wizard
+  	     name="%newWizardName"
+  	     icon="icons/obj16/DsmlDiagramFile.gif"
+  	     category="org.eclipse.ui.Examples"
+  	     class="dsml.diagram.part.DsmlCreationWizard"
+  	     id="dsml.diagram.part.DsmlCreationWizardID">
+  	  	 <description>%newWizardDesc</description>  
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.popupMenus" id="init-diagram-action">
+      <?gmfgen generated="true"?>
+      <objectContribution
+            id="br.ufpe.cin.dsml.cep.diagram.InitDiagram"
+            nameFilter="*.dsml"
+            objectClass="org.eclipse.core.resources.IFile">
+         <action
+               label="%initDiagramActionLabel"
+               class="dsml.diagram.part.DsmlInitDiagramFileAction"
+               menubarPath="additions"
+               enablesFor="1"
+               id="br.ufpe.cin.dsml.cep.diagram.InitDiagramAction">
+         </action>
+      </objectContribution>
+   </extension>
+	
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.globalActionHandlerProviders" id="global-actions">
+      <?gmfgen generated="true"?>
+      <GlobalActionHandlerProvider
+         class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramGlobalActionHandlerProvider"
+         id="DsmlPresentation">
+         <Priority name="Lowest"/>
+         <ViewId id="dsml.diagram.part.DsmlDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="delete"/>
+            </ElementType>
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart">
+               <GlobalActionId actionId="save"/>
+            </ElementType>
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="save">
+               </GlobalActionId>
+            </ElementType>        
+         </ViewId>
+      </GlobalActionHandlerProvider>
+      <GlobalActionHandlerProvider
+         class="org.eclipse.gmf.runtime.diagram.ui.printing.render.providers.DiagramWithPrintGlobalActionHandlerProvider"
+         id="DsmlPresentationPrint">
+         <Priority name="Lowest"/>
+         <ViewId id="dsml.diagram.part.DsmlDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="print"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+      <GlobalActionHandlerProvider
+         class="org.eclipse.gmf.runtime.diagram.ui.providers.ide.providers.DiagramIDEGlobalActionHandlerProvider"
+         id="DsmlPresentationIDE">
+         <Priority name="Lowest"/>
+         <ViewId id="dsml.diagram.part.DsmlDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="bookmark"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+      <GlobalActionHandlerProvider
+            class="org.eclipse.gmf.runtime.diagram.ui.render.providers.DiagramUIRenderGlobalActionHandlerProvider"
+            id="DsmlRender">
+         <Priority name="Lowest"/>
+         <ViewId id="dsml.diagram.part.DsmlDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="cut"/>
+               <GlobalActionId actionId="copy"/>
+               <GlobalActionId actionId="paste"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+   </extension>
+
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.markerNavigationProviders" id="markers-navigation">
+      <?gmfgen generated="true"?>
+      <MarkerNavigationProvider class="dsml.diagram.providers.DsmlMarkerNavigationProvider">
+         <MarkerType name="br.ufpe.cin.dsml.cep.diagram.diagnostic"/>
+         <Priority name="Lowest"/>
+      </MarkerNavigationProvider>
+   </extension>
+
+   <extension id="diagnostic" name="Dsml Plugin problems" point="org.eclipse.core.resources.markers">
+      <?gmfgen generated="true"?>
+      <super type="org.eclipse.core.resources.problemmarker"/>
+      <super type="org.eclipse.gmf.runtime.common.ui.services.marker"/>
+      <persistent value="true"/>
+   </extension>   
+
+   <extension id="validationDecoratorProvider" name="ValidationDecorations" point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders">
+      <?gmfgen generated="true"?>
+      <decoratorProvider class="dsml.diagram.providers.DsmlValidationDecoratorProvider">
+         <Priority name="Lowest"/>
+         <object class="org.eclipse.gmf.runtime.diagram.ui.editparts.IPrimaryEditPart(org.eclipse.gmf.runtime.diagram.ui)" id="PRIMARY_VIEW"/>
+         <context decoratorTargets="PRIMARY_VIEW"/>
+      </decoratorProvider>
+   </extension>
+
+   <extension point="org.eclipse.core.runtime.preferences" id="prefs">
+      <?gmfgen generated="true"?>
+      <initializer class="dsml.diagram.preferences.DiagramPreferenceInitializer"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.preferencePages" id="prefpages">
+      <?gmfgen generated="true"?>
+      <page
+            id="br.ufpe.cin.dsml.cep.diagram.general"
+            name="%prefpage.br.ufpe.cin.dsml.cep.diagram.general"
+            class="dsml.diagram.preferences.DiagramGeneralPreferencePage">
+      </page>
+      <page
+            id="br.ufpe.cin.dsml.cep.diagram.appearance"
+            name="%prefpage.br.ufpe.cin.dsml.cep.diagram.appearance"
+            category="br.ufpe.cin.dsml.cep.diagram.general"
+            class="dsml.diagram.preferences.DiagramAppearancePreferencePage">
+      </page>
+      <page
+            id="br.ufpe.cin.dsml.cep.diagram.connections"
+            name="%prefpage.br.ufpe.cin.dsml.cep.diagram.connections"
+            category="br.ufpe.cin.dsml.cep.diagram.general"
+            class="dsml.diagram.preferences.DiagramConnectionsPreferencePage">
+      </page>
+      <page
+            id="br.ufpe.cin.dsml.cep.diagram.printing"
+            name="%prefpage.br.ufpe.cin.dsml.cep.diagram.printing"
+            category="br.ufpe.cin.dsml.cep.diagram.general"
+            class="dsml.diagram.preferences.DiagramPrintingPreferencePage">
+      </page>
+      <page
+            id="br.ufpe.cin.dsml.cep.diagram.rulersAndGrid"
+            name="%prefpage.br.ufpe.cin.dsml.cep.diagram.rulersAndGrid"
+            category="br.ufpe.cin.dsml.cep.diagram.general"
+            class="dsml.diagram.preferences.DiagramRulersAndGridPreferencePage">
+      </page>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor" id="prop-contrib">
+      <?gmfgen generated="true"?>
+      <propertyContributor
+            contributorId="br.ufpe.cin.dsml.cep.diagram"
+            labelProvider="dsml.diagram.sheet.DsmlSheetLabelProvider">
+         <propertyCategory category="domain"/>
+         <propertyCategory category="visual"/>
+         <propertyCategory category="extra"/>
+      </propertyContributor>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs" id="proptabs">
+      <?gmfgen generated="true"?>   
+      <propertyTabs contributorId="br.ufpe.cin.dsml.cep.diagram">
+         <propertyTab
+             category="visual"
+             id="property.tab.AppearancePropertySection"
+             label="%tab.appearance"/>
+          <propertyTab
+             category="visual"
+             id="property.tab.DiagramPropertySection"
+             label="%tab.diagram"/>
+          <propertyTab
+             category="domain"
+             id="property.tab.domain"
+             label="%tab.domain"/>
+      </propertyTabs>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections">
+      <?gmfgen generated="true"?>   
+      <propertySections contributorId="br.ufpe.cin.dsml.cep.diagram">
+         <propertySection id="property.section.ConnectorAppearancePropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ConnectionEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ConnectionAppearancePropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection>
+         <propertySection id="property.section.ShapeColorAndFontPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ShapeEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ShapeColorsAndFontsPropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection> 
+         <propertySection id="property.section.DiagramColorsAndFontsPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.DiagramColorsAndFontsPropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection>     
+         <propertySection id="property.section.RulerGridPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.grid.RulerGridPropertySection" 
+            tab="property.tab.DiagramPropertySection">
+         </propertySection>     
+         <propertySection
+            id="property.section.domain" 
+            tab="property.tab.domain"
+            class="dsml.diagram.sheet.DsmlPropertySection">
+            <input type="org.eclipse.gmf.runtime.notation.View"/>
+            <input type="org.eclipse.gef.EditPart"/>
+            <input type="dsml.diagram.navigator.DsmlAbstractNavigatorItem"/>
+         </propertySection>
+      </propertySections>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders" id="view-provider">
+      <?gmfgen generated="true"?>
+      <viewProvider class="dsml.diagram.providers.DsmlViewProvider">
+         <Priority name="Lowest"/>
+         <object id="referencing-diagrams" class="org.eclipse.gmf.runtime.notation.Diagram">
+            <method name="getType()" value="dsml"/>
+         </object>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" containerViews="referencing-diagrams"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Dsml"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,2002,2003,2004,3040,3001,3041,3002,3042,3003,3004,3043,3005,3006,3044,3007,3008,3009,3010,3011,3012,3013,3014,3015,3016,3017,3018,3019,3020,3021,3022,3023,3024,3025,3026,3027,3028,3029,3030,3031,3032,3033,3034,3035,3036,3037,3038,3039"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4002,4003,4004,4005,4006"/>
+      </viewProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders" id="ep-provider">
+      <?gmfgen generated="true"?>
+      <editpartProvider class="dsml.diagram.providers.DsmlEditPartProvider">
+         <Priority name="Lowest"/>
+         <object class="org.eclipse.gmf.runtime.notation.Diagram" id="generated-diagram">
+            <method name="getType()" value="Dsml"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
+            <method name="getType()" value="2001,2002,2003,2004,3040,3001,3041,3002,3042,3003,3004,3043,3005,3006,3044,3007,3008,3009,3010,3011,3012,3013,3014,3015,3016,3017,3018,3019,3020,3021,3022,3023,3024,3025,3026,3027,3028,3029,3030,3031,3032,3033,3034,3035,3036,3037,3038,3039"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
+            <method name="getType()" value="4001,4002,4003,4004,4005,4006"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
+            <method name="getType()" value="5002,5036,5042,5043,5044,5001,5045,5028,5046,5027,5026,5047,5025,5024,5048,5009,5003,5004,5005,5006,5008,5007,5023,5022,5016,5015,5010,5011,5012,5013,5014,5017,5018,5019,5020,5021,5029,5030,5031,5032,5033,5034,5035,5037,5038,5039,5040,5041"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
+            <method name="getType()" value="7001,7002,7003,7004,7005,7006,7007,7008,7009,7010,7011,7012,7013,7014,7015,7016,7017,7018,7019,7020"/>
+         </object>
+         <context views="generated-diagram,generated-nodes,generated-links,generated-labels,generated-compartments"/>
+      </editpartProvider>
+   </extension>
+
+   
+   <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders" id="modelassist-provider">
+      <?gmfgen generated="true"?>
+      <modelingAssistantProvider class="dsml.diagram.providers.assistants.DsmlModelingAssistantProviderOfAreaDesenhoEditPart">
+         <Priority name="Lowest"/>
+         <object class="dsml.diagram.edit.parts.AreaDesenhoEditPart" id="AreaDesenho_1000"/>
+         <context elements="AreaDesenho_1000"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsml.diagram.providers.assistants.DsmlModelingAssistantProviderOfEventEditPart">
+         <Priority name="Lowest"/>
+         <object class="dsml.diagram.edit.parts.EventEditPart" id="Event_2001"/>
+         <context elements="Event_2001"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsml.diagram.providers.assistants.DsmlModelingAssistantProviderOfRuleEditPart">
+         <Priority name="Lowest"/>
+         <object class="dsml.diagram.edit.parts.RuleEditPart" id="Rule_2002"/>
+         <context elements="Rule_2002"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsml.diagram.providers.assistants.DsmlModelingAssistantProviderOfEventPatternEditPart">
+         <Priority name="Lowest"/>
+         <object class="dsml.diagram.edit.parts.EventPatternEditPart" id="EventPattern_2003"/>
+         <context elements="EventPattern_2003"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsml.diagram.providers.assistants.DsmlModelingAssistantProviderOfWindowEditPart">
+         <Priority name="Lowest"/>
+         <object class="dsml.diagram.edit.parts.WindowEditPart" id="Window_2004"/>
+         <context elements="Window_2004"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsml.diagram.providers.assistants.DsmlModelingAssistantProviderOfOperatorAttributeTypeEditPart">
+         <Priority name="Lowest"/>
+         <object class="dsml.diagram.edit.parts.OperatorAttributeTypeEditPart" id="OperatorAttributeType_3040"/>
+         <context elements="OperatorAttributeType_3040"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsml.diagram.providers.assistants.DsmlModelingAssistantProviderOfAttributeEditPart">
+         <Priority name="Lowest"/>
+         <object class="dsml.diagram.edit.parts.AttributeEditPart" id="Attribute_3001"/>
+         <context elements="Attribute_3001"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsml.diagram.providers.assistants.DsmlModelingAssistantProviderOfOperatorAttributeType2EditPart">
+         <Priority name="Lowest"/>
+         <object class="dsml.diagram.edit.parts.OperatorAttributeType2EditPart" id="OperatorAttributeType_3041"/>
+         <context elements="OperatorAttributeType_3041"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsml.diagram.providers.assistants.DsmlModelingAssistantProviderOfTargetEditPart">
+         <Priority name="Lowest"/>
+         <object class="dsml.diagram.edit.parts.TargetEditPart" id="Target_3002"/>
+         <context elements="Target_3002"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsml.diagram.providers.assistants.DsmlModelingAssistantProviderOfOperatorAttributeType3EditPart">
+         <Priority name="Lowest"/>
+         <object class="dsml.diagram.edit.parts.OperatorAttributeType3EditPart" id="OperatorAttributeType_3042"/>
+         <context elements="OperatorAttributeType_3042"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsml.diagram.providers.assistants.DsmlModelingAssistantProviderOfTarget2EditPart">
+         <Priority name="Lowest"/>
+         <object class="dsml.diagram.edit.parts.Target2EditPart" id="Target_3003"/>
+         <context elements="Target_3003"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsml.diagram.providers.assistants.DsmlModelingAssistantProviderOfConditionGroupEditPart">
+         <Priority name="Lowest"/>
+         <object class="dsml.diagram.edit.parts.ConditionGroupEditPart" id="ConditionGroup_3004"/>
+         <context elements="ConditionGroup_3004"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsml.diagram.providers.assistants.DsmlModelingAssistantProviderOfOperatorAttributeType4EditPart">
+         <Priority name="Lowest"/>
+         <object class="dsml.diagram.edit.parts.OperatorAttributeType4EditPart" id="OperatorAttributeType_3043"/>
+         <context elements="OperatorAttributeType_3043"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsml.diagram.providers.assistants.DsmlModelingAssistantProviderOfTarget3EditPart">
+         <Priority name="Lowest"/>
+         <object class="dsml.diagram.edit.parts.Target3EditPart" id="Target_3005"/>
+         <context elements="Target_3005"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsml.diagram.providers.assistants.DsmlModelingAssistantProviderOfBringGroupEditPart">
+         <Priority name="Lowest"/>
+         <object class="dsml.diagram.edit.parts.BringGroupEditPart" id="BringGroup_3006"/>
+         <context elements="BringGroup_3006"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsml.diagram.providers.assistants.DsmlModelingAssistantProviderOfOperatorAttributeType5EditPart">
+         <Priority name="Lowest"/>
+         <object class="dsml.diagram.edit.parts.OperatorAttributeType5EditPart" id="OperatorAttributeType_3044"/>
+         <context elements="OperatorAttributeType_3044"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsml.diagram.providers.assistants.DsmlModelingAssistantProviderOfTarget4EditPart">
+         <Priority name="Lowest"/>
+         <object class="dsml.diagram.edit.parts.Target4EditPart" id="Target_3007"/>
+         <context elements="Target_3007"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsml.diagram.providers.assistants.DsmlModelingAssistantProviderOfNotEditPart">
+         <Priority name="Lowest"/>
+         <object class="dsml.diagram.edit.parts.NotEditPart" id="Not_3008"/>
+         <context elements="Not_3008"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsml.diagram.providers.assistants.DsmlModelingAssistantProviderOfOperatorEditPart">
+         <Priority name="Lowest"/>
+         <object class="dsml.diagram.edit.parts.OperatorEditPart" id="Operator_3009"/>
+         <context elements="Operator_3009"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsml.diagram.providers.assistants.DsmlModelingAssistantProviderOfValueOperatorEditPart">
+         <Priority name="Lowest"/>
+         <object class="dsml.diagram.edit.parts.ValueOperatorEditPart" id="ValueOperator_3010"/>
+         <context elements="ValueOperator_3010"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsml.diagram.providers.assistants.DsmlModelingAssistantProviderOfAggregationEditPart">
+         <Priority name="Lowest"/>
+         <object class="dsml.diagram.edit.parts.AggregationEditPart" id="Aggregation_3011"/>
+         <context elements="Aggregation_3011"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsml.diagram.providers.assistants.DsmlModelingAssistantProviderOfOrderEditPart">
+         <Priority name="Lowest"/>
+         <object class="dsml.diagram.edit.parts.OrderEditPart" id="Order_3012"/>
+         <context elements="Order_3012"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsml.diagram.providers.assistants.DsmlModelingAssistantProviderOfLimitEditPart">
+         <Priority name="Lowest"/>
+         <object class="dsml.diagram.edit.parts.LimitEditPart" id="Limit_3013"/>
+         <context elements="Limit_3013"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsml.diagram.providers.assistants.DsmlModelingAssistantProviderOfConditionGroup2EditPart">
+         <Priority name="Lowest"/>
+         <object class="dsml.diagram.edit.parts.ConditionGroup2EditPart" id="ConditionGroup_3014"/>
+         <context elements="ConditionGroup_3014"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsml.diagram.providers.assistants.DsmlModelingAssistantProviderOfConditionGroup3EditPart">
+         <Priority name="Lowest"/>
+         <object class="dsml.diagram.edit.parts.ConditionGroup3EditPart" id="ConditionGroup_3015"/>
+         <context elements="ConditionGroup_3015"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsml.diagram.providers.assistants.DsmlModelingAssistantProviderOfBringGroup2EditPart">
+         <Priority name="Lowest"/>
+         <object class="dsml.diagram.edit.parts.BringGroup2EditPart" id="BringGroup_3016"/>
+         <context elements="BringGroup_3016"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsml.diagram.providers.assistants.DsmlModelingAssistantProviderOfBringGroup3EditPart">
+         <Priority name="Lowest"/>
+         <object class="dsml.diagram.edit.parts.BringGroup3EditPart" id="BringGroup_3017"/>
+         <context elements="BringGroup_3017"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsml.diagram.providers.assistants.DsmlModelingAssistantProviderOfNot2EditPart">
+         <Priority name="Lowest"/>
+         <object class="dsml.diagram.edit.parts.Not2EditPart" id="Not_3018"/>
+         <context elements="Not_3018"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsml.diagram.providers.assistants.DsmlModelingAssistantProviderOfOperator2EditPart">
+         <Priority name="Lowest"/>
+         <object class="dsml.diagram.edit.parts.Operator2EditPart" id="Operator_3019"/>
+         <context elements="Operator_3019"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsml.diagram.providers.assistants.DsmlModelingAssistantProviderOfValueOperator2EditPart">
+         <Priority name="Lowest"/>
+         <object class="dsml.diagram.edit.parts.ValueOperator2EditPart" id="ValueOperator_3020"/>
+         <context elements="ValueOperator_3020"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsml.diagram.providers.assistants.DsmlModelingAssistantProviderOfAggregation2EditPart">
+         <Priority name="Lowest"/>
+         <object class="dsml.diagram.edit.parts.Aggregation2EditPart" id="Aggregation_3021"/>
+         <context elements="Aggregation_3021"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsml.diagram.providers.assistants.DsmlModelingAssistantProviderOfOrder2EditPart">
+         <Priority name="Lowest"/>
+         <object class="dsml.diagram.edit.parts.Order2EditPart" id="Order_3022"/>
+         <context elements="Order_3022"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsml.diagram.providers.assistants.DsmlModelingAssistantProviderOfNot3EditPart">
+         <Priority name="Lowest"/>
+         <object class="dsml.diagram.edit.parts.Not3EditPart" id="Not_3023"/>
+         <context elements="Not_3023"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsml.diagram.providers.assistants.DsmlModelingAssistantProviderOfOperator3EditPart">
+         <Priority name="Lowest"/>
+         <object class="dsml.diagram.edit.parts.Operator3EditPart" id="Operator_3024"/>
+         <context elements="Operator_3024"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsml.diagram.providers.assistants.DsmlModelingAssistantProviderOfValueOperator3EditPart">
+         <Priority name="Lowest"/>
+         <object class="dsml.diagram.edit.parts.ValueOperator3EditPart" id="ValueOperator_3025"/>
+         <context elements="ValueOperator_3025"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsml.diagram.providers.assistants.DsmlModelingAssistantProviderOfAggregation3EditPart">
+         <Priority name="Lowest"/>
+         <object class="dsml.diagram.edit.parts.Aggregation3EditPart" id="Aggregation_3026"/>
+         <context elements="Aggregation_3026"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsml.diagram.providers.assistants.DsmlModelingAssistantProviderOfOrder3EditPart">
+         <Priority name="Lowest"/>
+         <object class="dsml.diagram.edit.parts.Order3EditPart" id="Order_3027"/>
+         <context elements="Order_3027"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsml.diagram.providers.assistants.DsmlModelingAssistantProviderOfConditionGroup4EditPart">
+         <Priority name="Lowest"/>
+         <object class="dsml.diagram.edit.parts.ConditionGroup4EditPart" id="ConditionGroup_3028"/>
+         <context elements="ConditionGroup_3028"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsml.diagram.providers.assistants.DsmlModelingAssistantProviderOfBringGroup4EditPart">
+         <Priority name="Lowest"/>
+         <object class="dsml.diagram.edit.parts.BringGroup4EditPart" id="BringGroup_3029"/>
+         <context elements="BringGroup_3029"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsml.diagram.providers.assistants.DsmlModelingAssistantProviderOfNot4EditPart">
+         <Priority name="Lowest"/>
+         <object class="dsml.diagram.edit.parts.Not4EditPart" id="Not_3030"/>
+         <context elements="Not_3030"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsml.diagram.providers.assistants.DsmlModelingAssistantProviderOfOperator4EditPart">
+         <Priority name="Lowest"/>
+         <object class="dsml.diagram.edit.parts.Operator4EditPart" id="Operator_3031"/>
+         <context elements="Operator_3031"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsml.diagram.providers.assistants.DsmlModelingAssistantProviderOfValueOperator4EditPart">
+         <Priority name="Lowest"/>
+         <object class="dsml.diagram.edit.parts.ValueOperator4EditPart" id="ValueOperator_3032"/>
+         <context elements="ValueOperator_3032"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsml.diagram.providers.assistants.DsmlModelingAssistantProviderOfAggregation4EditPart">
+         <Priority name="Lowest"/>
+         <object class="dsml.diagram.edit.parts.Aggregation4EditPart" id="Aggregation_3033"/>
+         <context elements="Aggregation_3033"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsml.diagram.providers.assistants.DsmlModelingAssistantProviderOfOrder4EditPart">
+         <Priority name="Lowest"/>
+         <object class="dsml.diagram.edit.parts.Order4EditPart" id="Order_3034"/>
+         <context elements="Order_3034"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsml.diagram.providers.assistants.DsmlModelingAssistantProviderOfTarget5EditPart">
+         <Priority name="Lowest"/>
+         <object class="dsml.diagram.edit.parts.Target5EditPart" id="Target_3035"/>
+         <context elements="Target_3035"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsml.diagram.providers.assistants.DsmlModelingAssistantProviderOfNot5EditPart">
+         <Priority name="Lowest"/>
+         <object class="dsml.diagram.edit.parts.Not5EditPart" id="Not_3036"/>
+         <context elements="Not_3036"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsml.diagram.providers.assistants.DsmlModelingAssistantProviderOfUnaryOperatorPatternEditPart">
+         <Priority name="Lowest"/>
+         <object class="dsml.diagram.edit.parts.UnaryOperatorPatternEditPart" id="UnaryOperatorPattern_3037"/>
+         <context elements="UnaryOperatorPattern_3037"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsml.diagram.providers.assistants.DsmlModelingAssistantProviderOfBinaryOperatorPatternEditPart">
+         <Priority name="Lowest"/>
+         <object class="dsml.diagram.edit.parts.BinaryOperatorPatternEditPart" id="BinaryOperatorPattern_3038"/>
+         <context elements="BinaryOperatorPattern_3038"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="dsml.diagram.providers.assistants.DsmlModelingAssistantProviderOfPatternTimerEditPart">
+         <Priority name="Lowest"/>
+         <object class="dsml.diagram.edit.parts.PatternTimerEditPart" id="PatternTimer_3039"/>
+         <context elements="PatternTimer_3039"/>
+      </modelingAssistantProvider>
+      
+   </extension>
+
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders" id="icon-provider">
+      <?gmfgen generated="true"?>
+      <IconProvider class="dsml.diagram.providers.DsmlIconProvider">
+         <Priority name="Low"/>
+      </IconProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
+      <?gmfgen generated="true"?>
+      <ParserProvider class="dsml.diagram.providers.DsmlParserProvider">
+         <Priority name="Lowest"/>
+      </ParserProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders" id="decorator-provider">
+      <?gmfgen generated="true"?>
+      <decoratorProvider class="dsml.diagram.providers.DsmlShortcutsDecoratorProvider">
+         <Priority name="Lowest"/>
+         <object class="org.eclipse.gmf.runtime.notation.Node(org.eclipse.gmf.runtime.notation)" id="generated-top-nodes">
+            <method name="getType()" value="2001,2002,2003,2004"/>
+         </object>
+         <context decoratorTargets="generated-top-nodes"/>
+      </decoratorProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
+      <?gmfgen generated="true"?>
+      <metamodel nsURI="dsml">
+         <metamodelType
+               id="br.ufpe.cin.dsml.cep.diagram.AreaDesenho_1000"
+               name="%metatype.name.AreaDesenho_1000"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="AreaDesenho"
+               edithelper="dsml.diagram.edit.helpers.AreaDesenhoEditHelper">
+            <param name="semanticHint" value="1000"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="dsml">
+         <metamodelType
+               id="br.ufpe.cin.dsml.cep.diagram.Event_2001"
+               name="%metatype.name.Event_2001"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Event"
+               edithelper="dsml.diagram.edit.helpers.EventEditHelper">
+            <param name="semanticHint" value="2001"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="dsml">
+         <metamodelType
+               id="br.ufpe.cin.dsml.cep.diagram.Rule_2002"
+               name="%metatype.name.Rule_2002"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Rule"
+               edithelper="dsml.diagram.edit.helpers.RuleEditHelper">
+            <param name="semanticHint" value="2002"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="dsml">
+         <metamodelType
+               id="br.ufpe.cin.dsml.cep.diagram.EventPattern_2003"
+               name="%metatype.name.EventPattern_2003"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="EventPattern"
+               edithelper="dsml.diagram.edit.helpers.EventPatternEditHelper">
+            <param name="semanticHint" value="2003"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="dsml">
+         <metamodelType
+               id="br.ufpe.cin.dsml.cep.diagram.Window_2004"
+               name="%metatype.name.Window_2004"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Window"
+               edithelper="dsml.diagram.edit.helpers.WindowEditHelper">
+            <param name="semanticHint" value="2004"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="dsml">
+         <metamodelType
+               id="br.ufpe.cin.dsml.cep.diagram.OperatorAttributeType_3040"
+               name="%metatype.name.OperatorAttributeType_3040"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="OperatorAttributeType"
+               edithelper="dsml.diagram.edit.helpers.OperatorAttributeTypeEditHelper">
+            <param name="semanticHint" value="3040"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="dsml">
+         <metamodelType
+               id="br.ufpe.cin.dsml.cep.diagram.Attribute_3001"
+               name="%metatype.name.Attribute_3001"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Attribute"
+               edithelper="dsml.diagram.edit.helpers.AttributeEditHelper">
+            <param name="semanticHint" value="3001"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="dsml">
+         <specializationType
+               id="br.ufpe.cin.dsml.cep.diagram.OperatorAttributeType_3041"
+               name="%metatype.name.OperatorAttributeType_3041"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="br.ufpe.cin.dsml.cep.diagram.OperatorAttributeType_3040"/>
+            <param name="semanticHint" value="3041"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="dsml">
+         <metamodelType
+               id="br.ufpe.cin.dsml.cep.diagram.Target_3002"
+               name="%metatype.name.Target_3002"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Target"
+               edithelper="dsml.diagram.edit.helpers.TargetEditHelper">
+            <param name="semanticHint" value="3002"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="dsml">
+         <specializationType
+               id="br.ufpe.cin.dsml.cep.diagram.OperatorAttributeType_3042"
+               name="%metatype.name.OperatorAttributeType_3042"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="br.ufpe.cin.dsml.cep.diagram.OperatorAttributeType_3040"/>
+            <param name="semanticHint" value="3042"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="dsml">
+         <specializationType
+               id="br.ufpe.cin.dsml.cep.diagram.Target_3003"
+               name="%metatype.name.Target_3003"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="br.ufpe.cin.dsml.cep.diagram.Target_3002"/>
+            <param name="semanticHint" value="3003"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="dsml">
+         <metamodelType
+               id="br.ufpe.cin.dsml.cep.diagram.ConditionGroup_3004"
+               name="%metatype.name.ConditionGroup_3004"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ConditionGroup"
+               edithelper="dsml.diagram.edit.helpers.ConditionGroupEditHelper">
+            <param name="semanticHint" value="3004"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="dsml">
+         <specializationType
+               id="br.ufpe.cin.dsml.cep.diagram.OperatorAttributeType_3043"
+               name="%metatype.name.OperatorAttributeType_3043"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="br.ufpe.cin.dsml.cep.diagram.OperatorAttributeType_3040"/>
+            <param name="semanticHint" value="3043"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="dsml">
+         <specializationType
+               id="br.ufpe.cin.dsml.cep.diagram.Target_3005"
+               name="%metatype.name.Target_3005"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="br.ufpe.cin.dsml.cep.diagram.Target_3002"/>
+            <param name="semanticHint" value="3005"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="dsml">
+         <metamodelType
+               id="br.ufpe.cin.dsml.cep.diagram.BringGroup_3006"
+               name="%metatype.name.BringGroup_3006"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="BringGroup"
+               edithelper="dsml.diagram.edit.helpers.BringGroupEditHelper">
+            <param name="semanticHint" value="3006"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="dsml">
+         <specializationType
+               id="br.ufpe.cin.dsml.cep.diagram.OperatorAttributeType_3044"
+               name="%metatype.name.OperatorAttributeType_3044"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="br.ufpe.cin.dsml.cep.diagram.OperatorAttributeType_3040"/>
+            <param name="semanticHint" value="3044"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="dsml">
+         <specializationType
+               id="br.ufpe.cin.dsml.cep.diagram.Target_3007"
+               name="%metatype.name.Target_3007"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="br.ufpe.cin.dsml.cep.diagram.Target_3002"/>
+            <param name="semanticHint" value="3007"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="dsml">
+         <metamodelType
+               id="br.ufpe.cin.dsml.cep.diagram.Not_3008"
+               name="%metatype.name.Not_3008"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Not"
+               edithelper="dsml.diagram.edit.helpers.NotEditHelper">
+            <param name="semanticHint" value="3008"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="dsml">
+         <metamodelType
+               id="br.ufpe.cin.dsml.cep.diagram.Operator_3009"
+               name="%metatype.name.Operator_3009"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Operator"
+               edithelper="dsml.diagram.edit.helpers.OperatorEditHelper">
+            <param name="semanticHint" value="3009"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="dsml">
+         <metamodelType
+               id="br.ufpe.cin.dsml.cep.diagram.ValueOperator_3010"
+               name="%metatype.name.ValueOperator_3010"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ValueOperator"
+               edithelper="dsml.diagram.edit.helpers.ValueOperatorEditHelper">
+            <param name="semanticHint" value="3010"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="dsml">
+         <metamodelType
+               id="br.ufpe.cin.dsml.cep.diagram.Aggregation_3011"
+               name="%metatype.name.Aggregation_3011"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Aggregation"
+               edithelper="dsml.diagram.edit.helpers.AggregationEditHelper">
+            <param name="semanticHint" value="3011"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="dsml">
+         <metamodelType
+               id="br.ufpe.cin.dsml.cep.diagram.Order_3012"
+               name="%metatype.name.Order_3012"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Order"
+               edithelper="dsml.diagram.edit.helpers.OrderEditHelper">
+            <param name="semanticHint" value="3012"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="dsml">
+         <metamodelType
+               id="br.ufpe.cin.dsml.cep.diagram.Limit_3013"
+               name="%metatype.name.Limit_3013"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Limit"
+               edithelper="dsml.diagram.edit.helpers.LimitEditHelper">
+            <param name="semanticHint" value="3013"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="dsml">
+         <specializationType
+               id="br.ufpe.cin.dsml.cep.diagram.ConditionGroup_3014"
+               name="%metatype.name.ConditionGroup_3014"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="br.ufpe.cin.dsml.cep.diagram.ConditionGroup_3004"/>
+            <param name="semanticHint" value="3014"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="dsml">
+         <specializationType
+               id="br.ufpe.cin.dsml.cep.diagram.ConditionGroup_3015"
+               name="%metatype.name.ConditionGroup_3015"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="br.ufpe.cin.dsml.cep.diagram.ConditionGroup_3004"/>
+            <param name="semanticHint" value="3015"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="dsml">
+         <specializationType
+               id="br.ufpe.cin.dsml.cep.diagram.BringGroup_3016"
+               name="%metatype.name.BringGroup_3016"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="br.ufpe.cin.dsml.cep.diagram.BringGroup_3006"/>
+            <param name="semanticHint" value="3016"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="dsml">
+         <specializationType
+               id="br.ufpe.cin.dsml.cep.diagram.BringGroup_3017"
+               name="%metatype.name.BringGroup_3017"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="br.ufpe.cin.dsml.cep.diagram.BringGroup_3006"/>
+            <param name="semanticHint" value="3017"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="dsml">
+         <specializationType
+               id="br.ufpe.cin.dsml.cep.diagram.Not_3018"
+               name="%metatype.name.Not_3018"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="br.ufpe.cin.dsml.cep.diagram.Not_3008"/>
+            <param name="semanticHint" value="3018"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="dsml">
+         <specializationType
+               id="br.ufpe.cin.dsml.cep.diagram.Operator_3019"
+               name="%metatype.name.Operator_3019"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="br.ufpe.cin.dsml.cep.diagram.Operator_3009"/>
+            <param name="semanticHint" value="3019"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="dsml">
+         <specializationType
+               id="br.ufpe.cin.dsml.cep.diagram.ValueOperator_3020"
+               name="%metatype.name.ValueOperator_3020"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="br.ufpe.cin.dsml.cep.diagram.ValueOperator_3010"/>
+            <param name="semanticHint" value="3020"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="dsml">
+         <specializationType
+               id="br.ufpe.cin.dsml.cep.diagram.Aggregation_3021"
+               name="%metatype.name.Aggregation_3021"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="br.ufpe.cin.dsml.cep.diagram.Aggregation_3011"/>
+            <param name="semanticHint" value="3021"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="dsml">
+         <specializationType
+               id="br.ufpe.cin.dsml.cep.diagram.Order_3022"
+               name="%metatype.name.Order_3022"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="br.ufpe.cin.dsml.cep.diagram.Order_3012"/>
+            <param name="semanticHint" value="3022"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="dsml">
+         <specializationType
+               id="br.ufpe.cin.dsml.cep.diagram.Not_3023"
+               name="%metatype.name.Not_3023"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="br.ufpe.cin.dsml.cep.diagram.Not_3008"/>
+            <param name="semanticHint" value="3023"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="dsml">
+         <specializationType
+               id="br.ufpe.cin.dsml.cep.diagram.Operator_3024"
+               name="%metatype.name.Operator_3024"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="br.ufpe.cin.dsml.cep.diagram.Operator_3009"/>
+            <param name="semanticHint" value="3024"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="dsml">
+         <specializationType
+               id="br.ufpe.cin.dsml.cep.diagram.ValueOperator_3025"
+               name="%metatype.name.ValueOperator_3025"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="br.ufpe.cin.dsml.cep.diagram.ValueOperator_3010"/>
+            <param name="semanticHint" value="3025"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="dsml">
+         <specializationType
+               id="br.ufpe.cin.dsml.cep.diagram.Aggregation_3026"
+               name="%metatype.name.Aggregation_3026"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="br.ufpe.cin.dsml.cep.diagram.Aggregation_3011"/>
+            <param name="semanticHint" value="3026"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="dsml">
+         <specializationType
+               id="br.ufpe.cin.dsml.cep.diagram.Order_3027"
+               name="%metatype.name.Order_3027"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="br.ufpe.cin.dsml.cep.diagram.Order_3012"/>
+            <param name="semanticHint" value="3027"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="dsml">
+         <specializationType
+               id="br.ufpe.cin.dsml.cep.diagram.ConditionGroup_3028"
+               name="%metatype.name.ConditionGroup_3028"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="br.ufpe.cin.dsml.cep.diagram.ConditionGroup_3004"/>
+            <param name="semanticHint" value="3028"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="dsml">
+         <specializationType
+               id="br.ufpe.cin.dsml.cep.diagram.BringGroup_3029"
+               name="%metatype.name.BringGroup_3029"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="br.ufpe.cin.dsml.cep.diagram.BringGroup_3006"/>
+            <param name="semanticHint" value="3029"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="dsml">
+         <specializationType
+               id="br.ufpe.cin.dsml.cep.diagram.Not_3030"
+               name="%metatype.name.Not_3030"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="br.ufpe.cin.dsml.cep.diagram.Not_3008"/>
+            <param name="semanticHint" value="3030"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="dsml">
+         <specializationType
+               id="br.ufpe.cin.dsml.cep.diagram.Operator_3031"
+               name="%metatype.name.Operator_3031"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="br.ufpe.cin.dsml.cep.diagram.Operator_3009"/>
+            <param name="semanticHint" value="3031"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="dsml">
+         <specializationType
+               id="br.ufpe.cin.dsml.cep.diagram.ValueOperator_3032"
+               name="%metatype.name.ValueOperator_3032"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="br.ufpe.cin.dsml.cep.diagram.ValueOperator_3010"/>
+            <param name="semanticHint" value="3032"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="dsml">
+         <specializationType
+               id="br.ufpe.cin.dsml.cep.diagram.Aggregation_3033"
+               name="%metatype.name.Aggregation_3033"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="br.ufpe.cin.dsml.cep.diagram.Aggregation_3011"/>
+            <param name="semanticHint" value="3033"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="dsml">
+         <specializationType
+               id="br.ufpe.cin.dsml.cep.diagram.Order_3034"
+               name="%metatype.name.Order_3034"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="br.ufpe.cin.dsml.cep.diagram.Order_3012"/>
+            <param name="semanticHint" value="3034"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="dsml">
+         <specializationType
+               id="br.ufpe.cin.dsml.cep.diagram.Target_3035"
+               name="%metatype.name.Target_3035"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="br.ufpe.cin.dsml.cep.diagram.Target_3002"/>
+            <param name="semanticHint" value="3035"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="dsml">
+         <specializationType
+               id="br.ufpe.cin.dsml.cep.diagram.Not_3036"
+               name="%metatype.name.Not_3036"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="br.ufpe.cin.dsml.cep.diagram.Not_3008"/>
+            <param name="semanticHint" value="3036"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="dsml">
+         <metamodelType
+               id="br.ufpe.cin.dsml.cep.diagram.UnaryOperatorPattern_3037"
+               name="%metatype.name.UnaryOperatorPattern_3037"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="UnaryOperatorPattern"
+               edithelper="dsml.diagram.edit.helpers.UnaryOperatorPatternEditHelper">
+            <param name="semanticHint" value="3037"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="dsml">
+         <metamodelType
+               id="br.ufpe.cin.dsml.cep.diagram.BinaryOperatorPattern_3038"
+               name="%metatype.name.BinaryOperatorPattern_3038"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="BinaryOperatorPattern"
+               edithelper="dsml.diagram.edit.helpers.BinaryOperatorPatternEditHelper">
+            <param name="semanticHint" value="3038"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="dsml">
+         <metamodelType
+               id="br.ufpe.cin.dsml.cep.diagram.PatternTimer_3039"
+               name="%metatype.name.PatternTimer_3039"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="PatternTimer"
+               edithelper="dsml.diagram.edit.helpers.PatternTimerEditHelper">
+            <param name="semanticHint" value="3039"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="dsml">
+         <metamodelType
+               id="br.ufpe.cin.dsml.cep.diagram.LinkComponent_4001"
+               name="%metatype.name.LinkComponent_4001"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="LinkComponent"
+               edithelper="dsml.diagram.edit.helpers.LinkComponentEditHelper">
+            <param name="semanticHint" value="4001"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="dsml">
+         <metamodelType
+               id="br.ufpe.cin.dsml.cep.diagram.LinkTarget_4002"
+               name="%metatype.name.LinkTarget_4002"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="LinkTarget"
+               edithelper="dsml.diagram.edit.helpers.LinkTargetEditHelper">
+            <param name="semanticHint" value="4002"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="dsml">
+         <metamodelType
+               id="br.ufpe.cin.dsml.cep.diagram.Comparison_4003"
+               name="%metatype.name.Comparison_4003"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Comparison"
+               edithelper="dsml.diagram.edit.helpers.ComparisonEditHelper">
+            <param name="semanticHint" value="4003"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="dsml">
+         <metamodelType
+               id="br.ufpe.cin.dsml.cep.diagram.Arithmetic_4004"
+               name="%metatype.name.Arithmetic_4004"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Arithmetic"
+               edithelper="dsml.diagram.edit.helpers.ArithmeticEditHelper">
+            <param name="semanticHint" value="4004"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="dsml">
+         <metamodelType
+               id="br.ufpe.cin.dsml.cep.diagram.Followedby_4005"
+               name="%metatype.name.Followedby_4005"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Followedby"
+               edithelper="dsml.diagram.edit.helpers.FollowedbyEditHelper">
+            <param name="semanticHint" value="4005"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="dsml">
+         <metamodelType
+               id="br.ufpe.cin.dsml.cep.diagram.LogicalConnector_4006"
+               name="%metatype.name.LogicalConnector_4006"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="LogicalConnector"
+               edithelper="dsml.diagram.edit.helpers.LogicalConnectorEditHelper">
+            <param name="semanticHint" value="4006"/>
+         </metamodelType>
+      </metamodel>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
+      <?gmfgen generated="true"?>
+      <clientContext id="br.ufpe.cin.dsml.cep.diagram.TypeContext">
+         <enablement>
+            <test
+               property="org.eclipse.gmf.runtime.emf.core.editingDomain"
+               value="br.ufpe.cin.dsml.cep.diagram.EditingDomain"/>
+         </enablement>
+      </clientContext> 
+      <binding context="br.ufpe.cin.dsml.cep.diagram.TypeContext">
+         <elementType ref="br.ufpe.cin.dsml.cep.diagram.AreaDesenho_1000"/>
+         <elementType ref="br.ufpe.cin.dsml.cep.diagram.Event_2001"/>
+         <elementType ref="br.ufpe.cin.dsml.cep.diagram.Rule_2002"/>
+         <elementType ref="br.ufpe.cin.dsml.cep.diagram.EventPattern_2003"/>
+         <elementType ref="br.ufpe.cin.dsml.cep.diagram.Window_2004"/>
+         <elementType ref="br.ufpe.cin.dsml.cep.diagram.OperatorAttributeType_3040"/>
+         <elementType ref="br.ufpe.cin.dsml.cep.diagram.Attribute_3001"/>
+         <elementType ref="br.ufpe.cin.dsml.cep.diagram.OperatorAttributeType_3041"/>
+         <elementType ref="br.ufpe.cin.dsml.cep.diagram.Target_3002"/>
+         <elementType ref="br.ufpe.cin.dsml.cep.diagram.OperatorAttributeType_3042"/>
+         <elementType ref="br.ufpe.cin.dsml.cep.diagram.Target_3003"/>
+         <elementType ref="br.ufpe.cin.dsml.cep.diagram.ConditionGroup_3004"/>
+         <elementType ref="br.ufpe.cin.dsml.cep.diagram.OperatorAttributeType_3043"/>
+         <elementType ref="br.ufpe.cin.dsml.cep.diagram.Target_3005"/>
+         <elementType ref="br.ufpe.cin.dsml.cep.diagram.BringGroup_3006"/>
+         <elementType ref="br.ufpe.cin.dsml.cep.diagram.OperatorAttributeType_3044"/>
+         <elementType ref="br.ufpe.cin.dsml.cep.diagram.Target_3007"/>
+         <elementType ref="br.ufpe.cin.dsml.cep.diagram.Not_3008"/>
+         <elementType ref="br.ufpe.cin.dsml.cep.diagram.Operator_3009"/>
+         <elementType ref="br.ufpe.cin.dsml.cep.diagram.ValueOperator_3010"/>
+         <elementType ref="br.ufpe.cin.dsml.cep.diagram.Aggregation_3011"/>
+         <elementType ref="br.ufpe.cin.dsml.cep.diagram.Order_3012"/>
+         <elementType ref="br.ufpe.cin.dsml.cep.diagram.Limit_3013"/>
+         <elementType ref="br.ufpe.cin.dsml.cep.diagram.ConditionGroup_3014"/>
+         <elementType ref="br.ufpe.cin.dsml.cep.diagram.ConditionGroup_3015"/>
+         <elementType ref="br.ufpe.cin.dsml.cep.diagram.BringGroup_3016"/>
+         <elementType ref="br.ufpe.cin.dsml.cep.diagram.BringGroup_3017"/>
+         <elementType ref="br.ufpe.cin.dsml.cep.diagram.Not_3018"/>
+         <elementType ref="br.ufpe.cin.dsml.cep.diagram.Operator_3019"/>
+         <elementType ref="br.ufpe.cin.dsml.cep.diagram.ValueOperator_3020"/>
+         <elementType ref="br.ufpe.cin.dsml.cep.diagram.Aggregation_3021"/>
+         <elementType ref="br.ufpe.cin.dsml.cep.diagram.Order_3022"/>
+         <elementType ref="br.ufpe.cin.dsml.cep.diagram.Not_3023"/>
+         <elementType ref="br.ufpe.cin.dsml.cep.diagram.Operator_3024"/>
+         <elementType ref="br.ufpe.cin.dsml.cep.diagram.ValueOperator_3025"/>
+         <elementType ref="br.ufpe.cin.dsml.cep.diagram.Aggregation_3026"/>
+         <elementType ref="br.ufpe.cin.dsml.cep.diagram.Order_3027"/>
+         <elementType ref="br.ufpe.cin.dsml.cep.diagram.ConditionGroup_3028"/>
+         <elementType ref="br.ufpe.cin.dsml.cep.diagram.BringGroup_3029"/>
+         <elementType ref="br.ufpe.cin.dsml.cep.diagram.Not_3030"/>
+         <elementType ref="br.ufpe.cin.dsml.cep.diagram.Operator_3031"/>
+         <elementType ref="br.ufpe.cin.dsml.cep.diagram.ValueOperator_3032"/>
+         <elementType ref="br.ufpe.cin.dsml.cep.diagram.Aggregation_3033"/>
+         <elementType ref="br.ufpe.cin.dsml.cep.diagram.Order_3034"/>
+         <elementType ref="br.ufpe.cin.dsml.cep.diagram.Target_3035"/>
+         <elementType ref="br.ufpe.cin.dsml.cep.diagram.Not_3036"/>
+         <elementType ref="br.ufpe.cin.dsml.cep.diagram.UnaryOperatorPattern_3037"/>
+         <elementType ref="br.ufpe.cin.dsml.cep.diagram.BinaryOperatorPattern_3038"/>
+         <elementType ref="br.ufpe.cin.dsml.cep.diagram.PatternTimer_3039"/>
+         <elementType ref="br.ufpe.cin.dsml.cep.diagram.LinkComponent_4001"/>
+         <elementType ref="br.ufpe.cin.dsml.cep.diagram.LinkTarget_4002"/>
+         <elementType ref="br.ufpe.cin.dsml.cep.diagram.Comparison_4003"/>
+         <elementType ref="br.ufpe.cin.dsml.cep.diagram.Arithmetic_4004"/>
+         <elementType ref="br.ufpe.cin.dsml.cep.diagram.Followedby_4005"/>
+         <elementType ref="br.ufpe.cin.dsml.cep.diagram.LogicalConnector_4006"/>
+         <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
+      </binding>
+   </extension>
+	   <extension point="org.eclipse.core.expressions.propertyTesters" id="navigator-proptest.isURIEditorInput">
+      <?gmfgen generated="true"?>
+       <propertyTester
+           id="br.ufpe.cin.dsml.cep.diagram.URIEditorInputPropertyTester"
+           type="org.eclipse.emf.common.ui.URIEditorInput"
+           namespace="br.ufpe.cin.dsml.cep.diagram"
+           properties="isURIEditorInput"
+           class="dsml.diagram.part.DsmlUriEditorInputTester">
+       </propertyTester>
+   </extension>
+
+	   <extension point="org.eclipse.core.expressions.propertyTesters" id="navigator-proptest.isShortcut">
+      <?gmfgen generated="true"?>
+       <propertyTester
+           id="br.ufpe.cin.dsml.cep.diagram.ShortcutPropertyTester"
+           type="org.eclipse.gmf.runtime.notation.View"
+           namespace="br.ufpe.cin.dsml.cep.diagram"
+           properties="isShortcut"
+           class="dsml.diagram.part.DsmlShortcutPropertyTester">
+       </propertyTester>
+   </extension>
+
+	   <extension point="org.eclipse.ui.navigator.viewer" id="navigator-viewbinding">
+      <?gmfgen generated="true"?>
+      <viewerContentBinding viewerId="org.eclipse.ui.navigator.ProjectExplorer">
+         <includes>
+            <contentExtension pattern="br.ufpe.cin.dsml.cep.diagram.resourceContent"/>
+			<contentExtension pattern="br.ufpe.cin.dsml.cep.diagram.domainResourceContent"/>
+            <contentExtension pattern="br.ufpe.cin.dsml.cep.diagram.navigatorLinkHelper"/>
+         </includes>
+      </viewerContentBinding>
+      <viewerActionBinding viewerId="org.eclipse.ui.navigator.ProjectExplorer">
+         <includes>
+            <actionExtension pattern="br.ufpe.cin.dsml.cep.diagram.navigatorActionProvider"/>
+         </includes>
+      </viewerActionBinding>
+   </extension>
+
+   <extension point="org.eclipse.ui.navigator.navigatorContent" id="navigator-content">
+      <?gmfgen generated="true"?>
+      <navigatorContent
+            id="br.ufpe.cin.dsml.cep.diagram.resourceContent" 
+            name="%navigatorContentName" 
+            priority="normal" 
+            contentProvider="dsml.diagram.navigator.DsmlNavigatorContentProvider" 
+            labelProvider="dsml.diagram.navigator.DsmlNavigatorLabelProvider"
+            icon="icons/obj16/DsmlDiagramFile.gif"
+            activeByDefault="true">
+         <triggerPoints>
+            <or>
+	           <and>
+    	          <instanceof value="org.eclipse.core.resources.IFile"/>
+        	      <test property="org.eclipse.core.resources.extension" value="dsml"/>
+               </and>
+               <instanceof value="dsml.diagram.navigator.DsmlAbstractNavigatorItem"/>
+           	   <adapt type="org.eclipse.gmf.runtime.notation.View">
+           	      <test property="br.ufpe.cin.dsml.cep.diagram.isShortcut"/>
+           	   </adapt>
+            </or>
+         </triggerPoints>
+         <possibleChildren>
+            <or>
+         	   <instanceof value="dsml.diagram.navigator.DsmlAbstractNavigatorItem"/>
+           	   <adapt type="org.eclipse.gmf.runtime.notation.View">
+           	      <test property="br.ufpe.cin.dsml.cep.diagram.isShortcut"/>
+           	   </adapt>
+            </or>
+         </possibleChildren>
+         <commonSorter 
+               id="br.ufpe.cin.dsml.cep.diagram.navigatorSorter" 
+               class="dsml.diagram.navigator.DsmlNavigatorSorter">
+            <parentExpression>
+               <or>
+	              <and>
+    	             <instanceof value="org.eclipse.core.resources.IFile"/>
+        	         <test property="org.eclipse.core.resources.extension" value="dsml"/>
+                  </and>
+                  <instanceof value="dsml.diagram.navigator.DsmlAbstractNavigatorItem"/>
+               </or>
+            </parentExpression>
+         </commonSorter>
+      </navigatorContent>
+      <navigatorContent
+            id="br.ufpe.cin.dsml.cep.diagram.domainResourceContent" 
+            name="%domainNavigatorContentName" 
+            priority="normal" 
+            contentProvider="dsml.diagram.navigator.DsmlDomainNavigatorContentProvider" 
+            labelProvider="dsml.diagram.navigator.DsmlDomainNavigatorLabelProvider"
+            icon="icons/obj16/DsmlDiagramFile.gif"
+            activeByDefault="true">
+         <triggerPoints>
+            <or>
+	           <and>
+    	          <instanceof value="org.eclipse.core.resources.IFile"/>
+        	      <test property="org.eclipse.core.resources.extension" value="dsml"/>
+               </and>
+               <instanceof value="dsml.diagram.navigator.DsmlDomainNavigatorItem"/>
+            </or>
+         </triggerPoints>
+         <possibleChildren>
+            <instanceof value="dsml.diagram.navigator.DsmlDomainNavigatorItem"/>
+         </possibleChildren>
+      </navigatorContent>
+      <actionProvider
+            id="br.ufpe.cin.dsml.cep.diagram.navigatorActionProvider"
+            class="dsml.diagram.navigator.DsmlNavigatorActionProvider">
+         <enablement>
+            <or>
+               <instanceof value="dsml.diagram.navigator.DsmlAbstractNavigatorItem"/>
+           	   <adapt type="org.eclipse.gmf.runtime.notation.View">
+           	      <test property="br.ufpe.cin.dsml.cep.diagram.isShortcut"/>
+           	   </adapt>
+            </or>
+         </enablement>
+      </actionProvider>
+   </extension>
+   
+	   <extension point="org.eclipse.ui.navigator.linkHelper" id="navigator-linkhelper">
+      <?gmfgen generated="true"?>
+      <linkHelper
+            id="br.ufpe.cin.dsml.cep.diagram.navigatorLinkHelper"
+            class="dsml.diagram.navigator.DsmlNavigatorLinkHelper">
+         <editorInputEnablement>
+            <and>
+               <instanceof value="org.eclipse.emf.common.ui.URIEditorInput"/>
+               <test property="br.ufpe.cin.dsml.cep.diagram.isURIEditorInput"/>
+            </and>
+         </editorInputEnablement>
+         <selectionEnablement>
+            <instanceof value="dsml.diagram.navigator.DsmlAbstractNavigatorItem"/>
+         </selectionEnablement>
+      </linkHelper>
+   </extension>
+   <extension point="org.eclipse.ui.commands" id="update-cmd">
+      <?gmfgen generated="true"?>
+      <command
+         categoryId="org.eclipse.ui.category.edit"
+         defaultHandler="dsml.diagram.part.DsmlDiagramUpdateCommand"
+         description="%update.diagram.description"
+         id="dsml.diagram.updateDiagram"
+         name="%update.diagram.name"/>
+   </extension>
+   
+   <extension point="org.eclipse.ui.bindings" id="update-cmd-binding">
+      <?gmfgen generated="true"?>
+      <key 
+         commandId="dsml.diagram.updateDiagram"
+         contextId="dsml.diagram.ui.diagramContext"
+         schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+         sequence="F5"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.menus" id="context-menus">
+      <?gmfgen generated="true"?>
+      <!-- menuContribution locationURI="menu:org.eclipse.ui.main.menu?after=">
+      </menuContribution>
+      <menuContribution locationURI="toolbar:org.eclipse.ui.main.toolbar?after=">
+      </menuContribution -->
+      <menuContribution locationURI="popup:org.eclipse.gmf.runtime.diagram.ui.DiagramEditorContextMenu">
+         <command commandId="br.ufpe.cin.dsml.cep.diagram.LoadResourceAction">
+            <visibleWhen>
+               <and>
+                  <with variable="activePartId"><equals value="dsml.diagram.part.DsmlDiagramEditorID"/></with>
+                  <with variable="selection"><iterate ifEmpty="false"> 
+                     <instanceof value="dsml.diagram.edit.parts.AreaDesenhoEditPart"/>
+                  </iterate></with>
+               </and>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+
+   <extension point="org.eclipse.ui.commands" id="menu-commands">
+      <?gmfgen generated="true"?>
+      <category id="dsml.diagram.part.DsmlDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
+      <command id="br.ufpe.cin.dsml.cep.diagram.LoadResourceAction"
+         name="Load Resource"
+         categoryId="dsml.diagram.part.DsmlDiagramEditorID"
+         defaultHandler="dsml.diagram.part.LoadResourceAction"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.handlers" id="menu-handlers">
+      <?gmfgen generated="true"?>
+   </extension>
+
+   <!-- optionally, specify keybindings -->
+</plugin>

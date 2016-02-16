@@ -1,0 +1,25 @@
+	/*
+ * 
+ */
+package dsml.diagram.edit.policies;
+
+/**
+ * @generated
+ */
+public class LinkTargetItemSemanticEditPolicy extends dsml.diagram.edit.policies.DsmlBaseItemSemanticEditPolicy {
+
+		/**
+ * @generated
+ */
+	public LinkTargetItemSemanticEditPolicy() {
+				super(dsml.diagram.providers.DsmlElementTypes.LinkTarget_4002);
+	}
+
+			/**
+ * @generated
+ */
+	protected org.eclipse.gef.commands.Command getDestroyElementCommand(org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest req) {
+		return getGEFWrapper(new org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand(req));
+	}
+					
+	}

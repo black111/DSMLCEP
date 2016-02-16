@@ -1,0 +1,18 @@
+/*
+ * 
+ */
+package prediqt.diagram.edit.helpers;
+
+/**
+ * @generated
+ */
+public class PrediqtBaseEditHelper extends org.eclipse.gmf.tooling.runtime.edit.helpers.GeneratedEditHelperBase {
+
+		
+		
+	
+	
+	
+	
+	
+	}

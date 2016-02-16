@@ -1,0 +1,437 @@
+/*
+ * 
+ */
+package dsml.diagram.part;
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+import org.eclipse.gef.palette.PaletteContainer;
+import org.eclipse.gef.palette.PaletteDrawer;
+import org.eclipse.gef.palette.PaletteRoot;
+import org.eclipse.gef.palette.ToolEntry;
+import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry;
+import org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry;
+
+import dsml.diagram.providers.DsmlElementTypes;
+
+/**
+ * @generated
+ */
+public class DsmlPaletteFactory {
+
+	/**
+	 * @generated
+	 */
+	public void fillPalette(PaletteRoot paletteRoot) {
+		paletteRoot.add(createObjects1Group());
+		paletteRoot.add(createConnections2Group());
+	}
+
+	/**
+	 * Creates "Objects" palette tool group
+	 * @generated
+	 */
+	private PaletteContainer createObjects1Group() {
+		PaletteDrawer paletteContainer = new PaletteDrawer(
+				Messages.Objects1Group_title);
+		paletteContainer.setId("createObjects1Group"); //$NON-NLS-1$
+		paletteContainer.add(createAggregation1CreationTool());
+		paletteContainer.add(createAttribute2CreationTool());
+		paletteContainer.add(createBinaryOperatorPattern3CreationTool());
+		paletteContainer.add(createBringGroup4CreationTool());
+		paletteContainer.add(createConditionGroup5CreationTool());
+		paletteContainer.add(createEvent6CreationTool());
+		paletteContainer.add(createEventPattern7CreationTool());
+		paletteContainer.add(createLimit8CreationTool());
+		paletteContainer.add(createNot9CreationTool());
+		paletteContainer.add(createOperator10CreationTool());
+		paletteContainer.add(createOrder11CreationTool());
+		paletteContainer.add(createPatternTimer12CreationTool());
+		paletteContainer.add(createRule13CreationTool());
+		paletteContainer.add(createTarget14CreationTool());
+		paletteContainer.add(createUnaryOperatorPattern15CreationTool());
+		paletteContainer.add(createValueOperator16CreationTool());
+		paletteContainer.add(createWindow17CreationTool());
+		return paletteContainer;
+	}
+
+	/**
+	 * Creates "Connections" palette tool group
+	 * @generated
+	 */
+	private PaletteContainer createConnections2Group() {
+		PaletteDrawer paletteContainer = new PaletteDrawer(
+				Messages.Connections2Group_title);
+		paletteContainer.setId("createConnections2Group"); //$NON-NLS-1$
+		paletteContainer.add(createArithmetic1CreationTool());
+		paletteContainer.add(createComparison2CreationTool());
+		paletteContainer.add(createFollowedby3CreationTool());
+		paletteContainer.add(createLinkComponent4CreationTool());
+		paletteContainer.add(createLinkTarget5CreationTool());
+		paletteContainer.add(createLogicalConnector6CreationTool());
+		return paletteContainer;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createAggregation1CreationTool() {
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
+				Messages.Aggregation1CreationTool_title,
+				Messages.Aggregation1CreationTool_desc,
+				Collections.singletonList(DsmlElementTypes.Aggregation_3014));
+		entry.setId("createAggregation1CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(DsmlElementTypes
+				.getImageDescriptor(DsmlElementTypes.Aggregation_3014));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createAttribute2CreationTool() {
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
+				Messages.Attribute2CreationTool_title,
+				Messages.Attribute2CreationTool_desc,
+				Collections.singletonList(DsmlElementTypes.Attribute_3001));
+		entry.setId("createAttribute2CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(DsmlElementTypes
+				.getImageDescriptor(DsmlElementTypes.Attribute_3001));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createBinaryOperatorPattern3CreationTool() {
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
+				Messages.BinaryOperatorPattern3CreationTool_title,
+				Messages.BinaryOperatorPattern3CreationTool_desc,
+				Collections
+						.singletonList(DsmlElementTypes.BinaryOperatorPattern_3020));
+		entry.setId("createBinaryOperatorPattern3CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(DsmlElementTypes
+				.getImageDescriptor(DsmlElementTypes.BinaryOperatorPattern_3020));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createBringGroup4CreationTool() {
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
+				Messages.BringGroup4CreationTool_title,
+				Messages.BringGroup4CreationTool_desc,
+				Collections.singletonList(DsmlElementTypes.BringGroup_3008));
+		entry.setId("createBringGroup4CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(DsmlElementTypes
+				.getImageDescriptor(DsmlElementTypes.BringGroup_3008));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createConditionGroup5CreationTool() {
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
+				Messages.ConditionGroup5CreationTool_title,
+				Messages.ConditionGroup5CreationTool_desc,
+				Collections.singletonList(DsmlElementTypes.ConditionGroup_3005));
+		entry.setId("createConditionGroup5CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(DsmlElementTypes
+				.getImageDescriptor(DsmlElementTypes.ConditionGroup_3005));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createEvent6CreationTool() {
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
+				Messages.Event6CreationTool_title,
+				Messages.Event6CreationTool_desc,
+				Collections.singletonList(DsmlElementTypes.Event_2001));
+		entry.setId("createEvent6CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(DsmlElementTypes
+				.getImageDescriptor(DsmlElementTypes.Event_2001));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createEventPattern7CreationTool() {
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
+				Messages.EventPattern7CreationTool_title,
+				Messages.EventPattern7CreationTool_desc,
+				Collections.singletonList(DsmlElementTypes.EventPattern_2003));
+		entry.setId("createEventPattern7CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(DsmlElementTypes
+				.getImageDescriptor(DsmlElementTypes.EventPattern_2003));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createLimit8CreationTool() {
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
+				Messages.Limit8CreationTool_title,
+				Messages.Limit8CreationTool_desc,
+				Collections.singletonList(DsmlElementTypes.Limit_3016));
+		entry.setId("createLimit8CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(DsmlElementTypes
+				.getImageDescriptor(DsmlElementTypes.Limit_3016));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createNot9CreationTool() {
+		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
+		types.add(DsmlElementTypes.Not_3011);
+		types.add(DsmlElementTypes.Not_3018);
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
+				Messages.Not9CreationTool_title,
+				Messages.Not9CreationTool_desc, types);
+		entry.setId("createNot9CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(DsmlElementTypes
+				.getImageDescriptor(DsmlElementTypes.Not_3011));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createOperator10CreationTool() {
+		ArrayList<IElementType> types = new ArrayList<IElementType>(4);
+		types.add(DsmlElementTypes.Operator_3003);
+		types.add(DsmlElementTypes.Operator_3006);
+		types.add(DsmlElementTypes.Operator_3009);
+		types.add(DsmlElementTypes.Operator_3012);
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
+				Messages.Operator10CreationTool_title,
+				Messages.Operator10CreationTool_desc, types);
+		entry.setId("createOperator10CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(DsmlElementTypes
+				.getImageDescriptor(DsmlElementTypes.Operator_3003));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createOrder11CreationTool() {
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
+				Messages.Order11CreationTool_title,
+				Messages.Order11CreationTool_desc,
+				Collections.singletonList(DsmlElementTypes.Order_3015));
+		entry.setId("createOrder11CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(DsmlElementTypes
+				.getImageDescriptor(DsmlElementTypes.Order_3015));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createPatternTimer12CreationTool() {
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
+				Messages.PatternTimer12CreationTool_title,
+				Messages.PatternTimer12CreationTool_desc,
+				Collections.singletonList(DsmlElementTypes.PatternTimer_3021));
+		entry.setId("createPatternTimer12CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(DsmlElementTypes
+				.getImageDescriptor(DsmlElementTypes.PatternTimer_3021));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createRule13CreationTool() {
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
+				Messages.Rule13CreationTool_title,
+				Messages.Rule13CreationTool_desc,
+				Collections.singletonList(DsmlElementTypes.Rule_2002));
+		entry.setId("createRule13CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(DsmlElementTypes
+				.getImageDescriptor(DsmlElementTypes.Rule_2002));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createTarget14CreationTool() {
+		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
+		types.add(DsmlElementTypes.Target_3002);
+		types.add(DsmlElementTypes.Target_3017);
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
+				Messages.Target14CreationTool_title,
+				Messages.Target14CreationTool_desc, types);
+		entry.setId("createTarget14CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(DsmlElementTypes
+				.getImageDescriptor(DsmlElementTypes.Target_3002));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createUnaryOperatorPattern15CreationTool() {
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
+				Messages.UnaryOperatorPattern15CreationTool_title,
+				Messages.UnaryOperatorPattern15CreationTool_desc,
+				Collections
+						.singletonList(DsmlElementTypes.UnaryOperatorPattern_3019));
+		entry.setId("createUnaryOperatorPattern15CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(DsmlElementTypes
+				.getImageDescriptor(DsmlElementTypes.UnaryOperatorPattern_3019));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createValueOperator16CreationTool() {
+		ArrayList<IElementType> types = new ArrayList<IElementType>(4);
+		types.add(DsmlElementTypes.ValueOperator_3004);
+		types.add(DsmlElementTypes.ValueOperator_3007);
+		types.add(DsmlElementTypes.ValueOperator_3010);
+		types.add(DsmlElementTypes.ValueOperator_3013);
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
+				Messages.ValueOperator16CreationTool_title,
+				Messages.ValueOperator16CreationTool_desc, types);
+		entry.setId("createValueOperator16CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(DsmlElementTypes
+				.getImageDescriptor(DsmlElementTypes.ValueOperator_3004));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createWindow17CreationTool() {
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(
+				Messages.Window17CreationTool_title,
+				Messages.Window17CreationTool_desc,
+				Collections.singletonList(DsmlElementTypes.Window_2004));
+		entry.setId("createWindow17CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(DsmlElementTypes
+				.getImageDescriptor(DsmlElementTypes.Window_2004));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createArithmetic1CreationTool() {
+		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
+				Messages.Arithmetic1CreationTool_title,
+				Messages.Arithmetic1CreationTool_desc,
+				Collections.singletonList(DsmlElementTypes.Arithmetic_4004));
+		entry.setId("createArithmetic1CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(DsmlElementTypes
+				.getImageDescriptor(DsmlElementTypes.Arithmetic_4004));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createComparison2CreationTool() {
+		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
+				Messages.Comparison2CreationTool_title,
+				Messages.Comparison2CreationTool_desc,
+				Collections.singletonList(DsmlElementTypes.Comparison_4003));
+		entry.setId("createComparison2CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(DsmlElementTypes
+				.getImageDescriptor(DsmlElementTypes.Comparison_4003));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createFollowedby3CreationTool() {
+		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
+				Messages.Followedby3CreationTool_title,
+				Messages.Followedby3CreationTool_desc,
+				Collections.singletonList(DsmlElementTypes.Followedby_4005));
+		entry.setId("createFollowedby3CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(DsmlElementTypes
+				.getImageDescriptor(DsmlElementTypes.Followedby_4005));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createLinkComponent4CreationTool() {
+		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
+				Messages.LinkComponent4CreationTool_title,
+				Messages.LinkComponent4CreationTool_desc,
+				Collections.singletonList(DsmlElementTypes.LinkComponent_4001));
+		entry.setId("createLinkComponent4CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(DsmlElementTypes
+				.getImageDescriptor(DsmlElementTypes.LinkComponent_4001));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createLinkTarget5CreationTool() {
+		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
+				Messages.LinkTarget5CreationTool_title,
+				Messages.LinkTarget5CreationTool_desc,
+				Collections.singletonList(DsmlElementTypes.LinkTarget_4002));
+		entry.setId("createLinkTarget5CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(DsmlElementTypes
+				.getImageDescriptor(DsmlElementTypes.LinkTarget_4002));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createLogicalConnector6CreationTool() {
+		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(
+				Messages.LogicalConnector6CreationTool_title,
+				Messages.LogicalConnector6CreationTool_desc,
+				Collections
+						.singletonList(DsmlElementTypes.LogicalConnector_4006));
+		entry.setId("createLogicalConnector6CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(DsmlElementTypes
+				.getImageDescriptor(DsmlElementTypes.LogicalConnector_4006));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+}

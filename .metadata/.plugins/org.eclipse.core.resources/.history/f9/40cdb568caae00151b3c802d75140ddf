@@ -1,0 +1,36 @@
+/**
+ */
+package dsml.tests;
+
+import dsml.OperatorAttributeType;
+
+/**
+ * <!-- begin-user-doc -->
+ * A test case for the model object '<em><b>Operator Attribute Type</b></em>'.
+ * <!-- end-user-doc -->
+ * @generated
+ */
+public abstract class OperatorAttributeTypeTest extends OperatorTest {
+
+	/**
+	 * Constructs a new Operator Attribute Type test case with the given name.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OperatorAttributeTypeTest(String name) {
+		super(name);
+	}
+
+	/**
+	 * Returns the fixture for this Operator Attribute Type test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected OperatorAttributeType getFixture() {
+		return (OperatorAttributeType)fixture;
+	}
+
+} //OperatorAttributeTypeTest

@@ -1,0 +1,21 @@
+/*
+ * 
+ */
+package dsml.diagram.providers;
+
+/**
+ * @generated
+ */
+public class DsmlEditPartProvider extends org.eclipse.gmf.tooling.runtime.providers.DefaultEditPartProvider {
+
+	
+	/**
+ * @generated
+ */
+	public DsmlEditPartProvider() {
+		super(new dsml.diagram.edit.parts.DsmlEditPartFactory(), 			dsml.diagram.part.DsmlVisualIDRegistry.TYPED_INSTANCE, 			dsml.diagram.edit.parts.AreaDesenhoEditPart.MODEL_ID			
+		);
+	}
+
+
+	}
